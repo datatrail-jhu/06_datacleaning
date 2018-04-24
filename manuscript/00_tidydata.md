@@ -13,35 +13,35 @@ We've previously discussed what the rows and columns in a spreadsheet are. Here,
 #### Variables
 Variables in a spreadsheet are the different categories of data that will be collected. Here, we see there are 7 different variables: ID, LastName, FirstName, Sex, City, State, and Occupation. The names for variables are put in the first row of the spreadsheet.
 
-![Variables](images/01_tidydata/01_data_tidydata-02.png)
+![Variables](images/00_tidydata/00_data_tidydata-02.png)
 
 #### Observations
 The measurements taken from a person for each variable are called observations. Observations for each individual are stored in a single row, with each observation being put in the appropriate column for each variable. 
 
-![Observations](images/01_tidydata/01_data_tidydata-03.png)
+![Observations](images/00_tidydata/00_data_tidydata-03.png)
 
 #### Types
 Often, data are collected for the same indivdiuals from multiple sources. For example, when you go to the doctor's office, you fill out a survey about yourself. That would count as one type of data. The measurements a doctor collects at your visit, however, would be a different type of data. 
 
-![Types](images/01_tidydata/01_data_tidydata-04.png)
+![Types](images/00_tidydata/00_data_tidydata-04.png)
 
 ### Principles of Tidy Data
 
 1. Each variable you measure should be in one column
 
-![Principle #1 of Tidy Data](images/01_tidydata/01_data_tidydata-05.png)
+![Principle #1 of Tidy Data](images/00_tidydata/00_data_tidydata-05.png)
 
 2. Each different observation of that variable should be in a different row
 
-![Principle #2 of Tidy Data](images/01_tidydata/01_data_tidydata-06.png)
+![Principle #2 of Tidy Data](images/00_tidydata/00_data_tidydata-06.png)
 
 3. There should be one spreadsheet for each "type" of data
 
-![Principle #3 of Tidy Data](images/01_tidydata/01_data_tidydata-07.png)
+![Principle #3 of Tidy Data](images/00_tidydata/00_data_tidydata-07.png)
 
 4. If you have multiple spreadsheets, they should include a column in each spreadsheet (with the same column label!) that allows them to be joined or merged
 
-![Principle #4 of Tidy Data](images/01_tidydata/01_data_tidydata-08.png)
+![Principle #4 of Tidy Data](images/00_tidydata/00_data_tidydata-08.png)
 
 
 ### Rules for Tidy Spreadsheets
@@ -66,7 +66,7 @@ With regard's to entering a person's sex, we were talking about how to code obse
 
 Consistency matters across every step of the analysis. Name your files in a consistent format. Always code dates in a consistent format (discussed further below). Avoid extra spaces in cells. If you're careful about and consistent in data entry, it will be incredibly helpful when you get to analysis
 
-![Be Consistent!](images/01_tidydata/01_data_tidydata-10.png)
+![Be Consistent!](images/00_tidydata/00_data_tidydata-10.png)
 
 #### Choose good names for things
 
@@ -74,32 +74,32 @@ Choosing good variable names is important. Generally, avoid spaces in variable n
 
 Additionally, make sure that file and variable names are as short as possible while still being meaningful. "F1" is short, but it doesn't really tell you anything about what is in that file. "doctor_visit_v1" is a more meaningful file name. We know now that this spreadsheet contains information about a doctor's visit. 'v1' specifies version 1 allowing for updates to this file later which would create a new file "doctor_visit_v2." 
 
-![Choose good names](images/01_tidydata/01_data_tidydata-11.png)
+![Choose good names](images/00_tidydata/00_data_tidydata-11.png)
 
 #### Write dates as YYYY-MM-DD
 
 When entering dates, there is a global 'ISO 8601' standard. Dates should be encoded YYYY-MM-DD. What this means is that if you want to specify that a measurement was taken on February 27th, 2018, you would type 2018-02-27. YYYY refers to the year, 2018. MM refers to the month of February, 02. And DD refers to the day of the month, 27. This standard is used for dates for two main reason. First, it avoids confusion when sharing data across different countries, where date conventions can differ. By all using ISO 8601 standard conventions, there is less room for error in interpretation of dates. Secondly, spreadsheet software often mishandles dates and assumes things that are not dates are dates and vice versa. By encoding dates as YYYY-MM-DD, this confusion is minimized. 
 
-![YYYY-MM-DD](images/01_tidydata/01_data_tidydata-12.png)
+![YYYY-MM-DD](images/00_tidydata/00_data_tidydata-12.png)
 
 #### No empty cells
 
 Simply, fill in every cell. If the data is unknown for that cell, put 'NA.' Without information in each cell, the analyst is often leeft guessing. In the spreasheets below, on the left, is the analyst to assume that the empty cells should use the date from the cell above? Or are we to assume that the date for that measurement is unknown? Fill in the date if it is known or type 'NA' if it is not. That will clear up the need for any guessing on behalf of the analyst. On the spreadsheet to the right, the first two rows have a lot of empty cells. This is problematic for the analysis. This spreadsheet does not follow the rules for tidy data. There is not a single variable per column with a single entry per row. These data would have to be reformatted before they could be use din analysis.
 
-![No empty cells](images/01_tidydata/01_data_tidydata-13.png)
+![No empty cells](images/00_tidydata/00_data_tidydata-13.png)
 
 
 #### Put just one thing in a cell
 
 Sometimes people are tempted to include a number and a unit in a single cell. For weight, someone may *want* to put '165 lbs' in that cell. Avoid this temptation! Keep numbers and units separate. In this case, put one piece of information in the cell (the person's weight) and either put the unit in a separte column, or better yet, make the variable name weight_lbs. That clears everything up for the analyst and avoids a number and a unit from both being put in a single cell. 
 
-![One thing per cell](images/01_tidydata/01_data_tidydata-14.png)
+![One thing per cell](images/00_tidydata/00_data_tidydata-14.png)
 
 #### Don't use font color or highlighting as data
 
 Avoid the temptation to highlight particular cells with a color to specify something about the data. Instead, add another column to convey that information. In the example below, 1.1 looks like an incorrect value for an individual's glucose measure. Instead of highlighting the value in read, instead create a new variable. Here, on the right, this column has been named 'outlier.' Including 'TRUE' for this indivdiual suggests that this individual may be an outlier to the data analyst. Doing it in this way ensures that this information will not be lost. Using font color or highlighting however can easily be lost in data processing, as you will see in future lessons.
 
-![No highlighting or font color](images/01_tidydata/01_data_tidydata-15.png)
+![No highlighting or font color](images/00_tidydata/00_data_tidydata-15.png)
 
 #### Save the data as plain text files
 
@@ -109,11 +109,11 @@ The following lessons will go into detail about what file formats are ideal for 
 
 The data entry guidelines discussed here and a few additional rules have been summarized below and are [available online for reference](https://doi.org/10.7287/peerj.preprints.3139v5).
 
-![Naming Guidelines](images/01_tidydata/01_data_tidydata-16.png)
+![Naming Guidelines](images/00_tidydata/00_data_tidydata-16.png)
 
 Most importantly, however, remember that tidy data are rectangular data. The data should be a rectangle with each variable in a separate column and each entry in a different row. All cells should contain some text, so that the spreadsheet looks like a rectangle with something in every cell.
 
-![Tidy Data = rectangular data](images/01_tidydata/01_data_tidydata-17.png)
+![Tidy Data = rectangular data](images/00_tidydata/00_data_tidydata-17.png)
 
 Additional resources:
 [Hadley Wickham's paper on Tidy Data](http://vita.had.co.nz/papers/tidy-data.pdf)
@@ -129,7 +129,7 @@ Additional resources:
 * [Slides](https://docs.google.com/presentation/d/1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54/edit?usp=sharing)
 
 
-{quiz, id: quiz_01_tidydata}
+{quiz, id: quiz_00_tidydata}
 
 ### Tidy Data quiz
 
