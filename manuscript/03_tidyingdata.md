@@ -242,7 +242,7 @@ msleep %>%
 
 Sometimes, information is provided in a single column that should really be two separate columns to make it helpful in data analysis. For example, we'll now move from the `msleep` dataset to talking about a [dataset](https://raw.githubusercontent.com/suzanbaert/RTutorials/master/Rmd_originals/conservation_explanation.csv) that includes information about conservation abbreviations in a single column.
 
-To read this file into R, we'll use the `httr` package, which was discussed in a previous lesson in an earlier course.
+To read this file into R, we'll use the `httr` package, which will be discussed in detail in a future lesson. For now, however, know that we're using this to read in a file from the Internet using the code below.
 
 ```r
 ## if not already installed, you'll have to run the following line of code
