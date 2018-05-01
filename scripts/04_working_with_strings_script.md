@@ -6,7 +6,7 @@ stringr is a package within the tidyverse specifically designed to work well wit
 
 We'll begin by discussing the available functions within stringr. As we'll only cover a few of the functions within stringr in this lesson, it's important to remember that if you start typing str underscore within RStudio, a list of the many options will show up.
 
-When working with strings, some of the most frequent tasks you'll need to complete are to  determine the length of a string, to combine strings together, and to subset strings. We'll begin with an object comprised of three strings. We can determine the length of each string in the vector using this code. Here we see that the first string has a length of 26. If you were to go back and count the characters in the first string, you would see that this 26 includes each letter, spcae, and period in that string. The length of a string does not just could the letters in its length. The length includes every chcaracter. The second and third strings each have length 12. 
+When working with strings, some of the most frequent tasks you'll need to complete are to  determine the length of a string, to combine strings together, and to subset strings. We'll begin with an object comprised of three strings. We can determine the length of each string in the vector using this code. Here we see that the first string has a length of 26. If you were to go back and count the characters in the first string, you would see that this 26 includes each letter, space, and period in that string. The length of a string does not just could the letters in its length. The length includes every character. The second and third strings each have length 12. 
 
 If you were interested in combining strings, you'd want to use str underscore c. We the first bit of code here, the output from this doesn't look quite right. You may want a space between these two words when you combine the two strings. That can be controlled with the sep argument within str underscore c.
 
@@ -28,7 +28,7 @@ Note, however, that regexps are case sensitive. To match patterns, you have to c
 
 To count the number of matches within your strings, you would use str underscore count. Here, using the names vector we've been using, we see that str underscore count produces a 1 for those names that start with M and a 0 otherwise.
 
-However,if we instead wanted a count of the numbers of lowercase "m"s, we could still use str underscore count function to accomplish that. Notice here we've removed the specification to just look at the beginning of the string. Here, we're looking for lowercase m's anywhere in the string and counting them:
+However, if we instead wanted a count of the numbers of lowercase "m"s, we could still use str underscore count function to accomplish that. Notice here we've removed the specification to just look at the beginning of the string. Here, we're looking for lowercase m's anywhere in the string and counting them:
   
 Instead of returning a count, at times you're just interested in knowing which strings match the pattern you're searching for. In these cases you'll want to use str underscore detect. This function simply returns a TRUE if the string matches the pattern specified and FALSE otherwise.
 
@@ -46,11 +46,11 @@ To search for anything other than a specified set of characters, you will add a 
 
 To search for digits (numeric variable between 0 and 9) in a string you use backslash d; however, backslashes are protected characters in R. This means that you have to escape this character first with an additional backslash , to let R know that you want to search for the digit regular expression.
 
-Identifying whitespace in R identifies any sapces, tabs or newlines. Note that again we have to escape the backlash s with a backslash for R to recognize the regular expression
+Identifying whitespace in R identifies any spaces, tabs or newlines. Note that again we have to escape the backlash s with a backslash for R to recognize the regular expression
 
 To identify any character except for a newline you'll use a period. Notice in our addresses example that there are no newlines, so this pattern will match with the entire string. 
 
-Searches for regular expressions allow you to specify how many times a pattern should be found within the string. We'll discuss a few approaches to addressing repitition within regular expressions here.
+Searches for regular expressions allow you to specify how many times a pattern should be found within the string. We'll discuss a few approaches to addressing repetition within regular expressions here.
 
 Using the definitions on the last slide, we can see that the following code will identify patterns within the addresses vector where n shows up one more more times in a string. 
 

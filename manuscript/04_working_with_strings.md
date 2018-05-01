@@ -57,7 +57,7 @@ str_length(objectA)
 
 ![str_length output](images/04_working_with_strings/04_datacleaning_working_with_strings-4.png)
 
-Here we see that the first string has a length of 26. If you were to go back and count the characters in the first string, you would see that this 26 includes each letter, spcae, and period in that string. The length of a string does not just could the letters in its length. The length includes every chcaracter. The second and third strings each have length 12. 
+Here we see that the first string has a length of 26. If you were to go back and count the characters in the first string, you would see that this 26 includes each letter, space, and period in that string. The length of a string does not just could the letters in its length. The length includes every character. The second and third strings each have length 12. 
 
 #### Combining strings: `str_c()`
 
@@ -183,7 +183,7 @@ str_count(names, "^M")
 
 ![str_count() strings that start with "M"](images/04_working_with_strings/04_datacleaning_working_with_strings-14.png)
 
-However,if we instead wanted a count of the numbers of lowercase "m"s, we could still use `str_count()` to accomplish that. Notice below we've removed the specification to just look at the beginning of the string. Here, we're looking for lowercase m's anywhere in the string and counting them:
+However, if we instead wanted a count of the numbers of lowercase "m"s, we could still use `str_count()` to accomplish that. Notice below we've removed the specification to just look at the beginning of the string. Here, we're looking for lowercase m's anywhere in the string and counting them:
 
 ```r
 ## identify strings that have a lowercase "m"
@@ -286,7 +286,7 @@ str_view_all(addresses, "\\d")
 
 ##### Search for whitespace
 
-Identifying whitespace in R identifies any sapces, tabs or newlines. Note that again we have to escape the "\s" with a backslash for R to recognize the regular expression
+Identifying whitespace in R identifies any spaces, tabs or newlines. Note that again we have to escape the "\s" with a backslash for R to recognize the regular expression
 
 ```r
 ## identify any whitespace
@@ -320,7 +320,7 @@ Searches for regular expressions allow you to specify how many times a pattern s
 * {n,} : n or more times
 * {n,m} : between n and m times
 
-##### Examples of repetition within regular expressios
+##### Examples of repetition within regular expressions
 
 Using the definitions above, we can see that the following code will identify patterns within the addresses vector where n shows up one more more times in a string. 
 ```r
@@ -376,7 +376,7 @@ This lesson set out to introduce you to how to work with strings within RStudio,
 ### Additional Resources
 
 * [r4ds : Chapter 14 - Strings](http://r4ds.had.co.nz/strings.html) by [Hadley Wickham](http://hadley.nz/)
-* [stringr documentaion](http://stringr.tidyverse.org/articles/regular-expressions.html), part of the [tidyverse](https://www.tidyverse.org/)
+* [stringr documentation](http://stringr.tidyverse.org/articles/regular-expressions.html), part of the [tidyverse](https://www.tidyverse.org/)
 
 
 ### Slides and Video
