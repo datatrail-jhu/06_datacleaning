@@ -23,7 +23,7 @@ Within R, there is a package specifically designed for helping you wrangle data.
 If you have not already, you'll want to be sure this package is installed and loaded in:
 
 ```r
-install.packages(dplyr)
+install.packages('dplyr')
 library(dplyr)
 ```
 
@@ -37,7 +37,7 @@ We will also return to the `tidyr` package. The same package that we used to res
 If you have not already, you'll want to be sure this package is installed and loaded in:
 
 ```r
-install.packages(tidyr)
+install.packages('tidyr')
 library(tidyr)
 ```
 
@@ -51,7 +51,7 @@ The third package we'll include here is the `janitor` package. This package prov
 If you have not already, you'll want to be sure this package is installed and loaded in:
 
 ```r
-install.packages(janitor)
+install.packages('janitor')
 library(janitor)
 ```
 
@@ -64,7 +64,7 @@ The final package we'll discuss here is the `skimr` package. This package provid
 If you have not already, you'll want to be sure this package is installed and loaded in:
 
 ```r
-install.packages(skimr)
+install.packages('skimr')
 library(skimr)
 ```
 
@@ -96,7 +96,7 @@ Below we'll use this pipe operator a lot. It will become clearer what this pipe 
 
 ### Filtering Data
 
-When working with a large dataset, you're often interesting in only working with a portion of the data at any one time. For example, if you had data on people from ages 0 to 100 years old, but you wanted to ask a question that only pertained to children, you would likely want to only work with data from those individuals who were less than 18 years old. To do this, you would want to **filter** your dataset to only include data from these individuals you're interested in. Filtering can be done by row or by column. We'll discuss the syntax in R for doing both.
+When working with a large dataset, you're often interesting in only working with a portion of the data at any one time. For example, if you had data on people from ages 0 to 100 years old, but you wanted to ask a question that only pertained to children, you would likely want to only work with data from those individuals who were less than 18 years old. To do this, you would want to **filter** your dataset to only include data from these individuals you're interested in. Filtering can be done by row or by column. We'll discuss the syntax in R for doing both. Please note that the examples in this lesson and the organization for this lesson were adapted from [Suzan Baert's](https://suzan.rbind.io/) wonderful dplyr tutorials. Links to the all four tutorials can be found in the "Additional Resources" section at the bottom of this lesson.
 
 For the examples below, we'll be using a dataset from `ggplot2` called `msleep.` This dataset includes sleep times and weights from a number of different mammals. It has 83 rows, with each row including information about a different type of animal, and 11 variables. As each row is a different animal and each column includes information about that animal, this is a **wide** dataset.
 
