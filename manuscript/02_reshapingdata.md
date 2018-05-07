@@ -2,7 +2,7 @@
 
 ### Data Formats
 
-Tidy data generally exist in two forms: wide data and long data. Both types of data are used and needed in data analyisis, and fortunately, there are tools that can take you from wide-to-long and from long-to-wide. This makes it easy to work with any tidy data set. We'll discuss the basics of what wide and long data are and how to go back and forth between the two in RStudio.
+Tidy data generally exist in two forms: wide data and long data. Both types of data are used and needed in data analysis, and fortunately, there are tools that can take you from wide-to-long and from long-to-wide. This makes it easy to work with any tidy data set. We'll discuss the basics of what wide and long data are and how to go back and forth between the two in RStudio.
 
 #### Wide Data
 
@@ -21,7 +21,7 @@ Long data, on the other hand, has a column for what type of variable is containe
 
 ![long dataset](images/02_reshapingdata/02_datacleaning_reshapingdata-2.png)
 
-This long dataset includes the exact same information as the previous wide datset; it is just stored differently. It's harder to see visually how many different measurements were taken and on how many different people, but the same information is there.
+This long dataset includes the exact same information as the previous wide dataset; it is just stored differently. It's harder to see visually how many different measurements were taken and on how many different people, but the same information is there.
 
 While long data formats are less readable than wide data at a glance, they are a lot easier to work with during analysis. Most of the tools we'll be working with use long data. Thus, to go from how data are often stored (wide) to working with the data during analysis (long), we'll need to understand what tools are needed to do this and how to work with them.
 
@@ -41,7 +41,7 @@ head(airquality)
 
 ![airquality dataset](images/02_reshapingdata/02_datacleaning_reshapingdata-4.png)
 
-Again, wide data are easy to deciper at a glance. We can see that we have six different variables for each day, with each one of these variables (measurements) being stored in a separate column.
+Again, wide data are easy to decipher at a glance. We can see that we have six different variables for each day, with each one of these variables (measurements) being stored in a separate column.
 
 #### tidyr
 
@@ -85,7 +85,7 @@ head(gathered)
 
 ![gather column names changed](images/02_reshapingdata/02_datacleaning_reshapingdata-8.png)
 
-However, you're likely not interested in your day and month variable being separated out into their own variabiles within the `key` column. In fact, knowing the day and month from which a data point came helps identify that particular data point. To account for this, you can exclude `day` and `month` from the variables being included in the `key` column by specifying all the variables that you *do* want inclued in the `key` column.  Here, that means specifying `ozone`, `solar.r`, `wind`, and `temp`. This will keep `day` and `month` in their own columns, allowing each row to be identified by the specific day and month being discussed.
+However, you're likely not interested in your day and month variable being separated out into their own variables within the `key` column. In fact, knowing the day and month from which a data point came helps identify that particular data point. To account for this, you can exclude `day` and `month` from the variables being included in the `key` column by specifying all the variables that you *do* want included in the `key` column.  Here, that means specifying `ozone`, `solar.r`, `wind`, and `temp`. This will keep `day` and `month` in their own columns, allowing each row to be identified by the specific day and month being discussed.
 
 ```r
 ## in gather(), after key and value, you can specify which variables 
@@ -155,7 +155,7 @@ When you run this code you see that each column from the original data frame (`o
 
 ![melted data](images/02_reshapingdata/02_datacleaning_reshapingdata-14.png)
 
-Now, to use month and day as identifiers as we did with `tidyr` above, the approach is slightly different. Rather than specificing the columns to be used as keys (as you did with `gather()`), to melt() your dataset, you will instead specify these two values (`day` and `month`) as identifiers for the dataset. You'll want to use the following syntax:
+Now, to use month and day as identifiers as we did with `tidyr` above, the approach is slightly different. Rather than specifying the columns to be used as keys (as you did with `gather()`), to melt() your dataset, you will instead specify these two values (`day` and `month`) as identifiers for the dataset. You'll want to use the following syntax:
 
 ```r
 ## melt the data frame
@@ -181,7 +181,7 @@ To return our melted data back into its original wide form, we'll use `dcast()`.
 
 ```r
 ## to get our data back to its original form
-## specigy which columns should be combined to use as identifiers
+## specify which columns should be combined to use as identifiers
 ## and which column should be used to specify the columns 
 original <- dcast(melted, month + day ~ variable)
 
@@ -194,7 +194,7 @@ head(airquality)
 
 As you can see, aside from the column order changing, the information in `original` is the same as what was in the data frame we started with (`airquality`).
 
-While reshaping data may not be the most exciting topic, having this skill will be indispensible as you start working with data. It's best to get these skills down early!
+While reshaping data may not be the most exciting topic, having this skill will be indispensable as you start working with data. It's best to get these skills down early!
 
 ### Additional Resources
 * [tidyR](https://tidyr.tidyverse.org/), part of the [tidyverse](https://www.tidyverse.org/) and developed by [Hadley Wickham](http://hadley.nz/) and [Lionel Henry](https://github.com/lionel-)
