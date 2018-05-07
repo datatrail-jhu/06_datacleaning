@@ -15,7 +15,7 @@ Tidy datasets, by design, are easier to manipulate, model and visualize. By star
 
 ### Data Terms
 
-We've previously discussed what the rows and columns in a spreadsheet are. Here, we'll discuss what is meant by observations, varaiables, and types, all of which are used to explain the principles of tidy data. 
+We've previously discussed what the rows and columns in a spreadsheet are. Here, we'll discuss what is meant by observations, variables, and types, all of which are used to explain the principles of tidy data. 
 
 #### Variables
 Variables in a spreadsheet are the different categories of data that will be collected. Here, we see there are 7 different variables: ID, LastName, FirstName, Sex, City, State, and Occupation. The names for variables are put in the first row of the spreadsheet.
@@ -28,7 +28,7 @@ The measurements taken from a person for each variable are called observations. 
 ![Observations](images/00_tidydata/00_data_tidydata-03.png)
 
 #### Types
-Often, data are collected for the same indivdiuals from multiple sources. For example, when you go to the doctor's office, you fill out a survey about yourself. That would count as one type of data. The measurements a doctor collects at your visit, however, would be a different type of data. 
+Often, data are collected for the same individuals from multiple sources. For example, when you go to the doctor's office, you fill out a survey about yourself. That would count as one type of data. The measurements a doctor collects at your visit, however, would be a different type of data. 
 
 ![Types](images/00_tidydata/00_data_tidydata-04.png)
 
@@ -91,20 +91,20 @@ When entering dates, there is a global 'ISO 8601' standard. Dates should be enco
 
 #### No empty cells
 
-Simply, fill in every cell. If the data is unknown for that cell, put 'NA.' Without information in each cell, the analyst is often leeft guessing. In the spreasheets below, on the left, is the analyst to assume that the empty cells should use the date from the cell above? Or are we to assume that the date for that measurement is unknown? Fill in the date if it is known or type 'NA' if it is not. That will clear up the need for any guessing on behalf of the analyst. On the spreadsheet to the right, the first two rows have a lot of empty cells. This is problematic for the analysis. This spreadsheet does not follow the rules for tidy data. There is not a single variable per column with a single entry per row. These data would have to be reformatted before they could be use din analysis.
+Simply, fill in every cell. If the data is unknown for that cell, put 'NA.' Without information in each cell, the analyst is often left guessing. In the spreadsheets below, on the left, is the analyst to assume that the empty cells should use the date from the cell above? Or are we to assume that the date for that measurement is unknown? Fill in the date if it is known or type 'NA' if it is not. That will clear up the need for any guessing on behalf of the analyst. On the spreadsheet to the right, the first two rows have a lot of empty cells. This is problematic for the analysis. This spreadsheet does not follow the rules for tidy data. There is not a single variable per column with a single entry per row. These data would have to be reformatted before they could be use din analysis.
 
 ![No empty cells](images/00_tidydata/00_data_tidydata-13.png)
 
 
 #### Put just one thing in a cell
 
-Sometimes people are tempted to include a number and a unit in a single cell. For weight, someone may *want* to put '165 lbs' in that cell. Avoid this temptation! Keep numbers and units separate. In this case, put one piece of information in the cell (the person's weight) and either put the unit in a separte column, or better yet, make the variable name weight_lbs. That clears everything up for the analyst and avoids a number and a unit from both being put in a single cell. 
+Sometimes people are tempted to include a number and a unit in a single cell. For weight, someone may *want* to put '165 lbs' in that cell. Avoid this temptation! Keep numbers and units separate. In this case, put one piece of information in the cell (the person's weight) and either put the unit in a separate column, or better yet, make the variable name weight_lbs. That clears everything up for the analyst and avoids a number and a unit from both being put in a single cell. 
 
 ![One thing per cell](images/00_tidydata/00_data_tidydata-14.png)
 
 #### Don't use font color or highlighting as data
 
-Avoid the temptation to highlight particular cells with a color to specify something about the data. Instead, add another column to convey that information. In the example below, 1.1 looks like an incorrect value for an individual's glucose measure. Instead of highlighting the value in read, instead create a new variable. Here, on the right, this column has been named 'outlier.' Including 'TRUE' for this indivdiual suggests that this individual may be an outlier to the data analyst. Doing it in this way ensures that this information will not be lost. Using font color or highlighting however can easily be lost in data processing, as you will see in future lessons.
+Avoid the temptation to highlight particular cells with a color to specify something about the data. Instead, add another column to convey that information. In the example below, 1.1 looks like an incorrect value for an individual's glucose measure. Instead of highlighting the value in read, instead create a new variable. Here, on the right, this column has been named 'outlier.' Including 'TRUE' for this individual suggests that this individual may be an outlier to the data analyst. Doing it in this way ensures that this information will not be lost. Using font color or highlighting however can easily be lost in data processing, as you will see in future lessons.
 
 ![No highlighting or font color](images/00_tidydata/00_data_tidydata-15.png)
 
