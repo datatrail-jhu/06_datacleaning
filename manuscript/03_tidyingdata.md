@@ -110,11 +110,11 @@ Below we'll use this pipe operator a lot. Essentially, it takes output from the 
 
 ### Filtering Data
 
-When working with a large dataset, you're often interesting in only working with a portion of the data at any one time. For example, if you had data on people from ages 0 to 100 years old, but you wanted to ask a question that only pertained to children, you would likely want to only work with data from those individuals who were less than 18 years old. To do this, you would want to **filter** your dataset to only include data from these individuals you're interested in. Filtering can be done by row or by column. We'll discuss the syntax in R for doing both. Please note that the examples in this lesson and the organization for this lesson were adapted from [Suzan Baert's](https://suzan.rbind.io/) wonderful dplyr tutorials. Links to the all four tutorials can be found in the "Additional Resources" section at the bottom of this lesson.
+When working with a large dataset, you're often interesting in only working with a portion of the data at any one time. For example, if you had data on people from ages 0 to 100 years old, but you wanted to ask a question that only pertained to children, you would likely want to only work with data from those individuals who were less than 18 years old. To do this, you would want to **filter** your dataset to only include data from these select individuals. Filtering can be done by row or by column. We'll discuss the syntax in R for doing both. Please note that the examples in this lesson and the organization for this lesson were adapted from [Suzan Baert's](https://suzan.rbind.io/) wonderful `dplyr` tutorials. Links to the all four tutorials can be found in the "Additional Resources" section at the bottom of this lesson.
 
-For the examples below, we'll be using a dataset from `ggplot2` called `msleep.` This dataset includes sleep times and weights from a number of different mammals. It has 83 rows, with each row including information about a different type of animal, and 11 variables. As each row is a different animal and each column includes information about that animal, this is a **wide** dataset.
+For the examples below, we'll be using a dataset from `ggplot2` called `msleep`. This dataset includes sleep times and weights from a number of different mammals. It has 83 rows, with each row including information about a different type of animal, and 11 variables. As each row is a different animal and each column includes information about that animal, this is a **wide** dataset.
 
-To get an idea of what variables are included in this data frame, you can use `glimpse()`. This function summarizes how many rows there are (`Observations`) and how many columns there are (`Variables`). Additionally, it gives you a glimpse into the type of data contained in each column. Specifically, in this data set, we know that the first column is `name` and that it contains a character vector (`chr`) and that the first three entires are "Cheetah", "Owl monkey", and "Mountain beaver."
+To get an idea of what variables are included in this data frame, you can use `glimpse()`. This function summarizes how many rows there are (`Observations`) and how many columns there are (`Variables`). Additionally, it gives you a glimpse into the type of data contained in each column. Specifically, in this data set, we know that the first column is `name` and that it contains a character vector (`chr`) and that the first three entires are "Cheetah", "Owl monkey", and "Mountain beaver." It works similarly to the `summary()` function covered in an earlier course.
 
 ```r
 ## load necessary packages
@@ -124,7 +124,7 @@ library(ggplot2)
 glimpse(msleep)
 ```
 
-![glimpse of msleep dataset](images/03_tidyingdata/03_datacleaning_tidyingdata-12.png)
+![Glimpse of msleep dataset](images/03_tidyingdata/03_datacleaning_tidyingdata-12.png)
 
 #### Filtering Rows
 
@@ -135,22 +135,33 @@ msleep %>%
   filter(order == "Primates")
 ```
 
-![filtered to only include Primates](images/03_tidyingdata/03_datacleaning_tidyingdata-13.png)
+Note that we are using the equality `==` comparison operator.
+
+![Filtered to only include Primates](images/03_tidyingdata/03_datacleaning_tidyingdata-13.png)
 
 Here, we have a smaller dataset of only 12 mammals (as opposed to the original 83) and we can see that the `order` variable column only includes "Primates." 
 
-But, what if we were only interested in Primates who sleep more than 10 hours total a night. This information is in the `sleep_total` column. Fortunately, `filter()` also works on numeric variables. To accomplish this, you would use the following syntax, separating the multiple filters you want to apply with a comma:
+But, what if we were only interested in Primates who sleep more than 10 hours total per night? This information is in the `sleep_total` column. Fortunately, `filter()` also works on numeric variables. To accomplish this, you would use the following syntax, separating the multiple filters you want to apply with a comma:
 
 ```r
 msleep %>%
   filter(order == "Primates", sleep_total > 10)
 ```
 
+Note that we have used the "greater than" comparison operator with `sleep_total`.
+
 Now, we have a dataset focused in on only 5 mammals, all of which are primates who sleep for more than 10 hours a night total.
 
-![numerically filtered dataset](images/03_tidyingdata/03_datacleaning_tidyingdata-14.png)
+![Numerically filtered dataset](images/03_tidyingdata/03_datacleaning_tidyingdata-14.png)
 
-Note that the number of columns hasn't changed -- all 11 variables are still shown in columns because the function `filter()` filters on rows, not columns.
+We can obtain the same result with the AND `&` comparison operator instead of separating filtering conditions with a comma:
+
+```r
+msleep %>%
+  filter(order == "Primates" & sleep_total > 10)
+```
+
+Note that the number of columns hasn't changed. All 11 variables are still shown in columns because the function `filter()` filters on rows, not columns.
 
 #### Selecting Columns
 
