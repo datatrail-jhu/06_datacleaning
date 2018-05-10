@@ -2,25 +2,25 @@
 
 So far we've discussed what tidy and untidy data are. We've (hopefully) convinced you that tidy data are the right type of data to work with. And, more than that, hopefully we've explained that data are not always the tidiest when they come to you at the start of a project. An incredibly important skill of a data scientist is to be able to take data from an untidy format and get it into a tidy format. We've started to discuss how to do this in the last lesson where we learned to reshape data. In this lesson, we'll discuss a number of other ways in which data can be tidied and the necessary tools to **tidy data**. 
 
-These skills are often referred to as **data wrangling** -- they are skills that allow you to wrangle data from the format they're currently in into the format you actually want them in. 
+These skills are often referred to as **data wrangling**. They are skills that allow you to wrangle data from the format they're currently in into the format you actually want them in. 
 
-![data wrangling example](images/03_tidyingdata/04_datacleaning_tidyingdata-1.png)
+![data wrangling example](images/03_tidyingdata/03_datacleaning_tidyingdata-1.png)
 
 ### dplyr
 
-Within R, there is a package specifically designed for helping you wrangle data. This package is called [`dplyr`](https://dplyr.tidyverse.org/) and will allow you to easily accomplish a lit of the data wrangling  tasks necessary. In this lesson we will cover a number of functions that will help you wrangle data using `dplyr`:
+Within R, there is a package specifically designed for helping you wrangle data. This package is called [`dplyr`](https://dplyr.tidyverse.org/) and will allow you to easily accomplish many of the data wrangling tasks necessary. In this lesson, we will cover a number of functions that will help you wrangle data using `dplyr`:
 
-* %>% - pipe operator 
-* glimpse() - get an overview of what's included in dataset
-* filter() - filter rows
-* select() - select, rename, and re-order columns
-* arrange() - reorder rows
-* mutate() - create a new column
-* group_by() - group variables 
-* summarize() - summarize information within a dataset
-* left_join() - combining data across data frame
+* `%>%` - pipe operator for chaining a sequence of operations
+* `glimpse()` - get an overview of what's included in dataset
+* `filter()` - filter rows
+* `select()` - select, rename, and reorder columns
+* `arrange()` - reorder rows
+* `mutate()` - create a new column
+* `group_by()` - group variables 
+* `summarize()` - summarize information within a dataset
+* `left_join()` - combining data across data frame
 
-If you have not already, you'll want to be sure this package is installed and loaded in:
+If you have not already, you'll want to be sure this package is installed and loaded:
 
 ```r
 install.packages('dplyr')
@@ -31,10 +31,10 @@ library(dplyr)
 
 We will also return to the `tidyr` package. The same package that we used to reshape our data will be helpful when tidying data. The main functions we'll cover from `tidyr` are:
 
-* unite() - to combine contents of two separate columns into a single column
-* separate() - to separate contents of a column into two separate columns
+* `unite()` - to combine contents of two separate columns into a single column
+* `separate()` - to separate contents of a column into two separate columns
 
-If you have not already, you'll want to be sure this package is installed and loaded in:
+If you have not already, you'll want to be sure this package is installed and loaded:
 
 ```r
 install.packages('tidyr')
@@ -45,10 +45,10 @@ library(tidyr)
 
 The third package we'll include here is the `janitor` package. This package provides tools for cleaning dirty data. The main functions we'll cover from janitor are:
 
-* clean_names() - clean names of a data frame
-* tabyl() - get a helpful summary of a variable
+* `clean_names()` - clean names of a data frame
+* `tabyl()` - get a helpful summary of a variable
 
-If you have not already, you'll want to be sure this package is installed and loaded in:
+If you have not already, you'll want to be sure this package is installed and loaded:
 
 ```r
 install.packages('janitor')
@@ -59,9 +59,9 @@ library(janitor)
 
 The final package we'll discuss here is the `skimr` package. This package provides a quick way to summarize a data frame. We'll discuss its most useful function here:
 
-*skim() - summarize a data frame
+* `skim()` - summarize a data frame
 
-If you have not already, you'll want to be sure this package is installed and loaded in:
+If you have not already, you'll want to be sure this package is installed and loaded:
 
 ```r
 install.packages('skimr')
@@ -70,29 +70,43 @@ library(skimr)
 
 #### The Pipe Operator
 
-Before we get into the important functions within `dplyr`, we first have to discuss what is known as the **pipe operator**. The pipe operator looks like this in R: %>%.
+Before we get into the important functions within `dplyr`, it will be very useful to discuss what is known as the **pipe operator**. The pipe operator looks like this in R: `%>%`.
 
-The pipe operator allows you to string a number of different functions together in R. If you wanted to take data frame A and carry out function B on it in R, you may think that it would look describe it like this:
+The pipe operator allows you to string a number of different functions together in R in a way that is easier to read than traditional syntax. If you wanted to take data frame A and carry out function B on it in R, you could depict this with an arrow pointing from A to B:
 
 A --> B
 
-Here you're, saying take A and carry out B.
+Here you are saying, "Take A and feed it into function B."
 
-In R syntax, instead of using that arrow, you would use the pipe operator (%>%)
+In R syntax, what is depicted by the arrow above would be carried out by calling the function B on the data frame object A:
 
+```r
+B(A)
+```
+
+Alternatively, you could use the pipe operator (`%>%`):
+
+```r
 A %>% B
+```
 
-However, often you aren't just doing one thing to a data frame, but rather are looking to carry out multiple functions. 
-
-This may look like this:
+However, often you are not performing just one action on a data frame, but rather you are looking to carry out multiple functions. We can again depict this with an arrow diagram.
 
 A --> B --> C --> D
 
-Here, you're saying that you want to take data frame (A) and carry out function B, then you want to take the output from that and carry out function C. Subsequently you want to take the output of that and carry out function D. Each time you want take the output of one function and carry out something new on that output, you will use the pipe operator in R:
+Here you are saying that you want to take data frame A and carry out function B, then you want to take the output from that and carry out function C. Subsequently you want to take the output of that and carry out function D. In R syntax, we would first apply function B to data frame A, then apply function C to this output, then apply function D to this output. This results in the following syntax that is hard to read because multiple calls to functions are nested within each other:
 
+```r
+D(C(B(A)))
+```
+
+Alternatively, you could use the pipe operator. Each time you want take the output of one function and carry out something new on that output, you will use the pipe operator:
+
+```r
 A %>% B %>% C %>% D
+```
 
-Below we'll use this pipe operator a lot. It will become clearer what this pipe operator does as you run the code below. 
+Below we'll use this pipe operator a lot. Essentially, it takes output from the left hand side and feeds it into a function on the right hand side. You'll get a better understanding of how it works as you run the code below.
 
 ### Filtering Data
 
@@ -110,7 +124,7 @@ library(ggplot2)
 glimpse(msleep)
 ```
 
-![glimpse of msleep dataset](images/03_tidyingdata/04_datacleaning_tidyingdata-12.png)
+![glimpse of msleep dataset](images/03_tidyingdata/03_datacleaning_tidyingdata-12.png)
 
 #### Filtering Rows
 
@@ -121,7 +135,7 @@ msleep %>%
   filter(order == "Primates")
 ```
 
-![filtered to only include Primates](images/03_tidyingdata/04_datacleaning_tidyingdata-13.png)
+![filtered to only include Primates](images/03_tidyingdata/03_datacleaning_tidyingdata-13.png)
 
 Here, we have a smaller dataset of only 12 mammals (as opposed to the original 83) and we can see that the `order` variable column only includes "Primates." 
 
@@ -134,7 +148,7 @@ msleep %>%
 
 Now, we have a dataset focused in on only 5 mammals, all of which are primates who sleep for more than 10 hours a night total.
 
-![numerically filtered dataset](images/03_tidyingdata/04_datacleaning_tidyingdata-14.png)
+![numerically filtered dataset](images/03_tidyingdata/03_datacleaning_tidyingdata-14.png)
 
 Note that the number of columns hasn't changed -- all 11 variables are still shown in columns because the function `filter()` filters on rows, not columns.
 
@@ -150,7 +164,7 @@ msleep %>%
   select(name, sleep_total, sleep_rem, sleep_cycle)
 ```
 
-![data with selected columns](images/03_tidyingdata/04_datacleaning_tidyingdata-15.png)
+![data with selected columns](images/03_tidyingdata/03_datacleaning_tidyingdata-15.png)
 
 
 Now, using `select()` we see that we still have the five rows we filtered to before, but we only have the four columns specified using `select()`.
@@ -164,7 +178,7 @@ msleep %>%
   filter(order == "Primates", sleep_total > 10) %>%
   select(name, total=sleep_total, rem=sleep_rem, cycle=sleep_cycle)
 ```
-![data with re-named columns names](images/03_tidyingdata/04_datacleaning_tidyingdata-16.png)
+![data with re-named columns names](images/03_tidyingdata/03_datacleaning_tidyingdata-16.png)
 
 #### Reordering 
 
@@ -182,7 +196,7 @@ msleep %>%
 
 Here we see that sleep_rem `name` is displayed first followed by `sleep_rem`, `sleep_cycle`, and `sleep_total`, just as it was specified within `select()`. 
 
-![data with re-ordered columns names](images/03_tidyingdata/04_datacleaning_tidyingdata-18.png)
+![data with re-ordered columns names](images/03_tidyingdata/03_datacleaning_tidyingdata-18.png)
 
 
 #### Reordering Rows
@@ -196,7 +210,7 @@ msleep %>%
   arrange(sleep_total)
 ```
 
-![data arranged by total sleep in ascending order](images/03_tidyingdata/04_datacleaning_tidyingdata-19.png)
+![data arranged by total sleep in ascending order](images/03_tidyingdata/03_datacleaning_tidyingdata-19.png)
 
 While arrange sorts variables in ascending order, it's also possible to sort in descending (largest to smallest) order. To do this you just use `desc()` with the following syntax:
 
@@ -209,7 +223,7 @@ msleep %>%
 
 By putting `sleep_total` within `desc()`, `arrange()` will now sort your data from the primates with the longest total sleep to the shortest.
 
-![data arranged by total sleep in descending order](images/03_tidyingdata/04_datacleaning_tidyingdata-20.png)
+![data arranged by total sleep in descending order](images/03_tidyingdata/03_datacleaning_tidyingdata-20.png)
 
 `arrange()` can also be used to order non-numeric variables. For example, arrange() will sort character vectors alphabetically. 
 
@@ -220,7 +234,7 @@ msleep %>%
   arrange(name)
 ```
 
-![data arranged alphabetically by name](images/03_tidyingdata/04_datacleaning_tidyingdata-21.png)
+![data arranged alphabetically by name](images/03_tidyingdata/03_datacleaning_tidyingdata-21.png)
 
 ### Creating new columns
 
@@ -236,7 +250,7 @@ msleep %>%
   mutate(sleep_total_min = sleep_total * 60)
 ```
 
-![mutate to add new column to data](images/03_tidyingdata/04_datacleaning_tidyingdata-23.png)
+![mutate to add new column to data](images/03_tidyingdata/03_datacleaning_tidyingdata-23.png)
 
 ### Separating Columns 
 
@@ -259,7 +273,7 @@ conservation <- read_csv(tf)
 head(conservation)
 ```
 
-![conservation data set](images/03_tidyingdata/04_datacleaning_tidyingdata-25.png)
+![conservation data set](images/03_tidyingdata/03_datacleaning_tidyingdata-25.png)
 
 In this dataset, we see that there is a single column that includes *both* the abbreviation for the conservation term as well as what that abbreviation means. To work with these data, you could imagine that you may want these two pieces of information (the abbreviation and the description) in two different columns. To accomplish this in R, you'll want to use `separate()` from `tidyr`.
 
@@ -273,7 +287,7 @@ conservation %>%
 
 The output of this code shows that we now have two separate columns with the information in the original column separated out into `abbreviation` and `description`.
 
-![separate() output](images/03_tidyingdata/04_datacleaning_tidyingdata-26.png)
+![separate() output](images/03_tidyingdata/03_datacleaning_tidyingdata-26.png)
 
 
 ### Merging Columns 
@@ -287,7 +301,7 @@ conservation %>%
   unite(united_col, abbreviation, description, sep=" = ")
 ```
 
-![unite() output](images/03_tidyingdata/04_datacleaning_tidyingdata-27.png)
+![unite() output](images/03_tidyingdata/03_datacleaning_tidyingdata-27.png)
 
 ### Cleaning up column names
 
@@ -298,7 +312,7 @@ conservation %>%
   clean_names()
 ```
 
-![clean_names() output](images/03_tidyingdata/04_datacleaning_tidyingdata-28.png)
+![clean_names() output](images/03_tidyingdata/03_datacleaning_tidyingdata-28.png)
 
 ### Combining data across data frames
 
@@ -325,7 +339,7 @@ msleep %>%
   left_join(conserve, by = c("conservation" = "abbreviation"))
 ```
 
-![left join data](images/03_tidyingdata/04_datacleaning_tidyingdata-29.png)
+![left join data](images/03_tidyingdata/03_datacleaning_tidyingdata-29.png)
 
 ### Grouping Data
 
@@ -342,7 +356,7 @@ msleep %>%
   group_by(order)
 ```
 
-![group_by() output](images/03_tidyingdata/04_datacleaning_tidyingdata-31.png)
+![group_by() output](images/03_tidyingdata/03_datacleaning_tidyingdata-31.png)
 
 In fact, the only thing that appears different in the output when you group_by is that the number of different orders is now printed on your screen. However, in the next section you'll see that the output from any further functions you carry out at this point will differ between the two datasets. 
 
@@ -362,7 +376,7 @@ msleep %>%
 
 This provides a summary of the data with the column name we specified above (`N`) and the number of samples in the dataset.
 
-![summarize with n()](images/03_tidyingdata/04_datacleaning_tidyingdata-32.png)
+![summarize with n()](images/03_tidyingdata/03_datacleaning_tidyingdata-32.png)
 
 However, if you wanted to count how many of each different `order` of mammal you had. You would first `group_by(order)` and then use `summarize()`. This will summarize within group.
 
@@ -375,7 +389,7 @@ msleep %>%
 
 The output from this, like above, includes the column name we specified in summarize (`N`). However, it includes the number of samples in the group_by variable we specified (`order`).
 
-![group_by() and summarize with n()](images/03_tidyingdata/04_datacleaning_tidyingdata-33.png)
+![group_by() and summarize with n()](images/03_tidyingdata/03_datacleaning_tidyingdata-33.png)
 
 There are other ways in which the data can be summarized using `summarize()`. In addition to using n() to count the number of samples within a group, you can also summarize using other helpful functions within R, such as `mean()`, `median()`, `min()`, and `max()`. 
 
@@ -388,7 +402,7 @@ msleep %>%
   summarize(N=n(), mean_sleep=mean(sleep_total))
 ```
 
-![summarize using mean()](images/03_tidyingdata/04_datacleaning_tidyingdata-34.png)
+![summarize using mean()](images/03_tidyingdata/03_datacleaning_tidyingdata-34.png)
 
 #### tabyl()
 
@@ -399,7 +413,7 @@ msleep %>%
   tabyl(order)
 ```
 
-![summarize using tabyl() from janitor](images/03_tidyingdata/04_datacleaning_tidyingdata-35.png)
+![summarize using tabyl() from janitor](images/03_tidyingdata/03_datacleaning_tidyingdata-35.png)
 
 Note, that `tabyl` assumes categorical variables. If you want to summarize numeric variables `summary()` works well. For example, this code will summarize the values in `msleep$awake` for you. 
 
@@ -407,7 +421,7 @@ Note, that `tabyl` assumes categorical variables. If you want to summarize numer
 summary(msleep$awake)
 ```
 
-![summarize numeric variables](images/03_tidyingdata/04_datacleaning_tidyingdata-36.png)
+![summarize numeric variables](images/03_tidyingdata/03_datacleaning_tidyingdata-36.png)
 
 #### skim()
 
@@ -417,7 +431,7 @@ When you would rather get a snapshot of the entire dataset, rather than just one
 skim(msleep)
 ```
 
-![summarize entire dataset using skim() from skimr](images/03_tidyingdata/04_datacleaning_tidyingdata-37.png)
+![summarize entire dataset using skim() from skimr](images/03_tidyingdata/03_datacleaning_tidyingdata-37.png)
 
 
 ### Conclusion
