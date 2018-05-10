@@ -272,7 +272,7 @@ msleep %>%
 
 ### Separating Columns 
 
-Sometimes, information is provided in a single column that should really be two separate columns to make it helpful in data analysis. For example, we'll now move from the `msleep` dataset to talking about a [dataset](https://raw.githubusercontent.com/suzanbaert/RTutorials/master/Rmd_originals/conservation_explanation.csv) that includes information about conservation abbreviations in a single column.
+Sometimes multiple pieces of information are merged within a single column even though it would be more useful during analysis to have those pieces of information in separate columns. To demonstrate, we'll now move from the `msleep` dataset to talking about another [dataset](https://raw.githubusercontent.com/suzanbaert/RTutorials/master/Rmd_originals/conservation_explanation.csv) that includes information about conservation abbreviations in a single column.
 
 To read this file into R, we'll use the `httr` package, which will be discussed in detail in a future lesson. For now, however, know that we're using this to read in a file from the Internet using the code below.
 
@@ -291,11 +291,11 @@ conservation <- read_csv(tf)
 head(conservation)
 ```
 
-![conservation data set](images/03_tidyingdata/03_datacleaning_tidyingdata-25.png)
+![Conservation data set](images/03_tidyingdata/03_datacleaning_tidyingdata-25.png)
 
-In this dataset, we see that there is a single column that includes *both* the abbreviation for the conservation term as well as what that abbreviation means. To work with these data, you could imagine that you may want these two pieces of information (the abbreviation and the description) in two different columns. To accomplish this in R, you'll want to use `separate()` from `tidyr`.
+In this dataset, we see that there is a single column that includes *both* the abbreviation for the conservation term as well as what that abbreviation means. Recall that this violates one of the tidy data principles covered in the first lesson: Put just one thing in a cell. To work with these data, you could imagine that you may want these two pieces of information (the abbreviation and the description) in two different columns. To accomplish this in R, you'll want to use `separate()` from `tidyr`.
 
-The `separate()` function requires what column you want to separate (`conservation abbreviation`), what the names of the columns you will separate the information into should be called (`into = c("abbreviation", "description")`), and what the separator between these two pieces of information is currently (`sep = " = "`). 
+The `separate()` function requires the name of the existing column that you want to separate (`conservation abbreviation`), the desired column names of the resulting separated columns (`into = c("abbreviation", "description")`), and the characters that currently separate the pieces of information (`sep = " = "`). 
 
 ```r
 conservation %>%
@@ -305,12 +305,12 @@ conservation %>%
 
 The output of this code shows that we now have two separate columns with the information in the original column separated out into `abbreviation` and `description`.
 
-![separate() output](images/03_tidyingdata/03_datacleaning_tidyingdata-26.png)
+![Output of separate()](images/03_tidyingdata/03_datacleaning_tidyingdata-26.png)
 
 
 ### Merging Columns 
 
-The opposite of `separate()` is `unite()`. So, if you have information in two different columns but wish it were in one, single column, you'll want to use `unite()`. Using the code forming the two separate columns above, we can then add on an extra line of `unite()` code to re-join these separate columns, returning what we started with.
+The opposite of `separate()` is `unite()`. So, if you have information in two different columns but wish it were in one single column, you'll want to use `unite()`. Using the code forming the two separate columns above, we can then add on an extra line of `unite()` code to re-join these separate columns, returning what we started with.
 
 ```r
 conservation %>%
@@ -319,11 +319,11 @@ conservation %>%
   unite(united_col, abbreviation, description, sep=" = ")
 ```
 
-![unite() output](images/03_tidyingdata/03_datacleaning_tidyingdata-27.png)
+![Output of unite()](images/03_tidyingdata/03_datacleaning_tidyingdata-27.png)
 
 ### Cleaning up column names
 
-While maybe not quite as important as some of the other functions mentioned in this lesson, a function that will likely prove very helpful as you start analyzing lots of different datasets is `clean_names()` from the `janitor` package. This function takes the existing column names of your dataset, converts them all to lowercase letters and numbers, and separates all words using the underscore (_) character. For example, there is a space in the column name for conservation. clean_names will convert `conservation abbreviation` to `conservation_abbreviation`. These cleaned up column names are a lot easier to work with analytically when you have large datasets.
+While maybe not quite as important as some of the other functions mentioned in this lesson, a function that will likely prove very helpful as you start analyzing lots of different datasets is `clean_names()` from the `janitor` package. This function takes the existing column names of your dataset, converts them all to lowercase letters and numbers, and separates all words using the underscore character. For example, there is a space in the column name for conservation. `clean_names` will convert `conservation abbreviation` to `conservation_abbreviation`. These cleaned up column names are a lot easier to work with analytically when you have large datasets.
 
 ```r
 conservation %>%
