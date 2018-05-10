@@ -167,7 +167,7 @@ Note that the number of columns hasn't changed. All 11 variables are still shown
 
 While `filter()` operates on rows, it *is* possible to filter your dataset to only include the columns you're interested in. To select columns so that your dataset only includes variables you're interested in, you will use `select()`. 
 
-Let's start with the code we just wrote to only include primates who sleep a lot. What if we only want to include the first column -- the name of the mammal -- and the sleep information -- included in the columns `sleep_total`, `sleep_rem`, and `sleep_cycle`. We would do this by starting with the code we just used, adding another pipe, and using the function `select()`. Within select, we specify which columns we want in our output.
+Let's start with the code we just wrote to only include primates who sleep a lot. What if we only want to include the first column (the name of the mammal) and the sleep information (included in the columns `sleep_total`, `sleep_rem`, and `sleep_cycle`)? We would do this by starting with the code we just used, adding another pipe, and using the function `select()`. Within `select`, we specify which columns we want in our output.
 
 ```r
 msleep %>%
@@ -175,29 +175,28 @@ msleep %>%
   select(name, sleep_total, sleep_rem, sleep_cycle)
 ```
 
-![data with selected columns](images/03_tidyingdata/03_datacleaning_tidyingdata-15.png)
-
+![Data with selected columns](images/03_tidyingdata/03_datacleaning_tidyingdata-15.png)
 
 Now, using `select()` we see that we still have the five rows we filtered to before, but we only have the four columns specified using `select()`.
 
 #### Renaming Columns
 
-`select()` can also be used to rename columns. To do so, you use the syntax: `new_column_name = old_column_name` within select. For example, to select the same columns and rename them `total`, `rem` and `cycle`, you would use the following syntax:
+`select()` can also be used to rename columns. To do so, you use the syntax: `new_column_name = old_column_name` within `select`. For example, to select the same columns and rename them `total`, `rem` and `cycle`, you would use the following syntax:
 
 ```r
 msleep %>%
   filter(order == "Primates", sleep_total > 10) %>%
   select(name, total=sleep_total, rem=sleep_rem, cycle=sleep_cycle)
 ```
-![data with re-named columns names](images/03_tidyingdata/03_datacleaning_tidyingdata-16.png)
+![Data with renamed columns names](images/03_tidyingdata/03_datacleaning_tidyingdata-16.png)
 
-#### Reordering 
+#### Reordering
 
-In addition to filtering rows and columns, often, you'll want the data arranged in a particular order. It may order the columns in a logical way, or it could be to sort the data so that the data are sorted by value, with those having the smallest value in the first row and the largest value in the last row. All of this is completed with a few simple functions.
+In addition to filtering rows and columns, often, you'll want the data arranged in a particular order. It may order the columns in a logical way, or it could be to sort the data so that the data are sorted by value, with those having the smallest value in the first row and the largest value in the last row. All of this can be achieved with a few simple functions.
 
 #### Reordering Columns
 
-The `select()` function is powerful. Not only will it filter and rename columns, but it can also be used to reorder your columns. Using our example from above, if you wanted `sleep_rem` to be the first sleep column and `sleep_total` to be the last column, all you have to do is reorder them within `select()`. The output from `select()` would then be re-ordered to match the order specified within `select()`.
+The `select()` function is powerful. Not only will it filter and rename columns, but it can also be used to reorder your columns. Using our example from above, if you wanted `sleep_rem` to be the first sleep column and `sleep_total` to be the last column, all you have to do is reorder them within `select()`. The output from `select()` would then be reordered to match the order specified within `select()`.
 
 ```r
 msleep %>%
@@ -207,12 +206,11 @@ msleep %>%
 
 Here we see that sleep_rem `name` is displayed first followed by `sleep_rem`, `sleep_cycle`, and `sleep_total`, just as it was specified within `select()`. 
 
-![data with re-ordered columns names](images/03_tidyingdata/03_datacleaning_tidyingdata-18.png)
-
+![Data with reordered columns names](images/03_tidyingdata/03_datacleaning_tidyingdata-18.png)
 
 #### Reordering Rows
 
-Rows can also be re-ordered. To re-order a variable in ascending order (from smallest to largest), you'll want to use arrange(). Continuing on from our example above, to now sort our rows by the amount of total sleep each mammal gets, we would use the following syntax:
+Rows can also be reordered. To reorder a variable in ascending order (from smallest to largest), you'll want to use `arrange()`. Continuing on from our example above, to now sort our rows by the amount of total sleep each mammal gets, we would use the following syntax:
 
 ```r
 msleep %>%
@@ -221,9 +219,9 @@ msleep %>%
   arrange(sleep_total)
 ```
 
-![data arranged by total sleep in ascending order](images/03_tidyingdata/03_datacleaning_tidyingdata-19.png)
+![Data arranged by total sleep in ascending order](images/03_tidyingdata/03_datacleaning_tidyingdata-19.png)
 
-While arrange sorts variables in ascending order, it's also possible to sort in descending (largest to smallest) order. To do this you just use `desc()` with the following syntax:
+While `arrange` sorts variables in ascending order, it's also possible to sort in descending (largest to smallest) order. To do this you just use `desc()` with the following syntax:
 
 ```r
 msleep %>%
@@ -234,9 +232,9 @@ msleep %>%
 
 By putting `sleep_total` within `desc()`, `arrange()` will now sort your data from the primates with the longest total sleep to the shortest.
 
-![data arranged by total sleep in descending order](images/03_tidyingdata/03_datacleaning_tidyingdata-20.png)
+![Data arranged by total sleep in descending order](images/03_tidyingdata/03_datacleaning_tidyingdata-20.png)
 
-`arrange()` can also be used to order non-numeric variables. For example, arrange() will sort character vectors alphabetically. 
+`arrange()` can also be used to order non-numeric variables. For example, `arrange()` will sort character vectors alphabetically. 
 
 ```r
 msleep %>%
@@ -245,7 +243,16 @@ msleep %>%
   arrange(name)
 ```
 
-![data arranged alphabetically by name](images/03_tidyingdata/03_datacleaning_tidyingdata-21.png)
+![Data arranged alphabetically by name](images/03_tidyingdata/03_datacleaning_tidyingdata-21.png)
+
+If you would like to reorder rows based on information in multiple columns, you can specify them separated by commas. This is useful if you have repeated labels in one column and want to sort within a category based on information in another column. In the example here, if there were repeated primates, this would sort the repeats based on their total sleep.
+
+```r
+msleep %>%
+  filter(order == "Primates", sleep_total > 10) %>%
+  select(name, sleep_rem, sleep_cycle, sleep_total) %>%
+  arrange(name, sleep_total)
+```
 
 ### Creating new columns
 
@@ -261,7 +268,7 @@ msleep %>%
   mutate(sleep_total_min = sleep_total * 60)
 ```
 
-![mutate to add new column to data](images/03_tidyingdata/03_datacleaning_tidyingdata-23.png)
+![Mutate to add new column to data](images/03_tidyingdata/03_datacleaning_tidyingdata-23.png)
 
 ### Separating Columns 
 
