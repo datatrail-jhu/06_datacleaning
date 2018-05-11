@@ -1,0 +1,9 @@
+00_whatisdata.md
+01_getting_data.md
+00_tidydata.md
+01_untidydata.md
+02_reshapingdata.md
+03_tidyingdata.md
+04_working_with_strings.md
+05_working_with_factors.md
+06_working_with_dates.md
