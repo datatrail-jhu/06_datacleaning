@@ -340,7 +340,7 @@ Let's try to combine the information from the two different datasets we've used 
 
 To handle the fact that in one dataset the abbreviations are lowercase and the other they are uppercase, we'll use `mutate()` to take all the lowercase abbreviations to uppercase abbreviations using the function `toupper()`. 
  
-We'll then use `left_join()` which takes all of the rows in the first dataset mentioned (`msleep`, below) and includes information from the second dataset mentioned (`conserve`, below), when information is available. The `by = ` argument states what columns to join by in the first ("conservation") and second("abbreviation") datasets. This join adds the `description` column from the conserve dataset onto the original dataset (`msleep`). Note that if there is no information in the second dataset that matches with the information in the first dataset, left_join() will add NA. Specifically, for rows where conservation is "DOMESTICATED" below, the description column will have NA. This is because "DOMESTICATED"" is not an abbreviation in the `conserve` dataset.
+We'll then use `left_join()` which takes all of the rows in the first dataset mentioned (`msleep`, below) and incorporates information from the second dataset mentioned (`conserve`, below), when information in the second dataset is available. The `by = ` argument states what columns to join by in the first ("conservation") and second ("abbreviation") datasets. This join adds the `description` column from the `conserve` dataset onto the original dataset (`msleep`). Note that if there is no information in the second dataset that matches with the information in the first dataset, `left_join()` will add NA. Specifically, for rows where conservation is "DOMESTICATED" below, the `description` column will have NA because "DOMESTICATED"" is not an abbreviation in the `conserve` dataset.
 
 ```r
 ## take conservation dataset and separate information
@@ -357,7 +357,7 @@ msleep %>%
   left_join(conserve, by = c("conservation" = "abbreviation"))
 ```
 
-![left join data](images/03_tidyingdata/03_datacleaning_tidyingdata-29.png)
+![Data resulting from left_join](images/03_tidyingdata/03_datacleaning_tidyingdata-29.png)
 
 ### Grouping Data
 
@@ -365,7 +365,7 @@ Often, data scientists will want to summarize information in their dataset. You 
 
 #### group_by()
 
-There is an incredibly helpful function within `dplyr()` called `group_by()`. `group_by()` groups a dataset by one or more variables. On it's own, it does not appear to change the dataset very much. The difference between the two outputs below is subtle:
+There is an incredibly helpful function within `dplyr()` called `group_by()`. `group_by()` groups a dataset by one or more variables. On its own, it does not appear to change the dataset very much. The difference between the two outputs below is subtle:
 
 ```r
 msleep
@@ -376,7 +376,7 @@ msleep %>%
 
 ![group_by() output](images/03_tidyingdata/03_datacleaning_tidyingdata-31.png)
 
-In fact, the only thing that appears different in the output when you group_by is that the number of different orders is now printed on your screen. However, in the next section you'll see that the output from any further functions you carry out at this point will differ between the two datasets. 
+In fact, the only aspect of the output that is different is that the number of different orders is now printed on your screen. However, in the next section, you'll see that the output from any further functions you carry out at this point will differ between the two datasets.
 
 ### Summarizing Data
 
