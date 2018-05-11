@@ -380,11 +380,11 @@ In fact, the only aspect of the output that is different is that the number of d
 
 ### Summarizing Data
 
+Throughout data cleaning and analysis it will be important to summarize information in your dataset. This may be for a formal report or for checking the results of a data tidying operation.
+
 #### summarize()
 
-It's important to be able to get summary information from what's in your dataset. 
-
-For example, continuing on from the last examples, if you wanted to figure out how many samples there were in your dataset, you could use the `summarize()` function. 
+Continuing on from the previous examples, if you wanted to figure out how many samples are present in your dataset, you could use the `summarize()` function. 
 
 ```r
 msleep %>%
@@ -392,9 +392,9 @@ msleep %>%
   summarize(N=n())
 ```
 
-This provides a summary of the data with the column name we specified above (`N`) and the number of samples in the dataset.
+This provides a summary of the data with the new column name we specified above (`N`) and the number of samples in the dataset. Note that we could also obtain the same information by directly obtaining the number of rows in the data frame with `nrow(msleep)`.
 
-![summarize with n()](images/03_tidyingdata/03_datacleaning_tidyingdata-32.png)
+![Summarize with n()](images/03_tidyingdata/03_datacleaning_tidyingdata-32.png)
 
 However, if you wanted to count how many of each different `order` of mammal you had. You would first `group_by(order)` and then use `summarize()`. This will summarize within group.
 

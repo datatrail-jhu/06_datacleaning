@@ -62,7 +62,7 @@ Often, data scientists will want to summarize information in their dataset. You 
 
 group_by groups a dataset by one or more variables. On its own, it does not appear to change the dataset very much. The difference between the two outputs here is subtle. In fact, the only aspect of the output that is different is that the number of different orders is now printed on your screen. However, in the next section, you'll see that the output from any further functions you carry out at this point will differ between the two datasets. The effects of group_by will become evident in the next few slides.
 
-Continuing on from the last examples, if you wanted to figure out how many samples there were in your dataset, you could use the summarize function. This provides a summary of the data with the column name we specified above (N) and the number of samples in the dataset.
+Continuing on from the previous examples, if you wanted to figure out how many samples are present in your dataset, you could use the summarize function. This provides a summary of the data with the new column name we specified above (N) and the number of samples in the dataset.
 
 However, if you wanted to count how many of each different order of mammal you had. You would first group_by(order) and then use summarize. This will summarize within group.The output from this, like above, includes the column name we specified in summarize (N). However, it includes the number of samples in the group_by variable we specified, order.
 
