@@ -11,11 +11,11 @@ The idea of tidy data was formalized in 2014 in a [paper](http://vita.had.co.nz/
 
 ### Why Tidy Data?
 
-Tidy datasets, by design, are easier to manipulate, model and visualize. By starting with data that are already in a tidy format *or* by spending the time at the beginning of a project to get data into a tidy format, all of the rest of the steps of your data science project will be easier.
+Tidy datasets, by design, are easier to manipulate, model, and visualize. By starting with data that are already in a tidy format *or* by spending the time at the beginning of a project to get data into a tidy format, the remaining steps of your data science project will be easier.
 
 ### Data Terminology
 
-We've previously discussed what the rows and columns in a spreadsheet are. Here, we'll discuss what is meant by observations, variables, and types, all of which are used to explain the principles of tidy data. 
+We've previously discussed what the rows and columns in a spreadsheet are. Here, we'll discuss what is meant by **observations**, **variables**, and **types**, all of which are used to explain the principles of tidy data.
 
 #### Variables
 
@@ -56,7 +56,7 @@ Often, data are collected for the same individuals from multiple sources. For ex
 
 ### Rules for Tidy Spreadsheets
 
-In addition to these four principles, there are a number of rules to follow when entering data into a spreadsheet, or when re-organizing untidy data you have been handed for a project into a tidy format. They are rules that will help make data analysis and visualization easier down the road. They were formalized in a paper called ["Data organization in spreadsheets"](https://peerj.com/preprints/3183/), written by two prominent data scientists, [Karl Broman](http://kbroman.org/) and [Kara Woo](http://karawoo.com/). In this paper, in addition to ensuring that the data are tidy, they suggest following these guidelines when entering data into spreadsheets:
+In addition to these four principles, there are a number of rules to follow when entering data into a spreadsheet, or when re-organizing untidy data that you have alredy been given for a project into a tidy format. They are rules that will help make data analysis and visualization easier down the road. They were formalized in a paper called ["Data organization in spreadsheets"](https://peerj.com/preprints/3183/), written by two prominent data scientists, [Karl Broman](http://kbroman.org/) and [Kara Woo](http://karawoo.com/). In this paper, in addition to ensuring that the data are tidy, they suggest following these guidelines when entering data into spreadsheets:
 
 1. Be consistent
 2. Choose good names for things
@@ -88,7 +88,7 @@ Additionally, make sure that file and variable names are as short as possible wh
 
 #### Write dates as YYYY-MM-DD
 
-When entering dates, there is a global 'ISO 8601' standard. Dates should be encoded YYYY-MM-DD. What this means is that if you want to specify that a measurement was taken on February 27th, 2018, you would type 2018-02-27. YYYY refers to the year, 2018. MM refers to the month of February, 02. And DD refers to the day of the month, 27. This standard is used for dates for two main reason. First, it avoids confusion when sharing data across different countries, where date conventions can differ. By all using ISO 8601 standard conventions, there is less room for error in interpretation of dates. Secondly, spreadsheet software often mishandles dates and assumes that non-date information are actually dates and vice versa. By encoding dates as YYYY-MM-DD, this confusion is minimized. 
+When entering dates, there is a global 'ISO 8601' standard. Dates should be encoded YYYY-MM-DD. For example if you want to specify that a measurement was taken on February 27th, 2018, you would type 2018-02-27. YYYY refers to the year, 2018. MM refers to the month of February, 02. And DD refers to the day of the month, 27. This standard is used for dates for two main reason. First, it avoids confusion when sharing data across different countries, where date conventions can differ. By all using ISO 8601 standard conventions, there is less room for error in interpretation of dates. Secondly, spreadsheet software often mishandles dates and assumes that non-date information are actually dates and vice versa. By encoding dates as YYYY-MM-DD, this confusion is minimized. 
 
 ![YYYY-MM-DD](images/00_tidydata/00_datacleaning_tidydata-11.png)
 
@@ -100,13 +100,13 @@ Simply, fill in every cell. If the data is unknown for that cell, put 'NA.' With
 
 #### Put just one thing in a cell
 
-Sometimes people are tempted to include a number and a unit in a single cell. For weight, someone may *want* to put '165 lbs' in that cell. Avoid this temptation! Keep numbers and units separate. In this case, put one piece of information in the cell (the person's weight) and either put the unit in a separate column, or better yet, make the variable name weight_lbs. That clears everything up for the analyst and avoids a number and a unit from both being put in a single cell. As analysts, we prefer weight information to be in number form if we want to make calculations or figures. This is facilitated by the first column because it will be read into R as a numeric object. The second column, however, will be read into R as a character object because of the "lbs", which makes our desired tasks more difficult.
+Sometimes people are tempted to include a number and a unit in a single cell. For weight, someone may *want* to put '165 lbs' in that cell. Avoid this temptation! Keep numbers and units separate. In this case, put one piece of information in the cell (the person's weight) and either put the unit in a separate column, or better yet, make the variable name weight_lbs. That clears everything up for the analyst and avoids a number and a unit from both being put in a single cell. As analysts, we prefer weight information to be in number form if we want to make calculations or figures. This is facilitated by the first column called "Weight_lbs" because it will be read into R as a numeric object. The second column called "Weight", however, will be read into R as a character object because of the "lbs", which makes our desired tasks more difficult.
 
 ![One thing per cell](images/00_tidydata/00_datacleaning_tidydata-13.png)
 
 #### Don't use font color or highlighting as data
 
-Avoid the temptation to highlight particular cells with a color to specify something about the data. Instead, add another column to convey that information. In the example below, 1.1 looks like an incorrect value for an individual's glucose measure. Instead of highlighting the value in red, instead create a new variable. Here, on the right, this column has been named 'outlier.' Including 'TRUE' for this individual suggests that this individual may be an outlier to the data analyst. Doing it in this way ensures that this information will not be lost. Using font color or highlighting however can easily be lost in data processing, as you will see in future lessons.
+Avoid the temptation to highlight particular cells with a color to specify something about the data. Instead, add another column to convey that information. In the example below, 1.1 looks like an incorrect value for an individual's glucose measure. Instead of highlighting the value in red, create a new variable. Here, on the right, this column has been named 'outlier.' Including 'TRUE' for this individual suggests that this individual may be an outlier to the data analyst. Doing it in this way ensures that this information will not be lost. Using font color or highlighting however can easily be lost in data processing, as you will see in future lessons.
 
 ![No highlighting or font color](images/00_tidydata/00_datacleaning_tidydata-14.png)
 
@@ -124,7 +124,7 @@ Most importantly, however, remember that tidy data are rectangular data. The dat
 
 ![Tidy Data = rectangular data](images/00_tidydata/00_datacleaning_tidydata-16.png)
 
-Additional resources:
+### Additional resources
 
 - [Hadley Wickham's paper on Tidy Data](http://vita.had.co.nz/papers/tidy-data.pdf)
 - [Data Organization in Spreadsheets](https://peerj.com/preprints/3183/)
