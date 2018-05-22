@@ -2,7 +2,7 @@
 
 ### Data Formats
 
-Tidy data generally exist in two forms: wide data and long data. Both types of data are used and needed in data analysis, and fortunately, there are tools that can take you from wide-to-long and from long-to-wide. This makes it easy to work with any tidy data set. We'll discuss the basics of what wide and long data are and how to go back and forth between the two in R.
+Tidy data generally exist in two forms: wide data and long data. Both types of data are used and needed in data analysis, and fortunately, there are tools that can take you from wide-to-long and from long-to-wide. This makes it easy to work with any tidy data set. We'll discuss the basics of what wide and long data are and how to go back and forth between the two in R. Getting data into the right format will be crucial later when summarizing data and visualizing it.
 
 #### Wide Data
 
@@ -26,11 +26,11 @@ While long data formats are less readable than wide data at a glance, they are a
 
 ### R Packages
 
-Converting your data from wide-to-long or from long-to-wide data formats is referred to as **reshaping** your data. There are two primary packages in R that will help you reshape your data: [tidyr](https://tidyr.tidyverse.org/) and [reshape2](https://stat.ethz.ch/pipermail/r-packages/2010/001169.html). We'll walk through the important functions of these two packages and work through a few examples using the functions in each. However, as with most really helpful packages in R, there is more functionality than what is discussed here, so feel free to explore the additional resources at the bottom to learn even more.
+Converting your data from wide-to-long or from long-to-wide data formats is referred to as **reshaping** your data. There are two primary packages in R that will help you reshape your data: [tidyr](https://tidyr.tidyverse.org/) and [reshape2](https://stat.ethz.ch/pipermail/r-packages/2010/001169.html). We'll walk through the important functions of these two packages and work through a few examples using the functions in each. However, as with most helpful packages in R, there is more functionality than what is discussed here, so feel free to explore the additional resources at the bottom to learn even more.
 
-![reshape data](images/02_reshapingdata/02_datacleaning_reshapingdata-3.png)
+![Reshaping data](images/02_reshapingdata/02_datacleaning_reshapingdata-3.png)
 
-For these examples, we'll again use a dataset that is available in R. This time we'll work with the `airquality` dataset.  The data in this dataset includes "Daily air quality measurements in New York, May to September 1973" This is a wide dataset because each day is in a separate row and there are multiple columns with each including information about a different variable (ozone, solar.r, wind, temp, month, and day). 
+For these examples, we'll work with the `airquality` dataset available in R. The data in this dataset includes "Daily air quality measurements in New York, May to September 1973." This is a wide dataset because each day is in a separate row and there are multiple columns with each including information about a different variable (ozone, solar.r, wind, temp, month, and day). 
 
 We can see the first few lines of this dataset using the following code:
 
@@ -38,7 +38,7 @@ We can see the first few lines of this dataset using the following code:
 head(airquality)
 ```
 
-![Air Quality dataset](images/02_reshapingdata/02_datacleaning_reshapingdata-4.png)
+![Air quality dataset](images/02_reshapingdata/02_datacleaning_reshapingdata-4.png)
 
 Again, wide data are easy to decipher at a glance. We can see that we have six different variables for each day, with each one of these variables (measurements) being stored in a separate column.
 
@@ -99,11 +99,11 @@ head(gathered)
 
 ![gather specifying which variables to include in long format](images/02_reshapingdata/02_datacleaning_reshapingdata-9.png)
 
-Now, when you look at the top of this object, you'll see that `month` and `day` remain in the data frame and that variable combines information from the other columns in airquality (`ozone`, `solar.r`, `wind`, `temp`). This is still a long format dataset; however, it has used `month` and `day` as IDs when melting the data frame.
+Now, when you look at the top of this object, you'll see that `month` and `day` remain in the data frame and that variable combines information from the other columns in airquality (`ozone`, `solar.r`, `wind`, `temp`). This is still a long format dataset; however, it has used `month` and `day` as IDs when reshaping the data frame.
 
 ##### spread()
 
-To return your long data back to its original form, you can use `spread()`. Here you specify which column has the names of what your wide data columns should be (`key=variable`) and which column has the values that should go in these columns (`value=value`). The data frame resulting from `spread()` will have the original information back in the wide format (again, the columns will be in a different order). But, we'll discuss how to rearrange data in the next lesson!
+To return your long data back to its original form, you can use `spread()`. Here you specify two columns: the column that contains the names of what your wide data columns should be (`key=variable`) and the column that contains the values that should go in these columns (`value=value`). The data frame resulting from `spread()` will have the original information back in the wide format (again, the columns will be in a different order). But, we'll discuss how to rearrange data in the next lesson!
 
 ```r
 ## use gather() to reshape from wide to long
@@ -137,7 +137,7 @@ There are two main functions within the `reshape2` package:
 
 ##### melt()
 
-`melt()` will allow you to get the data into a long format that will be easy to use for analysis. When you just generally melt a data set, melt() will take every column, put the column name put it into a `variable` column, and then put that variables value into a `value` column. For the `airquality` data set, below we first assign the melted data frame to the object `melted`. Then we take a look at the top (`head()`) and bottom(`tail()`) of this melted data frame (`melted`). 
+The `melt()` function will allow you to get the data into a long format that will be easy to use for analysis. When you melt a dataset with the default options, `melt()` will take every column, put the column name put it into a `variable` column, and then put the values of those variables into a `value` column. For the `airquality` data set, below we first assign the melted data frame to the object `melted`. Then we take a look at the top (`head()`) and bottom(`tail()`) of this melted data frame (`melted`). 
 
 ```r
 ## puts each column name into the 'variable' column
@@ -155,7 +155,7 @@ When you run this code you see that each column from the original data frame (`o
 
 ![melted data](images/02_reshapingdata/02_datacleaning_reshapingdata-14.png)
 
-Now, to use month and day as identifiers as we did with `tidyr` above, the approach is slightly different. Rather than specifying the columns to be used as keys (as you did with `gather()`), to `melt()` your dataset, you will instead specify these two values (`day` and `month`) as identifiers for the dataset. You'll want to use the following syntax:
+Now, to use month and day as identifiers as we did with `tidyr` above, the approach is slightly different. With `gather()`, you specified the column names that you wanted to gather and omitted the column names that you wanted to retain as identifiers. With `melt()` you will do the opposite. You will specify `day` and `month` as identifiers for the dataset and omit the remaining variables. You'll want to use the following syntax:
 
 ```r
 ## melt the data frame
