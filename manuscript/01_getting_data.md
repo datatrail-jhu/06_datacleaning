@@ -8,9 +8,11 @@ contributors: Aboozar Hadavand
 
 # Getting Data into R
 
-The first step in working with data is to *import* them into your software environment or in other words *load* them into R. Importing data into R is straightforward but each data type requires a different way of importing. Data that you would like to import has to be in an R compatible format and has exist somewhere, i.e. it can be saved on your Chromebook or can be on the web. Since your intention is to learn data science on a Chromebook and the fact that Chromebooks don't have much space, your data is mostly stored on the cloud. 
+The first step in working with data is to *import* them into your software environment or in other words *load* them into R. Importing data into R is straightforward but each data type requires a different way of importing. Data that you would like to import must be in an R compatible format and must exist somewhere. For example, it can be saved on your Chromebook or can exist on the web. Since your intention is to learn data science on a Chromebook and the fact that Chromebooks don't have much space, your data is mostly stored on the cloud. 
 
-To see what data is already loaded in your environment, Look at the environment panel. Any data that is already imported is loaded here.
+To see what data is already loaded in your R environment, look at the Environment panel, often in the top right corner of RStudio. Any data that is already imported will be shown here.
+
+## NOTE: This lesson needs to be updated given the rearrange. See Trello card.
 
 ![Environment Panel](images/01_getting_data/01_data_gettingdata_01.png)
 
