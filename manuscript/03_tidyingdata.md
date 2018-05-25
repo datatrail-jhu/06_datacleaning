@@ -31,8 +31,8 @@ library(dplyr)
 
 We will also return to the `tidyr` package. The same package that we used to reshape our data will be helpful when tidying data. The main functions we'll cover from `tidyr` are:
 
-* `unite()` - to combine contents of two separate columns into a single column
-* `separate()` - to separate contents of a column into two separate columns
+* `unite()` - combine contents of two or more columns into a single column
+* `separate()` - separate contents of a column into two or more columns
 
 If you have not already, you'll want to be sure this package is installed and loaded:
 
@@ -43,7 +43,7 @@ library(tidyr)
 
 ### janitor
 
-The third package we'll include here is the `janitor` package. This package provides tools for cleaning dirty data. The main functions we'll cover from janitor are:
+The third package we'll include here is the `janitor` package. This package provides tools for cleaning messy data. The main functions we'll cover from janitor are:
 
 * `clean_names()` - clean names of a data frame
 * `tabyl()` - get a helpful summary of a variable
@@ -68,7 +68,7 @@ install.packages('skimr')
 library(skimr)
 ```
 
-#### The Pipe Operator
+### The Pipe Operator
 
 Before we get into the important functions within `dplyr`, it will be very useful to discuss what is known as the **pipe operator**. The pipe operator looks like this in R: `%>%`.
 
@@ -112,7 +112,7 @@ Below we'll use this pipe operator a lot. Essentially, it takes output from the 
 
 When working with a large dataset, you're often interesting in only working with a portion of the data at any one time. For example, if you had data on people from ages 0 to 100 years old, but you wanted to ask a question that only pertained to children, you would likely want to only work with data from those individuals who were less than 18 years old. To do this, you would want to **filter** your dataset to only include data from these select individuals. Filtering can be done by row or by column. We'll discuss the syntax in R for doing both. Please note that the examples in this lesson and the organization for this lesson were adapted from [Suzan Baert's](https://suzan.rbind.io/) wonderful `dplyr` tutorials. Links to the all four tutorials can be found in the "Additional Resources" section at the bottom of this lesson.
 
-For the examples below, we'll be using a dataset from `ggplot2` called `msleep`. This dataset includes sleep times and weights from a number of different mammals. It has 83 rows, with each row including information about a different type of animal, and 11 variables. As each row is a different animal and each column includes information about that animal, this is a **wide** dataset.
+For the examples below, we'll be using a dataset from the `ggplot2` package called `msleep`. (You'll learn more about this package in a later course on data visualization.) This dataset includes sleep times and weights from a number of different mammals. It has 83 rows, with each row including information about a different type of animal, and 11 variables. As each row is a different animal and each column includes information about that animal, this is a **wide** dataset.
 
 To get an idea of what variables are included in this data frame, you can use `glimpse()`. This function summarizes how many rows there are (`Observations`) and how many columns there are (`Variables`). Additionally, it gives you a glimpse into the type of data contained in each column. Specifically, in this data set, we know that the first column is `name` and that it contains a character vector (`chr`) and that the first three entires are "Cheetah", "Owl monkey", and "Mountain beaver." It works similarly to the `summary()` function covered in an earlier course.
 
@@ -135,7 +135,11 @@ msleep %>%
   filter(order == "Primates")
 ```
 
-Note that we are using the equality `==` comparison operator.
+Note that we are using the equality `==` comparison operator that you learned about in the previous course. Also note that we have used the pipe operator to feed the `msleep` data frame into the `filter()` function. This is short hand for:
+
+```r
+filter(msleep, order == "Primates")
+```
 
 ![Filtered to only include Primates](images/03_tidyingdata/03_datacleaning_tidyingdata-13.png)
 
@@ -154,7 +158,7 @@ Now, we have a dataset focused in on only 5 mammals, all of which are primates w
 
 ![Numerically filtered dataset](images/03_tidyingdata/03_datacleaning_tidyingdata-14.png)
 
-We can obtain the same result with the AND `&` comparison operator instead of separating filtering conditions with a comma:
+We can obtain the same result with the AND `&` logical operator instead of separating filtering conditions with a comma:
 
 ```r
 msleep %>%
@@ -177,7 +181,11 @@ msleep %>%
 
 ![Data with selected columns](images/03_tidyingdata/03_datacleaning_tidyingdata-15.png)
 
-Now, using `select()` we see that we still have the five rows we filtered to before, but we only have the four columns specified using `select()`.
+Now, using `select()` we see that we still have the five rows we filtered to before, but we only have the four columns specified using `select()`. Here you can hopefully see the power of the pipe operator to chain together several commands in a row. Without the pipe operator, the full command would look like this:
+
+```r
+select(filter(msleep, order == "Primates", sleep_total > 10), name, sleep_total, sleep_rem, sleep_cycle)
+```
 
 #### Renaming Columns
 
@@ -190,7 +198,7 @@ msleep %>%
 ```
 ![Data with renamed columns names](images/03_tidyingdata/03_datacleaning_tidyingdata-16.png)
 
-#### Reordering
+### Reordering
 
 In addition to filtering rows and columns, often, you'll want the data arranged in a particular order. It may order the columns in a logical way, or it could be to sort the data so that the data are sorted by value, with those having the smallest value in the first row and the largest value in the last row. All of this can be achieved with a few simple functions.
 
@@ -295,7 +303,7 @@ head(conservation)
 
 In this dataset, we see that there is a single column that includes *both* the abbreviation for the conservation term as well as what that abbreviation means. Recall that this violates one of the tidy data principles covered in the first lesson: Put just one thing in a cell. To work with these data, you could imagine that you may want these two pieces of information (the abbreviation and the description) in two different columns. To accomplish this in R, you'll want to use `separate()` from `tidyr`.
 
-The `separate()` function requires the name of the existing column that you want to separate (`conservation abbreviation`), the desired column names of the resulting separated columns (`into = c("abbreviation", "description")`), and the characters that currently separate the pieces of information (`sep = " = "`). 
+The `separate()` function requires the name of the existing column that you want to separate (`conservation abbreviation`), the desired column names of the resulting separated columns (`into = c("abbreviation", "description")`), and the characters that currently separate the pieces of information (`sep = " = "`). We have to put `conservation abbreviation` in back ticks in the code below because the column name contains a space. Without the back ticks, R would think that `conservation` and `abbreviation` were two separate things. This is another violation of tidy data! Variable names should have underscores, not spaces!
 
 ```r
 conservation %>%
@@ -307,23 +315,22 @@ The output of this code shows that we now have two separate columns with the inf
 
 ![Output of separate()](images/03_tidyingdata/03_datacleaning_tidyingdata-26.png)
 
-
 ### Merging Columns 
 
-The opposite of `separate()` is `unite()`. So, if you have information in two different columns but wish it were in one single column, you'll want to use `unite()`. Using the code forming the two separate columns above, we can then add on an extra line of `unite()` code to re-join these separate columns, returning what we started with.
+The opposite of `separate()` is `unite()`. So, if you have information in two or more different columns but wish it were in one single column, you'll want to use `unite()`. Using the code forming the two separate columns above, we can then add on an extra line of `unite()` code to re-join these separate columns, returning what we started with.
 
 ```r
 conservation %>%
   separate(`conservation abbreviation`, 
            into = c("abbreviation", "description"), sep = " = ") %>%
-  unite(united_col, abbreviation, description, sep=" = ")
+  unite(united_col, abbreviation, description, sep = " = ")
 ```
 
 ![Output of unite()](images/03_tidyingdata/03_datacleaning_tidyingdata-27.png)
 
 ### Cleaning up column names
 
-While maybe not quite as important as some of the other functions mentioned in this lesson, a function that will likely prove very helpful as you start analyzing lots of different datasets is `clean_names()` from the `janitor` package. This function takes the existing column names of your dataset, converts them all to lowercase letters and numbers, and separates all words using the underscore character. For example, there is a space in the column name for conservation. `clean_names` will convert `conservation abbreviation` to `conservation_abbreviation`. These cleaned up column names are a lot easier to work with analytically when you have large datasets.
+While maybe not quite as important as some of the other functions mentioned in this lesson, a function that will likely prove very helpful as you start analyzing lots of different datasets is `clean_names()` from the `janitor` package. This function takes the existing column names of your dataset, converts them all to lowercase letters and numbers, and separates all words using the underscore character. For example, there is a space in the column name for conservation. `clean_names()` will convert `conservation abbreviation` to `conservation_abbreviation`. These cleaned up column names are a lot easier to work with when you have large datasets.
 
 ```r
 conservation %>%
@@ -334,9 +341,9 @@ conservation %>%
 
 ### Combining data across data frames
 
-There is often information stored in two separate data frames that you'll want in a single data frame. There are *many* different ways to join separate data frames. They are discussed in more in [this tutorial](http://stat545.com/bit001_dplyr-cheatsheet.html) from [Jenny Bryan](https://www.stat.ubc.ca/~jenny/). Here, we'll demonstrate how `left_join()` works, as this is used frequently. 
+There is often information stored in two separate data frames that you'll want in a single data frame. There are *many* different ways to join separate data frames. They are discussed in more in [this tutorial](http://stat545.com/bit001_dplyr-cheatsheet.html) from [Jenny Bryan](https://www.stat.ubc.ca/~jenny/). Here, we'll demonstrate how the `left_join()` function works, as this is used frequently. 
 
-Let's try to combine the information from the two different datasets we've used in this lesson. We have `msleep` an `conservation`. `msleep` contains a column called `conservation`. This column includes lowercase abbreviations that overlap with the uppercase abbreviations in the `abbreviation` column in the `conservation` dataset.
+Let's try to combine the information from the two different datasets we've used in this lesson. We have `msleep` and `conservation`. `msleep` contains a column called `conservation`. This column includes lowercase abbreviations that overlap with the uppercase abbreviations in the `abbreviation` column in the `conservation` dataset.
 
 To handle the fact that in one dataset the abbreviations are lowercase and the other they are uppercase, we'll use `mutate()` to take all the lowercase abbreviations to uppercase abbreviations using the function `toupper()`. 
  
@@ -365,7 +372,7 @@ Often, data scientists will want to summarize information in their dataset. You 
 
 #### group_by()
 
-There is an incredibly helpful function within `dplyr()` called `group_by()`. `group_by()` groups a dataset by one or more variables. On its own, it does not appear to change the dataset very much. The difference between the two outputs below is subtle:
+There is an incredibly helpful function within `dplyr` called `group_by()`. `group_by()` groups a dataset by one or more variables. On its own, it does not appear to change the dataset very much. The difference between the two outputs below is subtle:
 
 ```r
 msleep
@@ -424,7 +431,7 @@ msleep %>%
 
 #### tabyl()
 
-In addition to using summarize() from `dplyr`, the `tabyl()` function from the `janitor` package can be incredibly helpful for summarizing categorical variables quickly and discerning the output at a glance. Again returning to our `msleep` dataset, if we wanted to get a summary of how many samples are in each order category and what percent of the data fall into each category we could call tabyl on that variable. For example, if we use the following syntax, we easily get a quick snapshot of this variable. 
+In addition to using `summarize()` from `dplyr`, the `tabyl()` function from the `janitor` package can be incredibly helpful for summarizing categorical variables quickly and discerning the output at a glance. Again returning to our `msleep` dataset, if we wanted to get a summary of how many samples are in each order category and what percent of the data fall into each category we could call tabyl on that variable. For example, if we use the following syntax, we easily get a quick snapshot of this variable. 
 
 ```r
 msleep %>%
