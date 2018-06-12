@@ -393,46 +393,57 @@ This lesson set out to introduce you to how to work with strings within RStudio,
 The best way to learn how to work with strings is to actually practice working with them. Use the following object to answer the questions on this quiz:
 
 ```r
-colors <- c('red', 'orange', 'yellow', 'green', 'blue', 'violet', '#C8C8C8', '#000000')
+colors <- c('red','orange','yellow','green','blue','violet','#C8C8C8','#000000')
 ```
 
+{choose-answers: 4, points: 2}
 ? To return the value 'TRUE' for each string that contains numbers, which would you use?
 
-a) str_extract(colors, '\\d')
-b) str_extract(colors, '[0-9]')
 C) str_detect(colors, '\\d')
-d) str_subset(colors, '[0-9]')
+o) str_extract(colors, '\\d')
+o) str_extract(colors, '[0-9]')
+o) str_subset(colors, '[0-9]')
+o) str_view(colors, '\\d')
+o) str_view_all(colors, '\\d')
 
-? To return the colors of all colors that start with a lowercase letter, which would you use?
+{choose-answers: 4, points: 2}
+? To print the values of the `colors` object that start with a lowercase letter, which would you use?
 
-A) str_subset(colors, '[a-z]')
-b) str_view(colors, '[a-z]')
-c) str_count(colors, '[a-z]')
-d) str_replace(colors, '[a-z]', '?')
+C) str_subset(colors, '^[a-z]')
+o) str_view(colors, '[a-z]')
+o) str_count(colors, '[a-z]')
+o) str_replace(colors, '[a-z]', '?')
 
-
+{choose-answers: 4, points: 2}
 ? What does `str_view_all(colors, "\\d+[A-Z]+")` match?
 
-a) any uppercase letter
-b) one digit followed by one capital letter
-c) any digit
-D) at least one digit followed by at least one capital letter
+C) at least one digit followed by at least one capital letter
+o) any uppercase letter
+o) one digit followed by one capital letter
+o) any digit
+o) any uppercase letter followed by a digit
+o) a string consisting of only uppercase letters
 
-
+{choose-answers: 4, points: 2}
 ? What does `str_count(colors, '[a-zA-Z]')` accomplish?
 
-a) counts the number of characters in each string
-B) counts the number of letters in each string
-c) counts the number of lowercase letters in each string
-d) counts the number of capital letters in each string
+C) counts the number of letters in each string
+o) counts the number of characters in each string
+o) counts the number of lowercase letters in each string
+o) counts the number of capital letters in each string
+o) counts the number of digits in each string
 
+{choose-answers: 4, points: 2}
 ? If you were to identify which strings start with `#`, what would you use?
 
-a) str_view_all(colors, '#$')
-b) str_view_all(colors, '$#')
 C) str_view_all(colors, '^#')
-d) str_view_all(colors, '#^')
+o) str_view_all(colors, '#$')
+o) str_view_all(colors, '$#')
+o) str_view_all(colors, '#^')
+o)  str_view_all(colors, '!#')
+o)  str_view_all(colors, '#!')
 
+{points: 2}
 ? Using, str_view_all(), how would you only highlight strings that don't start with a vowel?
 
 ! str_view_all(colors, '[^aeiou]')

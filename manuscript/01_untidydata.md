@@ -51,20 +51,25 @@ To address this, these data can be split into two different spreadsheets, one fo
 
 ### Untidy Data quiz
 
-This is the Untidy Data quiz.
-
+{choose-answers: 4}
 ? Which of these would indicate a messy data set?
 
-a) One variable per column
 B) Not rectangular data
-c) One piece of information per cell
-d) Column names with no extra spaces
+o) One variable per column
+o) One piece of information per cell
+o) Column names with no extra spaces
+o) A numeric value in a cell
+o) A text value in a cell
 
-? What must each spreadsheet for a multiple-spreadsheet project have?
+{choose-answers: 4}
+? What *must* each spreadsheet for a multiple-spreadsheet project have?
 
-a) At least five columns 
-B) A column with the same column name and IDs in each spreadsheet
-c) The ability to guess what the units are for each variable
-d) Observations that can be summed to one
+C) A column with the same column name and IDs in each spreadsheet
+o) The ability to guess what the units are for each variable
+o) Observations that can be summed to one
+o) At least five columns 
+o) A first line that starts with a pound sign (#)
+o) A column named "name"
+o) A column named "id"
 
 {/quiz}

@@ -260,7 +260,7 @@ o) .csv
 C) rda
 C) Rda
 C) r
-c) R
+C) R
 o) xlsx
 o) txt
 o) csv

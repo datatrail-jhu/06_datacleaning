@@ -44,20 +44,25 @@ c) a spreadsheet of people's heights
 d) None are data.
 E) They're all data.
 
+{choose-answers: 4}
 ? Which of these is NOT qualitative data?
 
-a) colors of shirts you wear each day
-b) photos taken at a baby shower
-c) recorded songs from a band  
-D) square footage of a house
+C) square footage of a house
+C) heights of students in a class
+C) number of members in a family
+o) colors of shirts you wear each day
+o) photos taken at a baby shower
+o) recorded songs from a band  
 
+{choose-answers: 4}
 ? Which of these is NOT quantitative data?
 
-a) individual's weights
-b) number of daily visitors to a museum  
 C) color of houses on a block
-d) annual income
-
+C) types of flowers in a garden
+o) individual's weights
+o) number of daily visitors to a museum  
+o) annual income
+o) prices over time
 
 {/quiz}
 

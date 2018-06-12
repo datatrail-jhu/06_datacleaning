@@ -140,29 +140,37 @@ This lesson has not covered how to work with times, much detail about how to ope
 
 ### Working with: dates quiz
 
+{choose-answers: 4}
 ? To obtain the day of the week of your birthday, which function would you use?
 
-A) wday()
-b) d()
-c) date()
-d) day()
+C) wday()
+o) d()
+o) date()
+o) day()
+o) Day()
+o) weekday()
+o) birthday()
+o) bday()
 
+{choose-answers: 4}
 ? What information does `year("1985-05-04") - year("1988-09-29")` give you?
 
-a) the number of months difference between the two dates 
-B) the number of years difference between the two dates
-c) the number of days difference between the two dates
-d) the number of minutes difference between the two dates
+C) the number of years difference between the two dates
+o) the number of days difference between the two dates
+o) the number of minutes difference between the two dates
+o) the number of months difference between the two dates 
+o) the years 1985 and 1988 added together 
 
+{choose-answers: 4, points: 2}
 ? What day of the week was December 28th, 1992?
 
-A) Mon
-b) Tues
-c) Wed
-d) Thurs
-e) Fri
-f) Sat
-g) Sun
+C) Mon
+o) Tues
+o) Wed
+o) Thurs
+o) Fri
+o) Sat
+o) Sun
 
 {/quiz}
 
