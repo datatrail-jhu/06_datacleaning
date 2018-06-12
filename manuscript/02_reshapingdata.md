@@ -215,19 +215,25 @@ While reshaping data may not be the most exciting topic, having this skill will 
 
 ### Reshaping Data quiz
 
+{choose-answers: 4}
 ? A dataset where each person's data is in a row and all their medically-relevant measurements (i.e. height, weight, blood_pressure, etc.) are recorded in separate columns is an example of what data format? 
 
-A) wide
-b) circular
-c) long
-d) oblong
+C) wide
+o) circular
+m) long
+o) oblong
+o) large
+o) healthy
 
+{choose-answers: 4}
 ? A dataset where there is a column specifying what variable's data is included in that row and a second column containing the value for that variable is an example of what data format?
 
-a) wide
-b) circular
 C) long
-d) oblong
+m) wide
+o) circular
+o) oblong
+o) large
+o) healthy
 
 ? Which of these pairs of functions accomplish the same goal?
 

@@ -484,12 +484,16 @@ We have gone through a number of ways to work with data in this lesson. Masterin
 
 ### Tidying Data quiz
 
+
+{choose-answers: 4}
 ? To create a new column which function would you use?
 
-a) arrange()
-b) clean_names()
-c) glimpse()
-D) mutate()
+C) mutate()
+o) arrange()
+o) clean_names()
+o) glimpse()
+o) new_column()
+o) new()
 
 ? Which of these is not a capability of select()?
 
@@ -498,26 +502,37 @@ b) rename columns
 c) reorder columns
 D) choose what rows to include in output
 
-? To summarize an entire dataset, what function would you use?
+{choose-answers: 4}
+? To summarize an entire dataset, what *function* would you use?
 
-a) summary()
-b) tabyl()
-c) summarize()
-D) skim()
+C) skim()
+o) summary()
+o) tabyl()
+o) summarize()
+o) skimr
+o) janitor
+o) dplyr 
 
+{choose-answers: 4, points: 2}
 ? If you were to select only the cars in the `mtcars` data set with horsepower > 100 using the code `newdata <- mtcars %>% filter(hp>100)`, how many cars would be left in your data frame?
 
-A) 23
-b) 32
-c) 9
-d) 0
+C) 23
+m) 32
+o) 9
+o) 0
+o) 30
+o) 15
 
+{choose-answers: 4, points: 2}
 ? How many different types of iris `Species` are included in the `iris` dataset?
 
-a) 1
-B) 3 
-c) 100
-d) 150
+C) 3 
+o) 100
+o) 150
+o) 1
+o) 5
+o) 7
+o) 20
 
 ? If you had six different variables in the columns of a dataset (`df`) and wanted to select three of them (height, weight, bmi) and display them in alphabetical order, which of these would achieve that?
 

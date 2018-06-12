@@ -188,26 +188,34 @@ Note: [Wrangling Categorical Data in R](https://peerj.com/preprints/3163/) is **
 
 ### Working with: factors quiz
 
+{choose-answers: 4}
 ? If you wanted to re-order the levels of a factor variable to be ordered by frequency of that variable in the dataset, what function would you use?
 
-a) fct_recode()
-B) fct_infreq()
-c) fct_reorder()
-d) fct_refreq()
+C) fct_infreq()
+o) fct_recode()
+o) fct_reorder()
+o) fct_refreq()
+o) fct_forcat()
+o) fct_tabyl()
 
+{choose-answers: 4}
 ? Assuming you have a dataframe (`df`) with two columns: `car`, and `size`, what would the code `df %>% fct_reorder(car, size)` accomplish?
 
-a) sort the data frame of car by size
-B) reorder the levels of the variable car based on their median size
-c) reorder the levels of the variable size based on their median car
-d) sort the data frame of size by car
+C) reorder the levels of the variable car based on their median size
+o) sort the data frame of car by size
+o) reorder the levels of the variable size based on their median car
+o) sort the data frame of size by car
+o) leave the data frame as is
 
+{choose-answers: 4, points: 3}
 ? If you were working with the `iris` dataset in r, which functions would you use to add a new column to the dataframe that changed the name of the Species variable?  
 
-a) filter(), fct_recode()
-B) mutate(), fct_recode()
-c) mutate(), fct_inorder()
-d) filter(), fct_inorder() 
+C) mutate(), fct_recode()
+o) filter(), fct_recode()
+o) mutate(), fct_inorder()
+o) filter(), fct_inorder() 
+o) mutate(), fct_refreq()
+o) filter(), fct_refreq()
 
 {/quiz}
 
