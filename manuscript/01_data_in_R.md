@@ -180,7 +180,7 @@ For example, to see a list of the datasets available from the ggplot2 package, y
 data(package="ggplot2")
 ```
 
-![`datasets available from gplot2 package](images/01_data_in_R/01_data_data_in_R-19.png)
+![datasets available from ggplot2 package](images/01_data_in_R/01_data_data_in_R-19.png)
 
 
 As before, this function will open up a list of the available datasets within that package. 
