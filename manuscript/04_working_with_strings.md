@@ -433,7 +433,6 @@ b) str_view_all(colors, '$#')
 C) str_view_all(colors, '^#')
 d) str_view_all(colors, '#^')
 
-{words: 10}
 ? Using, str_view_all(), how would you only highlight strings that don't start with a vowel?
 
 ! str_view_all(colors, '[^aeiou]')

@@ -219,7 +219,7 @@ In this lesson we've covered the main file formats that are used within R. Make 
 
 ### Data in R quiz
 
-? TRUE or FALSE: Your computer knows that .r and .R files are the same type of file
+? TRUE or FALSE: Your computer knows that .r and .R files are the same type of file.
 
 A) TRUE
 b) FALSE
@@ -256,6 +256,7 @@ o) .csv
 
 {choose-answers: 4}
 ? Which of the following is an R data format type?
+
 C) rda
 C) Rda
 C) r
