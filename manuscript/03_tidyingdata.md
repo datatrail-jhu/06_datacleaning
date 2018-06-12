@@ -484,7 +484,6 @@ We have gone through a number of ways to work with data in this lesson. Masterin
 
 ### Tidying Data quiz
 
-
 {choose-answers: 4}
 ? To create a new column which function would you use?
 
