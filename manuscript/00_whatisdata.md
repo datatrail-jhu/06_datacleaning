@@ -53,6 +53,7 @@ C) number of members in a family
 o) colors of shirts you wear each day
 o) photos taken at a baby shower
 o) recorded songs from a band  
+o) names of brands of shoes sold at a department store
 
 {choose-answers: 4}
 ? Which of these is NOT quantitative data?

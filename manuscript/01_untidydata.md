@@ -54,7 +54,7 @@ To address this, these data can be split into two different spreadsheets, one fo
 {choose-answers: 4}
 ? Which of these would indicate a messy data set?
 
-B) Not rectangular data
+C) Not rectangular data
 o) One variable per column
 o) One piece of information per cell
 o) Column names with no extra spaces
