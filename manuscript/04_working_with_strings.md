@@ -381,7 +381,7 @@ This lesson set out to introduce you to how to work with strings within RStudio,
 
 ### Slides and Video
 
-![Working with strings](UPDATE LINK)
+![Working with strings](https://www.youtube.com/watch?v=r6SVAIajWjk)
 
 * [Slides](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/edit?usp=sharing)
 

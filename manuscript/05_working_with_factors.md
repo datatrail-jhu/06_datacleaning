@@ -179,7 +179,7 @@ Note: [Wrangling Categorical Data in R](https://peerj.com/preprints/3163/) is **
 
 ### Slides and Video
 
-![Working with factors](UPDATE LINK)
+![Working with factors](https://www.youtube.com/watch?v=miyO-dPGLzA)
 
 * [Slides](https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/edit?usp=sharing)
 

@@ -1,5 +1,3 @@
-Working with strings
-
 Strings were introduced in an earlier lesson; however, to review briefly here: a string is a sequence of characters, letters, numbers or symbols.
 
 stringr is a package within the tidyverse specifically designed to work well with strings. All functions within this package start with str underscore. There are many helpful functions within the stringr package. We'll only review the basics here, but if you're looking to accomplish something with a string and aren't sure how to approach it, the stringr package is a good first place to look. You'll want to be sure you've installed stringr using install dot packages and loaded it into R using hte library function before starting this lesson. The best way to work through this lesson is to copy and paste every line of code into your RStudio window and see if the output makes sense to you. Working with strings and regular expressions is best learned by practice. 
