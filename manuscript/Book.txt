@@ -1,5 +1,5 @@
 00_whatisdata.md
-01_getting_data.md
+01_data_in_R.md
 00_tidydata.md
 01_untidydata.md
 02_reshapingdata.md

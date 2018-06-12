@@ -21,7 +21,7 @@ However, you're likely not interested in your day and month variable being separ
 To return your long data back to its original form, you can use spread. Here you specify two columns: the column that contains the names of what your wide data columns should be (key=variable) and the column that contains the values that should go in these columns (value=value).
 
 The data frame resulting from spread will have the original information back in the wide format (but, the columns will be in a different order). But, we'll discuss how to rearrange columns in the next lesson!
-  
+
 As with many things in R, there is more than one way to solve a problem. While tidy r provides a more general solution for reshaping data, reshape2 was specifically designed for reshaping data. The details aren't particularly important yet, but later on as you carry out your own analyses it will be good to know about both packages. To get started using reshape2, you'll have to first install the library and load it into your R session. 
 
 There are two main functions within the reshape2 package: melt, which makes wide data long and d cast, which makes long data wide. When you melt a dataset with the default options, melt will take every column, put the column name put it into a variable column, and then put the values of those variables into a value column. For the air quality data set, below we first assign the melted data frame to the object melted. Then we take a look at the top and bottom of this melted data frame.

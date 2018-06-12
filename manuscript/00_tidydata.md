@@ -134,7 +134,7 @@ Most importantly, however, remember that tidy data are rectangular data. The dat
 
 ### Slides and Video
 
-![Tidy Data](UPDATE LINK)
+![Tidy Data](https://www.youtube.com/watch?v=MpvoNGjAQ6A)
 
 * [Slides](https://docs.google.com/presentation/d/1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54/edit?usp=sharing)
 

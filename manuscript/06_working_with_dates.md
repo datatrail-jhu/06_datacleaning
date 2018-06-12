@@ -131,7 +131,7 @@ This lesson has not covered how to work with times, much detail about how to ope
 
 ### Slides and Video
 
-![Working with dates](UPDATE LINK)
+![Working with dates](https://www.youtube.com/watch?v=hGx-1Ib6Lic)
 
 * [Slides](https://docs.google.com/presentation/d/1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c/edit?usp=sharing)
 
