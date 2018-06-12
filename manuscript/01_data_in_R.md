@@ -1,4 +1,4 @@
-# Data into R
+# Data in R
 
 You've already been working with data throughout this set of courses. You've generated your own data in Google Sheets (i.e. collected data from Leanpub). You've worked with datasets that are included in RStudio automatically (i.e. `iris` and `mtcars`). And, you've generated R Markdown documents and pushed code to GitHub, creating even more data! But, we haven't formalized exactly what all the different types of data are in R, how to access them, and what the various file types in R are. We'll discuss all of that in this lesson. 
 
@@ -26,11 +26,11 @@ The most basic file type in R uses the .R file extension. R Script files contain
 
 To get started writing an R Script file, you'll go to [rstudio.cloud](rstudio.cloud) and click on File > New File > RScript along the menu at the top. This will open ups a blank R Script file.
 
-![R Script](images/01_gettingdata/01_data_gettingdata-2.png)
+![R Script](images/01_data_in_R/01_data_data_in_R-2.png)
 
 In this R Script is where you would write R code. As you write code, you'll want to save this file. Here, in this example, you can see the R code we've written and that this file has been saved as "script_test.R."
 
-![.R file](images/01_gettingdata/01_data_gettingdata-3.png)
+![.R file](images/01_data_in_R/01_data_data_in_R-3.png)
 
 
 #### R Markdown (.Rmd)
@@ -39,11 +39,11 @@ We've also introduced R Markdown files previously. As a refresher, R Markdown do
 
 To get started writing an R Markdown document, you'll go to [rstudio.cloud](rstudio.cloud) and click on File > New File > R Markdown... After filling out the information in the pop-up window and clicking OK, an R Markdown document will open up. 
 
-![R Markdown](images/01_gettingdata/01_data_gettingdata-4.png)
+![R Markdown](images/01_data_in_R/01_data_data_in_R-4.png)
 
 In this document you'll use Markdown syntax outside of code chunks and R code in the code chunks to generate your reports. 
 
-![.Rmd file](images/01_gettingdata/01_data_gettingdata-5.png)
+![.Rmd file](images/01_data_in_R/01_data_data_in_R-5.png)
 
 R Markdown documents are great at producing reproducible reports that walk people through your data science process from start to finish.
 
@@ -57,11 +57,11 @@ mpg <- mtcars$mpg
 cyl <- mtcars$cyl
 ``` 
 
-![`mpg` and `cyl` are objects](images/01_gettingdata/01_data_gettingdata-6.png)
+![`mpg` and `cyl` are objects](images/01_data_in_R/01_data_data_in_R-6.png)
 
 If I were to run these two lines of code, they would show up in the Console, and the objects `mpg` and `cyl` would now be visible in the Environment tab. 
 
-![`mpg` and `cyl` visible in Environment tab](images/01_gettingdata/01_data_gettingdata-7.png)
+![`mpg` and `cyl` visible in Environment tab](images/01_data_in_R/01_data_data_in_R-7.png)
 
 Often you'll create objects that you won't need to save. However, from time to time you'll make changes to a data frame or generate an object that you'll want to use later. To save an object and use it later, you can save it as an R data file. These files contain objects that can be saved directly *from* and read directly *into* R using the commands `save()` and `load()`. And, in particular, R data files can **save multiple objects**.
 
@@ -71,19 +71,19 @@ To save the two objects `mpg` and `cyl` into an R Data file, you would do the fo
 save(mpg, cyl, file="mtcars_objects.rda")
 ```
 
-![`save`](images/01_gettingdata/01_data_gettingdata-8.png)
+![`save`](images/01_data_in_R/01_data_data_in_R-8.png)
 
 
 The syntax for `save` requires you to specify the objects you want to save, separated by commas. Then, the filename you want this R data file to have is specified using the `file=` argument. When this line of code is run, the specified file (here, `mtcars_objects.rda`) appears in the Files tab within RStudio, demonstrating that this file has been created.
 
 If in the future, if you were to want to load the objects `mpg` and `cyl` back into your R session, you would do this using `load()`. To do that here, we'll first have to remove these objects from RStudio. To accomplish this, click on the broom in the Environment tab of RStudio Cloud.  
 
-![broom icon removes all objects from R session](images/01_gettingdata/01_data_gettingdata-9.png)
+![broom icon removes all objects from R session](images/01_data_in_R/01_data_data_in_R-9.png)
 
 
 After clicking "Yes" to confirm that you want to remove all objects, you'll see that `mpg` and `cyl` are no longer in your RStudio environment. They have been removed from RStudio.
 
-![Empty Environment](images/01_gettingdata/01_data_gettingdata-11.png)
+![Empty Environment](images/01_data_in_R/01_data_data_in_R-11.png)
 
 To load them back in from `mtcars_objects.rda`, you would do the following:
 
@@ -97,7 +97,7 @@ A second note is a reminder about file paths. Here, the file we want is in the d
 
 When you run this line of code, you'll see that `cyl` and `mpg` are once again available objects in your RStudio Environment tab!
 
-![`load` loads objects in .rda file back in](images/01_gettingdata/01_data_gettingdata-12.png)
+![`load` loads objects in .rda file back in](images/01_data_in_R/01_data_data_in_R-12.png)
 
 To recap, when you want to save multiple objects to be read in at a later time, you'll save them as an R data file (.rda). R Data files are generated using the `save()` function and read into R using the `load()` command.
 
@@ -112,13 +112,13 @@ For example, to save the `mpg` object you would use the following:
 ```r
 saveRDS(mpg, file="mpg.rds")
 ```
-![`saveRDS`](images/01_gettingdata/01_data_gettingdata-13.png)
+![`saveRDS`](images/01_data_in_R/01_data_data_in_R-13.png)
 
 This will generate the file `mpg.rds`. 
 
 To read this file back in, we'll first remove all objects from R Studio using the broom icon in the Environment tab and will then use the `readRDS()` function.
  
-![broom icon to clean up Environment](images/01_gettingdata/01_data_gettingdata-14.png)
+![broom icon to clean up Environment](images/01_data_in_R/01_data_data_in_R-14.png)
 
 Unlike with .rda objects, when you read a .rds object back in, to make the object available, you have to assign the object a variable name. Otherwise, the contents of the object will just print to your Console. This is helpful because it doesn't matter what the name of the object was when you saved it. As long as you know the filename, you can pick a new object name. Here, we assign the serialized R object file to `mpg`, but we could have chosen a different object name.
 
@@ -126,7 +126,7 @@ Unlike with .rda objects, when you read a .rds object back in, to make the objec
  mpg <- readRDS("mpg.rds")
 ```
 
-![`readRDS`](images/01_gettingdata/01_data_gettingdata-15.png)
+![`readRDS`](images/01_data_in_R/01_data_data_in_R-15.png)
 
 
 #### R Project files (.Rproj)
@@ -135,7 +135,7 @@ R Projects are incredibly helpful files. In their simplest form, by working with
  
 RStudio Cloud will start a "project.Rproj" file within each project you start. This file will then track your project as you write code and create objects.
 
-![R Project files](images/01_gettingdata/01_data_gettingdata-16.png)
+![R Project files](images/01_data_in_R/01_data_data_in_R-16.png)
 
 Then, when you return to this project, your .Rroj file will:
 
@@ -158,7 +158,7 @@ You've previously seen and worked with datasets that are available to you in R. 
 
 To access a list of all the available datasets within R, you'll type `data()` into your Console. This will open up a file called "R data sets". You can scroll through this list to get a sense of what data sets are available. The name of the data set is in the first column while a brief description of the dataset is in the second column. 
 
-![R data sets](images/01_gettingdata/01_data_gettingdata-17.png)
+![R data sets](images/01_data_in_R/01_data_data_in_R-17.png)
 
  If one of these datasets looks interesting to you, say the "Orange" dataset, you can get more detailed information about the dataset by using help function in R (`?`). 
  
@@ -168,7 +168,7 @@ To access a list of all the available datasets within R, you'll type `data()` in
  
 This opens up an explanation in the Help tab of RStudio Cloud. Here, you can see a description of the dataset and can scroll to see what variables are included in this dataset. Finally, at the bottom of the Help window, you'll see examples of how to work with the dataset!
  
- ![`Orange` dataset Help page](images/01_gettingdata/01_data_gettingdata-18.png)
+![`Orange` dataset Help page](images/01_data_in_R/01_data_data_in_R-18.png)
  
 ### Datasets in Packages
 
@@ -180,7 +180,7 @@ For example, to see a list of the datasets available from the ggplot2 package, y
 data(package="ggplot2")
 ```
 
- ![`datasets available from gplot2 package](images/01_gettingdata/01_data_gettingdata-19.png)
+![`datasets available from gplot2 package](images/01_data_in_R/01_data_data_in_R-19.png)
 
 
 As before, this function will open up a list of the available datasets within that package. 
@@ -192,7 +192,7 @@ library(ggplot2)
 ?msleep
 ```
 
-![`msleep` from ggplot2 package dataset Help page](images/01_gettingdata/01_data_gettingdata-20.png)
+![`msleep` from ggplot2 package dataset Help page](images/01_data_in_R/01_data_data_in_R-20.png)
 
 
 ### Other types of data in R
