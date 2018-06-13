@@ -82,10 +82,6 @@ Once the .Rmd document is in the correct folder, you'll want to change the autho
 
 You'll want to save changes to your project regularly by pushing them to GitHub. Now that you've got your file structure set up and have added an R Markdown document to your code/raw_code directory, it's a good time to stage, commit, and push these changes to GitHub. Do so now, and then take a long on GitHub to see the changes on their website!
 
-? In what directory did you save  `data_tidying_project.Rmd `?
-
-! code/raw_code
-
 ? After this initial push, how many of the directories you created are visible on GitHub?
 
 ! 1
@@ -120,7 +116,7 @@ Add the code to do this to the `save-data` code chunk in your `data_tidying_proj
 
 #### Wrangle the Data
 
-##### df2
+##### The retail data: `df2`
 
 Now that you have the data in RStudio Cloud and have saved the raw data to your data/raw_data file, we're ready to start wrangling data. 
 
@@ -177,7 +173,7 @@ Again, take a look at the output variable `df_retail` to understand this additio
 
 ! It only includes those two kinds of businesses in the final data frame
 
-##### df1
+##### The department store data: `df1`
 
 Having had all the code to wrangle `df2` and being able to understand what each line did, now it's your turn to wrangle a data frame! You'll take  We'll first ask a few questions to get you acquainted with `df1`.
 
