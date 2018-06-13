@@ -173,4 +173,3 @@ o) Sat
 o) Sun
 
 {/quiz}
-
