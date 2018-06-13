@@ -7,4 +7,3 @@
 04_working_with_strings.md
 05_working_with_factors.md
 06_working_with_dates.md
-09_data_tidying_project.md
