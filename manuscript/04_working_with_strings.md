@@ -395,6 +395,7 @@ The best way to learn how to work with strings is to actually practice working w
 ```r
 colors <- c('red','orange','yellow','green','blue','violet','#C8C8C8','#000000')
 ```
+Note: be sure you scroll to copy the entire vector. It ends with a closed parenthesis.
 
 {choose-answers: 4, points: 2}
 ? To return the value 'TRUE' for each string that contains numbers, which would you use?

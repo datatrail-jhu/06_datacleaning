@@ -120,7 +120,7 @@ Using addition, subtraction, multiplication, and division is possible with date 
 
 ### What's not covered in this lesson
 
-This lesson has not covered how to work with times, much detail about how to operate on date or date-time objects, nor how to deal with timezones in date-time objects. To learn more about these subjects, explore the additional resources below.
+This lesson has not covered how to work with times, much detail about how to operate on date or date-time objects, nor how to deal with timezones in date-time objects. To learn more about these subjects, feel free to explore the additional resources below, or hold off for a later course in a different course set!
 
 
 ### Additional Resources
