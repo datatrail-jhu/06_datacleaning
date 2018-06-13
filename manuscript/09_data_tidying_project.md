@@ -18,6 +18,10 @@ You can access the first project by going to the exercise accompanying this less
 
 Often times, data scientists are handed data and asked to make sense of them. The data scientist may be asked to figure out why people are getting sick in a city or how their employer can save money. No matter the situation, these data aren't always in the most usable format. **Data wrangling** is required before any pretty visualizations can be mad or questions can be answered. This exercise has been generated to practice your data wrangling skills.
 
+{words: 100}
+? Why did you clone your GH repository into RStudio Cloud?
+
+!  Allows project to be version controlled
 
 {/exercise}
 
