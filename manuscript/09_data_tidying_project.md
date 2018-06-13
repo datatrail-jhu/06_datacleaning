@@ -259,7 +259,7 @@ Now that you've finalized your project, you'll do one final push to GitHub. add,
 
 ? Submit the URL to your `data_tidying_project` GitHub repository below.
 
-! /(.+\/\/github.com\/.+\/data_tidying_project)/i
+! data_tidying_project
 
 **Congrats on finishing your first Data Science Project**
 
