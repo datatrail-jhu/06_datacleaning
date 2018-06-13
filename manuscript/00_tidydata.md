@@ -143,7 +143,7 @@ This is the Tidy Data quiz.
 A) baseball_analysis_v1.txt
 b) baseball.txt
 c) baseball analysis.txt
-d) baseball_analysis .txt
+d) baseball_analysis.txt
 
 ? Which of these is NOT a feature of tidy data?
 
