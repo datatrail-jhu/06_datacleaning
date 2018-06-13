@@ -31,16 +31,19 @@ To get started, you'll want to go to GitHub and start a new repository:
 
 Once the repository has been created, Click on `Clone or download` and copy the "Clone with HTTPS" link provided. You'll use this to clone your repo in RStudio Cloud.
 
+**Note**: If you're stuck on this, these steps were covered in detail in an earlier course: [Version Control](https://leanpub.com/universities/courses/jhu/version-control). Refer to the materials in this course if you're stuck on this part of the project.
+
 #### RStudio Cloud Setup
 
-- Go to the [Data Tidying Project Workspace on RStudio Cloud](https://rstudio.cloud/spaces/955/project/28350) 
-- Make a copy of this project 
+- Go to the [Data Tidying Project Workspace on RStudio Cloud](https://rstudio.cloud/spaces/955/join?access_code=0MYz9FzUVT264%2B9lkTTuBJI2cK2i%2BSZz%2BCkMj6jN) 
+- Click on the "Projects" tab at the top of the workspace
+- Make a copy of the project: `data_tidying_project`
 
 In this project you should see a `data_tidying_project.Rmd ` file. You'll use this to get started working on your project!
 
 *Note*: If you try to Knit this document at this time, you *will* get an error because there is code in this document that has to be edited (by you!) before it will be able to successfully knit!
 
-Now that you have a copy of the project you'll use to get started you'll want to clone the GitHub repository you just created into this workspace. To do so, go to the terminal and clone your project into this workspace.
+To start using version control, you'll want to clone the GitHub repository you just created into this workspace. To do so, go to the Terminal and clone your project into this workspace.
 
 A new directory with the name of your GitHub repository should now be viewable in the Files tab of RStudio Cloud. You are now set up to track your project with git.
 
@@ -78,6 +81,9 @@ Now that your directories are set up you'll want to use the Terminal (or 'More' 
 
 Once the .Rmd document is in the correct folder, you'll want to change the author of this document to your name at the top of the .Rmd document (in the YAML). Save this change before moving to the next step.
 
+**Note**: If you're stuck on this, these steps were covered in detail in an earlier course: [Organizing Data Science Projects](https://leanpub.com/universities/courses/jhu/organizingdatascienceprojects). Refer to the materials in this course if you're stuck on this part of the project.
+
+
 #### Pushing to GitHub
 
 You'll want to save changes to your project regularly by pushing them to GitHub. Now that you've got your file structure set up and have added an R Markdown document to your code/raw_code directory, it's a good time to stage, commit, and push these changes to GitHub. Do so now, and then take a long on GitHub to see the changes on their website!
@@ -85,6 +91,8 @@ You'll want to save changes to your project regularly by pushing them to GitHub.
 ? After this initial push, how many of the directories you created are visible on GitHub?
 
 ! 1
+
+**Note**: If you're stuck on this, these steps were covered in detail in an earlier course: [Version Control](https://leanpub.com/universities/courses/jhu/version-control). Refer to the materials in this course if you're stuck on this part of the project.
 
 #### The Data
 
@@ -115,6 +123,8 @@ Add the code to do this to the `save-data` code chunk in your `data_tidying_proj
 ! saveRDS(df1, file="data/raw_data/df_department.rds") ; saveRDS(df1, file='data/raw_data/df_department.rds') ; saveRDS(df1, file='/cloud/project/data_tidying_project/data/raw_data/df_department.rds') ; saveRDS(df1, file="/cloud/project/data_tidying_project/data/raw_data/df_department.rds")
 
 #### Wrangle the Data
+
+We'll now work with the two datasets you read in, so that they're in a usable (long) data format and can be merged into a single data frame.
 
 ##### The retail data: `df2`
 
@@ -233,6 +243,9 @@ OK, now it's your job to work line by line to change `function_name` to the appr
 
 You've written a lot of code at this point, so it'd be great to add this to GitHub at this point. Use `git add`, `git commit`, and `git push` to add the file changes to your GitHub repository.
 
+**Note**: If you're stuck on this, these steps were covered in detail in an earlier course: [Introduction to R](https://leanpub.com/universities/courses/jhu/introduction-to-r). Refer to the R Markdown lesson in this course if you're stuck on this part of the project.
+
+
 ##### Merging the data
 
 Once you have wrangled both `df1` and `df2`, you should be able to join them by binding the rows of `df_retail` and `df_department`. Change the code in the `merge-data` code chunk to generate an object called `df_total`. This should only take one function to accomplish.
@@ -245,13 +258,22 @@ While data visualization is coming up in a later course, we've included a few li
 
 Before finalizing your project you'll want to add some text outside of your code chunks to explain what you're doing in each code chunk. These explanations are incredibly helpful for someone who doesn't code.
 
+**Note**: If you're stuck on this, these steps were covered in detail in an earlier course: [Version Control](https://leanpub.com/universities/courses/jhu/version-control). Refer to the materials in this course if you're stuck on this part of the project.
+
 #### Knit your R Markdown Document
 
 Last but not least, you'll want to Knit your .Rmd document into an HTML document. If you get an error, take a look at what the error says and edit your .Rmd document. Then, try to Knit again! Troubleshooting these error messages will teach you a lot about coding in R.
 
+**Note**: If you're stuck on this, these steps were covered in detail in an earlier course: [Introduction to R](https://leanpub.com/universities/courses/jhu/introduction-to-r). Refer to the R Markdown lesson in this course if you're stuck on this part of the project.
+
+
+
 #### Final push to GitHub
 
 Now that you've finalized your project, you'll do one final push to GitHub. add, commit, and push your work to GitHub. Navigate to your GitHub repository, and answer the final question below! 
+
+**Note**: If you're stuck on this, these steps were covered in detail in an earlier course: [Version Control](https://leanpub.com/universities/courses/jhu/version-control). Refer to the materials in this course if you're stuck on this part of the project.
+
 
 ? Submit the URL to your `data_tidying_project` GitHub repository below.
 
