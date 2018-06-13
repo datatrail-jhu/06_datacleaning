@@ -38,6 +38,11 @@ In this project you should see a `data_tidying_project.Rmd ` file. You'll use th
 
 Now that you have a copy of the project you'll use to get started you'll want to clone the GitHub repository you just created into this workspace. To do so, go to the terminal and clone your project into this workspace.
 
+{words: 100}
+? Why did you clone your GH repository into RStudio Cloud?
+
+!  Allows project to be version controlled
+
 A new directory with the name of your GitHub repository should now be viewable in the Files tab of RStudio Cloud. You are now set up to track your project with git.
 
 #### Data Science Project Setup
@@ -62,9 +67,23 @@ Once in the correct directory, use `mkdir` in the terminal to create folders wit
 
 Now that your directories are set up you'll want to use the Terminal (or 'More' drop-down menu in the Files tab) to move (`mv`) the `data_tidying_project.Rmd ` file into code/raw_code. This ensures that your code file is in the correct directory.
 
+? In what directory did you save  `data_tidying_project.Rmd `?
+
+! code/raw_code
+
+Once the .Rmd document is in the correct folder, you'll want to change the author of this document to your name at the top of the .Rmd document (in the YAML). Save this change before moving to the next step.
+
 #### Pushing to GitHub
 
-You'll want to save changes to your project regularly on GitHub. Now that you've got your file structure set up and have added an R Markdown document to your code/raw_code directory, it's a good time to stage, commit, and push these changes to GitHub. Do so now, and then take a long on GitHub to see the changes on their website!
+You'll want to save changes to your project regularly by pushing them to GitHub. Now that you've got your file structure set up and have added an R Markdown document to your code/raw_code directory, it's a good time to stage, commit, and push these changes to GitHub. Do so now, and then take a long on GitHub to see the changes on their website!
+
+? In what directory did you save  `data_tidying_project.Rmd `?
+
+! code/raw_code
+
+? After this initial push, how many of the directories you created are visible on GitHub?
+
+! 1
 
 #### The Data
 
@@ -78,9 +97,24 @@ To get you started, let's get you acquainted with the data. The data you'll be w
 
 To get the data read into R, we're going to use two packages: `httr` and  `readxl`. These packages will be covered in the next course. As they haven't been taught yet, we'll have you use them here, but we'll provide all the code you need in order to use them, rather than having you figure this part out on your own.
 
-You can see the code to get these data read into RStudio in the second code chunk provided within `data_tidying_project.Rmd `. To read the data in, first run the code in the `setup` code chunk to get the necessary packages loaded into R. Then, run the code in the second code chunk to load the data into R. In your Environment tab, you will see that there are two new objects, `df1`
-and `df2` that have been created.
+You can see the code to get these data read into RStudio in the second code chunk provided within `data_tidying_project.Rmd`. To read the data in, first run the code in the `setup` code chunk to get the necessary packages loaded into R. Then, run the code in the second code chunk to load the data into R. In your Environment tab, you will see that there are two new objects, `df1` and `df2` that have been created.
 
+Use the `View()` function to view these data frames in RStudio Cloud
+
+```r
+View(df1)
+View(df2)
+```
+
+#### Saving the Raw Data
+
+While the data are available on the Internet, what if in the future they take them down? Then, you'll have lost the data for your project or at the very least you won't have access to it. To avoid this being a problem in the future, let's save a copy of the data on RStudio Cloud now. 
+
+You'll want to save these data in 
+
+#### Wrangling the Data
+
+#### 
 
 {/exercise}
 
