@@ -15,12 +15,8 @@ Generally, there are just two types of data. If data are numerical, consisting o
 
 Examples of: 
 
-* Qualitative data: eye color, gender, TRUE/FALSE responses, hometown, photos, text files, audio files, videos, etc.
-| Data Type        | Examples           | 
-| ------------- |:-------------:| 
-| Qualitative data    | eye color, gender, TRUE/FALSE responses, hometown, photos, text files, audio files, videos, etc.|
-| Quantitative data    | height, weight, heart rate, daily step count, body temperature, test scores, etc.|
-
+* Qualitative data  - eye color, gender, TRUE/FALSE responses, hometown, photos, text files, audio files, videos, etc.
+* Quantitative data  - height, weight, heart rate, daily step count, body temperature, test scores, etc.
 
 While people often distinguish between qualitative data and quantitative data, the truth is that qualitative data can become quantitative data. For example, if you collect eye color information from individuals in each country around the world, you could then summarize *how many* people in each country have brown eyes. Suddenly, you have quantitative data - a number of individuals in each country with brown eyes. We will be working with lots of different data sets throughout this curriculum. Knowing the distinction between qualitative and quantitative data is not crucially important. But as a data scientist, it will be crucially important for you to know how to work with a lot of different data sets. Throughout these courses, you'll do projects to familiarize yourself with how to work with data and get practice working with various different data sets to ensure that you can work with data, no matter what type it is.
 
