@@ -24,10 +24,10 @@ As such, this exercise has been generated to practice your, GitHub, terminal nav
 
 To get started, you'll want to go to GitHub and start a new repository:
 
-- Call this repository `data_tidying_project`. 
-- Add a short description
-- Check the box to "Initialize this repository with a README. 
-- Click `Create Repository`
+* Call this repository `data_tidying_project`. 
+* Add a short description
+* Check the box to "Initialize this repository with a README. 
+* Click `Create Repository`
 
 Once the repository has been created, Click on `Clone or download` and copy the "Clone with HTTPS" link provided. You'll use this to clone your repo in RStudio Cloud.
 
@@ -106,7 +106,7 @@ To get you started, let's get you acquainted with the data. The data you'll be w
 
 To get the data read into R, we're going to use two packages: `httr` and  `readxl`. These packages will be covered in the next course. As they haven't been taught yet, we'll have you use them here, but we'll provide all the code you need in order to use them, rather than having you figure this part out on your own.
 
-You can see the code to get these data read into RStudio in the second code chunk provided within `data_tidying_project.Rmd`. To read the data in, first run the code in the `setup` code chunk to get the necessary packages loaded into R. Then, run the code in the second code chunk to load the data into R. In your Environment tab, you will see that there are two new objects, `df1` and `df2` that have been created.
+You can see the code to get these data read into RStudio in the second code chunk (`data`) provided within `data_tidying_project.Rmd`. To read the data in, first run the code in the first code chunk ( `setup`) to get the necessary packages loaded into R. Then, run the code in the second code chunk (`data`) to load the data into R. In your Environment tab, you will see that there are two new objects, `df1` and `df2` that have been created.
 
 Once the data are read in, to take a look at these data you can use the `glimpse()` or `View()` functions in RStudio Cloud (i.e. `View(df1)` or `glimpse(df1`)
 
@@ -126,6 +126,8 @@ Add the code to do this to the `save-data` code chunk in your `data_tidying_proj
 
 We'll now work with the two datasets you read in, so that they're in a usable (long) data format and can be merged into a single data frame.
 
+The wrangling portion of this project will use the skills you learned in [Introduction to R](https://leanpub.com/universities/courses/jhu/introduction-to-r) and this course [Data Tidying](https://leanpub.com/universities/courses/jhu/data-tidying). Feel free to refer back to these materials for reference as you complete the project.
+
 ##### The retail data: `df2`
 
 Now that you have the data in RStudio Cloud and have saved the raw data to your data/raw_data file, we're ready to start wrangling data. 
@@ -140,7 +142,7 @@ To get you acquainted with the dataset, we'll first have you answer a few questi
 
 ! 30
 
-? In 2014, what were the sales fir Used car dealers? 
+? In 2014, what were the sales for used car dealers? 
 
 ! 90385 ; 90,385
 
@@ -243,8 +245,6 @@ OK, now it's your job to work line by line to change `function_name` to the appr
 
 You've written a lot of code at this point, so it'd be great to add this to GitHub at this point. Use `git add`, `git commit`, and `git push` to add the file changes to your GitHub repository.
 
-**Note**: If you're stuck on this, these steps were covered in detail in an earlier course: [Introduction to R](https://leanpub.com/universities/courses/jhu/introduction-to-r). Refer to the R Markdown lesson in this course if you're stuck on this part of the project.
-
 
 ##### Merging the data
 
@@ -252,20 +252,17 @@ Once you have wrangled both `df1` and `df2`, you should be able to join them by 
 
 ##### Plotting your Data
 
-While data visualization is coming up in a later course, we've included a few lines of code to plot the data from the three data frames you created (`df_retail`, `df_department`, `df_total`). For this you'll use the R package `ggplot2`. Try running these lines of code in the `plot` chunk. However, don't stress if you're not exactly sure what's going on. We'll cover all of this in an upcoming course!
+While data visualization is coming up in a later course, we've included a few lines of code to plot the data from the three data frames you created (`df_retail`, `df_department`, `df_total`). For this you'll use the R package `ggplot2`. Try running these lines of code in the `plot` chunk and take a look at the plots generated in the "Plots" tab of RStudio Cloud. However, don't stress if you're not exactly sure what's going on. We'll cover all of this in an upcoming course!
 
-#### Add Markdown text to document to explain what you've done
+#### Add Markdown text to .Rmd
 
 Before finalizing your project you'll want to add some text outside of your code chunks to explain what you're doing in each code chunk. These explanations are incredibly helpful for someone who doesn't code.
 
-**Note**: If you're stuck on this, these steps were covered in detail in an earlier course: [Version Control](https://leanpub.com/universities/courses/jhu/version-control). Refer to the materials in this course if you're stuck on this part of the project.
+**Note**: If you're stuck on this, these steps were covered in detail in an earlier course: [Introduction to R](https://leanpub.com/universities/courses/jhu/introduction-to-r). Refer to the R Markdown lesson in this course if you're stuck on this part (or the next part) of the project.
 
 #### Knit your R Markdown Document
 
 Last but not least, you'll want to Knit your .Rmd document into an HTML document. If you get an error, take a look at what the error says and edit your .Rmd document. Then, try to Knit again! Troubleshooting these error messages will teach you a lot about coding in R.
-
-**Note**: If you're stuck on this, these steps were covered in detail in an earlier course: [Introduction to R](https://leanpub.com/universities/courses/jhu/introduction-to-r). Refer to the R Markdown lesson in this course if you're stuck on this part of the project.
-
 
 
 #### Final push to GitHub
