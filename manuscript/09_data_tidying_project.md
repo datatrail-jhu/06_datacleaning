@@ -24,10 +24,10 @@ As such, this exercise has been generated to practice your, GitHub, terminal nav
 
 To get started, you'll want to go to GitHub and start a new repository:
 
-* Call this repository `data_tidying_project`. 
-* Add a short description
-* Check the box to "Initialize this repository with a README. 
-* Click `Create Repository`
+- Call this repository `data_tidying_project`. 
+- Add a short description
+- Check the box to "Initialize this repository with a README. 
+- Click `Create Repository`
 
 Once the repository has been created, Click on `Clone or download` and copy the "Clone with HTTPS" link provided. You'll use this to clone your repo in RStudio Cloud.
 
@@ -51,7 +51,6 @@ A new directory with the name of your GitHub repository should now be viewable i
 ? Why did you clone your GitHub repository into RStudio Cloud?
 
 !  Allows project to be version controlled
-
 
 #### Data Science Project Setup
 
@@ -250,11 +249,11 @@ You've written a lot of code at this point, so it'd be great to add this to GitH
 
 Once you have wrangled both `df1` and `df2`, you should be able to join them by binding the rows of `df_retail` and `df_department`. Change the code in the `merge-data` code chunk to generate an object called `df_total`. This should only take one function to accomplish.
 
-##### Plotting your Data
+##### Plotting Your Data
 
 While data visualization is coming up in a later course, we've included a few lines of code to plot the data from the three data frames you created (`df_retail`, `df_department`, `df_total`). For this you'll use the R package `ggplot2`. Try running these lines of code in the `plot` chunk and take a look at the plots generated in the "Plots" tab of RStudio Cloud. However, don't stress if you're not exactly sure what's going on. We'll cover all of this in an upcoming course!
 
-#### Add Markdown text to .Rmd
+#### Add Markdown Text to .Rmd
 
 Before finalizing your project you'll want to add some text outside of your code chunks to explain what you're doing in each code chunk. These explanations are incredibly helpful for someone who doesn't code.
 
@@ -265,7 +264,7 @@ Before finalizing your project you'll want to add some text outside of your code
 Last but not least, you'll want to Knit your .Rmd document into an HTML document. If you get an error, take a look at what the error says and edit your .Rmd document. Then, try to Knit again! Troubleshooting these error messages will teach you a lot about coding in R.
 
 
-#### Final push to GitHub
+#### Final `push` to GitHub
 
 Now that you've finalized your project, you'll do one final push to GitHub. add, commit, and push your work to GitHub. Navigate to your GitHub repository, and answer the final question below! 
 
