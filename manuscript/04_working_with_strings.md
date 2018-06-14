@@ -45,6 +45,7 @@ When working with strings, some of the most frequent tasks you'll need to comple
 * combine strings together
 * subset strings
 
+
 #### String length
 
 Returning to our object with three strings from earlier in the lesson, we can determine the length of each string in the vector.  
@@ -140,7 +141,8 @@ names <- c("Keisha", "Mohammed", "Jane", "Mathieu")
 ## identify strings that start with "M"
 str_view(names, "^M")
 ```
-![str_view() identifies names that start with M](images/04_working_with_strings/04_datacleaning_working_with_strings-10.png)
+
+![`str_view()` identifies names that start with M](images/04_working_with_strings/04_datacleaning_working_with_strings-10.png)
 
 In this first example we see in the Viewer Panel that str_view has identified the names that start with the letter M.
 
@@ -151,7 +153,7 @@ However, if you try to match strings that end with the letter "M", no match is f
 str_view(names, "M$")
 ```
 
-[str_view() does not idenfity any names that end with M](images/04_working_with_strings/04_datacleaning_working_with_strings-11.png)
+![`str_view()` does not identify any names that end with M](images/04_working_with_strings/04_datacleaning_working_with_strings-11.png)
 
 To identify names by that end with the letter "a", you would use the following.
 
@@ -160,7 +162,7 @@ To identify names by that end with the letter "a", you would use the following.
 str_view(names, "a$")
 ```
 
-[str_view() identifies names that end with a](images/04_working_with_strings/04_datacleaning_working_with_strings-12.png)
+![`str_view()` identifies names that end with a](images/04_working_with_strings/04_datacleaning_working_with_strings-12.png)
 
 Note, however, that regexps are case sensitive. To match patterns, you have to consider that "A" and "a" are different characters.  
 
@@ -169,7 +171,7 @@ Note, however, that regexps are case sensitive. To match patterns, you have to c
 str_view(names, "A$")
 ```
 
-[str_view() does not identify any names that end with A](images/04_working_with_strings/04_datacleaning_working_with_strings-13.png)
+![`str_view()` does not identify any names that end with A](images/04_working_with_strings/04_datacleaning_working_with_strings-13.png)
 
 #### Count matches: `str_count()`
 
@@ -286,7 +288,7 @@ str_view_all(addresses, "\\d")
 
 ##### Search for whitespace
 
-Identifying whitespace in R identifies any spaces, tabs or newlines. Note that again we have to escape the "\s" with a backslash for R to recognize the regular expression
+Identifying whitespace in R identifies any spaces, tabs or newlines. Note that again we have to escape the "\s" with a backslash for R to recognize the regular expression.
 
 ```r
 ## identify any whitespace
@@ -323,6 +325,7 @@ Searches for regular expressions allow you to specify how many times a pattern s
 ##### Examples of repetition within regular expressions
 
 Using the definitions above, we can see that the following code will identify patterns within the addresses vector where n shows up one more more times in a string. 
+
 ```r
 ## identify any time n shows up one or more times
 str_view_all(addresses, "n+")
