@@ -454,3 +454,23 @@ o)  str_view_all(colors, '#!')
 
 {/quiz}
 
+{exercise, id: exercise_04_working_with_strings}
+
+### DataCamp:  Working with Strings
+
+{case-sensitive: false}
+? To get more practice with Markdown syntax and creating R Markdown documents, go to the course [String Manipulation in R with stringr](https://www.datacamp.com/courses/string-manipulation-in-r-with-stringr) on DataCamp. Login and complete the first two chapters this course:
+
+- String basics
+- Introduction to stringr
+
+Once you've completed the two chapters in this course, type "completed" in the box below.
+
+*Note*: This requires a DataCamp login, which costs money. As an exercise, this is not required to pass the course but it *will* help you get a better grasp on the concepts covered in these lessons.
+
+*Reminder*: Videos in DataCamp are essential to understanding the material. It's best not to skip over these videos!
+
+! completed
+
+{/exercise}
+

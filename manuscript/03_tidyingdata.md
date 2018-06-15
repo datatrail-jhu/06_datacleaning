@@ -70,15 +70,15 @@ library(skimr)
 
 ### The Pipe Operator
 
-Before we get into the important functions within `dplyr`, it will be very useful to discuss what is known as the **pipe operator**. The pipe operator looks like this in R: `%>%`.
+Before we get into the important functions within `dplyr`, it will be very useful to discuss what is known as the **pipe operator**. The pipe operator looks like this in R: `%>%`. Whenever you see the pipe `%>%`, think of the word "then", so if you saw the sentence "I went to the the store and %>% I went back to my house," you would read this as I went to the store and *then* I went back to my house. The pipe tells you to do one think and *then* do another.
 
-The pipe operator allows you to string a number of different functions together in R in a way that is easier to read than traditional syntax. If you wanted to take data frame A and carry out function B on it in R, you could depict this with an arrow pointing from A to B:
+Generally, the pipe operator allows you to string a number of different functions together in a particular order. If you wanted to take data frame A and carry out function B on it in R, you could depict this with an arrow pointing from A to B:
 
 A --> B
 
-Here you are saying, "Take A and feed it into function B."
+Here you are saying, "Take A and *then* feed it into function B."
 
-In R syntax, what is depicted by the arrow above would be carried out by calling the function B on the data frame object A:
+In R syntax, from what you've seen so far, what is depicted by the arrow above would be carried out by calling the function B on the data frame object A:
 
 ```r
 B(A)
@@ -94,7 +94,7 @@ However, often you are not performing just one action on a data frame, but rathe
 
 A --> B --> C --> D
 
-Here you are saying that you want to take data frame A and carry out function B, then you want to take the output from that and carry out function C. Subsequently you want to take the output of that and carry out function D. In R syntax, we would first apply function B to data frame A, then apply function C to this output, then apply function D to this output. This results in the following syntax that is hard to read because multiple calls to functions are nested within each other:
+Here you are saying that you want to take data frame A and carry out function B, *then* you want to take the output from that and *then* carry out function C. Subsequently you want to take the output of that and *then* carry out function D. In R syntax, we would first apply function B to data frame A, then apply function C to this output, then apply function D to this output. This results in the following syntax that is hard to read because multiple calls to functions are nested within each other:
 
 ```r
 D(C(B(A)))
@@ -106,7 +106,7 @@ Alternatively, you could use the pipe operator. Each time you want take the outp
 A %>% B %>% C %>% D
 ```
 
-Below we'll use this pipe operator a lot. Essentially, it takes output from the left hand side and feeds it into a function on the right hand side. You'll get a better understanding of how it works as you run the code below.
+Below we'll use this pipe operator a lot. Essentially, it takes output from the left hand side and feeds it into a function on the right hand side. You'll get a better understanding of how it works as you run the code below. But, when in doub remember that the pipe operator should be read as *then*.
 
 ### Filtering Data
 
@@ -541,4 +541,56 @@ C) df %>% select(bmi, height, weight)
 d) df %>% filter(bmi, height, weight)
 
 {/quiz}
+
+{exercise, id: exercise_03_tidyingdata_dplyr}
+
+### DataCamp: Data Manipulation in R with dplyr
+
+{case-sensitive: false}
+? To get more practice with Markdown syntax and creating R Markdown documents, go to the course [Data Manipulation in R with dplyr](https://www.datacamp.com/courses/dplyr-data-manipulation-r-tutorial) on DataCamp. Login and complete this course. Once you've completed this course, type "completed" in the box below.
+
+*Note*: This requires a DataCamp login, which costs money. As an exercise, this is not required to pass the course but it *will* help you get a better grasp on the concepts covered in these lessons.
+
+*Reminder*: Videos in DataCamp are essential to understanding the material. It's best not to skip over these videos!
+
+! completed
+
+{/exercise}
+
+{exercise, id: exercise_03_tidyingdata_tidyr}
+
+### DataCamp:  Cleaning Data in R
+
+{case-sensitive: false}
+? To get more practice with Markdown syntax and creating R Markdown documents, go to the course [Cleaning Data in R](https://www.datacamp.com/courses/cleaning-data-in-r) on DataCamp. Login and complete the first two chapters this course:
+
+- Introduction and exploring raw data
+- Tidying data
+
+Once you've completed the two chapters in this course, type "completed" in the box below.
+
+*Note*: This requires a DataCamp login, which costs money. As an exercise, this is not required to pass the course but it *will* help you get a better grasp on the concepts covered in these lessons.
+
+*Reminder*: Videos in DataCamp are essential to understanding the material. It's best not to skip over these videos!
+
+! completed
+
+{/exercise}
+
+{exercise, id: exercise_03_tidyingdata_wrangling}
+
+### DataCamp:  Cleaning Data in R
+
+{case-sensitive: false}
+? To get more practice with Markdown syntax and creating R Markdown documents, go to the course [Introduction to the Tidyverse](https://www.datacamp.com/courses/introduction-to-the-tidyverse) on DataCamp. Login and complete the first chapter in this course: Data Wrangling
+
+Once you've completed this chapter, type "completed" in the box below.
+
+*Note*: This requires a DataCamp login, which costs money. As an exercise, this is not required to pass the course but it *will* help you get a better grasp on the concepts covered in these lessons.
+
+*Reminder*: Videos in DataCamp are essential to understanding the material. It's best not to skip over these videos!
+
+! completed
+
+{/exercise}
 
