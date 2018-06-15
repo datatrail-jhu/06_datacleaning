@@ -173,3 +173,23 @@ o) Sat
 o) Sun
 
 {/quiz}
+
+{exercise, id: exercise_06_working_with_dates}
+
+### DataCamp:  Working with Dates and Times in R
+
+{case-sensitive: false}
+? To get more practice with Markdown syntax and creating R Markdown documents, go to the course [Dates and Times in R](https://www.datacamp.com/courses/working-with-dates-and-times-in-r) on DataCamp. Login and complete the first two chapters this course:
+
+- Dates and Times in R
+- Parsing and Manipulating Dates and Times with lubridate
+
+Once you've completed the two chapters in this course, type "completed" in the box below.
+
+*Note*: This requires a DataCamp login, which costs money. As an exercise, this is not required to pass the course but it *will* help you get a better grasp on the concepts covered in these lessons.
+
+*Reminder*: Videos in DataCamp are essential to understanding the material. It's best not to skip over these videos!
+
+! completed
+
+{/exercise}
