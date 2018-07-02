@@ -4,6 +4,8 @@ So far we've discussed what tidy and untidy data are. We've (hopefully) convince
 
 These skills are often referred to as **data wrangling**. They are skills that allow you to wrangle data from the format they're currently in into the format you actually want them in. 
 
+As this is an incredibly important topic, this will be a long lesson covering a number of packages and topics. Take your time working through it and be sure to understand all of the examples!
+
 ![data wrangling example](images/03_tidyingdata/03_datacleaning_tidyingdata-1.png)
 
 ### dplyr
@@ -366,6 +368,8 @@ msleep %>%
 
 ![Data resulting from left_join](images/03_tidyingdata/03_datacleaning_tidyingdata-29.png)
 
+It's important to note that there are many other ways to join data, which are covered in more detail on this [dplyr join cheatsheet](http://stat545.com/bit001_dplyr-cheatsheet.html) from Jenny Bryan. For now, it's important to know that joining datasets is done easily in R using tools in `dplyr`. As you join data frames in your own work, it's a good idea to refer back to this cheatsheet for assistance.
+
 ### Grouping Data
 
 Often, data scientists will want to summarize information in their dataset. You may want to know how many people are in a dataset. However, more often, you'll want to know how many people there are within a group in your dataset. For example, you may want to know how many males and how many females there are. To do this, grouping your data is necessary. Rather than looking at the total number of individuals, to accomplish this, you first have to **group the data** by the gender of the individuals. Then, you count within those groups. Grouping by variables within `dplyr` is straightforward.
@@ -562,29 +566,12 @@ d) df %>% filter(bmi, height, weight)
 ### DataCamp:  Cleaning Data in R
 
 {case-sensitive: false}
-? To get more practice with Markdown syntax and creating R Markdown documents, go to the course [Cleaning Data in R](https://www.datacamp.com/courses/cleaning-data-in-r) on DataCamp. Login and complete the first two chapters this course:
+? To get more practice with tidying data, go to the course [Cleaning Data in R](https://www.datacamp.com/courses/cleaning-data-in-r) on DataCamp. Login and complete the first two chapters this course:
 
 - Introduction and exploring raw data
 - Tidying data
 
 Once you've completed the two chapters in this course, type "completed" in the box below.
-
-*Note*: This requires a DataCamp login, which costs money. As an exercise, this is not required to pass the course but it *will* help you get a better grasp on the concepts covered in these lessons.
-
-*Reminder*: Videos in DataCamp are essential to understanding the material. It's best not to skip over these videos!
-
-! completed
-
-{/exercise}
-
-{exercise, id: exercise_03_tidyingdata_wrangling}
-
-### DataCamp:  Cleaning Data in R
-
-{case-sensitive: false}
-? To get more practice with Markdown syntax and creating R Markdown documents, go to the course [Introduction to the Tidyverse](https://www.datacamp.com/courses/introduction-to-the-tidyverse) on DataCamp. Login and complete the first chapter in this course: Data Wrangling
-
-Once you've completed this chapter, type "completed" in the box below.
 
 *Note*: This requires a DataCamp login, which costs money. As an exercise, this is not required to pass the course but it *will* help you get a better grasp on the concepts covered in these lessons.
 

@@ -459,7 +459,7 @@ o)  str_view_all(colors, '#!')
 ### DataCamp:  Working with Strings
 
 {case-sensitive: false}
-? To get more practice with Markdown syntax and creating R Markdown documents, go to the course [String Manipulation in R with stringr](https://www.datacamp.com/courses/string-manipulation-in-r-with-stringr) on DataCamp. Login and complete the first two chapters this course:
+? To get more practice working with strings, go to the course [String Manipulation in R with stringr](https://www.datacamp.com/courses/string-manipulation-in-r-with-stringr) on DataCamp. Login and complete the first two chapters this course:
 
 - String basics
 - Introduction to stringr
