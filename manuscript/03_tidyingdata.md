@@ -551,7 +551,7 @@ d) df %>% filter(bmi, height, weight)
 ### DataCamp: Data Manipulation in R with dplyr
 
 {case-sensitive: false}
-? To get more practice with Markdown syntax and creating R Markdown documents, go to the course [Data Manipulation in R with dplyr](https://www.datacamp.com/courses/dplyr-data-manipulation-r-tutorial) on DataCamp. Login and complete this course. Once you've completed this course, type "completed" in the box below.
+? To get more practice with tidying data, go to the course [Data Manipulation in R with dplyr](https://www.datacamp.com/courses/dplyr-data-manipulation-r-tutorial) on DataCamp. Login and complete this course. Once you've completed this course, type "completed" in the box below.
 
 *Note*: This requires a DataCamp login, which costs money. As an exercise, this is not required to pass the course but it *will* help you get a better grasp on the concepts covered in these lessons.
 
