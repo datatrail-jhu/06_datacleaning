@@ -119,8 +119,11 @@ For the examples below, we'll be using a dataset from the `ggplot2` package call
 To get an idea of what variables are included in this data frame, you can use `glimpse()`. This function summarizes how many rows there are (`Observations`) and how many columns there are (`Variables`). Additionally, it gives you a glimpse into the type of data contained in each column. Specifically, in this data set, we know that the first column is `name` and that it contains a character vector (`chr`) and that the first three entires are "Cheetah", "Owl monkey", and "Mountain beaver." It works similarly to the `summary()` function covered in an earlier course.
 
 ```r
-## load necessary packages
-library(ggplot2)
+## install packages if you haven't already
+install.packages('dplyr')
+
+## load package
+library(dplyr)
 
 ## take a look at the data
 glimpse(msleep)
@@ -289,9 +292,11 @@ To read this file into R, we'll use the `httr` package, which will be discussed 
 ```r
 ## if not already installed, you'll have to run the following line of code
 ## install.packages('httr')
+## install.packages('readr')
 
-## load the library
-library("httr")
+## load the libraries
+library(httr)
+library(readr)
 
 ## download file 
 GET("https://raw.githubusercontent.com/suzanbaert/RTutorials/master/Rmd_originals/conservation_explanation.csv", write_disk(tf <- tempfile(fileext = ".csv")))
