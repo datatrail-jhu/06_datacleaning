@@ -494,47 +494,82 @@ We have gone through a number of ways to work with data in this lesson. Masterin
 ### Tidying Data quiz
 
 {choose-answers: 4}
-? To create a new column which function would you use?
+?1 To create a new column which function would you use?
 
 C) mutate()
-o) arrange()
+m) arrange()
 o) clean_names()
 o) glimpse()
 o) new_column()
 o) new()
 
-? Which of these is not a capability of select()?
+{choose-answers: 4}
+?1 To order the rows in a dataframe based on a variable's value, which function would you use?
 
-a) choose what columns to include in output
-b) rename columns
-c) reorder columns
-D) choose what rows to include in output
+C) arrange()
+m) mutate()
+o) clean_names()
+o) glimpse()
+o) new_column()
+o) new()
 
 {choose-answers: 4}
-? To summarize an entire dataset, what *function* would you use?
+?2 Which of these is not a capability of select()?
+
+C) choose what rows to include in output
+C) filter rows based on a condition
+C) read in a CSV file
+o) choose what columns to include in output
+o) rename columns
+o) reorder columns
+
+{choose-answers: 4}
+?3 To summarize an entire dataset, what *function* would you use?
 
 C) skim()
+m) skimr
 o) summary()
 o) tabyl()
 o) summarize()
-o) skimr
 o) janitor
 o) dplyr 
 
+{choose-answers: 4}
+?3 To summarize an entire dataset, you could use the `skim()` function, what package is that in?
+
+C) skimr
+m) skim()
+o) summary()
+o) tabyl()
+o) summarize()
+o) janitor
+o) dplyr
+
 {choose-answers: 4, points: 2}
-? If you were to select only the cars in the `mtcars` data set with horsepower > 100 using the code `newdata <- mtcars %>% filter(hp>100)`, how many cars would be left in your data frame?
+?4 If you were to select only the cars in the `mtcars` data set with horsepower > 100 using the code `newdata <- mtcars %>% filter(hp>100)`, how many cars would be left in your data frame?
 
 C) 23
 m) 32
-o) 9
+m) 9
 o) 0
 o) 30
 o) 15
 
 {choose-answers: 4, points: 2}
-? How many different types of iris `Species` are included in the `iris` dataset?
+?4 If you were to select only the cars in the `mtcars` data set with horsepower > 100 using the code `newdata <- mtcars %>% filter(hp<100)`, how many cars would be left in your data frame?
+
+C) 9
+m) 23
+o) 32
+o) 0
+o) 30
+o) 15
+
+{choose-answers: 4, points: 2}
+?5 How many different types of iris `Species` are included in the `iris` dataset?
 
 C) 3 
+m) 2
 o) 100
 o) 150
 o) 1
@@ -542,12 +577,42 @@ o) 5
 o) 7
 o) 20
 
-? If you had six different variables in the columns of a dataset (`df`) and wanted to select three of them (height, weight, bmi) and display them in alphabetical order, which of these would achieve that?
+{choose-answers: 4, points: 2}
+?5 What's the smallest `Sepal.Width` in the `iris` dataset?
 
-a) df %>% select(height, weight, bmi)
-b) df %>% arrange(height, weight, bmi)
+C) 2
+m) 3
+o) 100
+o) 150
+o) 1
+o) 5
+o) 7
+o) 20
+
+{choose-answers: 4, points: 2}
+?6 If you had six different variables in the columns of a dataset (`df`) and wanted to select three of them (height, weight, bmi) and display them in alphabetical order, which of these would achieve that?
+
 C) df %>% select(bmi, height, weight)
-d) df %>% filter(bmi, height, weight)
+m) df %>% select(height, weight, bmi)
+m) df %>% arrange(height, weight, bmi)
+o) df %>% arrange(bmi, height, weight)
+o) df %>% filter(bmi, height, weight)
+o) df %>% filter(height, weight, bmi)
+o) df %>% mutate(bmi, height, weight)
+o) df %>% mutate(height, weight, bmi)
+
+
+{choose-answers: 4, points: 2}
+?6 If you had a dataset (`df`) and wanted to order your dataframe by height, then by weight, and then by bmi, which of these would you use?
+
+C) df %>% arrange(height, weight, bmi)
+m) df %>% select(bmi, height, weight)
+o) df %>% arrange(bmi, height, weight)
+o) df %>% select(height, weight, bmi)
+o) df %>% filter(bmi, height, weight)
+o) df %>% filter(height, weight, bmi)
+o) df %>% mutate(bmi, height, weight)
+o) df %>% mutate(height, weight, bmi)
 
 {/quiz}
 

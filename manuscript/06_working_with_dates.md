@@ -141,9 +141,22 @@ This lesson has not covered how to work with times, much detail about how to ope
 ### Working with: dates quiz
 
 {choose-answers: 4}
-? To obtain the day of the week of your birthday, which function would you use?
+?1 To obtain the day of the week of your birthday, which function would you use?
 
 C) wday()
+m) mday()
+o) d()
+o) date()
+o) day()
+o) Day()
+o) weekday()
+o) birthday()
+o) bday()
+
+?1 To obtain the date of the month of your birthday, which function could you use?
+
+C) mday()
+m) wday()
 o) d()
 o) date()
 o) day()
@@ -153,23 +166,60 @@ o) birthday()
 o) bday()
 
 {choose-answers: 4}
-? What information does `year("1985-05-04") - year("1988-09-29")` give you?
+?2 What information does `year("1985-05-04") - year("1988-09-29")` give you?
 
 C) the number of years difference between the two dates
 o) the number of days difference between the two dates
 o) the number of minutes difference between the two dates
+o) the number of seconds difference between the two dates
 o) the number of months difference between the two dates 
 o) the years 1985 and 1988 added together 
 
+
 {choose-answers: 4, points: 2}
-? What day of the week was December 28th, 1992?
+?3 What code would you use to tell you what day of the week December 28th, 1992 was?
+
+C) wday(ymd("1992-12-28"))
+C) wday(ydm("1992-28-12"))
+m) wday(ymd("1992-28-12"))
+o) wday(ydm("1992-12-28"))
+o) mday(ymd("1992-12-28"))
+o) mday(ydm("1992-28-12"))
+o) mday(ymd("1992-28-12"))
+o) mday(ydm("1992-12-28"))
+
+{choose-answers: 4, points: 2}
+?3 What code would you use to tell you what day of the week May 4th, 1985 was?
+
+C) wday(ymd("1985-05-04"))
+C) wday(ydm("1985-04-05"))
+m) wday(ymd("1985-04-05"))
+o) wday(ydm("1985-05-04"))
+o) mday(ymd("1985-05-04"))
+o) mday(ydm("1985-04-05"))
+o) mday(ymd("1985-04-05"))
+o) mday(ydm("1985-05-04"))
+
+{choose-answers: 4}
+?4 What day of the week was December 28th, 1992?
 
 C) Mon
+m) Sat
 o) Tues
 o) Wed
 o) Thurs
 o) Fri
-o) Sat
+o) Sun
+
+{choose-answers: 4}
+?4 What day of the week was May 4th, 1985?
+
+C) Sat
+m) Mon
+o) Tues
+o) Wed
+o) Thurs
+o) Fri
 o) Sun
 
 {/quiz}

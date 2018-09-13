@@ -52,9 +52,11 @@ To address this, these data can be split into two different spreadsheets, one fo
 ### Untidy Data quiz
 
 {choose-answers: 4}
-? Which of these would indicate a messy data set?
+?1 Which of these would indicate a messy data set?
 
 C) Not rectangular data
+C) Multiple values in a single cell
+C) Multiple pieces of information in a single cell
 o) One variable per column
 o) One piece of information per cell
 o) Column names with no extra spaces
@@ -62,7 +64,7 @@ o) A numeric value in a cell
 o) A text value in a cell
 
 {choose-answers: 4}
-? What *must* each spreadsheet for a multiple-spreadsheet project have?
+?2 What *must* each spreadsheet for a multiple-spreadsheet project have?
 
 C) A column with the same column name and IDs in each spreadsheet
 o) The ability to guess what the units are for each variable
@@ -71,5 +73,28 @@ o) At least five columns
 o) A first line that starts with a pound sign (#)
 o) A column named "name"
 o) A column named "id"
+
+{choose-answers: 4}
+?3 If the ID column for a multiple-spreadsheet project has the column name "id" in the first spreadsheet, what should the name of the column with the same information in the second worksheet be?
+
+C) "id"
+m) "ID"
+o) "identification"
+o) "names""
+o) "observations"
+o) "i_d"
+o) "I_D"
+
+{choose-answers: 4}
+?3 If the ID column for a multiple-spreadsheet project has the column name "ID" in the first spreadsheet, what should the name of the column with the same information in the second worksheet be?
+
+C) "ID"
+m) "id"
+o) "identification"
+o) "names""
+o) "observations"
+o) "i_d"
+o) "I_D"
+
 
 {/quiz}

@@ -145,18 +145,75 @@ Most importantly, however, remember that tidy data are rectangular data. The dat
 
 This is the Tidy Data quiz.
 
-? Which is the best filename?
+{choose-answers:4}
+?1 Which is the best filename?
 
-A) baseball_analysis_v1.txt
-b) baseball.txt
-c) baseball analysis.txt
-d) baseball_analysis.txt
+C) baseball_analysis_v1.txt
+C) baseball_analysis_v2.txt
+o) baseball_analysis_final.txt
+o) baseball.txt
+o) baseball analysis.txt
+o) baseball_analysis.txt
 
-? Which of these is NOT a feature of tidy data?
 
-a) rectangular
-B) empty cells
-c) single variable per column
-d) one thing per cell
+{choose-answers:4}
+?1 Which is the best filename?
+
+C) familial_analysis_v1.txt
+C) familial_analysis_v2.txt
+o) familial_analysis_final.txt
+o) familial.txt
+o) familial analysis.txt
+o) familial_analysis.txt
+
+{choose-answers:4}
+?2 Which of these is NOT a feature of tidy data?
+
+C) empty cells
+C) using color to highlight information in a cell
+o) rectangular
+o) single variable per column
+o) one thing per cell
+
+{choose-answers:4}
+?3 If a dataset has 15 rows and 4 columns, how many observations are there in the dataset?
+
+C) 15
+m) 30
+m) 4
+o) 11
+o) 60
+o) 19
+
+
+{choose-answers:4}
+?3 If a dataset has 30 rows and 4 columns, how many observations are there in the dataset?
+
+C) 30
+m) 15
+m) 4
+o) 26
+o) 120
+o) 34
+
+{choose-answers:4}
+?4 If a dataset has 15 rows and 4 columns, how many variables are there in the dataset?
+
+C) 4
+m) 15
+m) 30
+o) 11
+o) 60
+o) 19
+
+{choose-answers:4}
+?4 If a dataset has 30 rows and 6 columns, how many variables are there in the dataset?
+
+C) 6
+m) 4
+m) 30
+o) 24
+o) 36
+o) 19
 
 {/quiz}

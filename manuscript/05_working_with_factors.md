@@ -189,26 +189,39 @@ Note: [Wrangling Categorical Data in R](https://peerj.com/preprints/3163/) is **
 ### Working with: factors quiz
 
 {choose-answers: 4}
-? If you wanted to re-order the levels of a factor variable to be ordered by frequency of that variable in the dataset, what function would you use?
+?1 If you wanted to re-order the levels of a factor variable to be ordered by frequency of that variable in the dataset, what function would you use?
 
 C) fct_infreq()
-o) fct_recode()
+m) fct_recode()
 o) fct_reorder()
 o) fct_refreq()
 o) fct_forcat()
 o) fct_tabyl()
 
 {choose-answers: 4}
-? Assuming you have a dataframe (`df`) with two columns: `car`, and `size`, what would the code `df %>% fct_reorder(car, size)` accomplish?
+?1 If you wanted to re-order the levels of a factor variable by hand, what function would you use?
 
-C) reorder the levels of the variable car based on their median size
-o) sort the data frame of car by size
-o) reorder the levels of the variable size based on their median car
-o) sort the data frame of size by car
+C) fct_recode()
+m) fct_infreq()
+o) fct_reorder()
+o) fct_refreq()
+o) fct_forcat()
+o) fct_tabyl()
+
+{choose-answers: 4}
+?2 Assuming you have a dataframe (`df`) with two columns: `car`, and `size`, what would the code `df %>% fct_reorder(car, size)` accomplish?
+
+C) reorder the levels of the variable `car` based on their median `size`
+C) reorders `car` levels based on their median `size`
+o) sort the data frame of `car` by `size`
+o) arranges the data frame of `car` by `size`
+o) reorder the levels of the variable `size` based on their median `car`
+o) sort the data frame of `size` by `car`
 o) leave the data frame as is
+o) filters out any row with the word `car` or `size`
 
-{choose-answers: 4, points: 3}
-? If you were working with the `iris` dataset in r, which functions would you use to add a new column to the dataframe that changed the name of the Species variable?  
+{choose-answers: 4, points: 2}
+?3 If you were working with the `iris` dataset in r, which functions would you use to add a new column to the dataframe and change the levels of the `Species` variable?  
 
 C) mutate(), fct_recode()
 o) filter(), fct_recode()

@@ -76,7 +76,7 @@ Now that your directories are set up you'll want to use the Terminal (or 'More' 
 
 ? In what directory did you save  `data_tidying_project.Rmd `?
 
-! code/raw_code
+! code/raw_code ; /cloud/project/code/rawcode
 
 Once the .Rmd document is in the correct folder, you'll want to change the author of this document to your name at the top of the .Rmd document (in the YAML). Save this change before moving to the next step.
 
@@ -89,7 +89,7 @@ You'll want to save changes to your project regularly by pushing them to GitHub.
 
 ? After this initial push, how many of the directories you created are visible on GitHub?
 
-! 1
+! 1 ; one
 
 **Note**: If you're stuck on this, these steps were covered in detail in an earlier course: [Version Control](https://leanpub.com/universities/courses/jhu/version-control). Refer to the materials in this course if you're stuck on this part of the project.
 
@@ -176,10 +176,12 @@ Again, take a look at the output variable `df_retail` to understand this additio
 
 ! It would create a column called "biz" instead of "business"
 
+{words: 20}
 ? What information is in the column `n`? 
 
 ! Sales for the business type and year for that row
 
+{words: 20}
 ? What does `filter(business == "Retail sales, total "| business=="Department stores ")` accomplish?
 
 ! It only includes those two kinds of businesses in the final data frame
@@ -198,7 +200,7 @@ Having had all the code to wrangle `df2` and being able to understand what each 
 
 ? In `Jun-1992`, what were retail sales (in millions)? 
 
-! 13354 ' 13,354
+! 13354 ; 13,354
 
 Now that you have an idea of what data are in the data frame `df`, it's time to wrangle! The goal of wrangling this data set is to mirror (or mimic) what we did in the first data set. This means, that by the end of data wrangling, you should have three columns with the same names as `df_retail`: `business`, `year`, and `n`.
 
