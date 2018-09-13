@@ -205,8 +205,8 @@ In this lesson we've covered the main file formats that are used within R. Make 
 
 ### Additional Resources
 
-*[R Studio Projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects)
-*[R Data files](https://thepracticalr.wordpress.com/2017/04/27/load-save-and-rda-files/)
+* [R Studio Projects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects)
+* [R Data files](https://thepracticalr.wordpress.com/2017/04/27/load-save-and-rda-files/)
 
 ### Slides and Video
 
@@ -219,21 +219,31 @@ In this lesson we've covered the main file formats that are used within R. Make 
 
 ### Data in R quiz
 
-? TRUE or FALSE: Your computer knows that .r and .R files are the same type of file.
+?1 TRUE or FALSE: Your computer knows that .r and .R files are the same type of file.
 
 A) TRUE
 b) FALSE
 
-? TRUE or FALSE: When reading in a file "file.r", if you type "file.R", your code will know what file to read in.
+?1 TRUE or FALSE: Your computer thinks that .r and .R files are two different types of file.
 
 a) TRUE
 B) FALSE
 
+?2 TRUE or FALSE: When reading in a file "file.r" into R, if you type "file.R", your code will know what file to read in.
+
+a) TRUE
+B) FALSE
+
+?2 TRUE or FALSE: When reading in a file "file.r" into R, if you type "file.R", your code will *not* know what file to read in.
+
+A) TRUE
+b) FALSE
+
 {choose-answers: 4}
-? When writing a reproducible report that includes Markdown syntax and chunks of R code, what would be the file extension of your report?
+?3 When writing a reproducible report that includes Markdown syntax and chunks of R code, what would be the file extension of your report?
 
 C) .Rmd
-o) .R
+m) .R
 o) .r
 o) .rda
 o) .rds
@@ -241,9 +251,19 @@ o) .Rproj
 o) .ro
 o) .csv
 
+{choose-answers: 4}
+?3 If you were writing an R Script, what would be the file extension of that file?
+
+C) .R
+m) .Rmd
+o) .rda
+o) .rds
+o) .Rproj
+o) .ro
+o) .csv
 
 {choose-answers: 4}
-? If you wanted to save a single R object, what would the file extension be?
+?4 If you wanted to save a single R object, what would the file extension be?
 
 C) .rds
 o) .R
@@ -255,18 +275,18 @@ o) .ro
 o) .csv
 
 {choose-answers: 4}
-? Which of the following is an R data format type?
+?5 Which of the following is an R data format type?
 
-C) rda
-C) Rda
-C) r
-C) R
-o) xlsx
-o) txt
-o) csv
-o) CSV
-o) TXT
-o) XLSX
+C) .rda
+C) .Rda
+o) .r
+o) .R
+o) .xlsx
+o) .txt
+o) .csv
+o) .CSV
+o) .TXT
+o) .XLSX
 
 
 {/quiz}

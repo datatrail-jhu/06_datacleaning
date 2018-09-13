@@ -198,9 +198,9 @@ While reshaping data may not be the most exciting topic, having this skill will 
 
 ### Additional Resources
 
-* [tidyR](https://tidyr.tidyverse.org/), part of the [tidyverse](https://www.tidyverse.org/) and developed by [Hadley Wickham](http://hadley.nz/) and [Lionel Henry](https://github.com/lionel-)
+* [tidyr](https://tidyr.tidyverse.org/), part of the [tidyverse](https://www.tidyverse.org/) and developed by [Hadley Wickham](http://hadley.nz/) and [Lionel Henry](https://github.com/lionel-)
 * [reshape2](https://stat.ethz.ch/pipermail/r-packages/2010/001169.html), developed by [Hadley Wickham](http://hadley.nz/) 
-* [tidyR tutorial](https://blog.rstudio.com/2014/07/22/introducing-tidyr/) by [Hadley Wickham](http://hadley.nz/)
+* [tidyr tutorial](https://blog.rstudio.com/2014/07/22/introducing-tidyr/) by [Hadley Wickham](http://hadley.nz/)
 * [reshape2 tutorial](http://seananderson.ca/2013/10/19/reshape/) by [Sean C. Anderson](http://seananderson.ca/)
 * [tidyr vs reshape2](http://www.milanor.net/blog/reshape-data-r-tidyr-vs-reshape2/) by [Alberto Giudici](http://www.milanor.net/blog/author/alberto-giudici/)
 
@@ -215,8 +215,21 @@ While reshaping data may not be the most exciting topic, having this skill will 
 
 ### Reshaping Data quiz
 
+{choose-answers:4}
+?3 Which package would you use to reshape data?
+
+C) reshape2
+C) tidyr
+o) dplyr
+o) ggplot2
+o) melt
+o) cast
+o) gather
+o) spread
+o) dcast
+
 {choose-answers: 4}
-? A dataset where each person's data is in a row and all their medically-relevant measurements (i.e. height, weight, blood_pressure, etc.) are recorded in separate columns is an example of what data format? 
+?1 A dataset where each person's data is in a row and all their medically-relevant measurements (i.e. height, weight, blood_pressure, etc.) are recorded in separate columns is an example of what data format? 
 
 C) wide
 m) long
@@ -227,7 +240,7 @@ o) circular
 
 
 {choose-answers: 4}
-? A dataset where there is a column specifying what variable's data is included in that row and a second column containing the value for that variable is an example of what data format?
+?1 A dataset where there is a column specifying what variable's data is included in that row and a second column containing the value for that variable is an example of what data format?
 
 C) long
 m) wide
@@ -236,12 +249,18 @@ o) oblong
 o) large
 o) healthy
 
-? Which of these pairs of functions accomplish the same goal?
+{choose-answers:4}
+?2 Which of these pairs of functions accomplish a similar goal?
 
-a) melt & spread
-b) melt & cast
-c) spread & gather
-D) gather & melt
+C) gather & melt
+C) spread & dcast
+o) melt & spread
+o) melt & cast
+o) spread & gather
+o) long & wide
+o) to_long & from_wide
+o) to_wide & from_long
+
 
 {/quiz}
 

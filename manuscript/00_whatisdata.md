@@ -52,6 +52,7 @@ C) square footage of a house
 C) heights of students in a class
 C) number of members in a family
 o) colors of shirts you wear each day
+o) size of all the shoes in your closet
 o) photos taken at a baby shower
 o) recorded songs from a band  
 o) names of brands of shoes sold at a department store
@@ -61,10 +62,14 @@ o) names of brands of shoes sold at a department store
 
 C) color of houses on a block
 C) types of flowers in a garden
+C) type of shoe in your closet
+C) brands sold at each department store
+C) gas station companies in the US
 o) individual's weights
 o) number of daily visitors to a museum  
 o) annual income
 o) prices over time
+o) heights of all your family members
 
 {/quiz}
 
