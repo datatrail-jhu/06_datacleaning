@@ -153,6 +153,7 @@ o) weekday()
 o) birthday()
 o) bday()
 
+{choose-answers: 4}
 ?1 To obtain the date of the month of your birthday, which function could you use?
 
 C) mday()

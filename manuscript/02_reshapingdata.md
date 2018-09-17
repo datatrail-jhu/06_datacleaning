@@ -215,7 +215,7 @@ While reshaping data may not be the most exciting topic, having this skill will 
 
 ### Reshaping Data quiz
 
-{choose-answers:4}
+{choose-answers: 4}
 ?1 Which package would you use to reshape data?
 
 C) reshape2
