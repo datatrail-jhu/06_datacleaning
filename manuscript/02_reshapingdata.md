@@ -216,7 +216,7 @@ While reshaping data may not be the most exciting topic, having this skill will 
 ### Reshaping Data quiz
 
 {choose-answers:4}
-?3 Which package would you use to reshape data?
+?1 Which package would you use to reshape data?
 
 C) reshape2
 C) tidyr
@@ -229,7 +229,7 @@ o) spread
 o) dcast
 
 {choose-answers: 4}
-?1 A dataset where each person's data is in a row and all their medically-relevant measurements (i.e. height, weight, blood_pressure, etc.) are recorded in separate columns is an example of what data format? 
+?2 A dataset where each person's data is in a row and all their medically-relevant measurements (i.e. height, weight, blood_pressure, etc.) are recorded in separate columns is an example of what data format? 
 
 C) wide
 m) long
@@ -240,7 +240,7 @@ o) circular
 
 
 {choose-answers: 4}
-?1 A dataset where there is a column specifying what variable's data is included in that row and a second column containing the value for that variable is an example of what data format?
+?2 A dataset where there is a column specifying what variable's data is included in that row and a second column containing the value for that variable is an example of what data format?
 
 C) long
 m) wide
@@ -250,7 +250,7 @@ o) large
 o) healthy
 
 {choose-answers:4}
-?2 Which of these pairs of functions accomplish a similar goal?
+?3 Which of these pairs of functions accomplish a similar goal?
 
 C) gather & melt
 C) spread & dcast
@@ -262,25 +262,25 @@ o) to_long & from_wide
 o) to_wide & from_long
 
 {points:3}
-?3 Go to the [Chromebook Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/3919/join?access_code=RUUQ%2BeEgKea0oMF7EJy4UePldyBBMu7d0amv2KFC) and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) Then, type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Data Tidying`. Type the number that corresponds to the lesson `L04 Reshaping Data Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
+?4 Go to the [Chromebook Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/3919/join?access_code=RUUQ%2BeEgKea0oMF7EJy4UePldyBBMu7d0amv2KFC) and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) Then, type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Data Tidying`. Type the number that corresponds to the lesson `L04 Reshaping Data Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
 
 ! /.*[2G7p||djcH||FHQ4||4XZU||6ZdH||VlR3||v5vB||LrXn||Lrdj||RwFk].*/i
 
 
 {points:3}
-?4 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L04 Reshaping Data Q02 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
+?5 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L04 Reshaping Data Q02 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
 ! /.*[urWq||Pqbl||s4zj||kDxh||KsrT||zDnX||Pgxb||ImFZ||VuJb||XK0h].*/i
 
 
 {points:3}
-?5 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L04 Reshaping Data Q03 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
+?6 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L04 Reshaping Data Q03 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
 ! /.*[70zj||bWsz||P3KF||vOys||hDCk||u7QX||qxM2||5Ku2||jI64||4TLg].*/i
 
 
 {points:3}
-?6 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L04 Reshaping Data Q04 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
+?7 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L04 Reshaping Data Q04 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
 ! /.*[Qi7z||YHeV||3IYB||xauz||iHFk||7MWL||4gfh||L2vh||H7zm||TZtt].*/i
 
