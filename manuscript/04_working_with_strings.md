@@ -495,7 +495,7 @@ o) str_view_all(colors, '#!')
 {points:3}
 ?7 Go to the [Chromebook Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/3919/join?access_code=RUUQ%2BeEgKea0oMF7EJy4UePldyBBMu7d0amv2KFC) and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) Then, type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Data Tidying`. Type the number that corresponds to the lesson `L06 Working With Strings Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
 
-! /*[rsz6||l06u||eC3R||fnP4||5KIw||JBNP||Cgzr||sM2P||ftet||2dMS].*/i
+! /.*[rsz6||l06u||eC3R||fnP4||5KIw||JBNP||Cgzr||sM2P||ftet||2dMS].*/i
 
 
 {points:3}
@@ -506,7 +506,7 @@ o) str_view_all(colors, '#!')
 {points:3}
 ?9 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L06 Working With Strings Q03 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
-! /*[nb4G||OrwM||xpZo||gJUC||SHAA||Bmw3||eT4R||kCzI||4CC7||Uhsq].*/i
+! /.*[nb4G||OrwM||xpZo||gJUC||SHAA||Bmw3||eT4R||kCzI||4CC7||Uhsq].*/i
 
 {points:3}
 ?10 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L06 Working With Strings Q04 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
