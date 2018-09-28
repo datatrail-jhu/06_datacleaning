@@ -1,11 +1,3 @@
-{
-course-completeness: 100
-course-attempts: 2
-default-quiz-attempts: 2
-default-random-choice-order: true
-default-quiz-show-answers: none
-}
-
 # Tidy Data
 
 The idea of tidy data was formalized in 2014 in a [paper](http://vita.had.co.nz/papers/tidy-data.pdf) written by a leader in the data science field, [Hadley Wickham](http://hadley.nz/). The principles of tidy data, which are discussed below, provide a standard way of formatting a data set. A tidy dataset follows a number of rules relating to how rows, columns, and spreadsheets are matched up with observations, variables, and types.
@@ -57,7 +49,7 @@ Often, data are collected for the same individuals from multiple sources. For ex
 
 ### Rules for Tidy Spreadsheets
 
-In addition to these four principles, there are a number of rules to follow when entering data into a spreadsheet, or when re-organizing untidy data that you have alredy been given for a project into a tidy format. They are rules that will help make data analysis and visualization easier down the road. They were formalized in a paper called ["Data organization in spreadsheets"](https://peerj.com/preprints/3183/), written by two prominent data scientists, [Karl Broman](http://kbroman.org/) and [Kara Woo](http://karawoo.com/). In this paper, in addition to ensuring that the data are tidy, they suggest following these guidelines when entering data into spreadsheets:
+In addition to these four principles, there are a number of rules to follow when entering data into a spreadsheet, or when re-organizing untidy data that you have already been given for a project into a tidy format. They are rules that will help make data analysis and visualization easier down the road. They were formalized in a paper called ["Data organization in spreadsheets"](https://peerj.com/preprints/3183/), written by two prominent data scientists, [Karl Broman](http://kbroman.org/) and [Kara Woo](http://karawoo.com/). In this paper, in addition to ensuring that the data are tidy, they suggest following these guidelines when entering data into spreadsheets:
 
 1. Be consistent
 2. Choose good names for things
@@ -135,7 +127,7 @@ Most importantly, however, remember that tidy data are rectangular data. The dat
 
 ### Slides and Video
 
-![Tidy Data](https://www.youtube.com/watch?v=MpvoNGjAQ6A)
+![Tidy Data](https://www.youtube.com/watch?v=yGj7mglTAWE)
 
 * [Slides](https://docs.google.com/presentation/d/1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54/edit?usp=sharing)
 

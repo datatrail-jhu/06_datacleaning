@@ -3,6 +3,7 @@ course-completeness: 100
 course-attempts: 2
 default-quiz-attempts: 2
 default-random-choice-order: true
+default-quiz-show-answers: none
 }
 
 # What is data?
@@ -28,7 +29,7 @@ Data are being used to make business decisions, to decide who to advertise a pro
 
 ### Slides and Video
 
-![What is data](https://www.youtube.com/watch?v=iRarNwrPnkU)
+![What is data](https://www.youtube.com/watch?v=nHSvkAmXaRI)
 
 * [Slides](https://docs.google.com/presentation/d/1btywbP59z-QJKtRw5yjQn81Gsck8Tc6Q-q3djeCfnYI/edit?usp=sharing)
 
