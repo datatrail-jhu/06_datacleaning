@@ -617,63 +617,63 @@ o) df %>% mutate(height, weight, bmi)
 {points:3}
 ?7 Go to the [Chromebook Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/3919/join?access_code=RUUQ%2BeEgKea0oMF7EJy4UePldyBBMu7d0amv2KFC){target="_blank"} and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) Then, type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Data Tidying`. Type the number that corresponds to the lesson `L05 Tidying Data Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
 
-! /.*[PNtY||zcwt||rRYH||5ASJ||h37d||ytrE||IUfi||yCgl||SFhU||SVIw].*/i
+! /.+(PNtY|zcwt|rRYH|5ASJ|h37d|ytrE|IUfi|yCgl|SFhU|SVIw).+/i
 
 
 {points:3}
 ?8 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L05 Tidying Data Q02 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
-! /.*[Mo5t||i1JE||8LsR||vLX3||w69f||0FTs||H6lV||hdFq||VuSA||yM3v].*/i
+! /.+(Mo5t|i1JE|8LsR|vLX3|w69f|0FTs|H6lV|hdFq|VuSA|yM3v).+/i
 
 {points:3}
 ?9 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L05 Tidying Data Q03 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
-! /.*[rHQl||0Z5K||UBOe||41nS||WB94||U4vN||Tukh||PvCX||0Bbb||MtAB].*/i
+! /.+(rHQl|0Z5K|UBOe|41nS|WB94|U4vN|Tukh|PvCX|0Bbb|MtAB).+/i
 
 {points:3}
 ?10 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L05 Tidying Data Q04 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
-! /.*[NuVE||7McM||hwxV||1Ezv||v0U0||c8Mu||KyMD||LKdb||fVen||uGNF].*/i
+! /.+(NuVE|7McM|hwxV|1Ezv|v0U0|c8Mu|KyMD|LKdb|fVen|uGNF).+/i
 
 {points:3}
 ?11 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L05 Tidying Data Q05 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
-! /.*[wQm9||k0Ch||GOeX||Deip||F4qR||uQxa||T73b||8a3O||YX4d||NhvW].*/i
+! /.+(wQm9|k0Ch|GOeX|Deip|F4qR|uQxa|T73b|8a3O|YX4d|NhvW).+/i
 
 {points:3}
 ?12 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L05 Tidying Data Q06 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
-! /.*[Ijam||uwou||se9I||xtkQ||zUP2||KI93||vkER||pPuI||MHAY||yPeC].*/i
+! /.+(Ijam|uwou|se9I|xtkQ|zUP2|KI93|vkER|pPuI|MHAY|yPeC).+/i
 
 {points:3}
 ?13 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L05 Tidying Data Q07 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
-! /.*[c3LP||2mAv||ehD7||hfyY||ddm4||842l||4SCN||IC9p||lr0w||8PTy].*/i
+! /.+(c3LP|2mAv|ehD7|hfyY|ddm4|842l|4SCN|IC9p|lr0w|8PTy).+/i
 
 {points:3}
 ?14 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L05 Tidying Data Q08 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
-! /.*[YJrr||xn6F||9Bpo||DRdg||HZLd||ei67||rbHO||VxD2||lqjr||cMRv].*/i
+! /.+(YJrr|xn6F|9Bpo|DRdg|HZLd|ei67|rbHO|VxD2|lqjr|cMRv).+/i
 
 {points:3}
 ?15 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L05 Tidying Data Q09 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
-! /.*[rGzl||0hoi||i1xp||DhKi||VYmP||gN7N||4t6g||4T9O||z5NB||L1wF].*/i
+! /.+(rGzl|0hoi|i1xp|DhKi|VYmP|gN7N|4t6g|4T9O|z5NB|L1wF).+/i
 
 {points:3}
 ?16 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L05 Tidying Data Q10 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
-! /.*[Zfue||0nKO||ThFp||BSMV||Aqjj||RTBg||ut5K||7Rda||XVvD||MLjG].*/i
+! /.+(Zfue|0nKO|ThFp|BSMV|Aqjj|RTBg|ut5K|7Rda|XVvD|MLjG).+/i
 
 {points:3}
 ?17 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L05 Tidying Data Q11 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
-! /.*[s1nk||81qt||bkQB||PewF||XNKs||1yba||1ulO||xaN1||yShU||2nio].*/i
+! /.+(s1nk|81qt|bkQB|PewF|XNKs|1yba|1ulO|xaN1|yShU|2nio).+/i
 
 {points:3}
 ?18 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L05 Tidying Data Q12 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
-! /.*[maPZ||0QE3||gmUp||6PbN||DgtM||yuDr||wiYW||KpHj||OPeU||6l0g].*/i
+! /.+(maPZ|0QE3|gmUp|6PbN|DgtM|yuDr|wiYW|KpHj|OPeU|6l0g).+/i
 
 {/quiz}
 
