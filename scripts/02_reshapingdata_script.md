@@ -8,7 +8,7 @@ Converting your data from wide-to-long or from long-to-wide data formats is refe
 
 For these examples, we'll work with the air quality dataset available in R.  The data in this dataset includes "Daily air quality measurements in New York, May to September 1973." This is a wide dataset because each day is in a separate row and there are multiple columns with each including information about a different variable. We can see the first few lines of this dataset using this code. Again, wide data are easy to decipher at a glance. We can see that we have six different variables for each day, with each one of these variables (measurements) being stored in a separate column.
 
-Within tidy r, there are two functions to help you reshape your data: gather, which makes wide data long and spread, which makes long data wide. To get started, you'll need to be sure that the tidy r package is installed and loaded into your RStudio session.
+Within tidy r, there are two functions to help you reshape your data: gather, which makes wide data long and spread, which makes long data wide. To get started, you'll need to be sure that the tidy r package is installed and loaded into your R Studio session.
 
 As data are often stored in wide formats, you'll likely use gather a lot more frequently than you'll use spread. This will allow you to get the data into a long format that will be easy to use for analysis. In tidy r, gather will take the air quality dataset from wide to long, putting each column name into the first column and each corresponding value into the second column. 
 
