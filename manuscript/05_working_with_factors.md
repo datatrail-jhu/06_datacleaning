@@ -231,7 +231,7 @@ o) mutate(), fct_refreq()
 o) filter(), fct_refreq()
 
 {points:3}
-?4 Go to the [Chromebook Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/3919/join?access_code=RUUQ%2BeEgKea0oMF7EJy4UePldyBBMu7d0amv2KFC){target="_blank"} and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) Then, type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Data Tidying`. Type the number that corresponds to the lesson `L06 Working With Factors Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
+?4 Go to the [Chromebook Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/3919/join?access_code=RUUQ%2BeEgKea0oMF7EJy4UePldyBBMu7d0amv2KFC) and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) Then, type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Data Tidying`. Type the number that corresponds to the lesson `L06 Working With Factors Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
 
 ! /.+(SRAP|ziTe|ZrdV|slq3|j1K1|45DK|KEa7|4C8q|4nqO|JyFv).+/i
 
