@@ -24,7 +24,7 @@ The data frame resulting from spread will have the original information back in 
 
 As with many things in R, there is more than one way to solve a problem. While tidy r provides a more general solution for reshaping data, reshape2 was specifically designed for reshaping data. The details aren't particularly important yet, but later on as you carry out your own analyses it will be good to know about both packages. To get started using reshape2, you'll have to first install the library and load it into your R session. 
 
-There are two main functions within the reshape2 package: melt, which makes wide data long and d cast, which makes long data wide. When you melt a dataset with the default options, melt will take every column, put the column name put it into a variable column, and then put the values of those variables into a value column. For the air quality data set, below we first assign the melted data frame to the object melted. Then we take a look at the top and bottom of this melted data frame.
+There are two main functions within the reshape2 package: melt, which makes wide data long and d cast, which makes long data wide. When you melt a dataset with the default options, melt will take every column, put the column name nto a variable column, and then put the values of those variables into a value column. For the air quality data set, below we first assign the melted data frame to the object melted. Then we take a look at the top and bottom of this melted data frame.
 
 When you run this code you see that each column from the original data frame (ozone, solar dot r, wind, temp dot month, and day) are now repeated in the variables column, and each days' value for that variable is now in the value column. This is now a long format dataset!
 
