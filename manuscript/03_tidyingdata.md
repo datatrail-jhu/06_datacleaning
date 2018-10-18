@@ -212,7 +212,7 @@ msleep %>%
   rename(total=sleep_total, rem=sleep_rem, cycle=sleep_cycle)
 ```
 
-![Data with renamed columns names using `rename()`](images/03_tidyingdata/03_datacleaning_tidyingdata-16.png)
+![Data with renamed columns names using `rename()`](images/03_tidyingdata/03_datacleaning_tidyingdata-17.png)
 
 ### Reordering
 
@@ -230,7 +230,7 @@ msleep %>%
 
 Here we see that sleep_rem `name` is displayed first followed by `sleep_rem`, `sleep_cycle`, and `sleep_total`, just as it was specified within `select()`. 
 
-![Data with reordered columns names](images/03_tidyingdata/03_datacleaning_tidyingdata-18.png)
+![Data with reordered columns names](images/03_tidyingdata/03_datacleaning_tidyingdata-19.png)
 
 #### Reordering Rows
 
@@ -243,7 +243,7 @@ msleep %>%
   arrange(sleep_total)
 ```
 
-![Data arranged by total sleep in ascending order](images/03_tidyingdata/03_datacleaning_tidyingdata-19.png)
+![Data arranged by total sleep in ascending order](images/03_tidyingdata/03_datacleaning_tidyingdata-20.png)
 
 While `arrange` sorts variables in ascending order, it's also possible to sort in descending (largest to smallest) order. To do this you just use `desc()` with the following syntax:
 
@@ -267,7 +267,7 @@ msleep %>%
   arrange(name)
 ```
 
-![Data arranged alphabetically by name](images/03_tidyingdata/03_datacleaning_tidyingdata-21.png)
+![Data arranged alphabetically by name](images/03_tidyingdata/03_datacleaning_tidyingdata-22.png)
 
 If you would like to reorder rows based on information in multiple columns, you can specify them separated by commas. This is useful if you have repeated labels in one column and want to sort within a category based on information in another column. In the example here, if there were repeated primates, this would sort the repeats based on their total sleep.
 
@@ -292,7 +292,7 @@ msleep %>%
   mutate(sleep_total_min = sleep_total * 60)
 ```
 
-![Mutate to add new column to data](images/03_tidyingdata/03_datacleaning_tidyingdata-23.png)
+![Mutate to add new column to data](images/03_tidyingdata/03_datacleaning_tidyingdata-24.png)
 
 ### Separating Columns 
 
@@ -317,7 +317,7 @@ conservation <- read_csv(tf)
 head(conservation)
 ```
 
-![Conservation data set](images/03_tidyingdata/03_datacleaning_tidyingdata-25.png)
+![Conservation data set](images/03_tidyingdata/03_datacleaning_tidyingdata-26.png)
 
 In this dataset, we see that there is a single column that includes *both* the abbreviation for the conservation term as well as what that abbreviation means. Recall that this violates one of the tidy data principles covered in the first lesson: Put just one thing in a cell. To work with these data, you could imagine that you may want these two pieces of information (the abbreviation and the description) in two different columns. To accomplish this in R, you'll want to use `separate()` from `tidyr`.
 
@@ -331,7 +331,7 @@ conservation %>%
 
 The output of this code shows that we now have two separate columns with the information in the original column separated out into `abbreviation` and `description`.
 
-![Output of separate()](images/03_tidyingdata/03_datacleaning_tidyingdata-26.png)
+![Output of separate()](images/03_tidyingdata/03_datacleaning_tidyingdata-27.png)
 
 ### Merging Columns 
 
@@ -344,7 +344,7 @@ conservation %>%
   unite(united_col, abbreviation, description, sep = " = ")
 ```
 
-![Output of unite()](images/03_tidyingdata/03_datacleaning_tidyingdata-27.png)
+![Output of unite()](images/03_tidyingdata/03_datacleaning_tidyingdata-28.png)
 
 ### Cleaning up column names
 
@@ -355,7 +355,7 @@ conservation %>%
   clean_names()
 ```
 
-![clean_names() output](images/03_tidyingdata/03_datacleaning_tidyingdata-28.png)
+![clean_names() output](images/03_tidyingdata/03_datacleaning_tidyingdata-29.png)
 
 ### Combining data across data frames
 
@@ -382,7 +382,7 @@ msleep %>%
   left_join(conserve, by = c("conservation" = "abbreviation"))
 ```
 
-![Data resulting from left_join](images/03_tidyingdata/03_datacleaning_tidyingdata-29.png)
+![Data resulting from left_join](images/03_tidyingdata/03_datacleaning_tidyingdata-30.png)
 
 It's important to note that there are many other ways to join data, which are covered in more detail on this [dplyr join cheatsheet](http://stat545.com/bit001_dplyr-cheatsheet.html) from Jenny Bryan. For now, it's important to know that joining datasets is done easily in R using tools in `dplyr`. As you join data frames in your own work, it's a good idea to refer back to this cheatsheet for assistance.
 
@@ -401,7 +401,7 @@ msleep %>%
   group_by(order)
 ```
 
-![group_by() output](images/03_tidyingdata/03_datacleaning_tidyingdata-31.png)
+![group_by() output](images/03_tidyingdata/03_datacleaning_tidyingdata-32.png)
 
 In fact, the only aspect of the output that is different is that the number of different orders is now printed on your screen. However, in the next section, you'll see that the output from any further functions you carry out at this point will differ between the two datasets.
 
@@ -421,7 +421,7 @@ msleep %>%
 
 This provides a summary of the data with the new column name we specified above (`N`) and the number of samples in the dataset. Note that we could also obtain the same information by directly obtaining the number of rows in the data frame with `nrow(msleep)`.
 
-![Summarize with n()](images/03_tidyingdata/03_datacleaning_tidyingdata-32.png)
+![Summarize with n()](images/03_tidyingdata/03_datacleaning_tidyingdata-33.png)
 
 However, if you wanted to count how many of each different `order` of mammal you had. You would first `group_by(order)` and then use `summarize()`. This will summarize within group.
 
@@ -434,7 +434,7 @@ msleep %>%
 
 The output from this, like above, includes the column name we specified in summarize (`N`). However, it includes the number of samples in the group_by variable we specified (`order`).
 
-![group_by() and summarize with n()](images/03_tidyingdata/03_datacleaning_tidyingdata-33.png)
+![group_by() and summarize with n()](images/03_tidyingdata/03_datacleaning_tidyingdata-34.png)
 
 There are other ways in which the data can be summarized using `summarize()`. In addition to using n() to count the number of samples within a group, you can also summarize using other helpful functions within R, such as `mean()`, `median()`, `min()`, and `max()`. 
 
@@ -447,7 +447,7 @@ msleep %>%
   summarize(N=n(), mean_sleep=mean(sleep_total))
 ```
 
-![summarize using mean()](images/03_tidyingdata/03_datacleaning_tidyingdata-34.png)
+![summarize using mean()](images/03_tidyingdata/03_datacleaning_tidyingdata-35.png)
 
 #### tabyl()
 
@@ -458,7 +458,7 @@ msleep %>%
   tabyl(order)
 ```
 
-![summarize using tabyl() from janitor](images/03_tidyingdata/03_datacleaning_tidyingdata-35.png)
+![summarize using tabyl() from janitor](images/03_tidyingdata/03_datacleaning_tidyingdata-36.png)
 
 Note, that `tabyl` assumes categorical variables. If you want to summarize numeric variables `summary()` works well. For example, this code will summarize the values in `msleep$awake` for you. 
 
@@ -466,7 +466,7 @@ Note, that `tabyl` assumes categorical variables. If you want to summarize numer
 summary(msleep$awake)
 ```
 
-![summarize numeric variables](images/03_tidyingdata/03_datacleaning_tidyingdata-36.png)
+![summarize numeric variables](images/03_tidyingdata/03_datacleaning_tidyingdata-37.png)
 
 #### skim()
 
@@ -476,7 +476,7 @@ When you would rather get a snapshot of the entire dataset, rather than just one
 skim(msleep)
 ```
 
-![summarize entire dataset using skim() from skimr](images/03_tidyingdata/03_datacleaning_tidyingdata-37.png)
+![summarize entire dataset using skim() from skimr](images/03_tidyingdata/03_datacleaning_tidyingdata-38.png)
 
 
 ### Conclusion
