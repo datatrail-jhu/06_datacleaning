@@ -16,6 +16,7 @@ Within R, there is a package specifically designed for helping you wrangle data.
 * `glimpse()` - get an overview of what's included in dataset
 * `filter()` - filter rows
 * `select()` - select, rename, and reorder columns
+* `rename()` - rename columns
 * `arrange()` - reorder rows
 * `mutate()` - create a new column
 * `group_by()` - group variables 
@@ -201,7 +202,17 @@ msleep %>%
   filter(order == "Primates", sleep_total > 10) %>%
   select(name, total=sleep_total, rem=sleep_rem, cycle=sleep_cycle)
 ```
-![Data with renamed columns names](images/03_tidyingdata/03_datacleaning_tidyingdata-16.png)
+![Data with renamed columns names with `select()`](images/03_tidyingdata/03_datacleaning_tidyingdata-16.png)
+
+It's important to keep in mind that when using `select()` to rename columns, only the specified columns will be included and renamed in the output. If you, instead, want to change the names of a few columns but return *all* columns in your output, you'll want to use `rename()`. For example, the following, returns a data frame with all 11 columns, where the column names for three columns specified within `rename()` function have been renamed.
+
+```r
+msleep %>%
+  filter(order == "Primates", sleep_total > 10) %>%
+  rename(total=sleep_total, rem=sleep_rem, cycle=sleep_cycle)
+```
+
+![Data with renamed columns names using `rename()`](images/03_tidyingdata/03_datacleaning_tidyingdata-16.png)
 
 ### Reordering
 
@@ -484,7 +495,7 @@ We have gone through a number of ways to work with data in this lesson. Masterin
 
 ### Slides and Video
 
-![Tidying Data](https://www.youtube.com/watch?v=tEbDnvlfu0k)
+![Tidying Data](https://www.youtube.com/watch?v=BMSpWfRqsNg)
 
 * [Slides](https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/edit?usp=sharing)
 

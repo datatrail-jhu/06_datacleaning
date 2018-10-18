@@ -32,6 +32,8 @@ While filter operates on rows, it is possible to filter your dataset to only inc
 
 Select can also be used to rename columns. To do so, you use the syntax: new column name = old column name within select. For example, to select the same columns and rename them total, rem and cycle, you would use the syntax here.
 
+It's important to keep in mind that when using the select function to rename columns, only the specified columns will be included and renamed in the output. If you, instead, want to change the names of a few columns but return all columns in your output, you'll want to use the rename function. For example, the following, returns a data frame with all 11 columns, where the column names for three columns specified within the rename function have been renamed.
+
 In addition to filtering rows and columns, often, you'll want the data arranged in a particular order. It may order the columns in a logical way, or it could be to sort the data so that the data are sorted by value, with those having the smallest value in the first row and the largest value in the last row. All of this can be achieved with a few simple functions.
 
 The select function is powerful. Not only will it filter and rename columns, but it can also be used to re-order your columns. Using our example from above, if you wanted sleep rem to be the first sleep column and sleep total to be the last column, all you have to do is reorder them within select. The output from select would then be re-ordered to match the order specified within select. Here we see that name is displayed first followed by sleep rem, sleep cycle, and sleep total, just as it was specified within select. 
