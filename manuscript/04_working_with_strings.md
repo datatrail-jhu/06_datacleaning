@@ -403,46 +403,46 @@ Note: be sure you scroll to copy the entire vector. It ends with a closed parent
 {choose-answers: 4, points: 2}
 ?1 To return the value 'TRUE' for each string that contains numbers in the object `colors`, which would you use?
 
-C) str_detect(colors, '\\d')
-m) str_subset(colors, '[0-9]')
-o) str_extract(colors, '\\d')
-o) str_extract(colors, '[0-9]')
-o) str_view(colors, '\\d')
-o) str_view_all(colors, '\\d')
+C) `str_detect(colors, '\\d')`
+m) `str_subset(colors, '[0-9]')`
+o) `str_extract(colors, '\\d')`
+o) `str_extract(colors, '[0-9]')`
+o) `str_view(colors, '\\d')`
+o) `str_view_all(colors, '\\d')`
 
 {choose-answers: 4, points: 2}
 ?1 To return the values of each string that contains numbers in the object `colors`, which would you use?
 
-C) str_subset(colors, '[0-9]')
-m) str_detect(colors, '\\d')
-o) str_extract(colors, '\\d')
-o) str_extract(colors, '[0-9]')
-o) str_view(colors, '\\d')
-o) str_view_all(colors, '\\d')
+C) `str_subset(colors, '[0-9]')`
+m) `str_detect(colors, '\\d')`
+o) `str_extract(colors, '\\d')`
+o) `str_extract(colors, '[0-9]')`
+o) `str_view(colors, '\\d')`
+o) `str_view_all(colors, '\\d')`
 
 {choose-answers: 4, points: 2}
 ?2 To print the values of the `colors` object that start with a lowercase letter, which would you use?
 
-C) str_subset(colors, '^[a-z]')
-m) str_count(colors, '[a-z]')
-o) str_view(colors, '[a-z]')
-o) str_replace(colors, '[a-z]', '?')
-o) str_extract(colors, '\\d')
-o) str_extract(colors, '[0-9]')
-o) str_view(colors, '\\d')
-o) str_view_all(colors, '\\d')
+C) `str_subset(colors, '^[a-z]')`
+m) `str_count(colors, '[a-z]')`
+o) `str_view(colors, '[a-z]')`
+o) `str_replace(colors, '[a-z]', '?')`
+o) `str_extract(colors, '\\d')`
+o) `str_extract(colors, '[0-9]')`
+o) `str_view(colors, '\\d')`
+o) `str_view_all(colors, '\\d')`
 
 {choose-answers: 4, points: 2}
 ?2 To print the number of lowercase letters in each string within `colors`, which would you use?
 
-C) str_count(colors, '[a-z]')
-m) str_subset(colors, '^[a-z]')
-o) str_view(colors, '[a-z]')
-o) str_replace(colors, '[a-z]', '?')
-o) str_extract(colors, '\\d')
-o) str_extract(colors, '[0-9]')
-o) str_view(colors, '\\d')
-o) str_view_all(colors, '\\d')
+C) `str_count(colors, '[a-z]')`
+m) `str_subset(colors, '^[a-z]')`
+o) `str_view(colors, '[a-z]')`
+o) `str_replace(colors, '[a-z]', '?')`
+o) `str_extract(colors, '\\d')`
+o) `str_extract(colors, '[0-9]')`
+o) `str_view(colors, '\\d')`
+o) `str_view_all(colors, '\\d')`
 
 {choose-answers: 4, points: 2}
 ?3 What does `str_view_all(colors, "\\d+[A-Z]+")` match?
@@ -468,24 +468,24 @@ o) counts the number of digits in each string
 {choose-answers: 4, points: 2}
 ?5 If you were to identify which strings start with `#`, what would you use?
 
-C) str_view_all(colors, '^#')
-m) str_view_all(colors, 'w$')
-o) str_view_all(colors, '#$')
-o) str_view_all(colors, '$#')
-o) str_view_all(colors, '#^')
-o) str_view_all(colors, '!#')
-o) str_view_all(colors, '#!')
+C) `str_view_all(colors, '^#')`
+m) `str_view_all(colors, 'w$')`
+o) `str_view_all(colors, '#$')`
+o) `str_view_all(colors, '$#')`
+o) `str_view_all(colors, '#^')`
+o) `str_view_all(colors, '!#')`
+o) `str_view_all(colors, '#!')`
 
 {choose-answers: 4, points: 2}
 ?5 If you were to identify which strings ends with `w`, what would you use?
 
-C) str_view_all(colors, 'w$')
-m) str_view_all(colors, '^#')
-o) str_view_all(colors, '#$')
-o) str_view_all(colors, '$#')
-o) str_view_all(colors, '#^')
-o) str_view_all(colors, '!#')
-o) str_view_all(colors, '#!')
+C) `str_view_all(colors, 'w$')`
+m) `str_view_all(colors, '^#')`
+o) `str_view_all(colors, '#$')`
+o) `str_view_all(colors, '$#')`
+o) `str_view_all(colors, '#^')`
+o) `str_view_all(colors, '!#')`
+o) `str_view_all(colors, '#!')`
 
 {points: 2}
 ?6 Using, str_view_all(), how would you only highlight strings that start with a vowel?
