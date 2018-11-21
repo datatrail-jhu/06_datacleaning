@@ -162,9 +162,9 @@ To access a list of all the available datasets within R, you'll type `data()` in
 
  If one of these datasets looks interesting to you, say the "Orange" dataset, you can get more detailed information about the dataset by using help function in R (`?`). 
  
- ```r
+```r
  ?Orange
- ```
+```
  
 This opens up an explanation in the Help tab of RStudio Cloud. Here, you can see a description of the dataset and can scroll to see what variables are included in this dataset. Finally, at the bottom of the Help window, you'll see examples of how to work with the dataset!
  
