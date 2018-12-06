@@ -29,7 +29,7 @@ mdy("September 29th, 1988")
 dmy("29-Sep-1988")
 ```
 
-![creating date and date-time objects](images/06_working_with_dates/06_datacleaning_working_with_dates-2.png)
+![creating date and date-time objects](https://docs.google.com/presentation/d/1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c/export/png?id=1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c&pageid=g39252087a2_0_22)
 
 However, this has only covered working with date objects. To work with date-time objects, you have to further include hour (`h`), minute(`m`), and second (`s`) into the function. For example, in the code below, you can see that the output contains time information in addition to the date information generated in the functions above:
 
@@ -58,7 +58,7 @@ flights %>%
   mutate(departure = make_date(year, month, day))
 ```
 
-![mutate and make_date() create a new column -- departure -- with a date object](images/06_working_with_dates/06_datacleaning_working_with_dates-4.png)
+![mutate and make_date() create a new column -- departure -- with a date object](https://docs.google.com/presentation/d/1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c/export/png?id=1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c&pageid=g39252087a2_0_0)
 
 A similar procedure is used to create a date-time object; however, this requires the function `make_datetime()` and requires columns with information about time be specified. Below, `hour` and `minute` are included to the function's input.
 
@@ -69,7 +69,7 @@ flights %>%
   select(year, month, day, hour, minute) %>% 
   mutate(departure = make_datetime(year, month, day, hour, minute))
 ```
-![mutate and make_datetime() create a new column -- departure -- with a date-time object](images/06_working_with_dates/06_datacleaning_working_with_dates-5.png)
+![mutate and make_datetime() create a new column -- departure -- with a date-time object](https://docs.google.com/presentation/d/1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c/export/png?id=1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c&pageid=g39252087a2_0_4)
 
 
 ### Working with dates
@@ -96,7 +96,7 @@ wday(mydate)
 wday(mydate, label = TRUE)
 ```
 
-![lubridate has specific functions to extract components from date and date-time objects](images/06_working_with_dates/06_datacleaning_working_with_dates-6.png)
+![lubridate has specific functions to extract components from date and date-time objects](https://docs.google.com/presentation/d/1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c/export/png?id=1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c&pageid=g39252087a2_0_27)
 
 ### Time spans
 
@@ -114,7 +114,7 @@ age
 as.duration(age)
 ```
 
-![dates and date-times can be operated upon](images/06_working_with_dates/06_datacleaning_working_with_dates-7.png)
+![dates and date-times can be operated upon](https://docs.google.com/presentation/d/1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c/export/png?id=1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c&pageid=g39252087a2_0_37)
 
 Using addition, subtraction, multiplication, and division is possible with date objects, and accurately takes into account things like leap years and different number of days each month. This capability and the additional functions that exist within lubridate can be enormously helpful when working with dates and date-time objects.
 

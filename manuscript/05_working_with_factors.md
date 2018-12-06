@@ -9,7 +9,7 @@ install.packages('forcats')
 library(forcats)
 ```
 
-![fct_ output from RStudio](images/05_working_with_factors/05_datacleaning_working_with_factors-3.png)
+![fct_ output from RStudio](https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&pageid=g391e563ea4_0_0)
 
 ### Factor basics
 
@@ -31,7 +31,7 @@ However, if we were to sort this vector, R would sort this vector alphabetically
 sort(some_months)
 ```
 
-![sort sorts variable alphabetically](images/05_working_with_factors/05_datacleaning_working_with_factors-4.png)
+![sort sorts variable alphabetically](https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&pageid=g391e563ea4_0_12)
 
 While you and I know that this is not how months should be ordered, we haven't yet told R that. To do so, we need to let R know that it's a factor variable and what the levels of that factor variable should be.
 
@@ -43,7 +43,7 @@ mon
 sort(mon)
 ```
 
-![defining the factor levels sorts this variable sensibly](images/05_working_with_factors/05_datacleaning_working_with_factors-5.png)
+![defining the factor levels sorts this variable sensibly](https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&pageid=g391e563ea4_0_16)
 
 Here, we specify all the possible values that the factor could take in the `levels = all_months` argument. So, even though not all twelve months are included in the some_months object, we've stated that all of the months are possible values. Further, when you sort this variable, it now sorts in the sensical way!
 
@@ -59,7 +59,7 @@ mon_relevel
 sort(mon_relevel)
 ```
 
-![fct_relevel enables you to change the order of your factor levels](images/05_working_with_factors/05_datacleaning_working_with_factors-6.png)
+![fct_relevel enables you to change the order of your factor levels](https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&pageid=g391e563ea4_0_47)
 
 After re-leveling, when we sort this factor, we see that Jul is placed first, as specified by the level re-ordering.
 
@@ -75,7 +75,7 @@ mon_inorder
 sort(mon_inorder)
 ```
 
-![fct_inorder assigns levels in the same order the level is seen in the data](images/05_working_with_factors/05_datacleaning_working_with_factors-7.png)
+![fct_inorder assigns levels in the same order the level is seen in the data](https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&pageid=g391e563ea4_0_52)
 
 We see now with `fct_inorder` that even when we sort the output, it does not sort the factor alphabetically, nor does it put it in calendar order. In fact, it stays in the same order as the input, just as we specified.
 
@@ -83,7 +83,7 @@ We see now with `fct_inorder` that even when we sort the output, it does not sor
 
 For the remainder of this lesson, we're going to return to using a dataset that's in R by default. We'll use the `chickwts` dataset for exploring the remaining advanced functions. This data set includes data from an experiment that was looking to compare the "effectiveness of various feed supplements on the growth rate of chickens."
 
-![chickwts dataset](images/05_working_with_factors/05_datacleaning_working_with_factors-8.png)
+![chickwts dataset](https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&pageid=g391e563ea4_0_24)
 
 ### Re-ordering factor levels by frequency : `fct_infreq()`
 
@@ -98,7 +98,7 @@ tabyl(chickwts$feed)
 ## order levels by frequency 
 fct_infreq(chickwts$feed) %>% head()
 ```
-![fct_infreq orders levels based on frequency in dataset](images/05_working_with_factors/05_datacleaning_working_with_factors-9.png)
+![fct_infreq orders levels based on frequency in dataset](https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&pageid=g391e563ea4_0_56)
 
 As expected, soybean, the most frequent level, appears as the first level and horsebean, the least frequent level, appears last. The rest of the levels are sorted by frequency. 
 
@@ -111,7 +111,7 @@ If we wanted to sort the levels from least frequent to most frequent, we could j
 fct_rev(fct_infreq(chickwts$feed)) %>% head()
 ```
 
-![fct_rev() reverses the factor level order](images/05_working_with_factors/05_datacleaning_working_with_factors-10.png)
+![fct_rev() reverses the factor level order](https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&pageid=g391e563ea4_0_20)
 
 ### Re-ordering factor levels by another variable : `fct_reorder()`
 
@@ -125,7 +125,7 @@ chickwts %>%
   geom_point()
 ```
 
-![fct_reorder allows you to re-level a factor based on a secondary numeric variable](images/05_working_with_factors/05_datacleaning_working_with_factors-11.png)
+![fct_reorder allows you to re-level a factor based on a secondary numeric variable](https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&pageid=g391e563ea4_0_69)
 
 ### Combining several levels into one: `fct_recode()`
 
@@ -148,7 +148,7 @@ chickwts %>%
   tabyl(feed_recode)
 ```
 
-![fct_recode() can be used to group multiple levels into a single level and/or to rename levels](images/05_working_with_factors/05_datacleaning_working_with_factors-12.png)
+![fct_recode() can be used to group multiple levels into a single level and/or to rename levels](https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&pageid=g391e563ea4_0_79)
 
 ### Converting numeric levels to factors: `ifelse()` + `factor()`
 
@@ -162,7 +162,7 @@ chickwts %>%
     tabyl(weight_recode)
 ```
 
-![converting a numeric type variable to a factor](images/05_working_with_factors/05_datacleaning_working_with_factors-13.png)
+![converting a numeric type variable to a factor](https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&pageid=g391e563ea4_0_84)
 
 ### Conclusions
 
