@@ -228,7 +228,7 @@ By changing `function_name()` to the appropriate function `separate()` and inclu
 
 Before you get started on the rest of this,  a quick note on data wrangling : As you master these skills, you *will* write code that errors and things *will* take you multiple tries before you get it right. If you're frustrated, that's ok! It's part of the process. Use the material in this course or places like [StackOverflow](https://stackoverflow.com/) to help you if you find answers if you get stuck!. 
 
-OK, now it's your job to work line by line to change `function_name` to the appropriate function in order to accomplish what the comments state you want to accomplish. Work through this code chunk line by line until you have a long data set called `df_department` with three columns:  `business`, `year`, and `n.
+OK, now it's your job to work line by line to change `function_name` to the appropriate function in order to accomplish what the comments state you want to accomplish. Work through this code chunk line by line until you have a long data set called `df_department` with three columns:  `business`, `year`, and `n`.
 
 ? What function did you use to group the data by the `year` column?
 
