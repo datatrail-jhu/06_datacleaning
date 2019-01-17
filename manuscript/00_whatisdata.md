@@ -53,7 +53,7 @@ C) square footage of a house
 C) heights of students in a class
 C) number of members in a family
 o) colors of shirts you wear each day
-o) size of all the shoes in your closet
+o) brand of all the shoes in your closet
 o) photos taken at a baby shower
 o) recorded songs from a band  
 o) names of brands of shoes sold at a department store
