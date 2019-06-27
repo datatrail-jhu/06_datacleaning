@@ -8,7 +8,7 @@ Finally, to give you an idea of where we're going, once you have a set of skills
 
 ### File Types in R
 
-In previous lessons we talked about R Markdown documents (which have the file extension .rmd or .Rmd) and we've saved R script files (which have the file extension .r or .R), but we haven't formally discussed which all the various types of files are used for in detail or about what other possible file types exist in R. So, we'll do that now!
+In previous lessons we talked about R Markdown documents (which have the file extension .rmd or .Rmd) and we've saved R script files (which have the file extension .r or .R), but we haven't formally discussed what all the various types of files are used for in detail or about what other possible file types exist in R. So, we'll do that now!
 
 Before discussing further details about each type of file, we'll point out that the file extension (what comes after the period in the file name) specifies what type of file you're working with. While the extension matters (.R is different than .Rmd), capitalization does not matter for file extensions (.r is the same as .R). Just something to keep in mind as you start working with these types of files.
 
