@@ -516,49 +516,29 @@ o) `str_view_all(colors, '#!')`
 {points: 2}
 ?6 Using, str_view_all(), how would you only highlight strings that start with a vowel?
 
-! str_view_all(colors, '^[aeiou]') ; str_view_all(colors, "^[aeiou]") 
+! str_view_all(colors, '^[aeiou]') ; str_view_all(colors, "^[aeiou]") ; str_view_all(colors, "^[AEIOUaeiou]"); str_view_all(colors, "^[aeiouAEIOU]")
+
 
 {points:3}
 ?7 Go to the [Cloud-based Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/3919/join?access_code=RUUQ%2BeEgKea0oMF7EJy4UePldyBBMu7d0amv2KFC) and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) Then, type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Data Tidying`. Type the number that corresponds to the lesson `L06 Working With Strings Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
 
-! /.+(rsz6|l06u|eC3R|fnP4|5KIw|JBNP|Cgzr|sM2P|ftet|2dMS).+/i
+! /.+(JXgt|sEJo|4Sc3|DQge|bY9W|V7Nc|1fPu|JAdy|bQSX|EYyj).+/i
 
 
 {points:3}
 ?8 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L06 Working With Strings Q02 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
-! /.+(1Rzf|QFqK|tW1C|ISNC|KYiI|J3j0|bpYg|8kZQ|mun1|QvfN).+/i
+! /.+(f71D|cL3p|sMAo|jiUX|P2iM|UjGX|mlwn|X7nh|ZJyo|jmpi).+/i
 
 {points:3}
 ?9 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L06 Working With Strings Q03 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
-! /.+(nb4G|OrwM|xpZo|gJUC|SHAA|Bmw3|eT4R|kCzI|4CC7|Uhsq).+/i
+! /.+(h82q|6iBE|61Od|G9v4|KQdG|H3IP|hucd|P9dC|JpFB|GTUe).+/i
 
 {points:3}
 ?10 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L06 Working With Strings Q04 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
-! /.+(mjKw|YSyq|pKwL|dSzP|CXwj|lppJ|26dw|g9tL|bte7|jvkU).+/i
+! /.+(GqX6|lVl3|ntNL|X18P|j7v5|lduj|YjjB|fSW8|LdDA|YE02).+/i
 
 
 {/quiz}
-
-{exercise, id: exercise_04_working_with_strings}
-
-### DataCamp:  Working with Strings
-
-{case-sensitive: false}
-? To get more practice working with strings, go to the course [String Manipulation in R with stringr](https://www.datacamp.com/courses/string-manipulation-in-r-with-stringr) on DataCamp. Login and complete the first two chapters this course:
-
-- String basics
-- Introduction to stringr
-
-Once you've completed the two chapters in this course, type "completed" in the box below.
-
-*Note*: This requires a DataCamp login, which costs money. As an exercise, this is not required to pass the course but it *will* help you get a better grasp on the concepts covered in these lessons.
-
-*Reminder*: Videos in DataCamp are essential to understanding the material. It's best not to skip over these videos!
-
-! completed
-
-{/exercise}
-

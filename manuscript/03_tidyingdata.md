@@ -711,39 +711,3 @@ o) df %>% mutate(height, weight, bmi)
 ! /.+(maPZ|0QE3|gmUp|6PbN|DgtM|yuDr|wiYW|KpHj|OPeU|6l0g).+/i
 
 {/quiz}
-
-{exercise, id: exercise_03_tidyingdata_dplyr}
-
-### DataCamp: Data Manipulation in R with dplyr
-
-{case-sensitive: false}
-? To get more practice with tidying data, go to the course [Data Manipulation in R with dplyr](https://www.datacamp.com/courses/dplyr-data-manipulation-r-tutorial) on DataCamp. Login and complete this course. Once you've completed this course, type "completed" in the box below.
-
-*Note*: This requires a DataCamp login, which costs money. As an exercise, this is not required to pass the course but it *will* help you get a better grasp on the concepts covered in these lessons.
-
-*Reminder*: Videos in DataCamp are essential to understanding the material. It's best not to skip over these videos!
-
-! completed
-
-{/exercise}
-
-{exercise, id: exercise_03_tidyingdata_tidyr}
-
-### DataCamp:  Cleaning Data in R
-
-{case-sensitive: false}
-? To get more practice with tidying data, go to the course [Cleaning Data in R](https://www.datacamp.com/courses/cleaning-data-in-r) on DataCamp. Login and complete the first two chapters this course:
-
-- Introduction and exploring raw data
-- Tidying data
-
-Once you've completed the two chapters in this course, type "completed" in the box below.
-
-*Note*: This requires a DataCamp login, which costs money. As an exercise, this is not required to pass the course but it *will* help you get a better grasp on the concepts covered in these lessons.
-
-*Reminder*: Videos in DataCamp are essential to understanding the material. It's best not to skip over these videos!
-
-! completed
-
-{/exercise}
-
