@@ -244,23 +244,23 @@ o) filter(), fct_refreq()
 {points:3}
 ?4 Go to the [Cloud-based Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/20345/join?access_code=n4b8J1s0XmWctSy83%2BEXbGAwj7rKcuFMI7WJEJFD) and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) Then, type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Data Tidying`. Type the number that corresponds to the lesson `L07 Working With Factors Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
 
-! /.+(SRAP|ziTe|ZrdV|slq3|j1K1|45DK|KEa7|4C8q|4nqO|JyFv).+/i
+! /.+(IudA|2Drs|i6k5|oVmt|oIMM|sF01|gJnA|SJCk|v4DU|5K90).+/i
 
 
 {points:3}
 ?5 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L07 Working With Factors Q02 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
-! /.+(4Rim|xLu8|UpPN|mqGr|1xSy|9bB3|WPta|GYt4|QKmC|Pnil).+/i
+! /.+(xcIW|TfRH|OLYa|c9qt|5WhD|mQsc|HAuP|fhlO|EG6p|6Q7K).+/i
 
 {points:3}
 ?6 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L07 Working With Factors Q03 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
-! /.+(4d0D|EktJ|TwAE|q290|jHAG|PhlK|GHKp|MxnL|gdAK|MknG).+/i
+! /.+(tZsQ|aHqm|PHy9|5Cdp|aj8T|Ojgy|DSNS|IxbW|Pohj|Si0Y).+/i
 
 {points:3}
 ?7 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L07 Working With Factors Q04 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
-! /.+(cUGE|yzCa|ghUg|RqkX|51Wa|8BXW|cygx|f2Bg|BNXO|YghJ).+/i
+! /.+(lUnQ|HA2n|19o1|Fw2c|JDFS|8drC|V9hO|WQGh|Tsn2|pcbD).+/i
 
 
 

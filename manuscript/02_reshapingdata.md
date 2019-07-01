@@ -275,25 +275,25 @@ o) to_wide & from_long
 {points:3}
 ?4 Go to the [Cloud-based Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/20345/join?access_code=n4b8J1s0XmWctSy83%2BEXbGAwj7rKcuFMI7WJEJFD) and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) Then, type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Data Tidying`. Type the number that corresponds to the lesson `L04 Reshaping Data Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
 
-! /.+(2G7p|djcH|FHQ4|4XZU|6ZdH|VlR3|v5vB|LrXn|Lrdj|RwFk).+/i
+! /.+(sYaN|dYsx|ztkD|RpuU|fVqf|ooPN|buw2|PdZg|Q2ca|2kgo).+/i
 
 
 {points:3}
 ?5 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L04 Reshaping Data Q02 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
-! /.+(urWq|Pqbl|s4zj|kDxh|KsrT|zDnX|Pgxb|ImFZ|VuJb|XK0h).+/i
+! /.+(f2QZ|kESS|pSN8|1UvR|pWD8|1lZx|EzGl|k1LR|F4Qe|YnYC).+/i
 
 
 {points:3}
 ?6 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L04 Reshaping Data Q03 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
-! /.+(70zj|bWsz|P3KF|vOys|hDCk|u7QX|qxM2|5Ku2|jI64|4TLg).+/i
+! /.+(ezVR|epoa|NZQ1|aoNq|sM3X|8tfs|llsW|gNrf|eUa3|lcJ2).+/i
 
 
 {points:3}
 ?7 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L04 Reshaping Data Q04 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
-! /.+(|}Qi7z|YHeV|3IYB|xauz|iHFk|7MWL|4gfh|L2vh|H7zm|TZtt).+/i
+! /.+(BBbQ|zDbF|pusZ|uYfc|cmqn|Xvr0|k3b1|74g1|8FFh|0rKq).+/i
 
 
 

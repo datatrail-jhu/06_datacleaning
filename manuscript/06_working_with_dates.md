@@ -231,12 +231,12 @@ o) Sun
 {points:3}
 ?5 Go to the [Cloud-based Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/20345/join?access_code=n4b8J1s0XmWctSy83%2BEXbGAwj7rKcuFMI7WJEJFD) and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) Then, type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Data Tidying`. Type the number that corresponds to the lesson `L08 Working With Dates Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
 
-! /.+(BREF|A8xE|32ep|qsUg|diZw|U7KE|QBbL|Fcq3|YVzp|2SK4).+/i
+! /.+(LB51|VieR|uI3f|HhIT|NHRJ|ClbO|jCCy|VYKM|0IMK|AAwD).+/i
 
 
 {points:3}
 ?6 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L08 Working With Dates Q02 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
 
-! /.+(4JWW|QWdG|4CFw|2NxA|pZir|lZUN|pGN9|HayR|T1PZ|eONr).+/i
+! /.+(HFgx|8POP|GAXk|GY2t|mhna|7kqz|NR1J|TFpX|K6kS|8qsA).+/i
 
 {/quiz}
