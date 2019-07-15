@@ -81,7 +81,7 @@ str_c( "Good", "Morning", sep=" ")
 
 #### Subsetting strings: `str_sub()`
 
-Often, it's important to get on part of a string out. To do this, you'll want to subset the string using the `str_sub()` function. For example, if you wanted only the first three characters in the string below, you would specify that within `str_sub()`.
+Often, it's important to get part of a string out. To do this, you'll want to subset the string using the `str_sub()` function. For example, if you wanted only the first three characters in the string below, you would specify that within `str_sub()`.
 
 ```r
 object <- c( "Good", "Morning")

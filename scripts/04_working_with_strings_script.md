@@ -10,7 +10,7 @@ When working with strings, some of the most frequent tasks you'll need to comple
 
 If you were interested in combining strings, you'd want to use str underscore c. We the first bit of code here, the output from this doesn't look quite right. You may want a space between these two words when you combine the two strings. That can be controlled with the sep argument within str underscore c.
 
-Often, it's important to get on part of a string out. To do this, you'll want to subset the string using the str underscore sub function. For example, if you wanted only the first three characters in the string below, you would specify that within str underscore sub.
+Often, it's important to get part of a string out. To do this, you'll want to subset the string using the str underscore sub function. For example, if you wanted only the first three characters in the string below, you would specify that within str underscore sub.
 
 You can also use negative numbers to count from the end of the string. For example, here we see code that returns the last three positions in the string.
 
