@@ -50,7 +50,7 @@ A new directory with the name of your GitHub repository should now be viewable i
 {words: 20}
 ? Why did you clone your GitHub repository into RStudio Cloud?
 
-!  Allows project to be version controlled
+!  Allows project to be version controlled ; /.+(version).+/i; /.+(track).+/i
 
 #### Data Science Project Setup
 
@@ -60,19 +60,18 @@ First, use `cd` to get yourself into the directory of your GitHub Project.
 
 Once in the correct directory, use `mkdir` in the terminal to create folders with the following structure:
 
-- data/
-  - raw_data/
-  - tidy_data/
-- code/
-  - raw_code/
-  - final_code/
-- figures/
-  - exploratory_figures/
-  - explanatory_figures/
-- products/
-  - writing/
+\- data/
+  \- raw_data/
+  \- tidy_data/
+\- code/
+  \- raw_code/
+  \- final_code/
+\- figures/
+  \- exploratory_figures/
+  \- explanatory_figures/
+\- products/
 
-Now that your directories are set up you'll want to use the Terminal (or 'More' drop-down menu in the Files tab) to move (`mv`) the `data_tidying_project.Rmd ` file into code/raw_code. This ensures that your code file is in the correct directory.
+Now that your directories are set up you'll want to use the Terminal (or 'More' drop-down menu in the Files tab) to move (`mv`) the `data_tidying_project.Rmd ` file into `code/raw_code`. This ensures that your code file is in the correct directory.
 
 ? In what directory did you save  `data_tidying_project.Rmd `?
 
