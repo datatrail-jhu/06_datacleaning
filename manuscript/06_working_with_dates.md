@@ -1,4 +1,4 @@
-# Working with: dates
+# Working with Dates
 
 In lessons an earlier course, you were introduced to different types of objects in R, such as characters, numeric, and logicals. Then, in earlier lessons in this course, we covered how to work with strings and factors in detail. The remaining type of variable we haven't yet covered is how to work with dates and time in R. 
 
@@ -136,14 +136,14 @@ This lesson has not covered how to work with times, much detail about how to ope
 
 ### Slides and Video
 
-![Working with dates](https://www.youtube.com/watch?v=_eutzRAVabQ)
+![Working with Dates](https://youtu.be/OaVuMHSR0T0)
 
 * [Slides](https://docs.google.com/presentation/d/1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c/edit?usp=sharing)
 
 
 {quiz, id: quiz_06_working_with_dates}
 
-### Working with: dates quiz
+### Working with Dates quiz
 
 {choose-answers: 4}
 ?1 To obtain the day of the week of your birthday, which function would you use?

@@ -217,7 +217,7 @@ While reshaping data may not be the most exciting topic, having this skill will 
 
 ### Slides and Video
 
-![Reshaping Data](https://www.youtube.com/watch?v=6ZSsfnaUyM8)
+![Reshaping Data](https://youtu.be/4Y-AdchVDXo)
 
 * [Slides](https://docs.google.com/presentation/d/14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI/edit?usp=sharing)
 

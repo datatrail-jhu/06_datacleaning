@@ -1,4 +1,4 @@
-# Working with: factors
+# Working with Factors
 
 In R, categorical data are handled as factors. By definition, categorical data are limited in that they have a set number of possible values they can take. For example, there are 12 months in a calendar year. In a month variable, each observation is limited to taking one of these twelve values. Thus, with a limited number of possible values, month is a categorical variable. Categorical data, which will be referred to as factors for the rest of this lesson, are regularly found in data. Learning how to work with this type of variable effectively will be incredibly helpful.
 
@@ -190,14 +190,14 @@ Note: [Wrangling Categorical Data in R](https://peerj.com/preprints/3163/) is **
 
 ### Slides and Video
 
-![Working with factors](https://www.youtube.com/watch?v=Rmlur2IoDbo)
+![Working with Factors](https://youtu.be/VW-8de5K0UI)
 
 * [Slides](https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/edit?usp=sharing)
 
 
 {quiz, id: quiz_05_working_with_factors}
 
-### Working with: factors quiz
+### Working with Factors quiz
 
 {choose-answers: 4}
 ?1 If you wanted to re-order the levels of a factor variable to be ordered by frequency of that variable in the dataset, what function would you use?

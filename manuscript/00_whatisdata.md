@@ -29,7 +29,7 @@ Data are being used to make business decisions, to decide who to advertise a pro
 
 ### Slides and Video
 
-![What is data](https://www.youtube.com/watch?v=nHSvkAmXaRI)
+![What is data](https://youtu.be/zMFI9z47psg)
 
 * [Slides](https://docs.google.com/presentation/d/1btywbP59z-QJKtRw5yjQn81Gsck8Tc6Q-q3djeCfnYI/edit?usp=sharing)
 

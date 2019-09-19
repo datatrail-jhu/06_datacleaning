@@ -1,4 +1,4 @@
-# Working with: strings
+# Working with Strings
 
 ### Strings review
 
@@ -410,14 +410,14 @@ This lesson set out to introduce you to how to work with strings within RStudio,
 
 ### Slides and Video
 
-![Working with strings](https://www.youtube.com/watch?v=jEL9Bxs9ebQ)
+![Working with Strings](https://youtu.be/F1YuVyHGwEQ)
 
 * [Slides](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/edit?usp=sharing)
 
 
 {quiz, id: quiz_04_working_with_strings}
 
-### Working with: strings quiz
+### Working with Strings quiz
 
 The best way to learn how to work with strings is to actually practice working with them. Use the following object to answer the questions on this quiz:
 

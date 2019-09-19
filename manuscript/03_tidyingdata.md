@@ -519,7 +519,7 @@ We have gone through a number of ways to work with data in this lesson. Masterin
 
 ### Slides and Video
 
-![Tidying Data](https://www.youtube.com/watch?v=xiI6JipsMmw)
+![Tidying Data](https://youtu.be/-B_jdAi6Eds)
 
 * [Slides](https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/edit?usp=sharing)
 
