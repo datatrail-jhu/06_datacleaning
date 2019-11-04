@@ -184,7 +184,7 @@ o) single variable per column
 o) one thing per cell
 
 {choose-answers:4}
-?3 If a dataset has 15 rows and 4 columns, how many observations are there in the dataset?
+?3 If a tidy dataset has 15 rows and 4 columns, from how many different people/items/timepoints/etc. were observations collected?
 
 C) 15
 m) 30
@@ -195,7 +195,7 @@ o) 19
 
 
 {choose-answers:4}
-?3 If a dataset has 30 rows and 4 columns, how many observations are there in the dataset?
+?3 If a tidy dataset has 30 rows and 4 columns, from how many different people/items/timepoints/etc. were observations collected?
 
 C) 30
 m) 15
@@ -205,7 +205,7 @@ o) 120
 o) 34
 
 {choose-answers:4}
-?4 If a dataset has 15 rows and 4 columns, how many variables are there in the dataset?
+?4 If a tidy dataset has 15 rows and 4 columns, how many different variables are there in the dataset?
 
 C) 4
 m) 15
@@ -215,7 +215,7 @@ o) 60
 o) 19
 
 {choose-answers:4}
-?4 If a dataset has 30 rows and 6 columns, how many variables are there in the dataset?
+?4 If a dataset has 30 rows and 6 columns, how many different variables are there in the dataset?
 
 C) 6
 m) 4
