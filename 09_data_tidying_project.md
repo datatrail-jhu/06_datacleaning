@@ -2,7 +2,7 @@
 
 Throughout this course set, we'll have a number of projects for you to complete. These will be included as Exercises. This means they will *not* be required to pass the course and receive your certificate; however, completing them will *really* help to improve your understanding of the material covered and to ensure that you've begun to master the skills needed to be a data scientist.
 
-In each project, we'll aim to get you started and to ask questions that will help guide you through the project. But, we'll intentionally leave pieces out where you have to figure out what needs to be done. 
+In each project, we'll aim to get you started and to ask questions that will help guide you through the project. But, we'll intentionally leave pieces out where you have to figure out what needs to be done.
 
 This first project will require you to:
 
@@ -16,7 +16,7 @@ You can access the first project by going to the exercise accompanying this less
 
 ### Data Tidying Project
 
-Often times, data scientists are handed data and asked to make sense of them. The data scientist may be asked to figure out why people are getting sick in a city or how their employer can save money. No matter the situation, these data aren't always in the most usable format. **Data wrangling** is required before any pretty visualizations can be made or interesting questions can be answered. 
+Often times, data scientists are handed data and asked to make sense of them. The data scientist may be asked to figure out why people are getting sick in a city or how their employer can save money. No matter the situation, these data aren't always in the most usable format. **Data wrangling** is required before any pretty visualizations can be made or interesting questions can be answered.
 
 As such, this exercise has been generated to practice your, GitHub, terminal navigation, RStudio, and data wrangling skills.
 
@@ -24,9 +24,9 @@ As such, this exercise has been generated to practice your, GitHub, terminal nav
 
 To get started, you'll want to go to GitHub and start a new repository:
 
-- Call this repository `data_tidying_project`. 
+- Call this repository `data_tidying_project`.
 - Add a short description
-- Check the box to "Initialize this repository with a README. 
+- Check the box to "Initialize this repository with a README.
 - Click `Create Repository`
 
 Once the repository has been created, Click on `Clone or download` and copy the "Clone with HTTPS" link provided. You'll use this to clone your repo in RStudio Cloud.
@@ -35,7 +35,7 @@ Once the repository has been created, Click on `Clone or download` and copy the 
 
 #### RStudio Cloud Setup
 
-- Go to the [Cloud-based Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/20345/join?access_code=n4b8J1s0XmWctSy83%2BEXbGAwj7rKcuFMI7WJEJFD){target="_blank"} 
+- Go to the [Cloud-based Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/20345/join?access_code=n4b8J1s0XmWctSy83%2BEXbGAwj7rKcuFMI7WJEJFD){target="_blank"}
 - Click on the "Projects" tab at the top of the workspace
 - Make a copy of the project: `data_tidying_project`
 
@@ -79,7 +79,7 @@ Now that your directories are set up you'll want to use the Terminal (or 'More' 
 
 Once the .Rmd document is in the correct folder, you'll want to change the author of this document to your name at the top of the .Rmd document (in the YAML). Save this change before moving to the next step.
 
-**Note**: If you're stuck on this, these steps were covered in detail in an earlier course: [Organizing Data Science Projects](https://leanpub.com/universities/courses/jhu/cbds-organizingdatascienceprojects). Refer to the materials in this course if you're stuck on this part of the project.
+**Note**: If you're stuck on this, these steps were covered in detail in an earlier course: [Organizing Data Science Projects](https://leanpub.com/universities/courses/jhu/cbds-organizing). Refer to the materials in this course if you're stuck on this part of the project.
 
 
 #### Pushing to GitHub
@@ -100,7 +100,7 @@ To get you started, let's get you acquainted with the data. The data you'll be w
 
 [Data Set 2](https://data.world/garyhoov/retail-sales-growth) US Retail Sales by Store Type with Growth Rate [2009-2014]
 
-#### Getting the Data into R 
+#### Getting the Data into R
 
 To get the data read into R, we're going to use two packages: `httr` and  `readxl`. These packages will be covered in the next course. As they haven't been taught yet, we'll have you use them here, but we'll provide all the code you need in order to use them, rather than having you figure this part out on your own.
 
@@ -110,9 +110,9 @@ Once the data are read in, to take a look at these data you can use the `glimpse
 
 #### Saving the Raw Data
 
-While the data are available on the Internet, what if in the future they take them down? Then, you'll have lost the data for your project or at the very least you won't have access to it. To avoid this being a problem in the future, let's save a copy of the data on RStudio Cloud now. 
+While the data are available on the Internet, what if in the future they take them down? Then, you'll have lost the data for your project or at the very least you won't have access to it. To avoid this being a problem in the future, let's save a copy of the data on RStudio Cloud now.
 
-You'll want to save these data in the data/raw_data folder you created. We'll save these as .rds objects. This means that each has to be saved separately using the `saveRDS()` function. 
+You'll want to save these data in the data/raw_data folder you created. We'll save these as .rds objects. This means that each has to be saved separately using the `saveRDS()` function.
 
 Add the code to do this to the `save-data` code chunk in your `data_tidying_project.Rmd` document. Save `df1` as 'df_department.rds' and `df2` as `df_retail.rds`.
 
@@ -124,11 +124,11 @@ Add the code to do this to the `save-data` code chunk in your `data_tidying_proj
 
 We'll now work with the two datasets you read in, so that they're in a usable (long) data format and can be merged into a single data frame.
 
-The wrangling portion of this project will use the skills you learned in [Introduction to R](https://leanpub.com/universities/courses/jhu/cbds-introduction-to-r) and this course [Data Tidying](https://leanpub.com/universities/courses/jhu/cbds-data-tidying). Feel free to refer back to these materials for reference as you complete the project.
+The wrangling portion of this project will use the skills you learned in [Introduction to R](https://leanpub.com/universities/courses/jhu/cbds-intro-r) and this course [Data Tidying](https://leanpub.com/universities/courses/jhu/cbds-tidying). Feel free to refer back to these materials for reference as you complete the project.
 
 ##### The retail data: `df2`
 
-Now that you have the data in RStudio Cloud and have saved the raw data to your data/raw_data file, we're ready to start wrangling data. 
+Now that you have the data in RStudio Cloud and have saved the raw data to your data/raw_data file, we're ready to start wrangling data.
 
 To get you acquainted with the dataset, we'll first have you answer a few questions about the dataset: `df2`
 
@@ -140,7 +140,7 @@ To get you acquainted with the dataset, we'll first have you answer a few questi
 
 ! 30
 
-? In 2014, what were the sales for used car dealers? 
+? In 2014, what were the sales for used car dealers?
 
 ! 90385 ; 90,385
 
@@ -163,7 +163,7 @@ Take a look at the output variable `df_retail` (using `glimpse()`, `View()`, or 
 ## let's wrangle!
 df_retail <- df2 %>%
   ## remove the r from the column names of df2
-  magrittr::set_colnames(gsub("r","",df2[1,])) %>% 
+  magrittr::set_colnames(gsub("r","",df2[1,])) %>%
   ## add a new column called "business"
   mutate(business = gsub("[?]|[.]","",`Kind of business`))
 ```
@@ -176,7 +176,7 @@ Again, take a look at the output variable `df_retail` to understand this additio
 ! It would create a column called "biz" instead of "business"
 
 {words: 20}
-? What information is in the column `n`? 
+? What information is in the column `n`?
 
 ! Sales for the business type and year for that row
 
@@ -197,35 +197,35 @@ Having had all the code to wrangle `df2` and being able to understand what each 
 
 ! 2
 
-? In `Jun-1992`, what were retail sales (in millions)? 
+? In `Jun-1992`, what were retail sales (in millions)?
 
 ! 13354 ; 13,354
 
 Now that you have an idea of what data are in the data frame `df`, it's time to wrangle! The goal of wrangling this data set is to mirror (or mimic) what we did in the first data set. This means, that by the end of data wrangling, you should have three columns with the same names as `df_retail`: `business`, `year`, and `n`.
 
-To accomplish this goal, you'll have to figure out what code should replace `function_name` for each line in the code chunk `wrangle-df1`. A different `function_name` will be called in each line of missing code. The arguments necessary to be included within the parentheses will also have to be added. 
+To accomplish this goal, you'll have to figure out what code should replace `function_name` for each line in the code chunk `wrangle-df1`. A different `function_name` will be called in each line of missing code. The arguments necessary to be included within the parentheses will also have to be added.
 
-For example, for the first part of the code, you currently see in the 
+For example, for the first part of the code, you currently see in the
 
 ```r
-df_department <- df1 %>% 
+df_department <- df1 %>%
   ## split Period column into one column called "month" and one called "year"
   function_name()
 ```
 
 The comment ` ## split Period column into one column called "month" and one called "year"` tells you what you'll want to accomplish in the next line of code.
 
-So, you may try adding the following: 
+So, you may try adding the following:
 
 ```r
-df_department <- df1 %>% 
+df_department <- df1 %>%
   ## split Period column into one column called "month" and one called "year"
   separate(Period, into = c('month','year'), extra = 'drop', remove = FALSE)
 ```
 
 By changing `function_name()` to the appropriate function `separate()` and including the necessary code within the parentheses, we are able to accomplish exactly what the comment says we wanted to do!
 
-Before you get started on the rest of this,  a quick note on data wrangling : As you master these skills, you *will* write code that errors and things *will* take you multiple tries before you get it right. If you're frustrated, that's ok! It's part of the process. Use the material in this course or places like [StackOverflow](https://stackoverflow.com/) to help you if you find answers if you get stuck!. 
+Before you get started on the rest of this,  a quick note on data wrangling : As you master these skills, you *will* write code that errors and things *will* take you multiple tries before you get it right. If you're frustrated, that's ok! It's part of the process. Use the material in this course or places like [StackOverflow](https://stackoverflow.com/) to help you if you find answers if you get stuck!.
 
 OK, now it's your job to work line by line to change `function_name` to the appropriate function in order to accomplish what the comments state you want to accomplish. Work through this code chunk line by line until you have a long data set called `df_department` with three columns:  `business`, `year`, and `n`.
 
@@ -240,7 +240,7 @@ OK, now it's your job to work line by line to change `function_name` to the appr
 ? What function did you use to reorder the column names?
 
 ! select() ; select
- 
+
 ##### Pushing to GitHub
 
 You've written a lot of code at this point, so it'd be great to add this to GitHub at this point. Use `git add`, `git commit`, and `git push` to add the file changes to your GitHub repository.
@@ -258,7 +258,7 @@ While data visualization is coming up in a later course, we've included a few li
 
 Before finalizing your project you'll want to add some text outside of your code chunks to explain what you're doing in each code chunk. These explanations are incredibly helpful for someone who doesn't code.
 
-**Note**: If you're stuck on this, these steps were covered in detail in an earlier course: [Introduction to R](https://leanpub.com/universities/courses/jhu/cbds-introduction-to-r). Refer to the R Markdown lesson in this course if you're stuck on this part (or the next part) of the project.
+**Note**: If you're stuck on this, these steps were covered in detail in an earlier course: [Introduction to R](https://leanpub.com/universities/courses/jhu/cbds-intro-r). Refer to the R Markdown lesson in this course if you're stuck on this part (or the next part) of the project.
 
 #### Knit your R Markdown Document
 
@@ -267,7 +267,7 @@ Last but not least, you'll want to Knit your .Rmd document into an HTML document
 
 #### Final `push` to GitHub
 
-Now that you've finalized your project, you'll do one final push to GitHub. add, commit, and push your work to GitHub. Navigate to your GitHub repository, and answer the final question below! 
+Now that you've finalized your project, you'll do one final push to GitHub. add, commit, and push your work to GitHub. Navigate to your GitHub repository, and answer the final question below!
 
 **Note**: If you're stuck on this, these steps were covered in detail in an earlier course: [Version Control](https://leanpub.com/universities/courses/jhu/cbds-version-control). Refer to the materials in this course if you're stuck on this part of the project.
 
@@ -279,4 +279,3 @@ Now that you've finalized your project, you'll do one final push to GitHub. add,
 **Congrats on finishing your first Data Science Project**
 
 {/exercise}
-
