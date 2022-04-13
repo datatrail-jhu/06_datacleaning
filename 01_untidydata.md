@@ -2,7 +2,7 @@
 
 We've just spent a while discussing the principles of tidy data as well as a number of guidelines on how to correctly enter data into spreadsheets. At this point, you may think "I got it. Make my data rectangular! I'll do it." But, the reality is that most data are untidy. If you are not the one entering the data but are instead handed the data from someone else to do a project, more often than not, those data will be untidy. Untidy data are often referred to simply as messy data.
 
-The following common problems seen in messy data sets again come from [Hadley Wickham's paper on tidy data](http://vita.had.co.nz/papers/tidy-data.pdf). After briefly reviewing what each common problem is, we will then take a look at a few messy data sets. We'll finally touch on the concepts of tidying untidy data, but we won't actually do any practice *yet*. That's coming soon! 
+The following common problems seen in messy data sets again come from [Hadley Wickham's paper on tidy data](http://vita.had.co.nz/papers/tidy-data.pdf). After briefly reviewing what each common problem is, we will then take a look at a few messy data sets. We'll finally touch on the concepts of tidying untidy data, but we won't actually do any practice *yet*. That's coming soon!
 
 ### Common problems with messy data sets
 
@@ -74,7 +74,7 @@ o) A text value in a cell
 C) A column with the same column name and IDs in each spreadsheet
 o) The ability to guess what the units are for each variable
 o) Observations that can be summed to one
-o) At least five columns 
+o) At least five columns
 o) A first line that starts with a pound sign (#)
 o) A column named "name"
 o) A column named "id"
