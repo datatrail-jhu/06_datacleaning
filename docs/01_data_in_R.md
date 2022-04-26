@@ -1,6 +1,6 @@
 # Data in R
 
-You've already been working with data throughout this set of courses. You've generated your own data in Google Sheets (i.e. collected data from Leanpub). You've worked with datasets that are included in RStudio automatically (i.e. `iris` and `mtcars`). And, you've generated R Markdown documents and pushed code to GitHub, creating even more data! But, we haven't formalized exactly what all the different types of data are in R, how to access them, and what the various file types in R are. We'll discuss all of that in this lesson. 
+You've already been working with data throughout this set of courses. You've generated your own data in Google Sheets (i.e. collected data from Leanpub). You've worked with datasets that are included in RStudio automatically (i.e. `iris` and `mtcars`). And, you've generated R Markdown documents and pushed code to GitHub, creating even more data! But, we haven't formalized exactly what all the different types of data are in R, how to access them, and what the various file types in R are. We'll discuss all of that in this lesson.
 
 Then, throughout the following lessons in this course, you'll learn how to work with data in R. Specifically, you'll learn how to get data into a usable format for data analysis. This process is called **data wrangling**, and we'll use datasets available to you from R and RStudio to learn the necessary tools for you to excel at data wrangling.
 
@@ -22,7 +22,7 @@ That said, while the *computer* will know what type of file it is regardless of 
 
 #### R Script file (.R)
 
-The most basic file type in R uses the .R file extension. R Script files contain code written in the R programming language. As you want to write R code and save this code, you'll save it as a .R file. 
+The most basic file type in R uses the .R file extension. R Script files contain code written in the R programming language. As you want to write R code and save this code, you'll save it as a .R file.
 
 To get started writing an R Script file, you'll go to [rstudio.cloud](rstudio.cloud) and click on File > New File > RScript along the menu at the top. This will open ups a blank R Script file.
 
@@ -39,12 +39,12 @@ In this R Script is where you would write R code. As you write code, you'll want
 
 We've also introduced R Markdown files previously. As a refresher, R Markdown documents use Markdown syntax *and* include code chunks with R code that will be run when the document is "Knit" into its final format (which can be PDF, HTML, or Word documents among others.
 
-To get started writing an R Markdown document, you'll go to [rstudio.cloud](rstudio.cloud) and click on File > New File > R Markdown... After filling out the information in the pop-up window and clicking OK, an R Markdown document will open up. 
+To get started writing an R Markdown document, you'll go to [rstudio.cloud](rstudio.cloud) and click on File > New File > R Markdown... After filling out the information in the pop-up window and clicking OK, an R Markdown document will open up.
 
 {format: png}
 ![R Markdown](https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&pageid=g3c53e17c93_1_11)
 
-In this document you'll use Markdown syntax outside of code chunks and R code in the code chunks to generate your reports. 
+In this document you'll use Markdown syntax outside of code chunks and R code in the code chunks to generate your reports.
 
 {format: png}
 ![.Rmd file](https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&pageid=g3c53e17c93_1_15)
@@ -54,17 +54,17 @@ R Markdown documents are great at producing reproducible reports that walk peopl
 
 #### Saved R objects (.rda, .RData)
 
-As you write R code (say, in an .R file), you will inevitably create objects. For example, in the code you see here, `mpg` is an object created by this code that contains the data from the `mpg` column of the `mtcars` data frame and `cyl` an object from the `cyl` column of the `mtcars` data frame. 
+As you write R code (say, in an .R file), you will inevitably create objects. For example, in the code you see here, `mpg` is an object created by this code that contains the data from the `mpg` column of the `mtcars` data frame and `cyl` an object from the `cyl` column of the `mtcars` data frame.
 
 ```r
 mpg <- mtcars$mpg
 cyl <- mtcars$cyl
-``` 
+```
 
 {format: png}
 ![`mpg` and `cyl` are objects](https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&pageid=g3c53e17c93_1_27)
 
-If I were to run these two lines of code, they would show up in the Console, and the objects `mpg` and `cyl` would now be visible in the Environment tab. 
+If I were to run these two lines of code, they would show up in the Console, and the objects `mpg` and `cyl` would now be visible in the Environment tab.
 
 {format: png}
 ![`mpg` and `cyl` visible in Environment tab](https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&pageid=g3c53e17c93_1_40)
@@ -125,10 +125,10 @@ saveRDS(mpg, file="mpg.rds")
 {format: png}
 ![`saveRDS`](https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&pageid=g3c53e17c93_1_85)
 
-This will generate the file `mpg.rds`. 
+This will generate the file `mpg.rds`.
 
 To read this file back in, we'll first remove all objects from R Studio using the broom icon in the Environment tab and will then use the `readRDS()` function.
- 
+
 {format: png}
 ![broom icon to clean up Environment](https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&pageid=g3c53e17c93_1_93)
 
@@ -143,9 +143,9 @@ Unlike with .rda objects, when you read a .rds object back in, to make the objec
 
 
 #### R Project files (.Rproj)
- 
-R Projects are incredibly helpful files. In their simplest form, by working within an R Project and saving an .Rproj file, you are always able to pick back up on a project from where you left off. Fortunately, RStudio Cloud uses R projects automatically. You may have noticed that there is a "project.Rproj" file in your Files tab. This is an R Project file. 
- 
+
+R Projects are incredibly helpful files. In their simplest form, by working within an R Project and saving an .Rproj file, you are always able to pick back up on a project from where you left off. Fortunately, RStudio Cloud uses R projects automatically. You may have noticed that there is a "project.Rproj" file in your Files tab. This is an R Project file.
+
 RStudio Cloud will start a "project.Rproj" file within each project you start. This file will then track your project as you write code and create objects.
 
 {format: png}
@@ -170,22 +170,22 @@ Now that we've covered the main types of R files you'll be working with and gene
 
 You've previously seen and worked with datasets that are available to you in R. Specifically, you've seen examples that used the `iris` and `mtcars` datasets in previous lessons. However, we haven't covered how to find all available datasets that are included in R automatically, so we'll do that now.
 
-To access a list of all the available datasets within R, you'll type `data()` into your Console. This will open up a file called "R data sets". You can scroll through this list to get a sense of what data sets are available. The name of the data set is in the first column while a brief description of the dataset is in the second column. 
+To access a list of all the available datasets within R, you'll type `data()` into your Console. This will open up a file called "R data sets". You can scroll through this list to get a sense of what data sets are available. The name of the data set is in the first column while a brief description of the dataset is in the second column.
 
 {format: png}
 ![R data sets](https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&pageid=g3c53e17c93_1_105)
 
- If one of these datasets looks interesting to you, say the "Orange" dataset, you can get more detailed information about the dataset by using help function in R (`?`). 
- 
+ If one of these datasets looks interesting to you, say the "Orange" dataset, you can get more detailed information about the dataset by using help function in R (`?`).
+
 ```r
  ?Orange
 ```
- 
+
 This opens up an explanation in the Help tab of RStudio Cloud. Here, you can see a description of the dataset and can scroll to see what variables are included in this dataset. Finally, at the bottom of the Help window, you'll see examples of how to work with the dataset!
- 
+
 {format: png}
 ![`Orange` dataset Help page](https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&pageid=g3c53e17c93_1_127)
- 
+
 ### Datasets in Packages
 
 In addition to the datasets available by default to you in R, many packages (but not all!) also contain datasets that you can use. To see a list of what datasets are available from a specific package, you can again use the `data()` function, but you'll want to specify the name of the package using the `package=` argument
@@ -200,7 +200,7 @@ data(package="ggplot2")
 ![datasets available from ggplot2 package](https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&pageid=g3c53e17c93_1_138)
 
 
-As before, this function will open up a list of the available datasets within that package. 
+As before, this function will open up a list of the available datasets within that package.
 
 In order to use any of these datasets, however, you'll have to load the package using the `library()` function. After loading the package, you can then access the Help pages for a dataset as previously using `?`.
 
@@ -231,81 +231,3 @@ In this lesson we've covered the main file formats that are used within R. Make 
 ![Data in R](https://youtu.be/fPt9faKdhP8)
 
 * [Slides](https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/edit?usp=sharing)
-
-
-{quiz, id: quiz_01_data_in_R}
-
-### Data in R quiz
-
-?1 TRUE or FALSE: Your computer knows that .r and .R files are the same type of file.
-
-A) TRUE
-b) FALSE
-
-?1 TRUE or FALSE: Your computer thinks that .r and .R files are two different types of file.
-
-a) TRUE
-B) FALSE
-
-?2 TRUE or FALSE: When reading in a file "file.r" into R, if you type "file.R", your code will know what file to read in.
-
-a) TRUE
-B) FALSE
-
-?2 TRUE or FALSE: When reading in a file "file.r" into R, if you type "file.R", your code will *not* know what file to read in.
-
-A) TRUE
-b) FALSE
-
-{choose-answers: 4}
-?3 When writing a reproducible report that includes Markdown syntax and chunks of R code, what would be the file extension of your report?
-
-C) .Rmd
-m) .R
-o) .r
-o) .rda
-o) .rds
-o) .Rproj
-o) .ro
-o) .csv
-
-{choose-answers: 4}
-?3 If you were writing an R Script, what would be the file extension of that file?
-
-C) .R
-m) .Rmd
-o) .rda
-o) .rds
-o) .Rproj
-o) .ro
-o) .csv
-
-{choose-answers: 4}
-?4 If you wanted to save a single R object, what would the file extension be?
-
-C) .rds
-o) .R
-o) .r
-o) .rda
-o) .Rmd
-o) .Rproj
-o) .ro
-o) .csv
-
-{choose-answers: 4}
-?5 Which of the following is an R data format type?
-
-C) .rda
-C) .Rda
-o) .r
-o) .R
-o) .xlsx
-o) .txt
-o) .csv
-o) .CSV
-o) .TXT
-o) .XLSX
-
-
-{/quiz}
-

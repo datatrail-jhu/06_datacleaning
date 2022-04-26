@@ -2,7 +2,7 @@
 
 ### Strings review
 
-Strings were introduced in an earlier lesson; however, to review briefly here: 
+Strings were introduced in an earlier lesson; however, to review briefly here:
 
 > A string is a sequence of characters, letters, numbers or symbols.
 
@@ -30,7 +30,7 @@ install.packages("stringr")
 library(stringr)
 ```
 
-The best way to work through this lesson is to copy and paste every line of code into your RStudio window and see if the output makes sense to you. Working with strings and regular expressions is best learned by practice. 
+The best way to work through this lesson is to copy and paste every line of code into your RStudio window and see if the output makes sense to you. Working with strings and regular expressions is best learned by practice.
 
 #### Available functions
 
@@ -60,7 +60,7 @@ str_length(objectA)
 {format: png}
 ![str_length output](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g38bb68a539_0_17)
 
-Here we see that the first string has a length of 26. If you were to go back and count the characters in the first string, you would see that this 26 includes each letter, space, and period in that string. The length of a string does not just could the letters in its length. The length includes every character. The second and third strings each have length 12. 
+Here we see that the first string has a length of 26. If you were to go back and count the characters in the first string, you would see that this 26 includes each letter, space, and period in that string. The length of a string does not just could the letters in its length. The length includes every character. The second and third strings each have length 12.
 
 #### Combining strings: `str_c()`
 
@@ -120,7 +120,7 @@ str_sort(names)
 
 Above we discuss the basics of working with strings within `stringr`. However, working with strings becomes infinitely easier with an understanding of regular expressions. Regular expressions (regexps) are used to **describe patterns within strings**. They can take a little while to get the hang of but become very helpful once you do. With regexps, instead of specifying that you want to extract the first three letters of a string (as we did above), you could more generally specify that you wanted to extract all strings that start with a specific letter or that contain a specific word somewhere in the string using regexps. We'll explore the basics of regexps here.
 
-The use them in `stringr`, the general format is `function(string , pattern = regexp)`, which you'll see used in practice below. The set of functions from `stringr` we'll cover are listed below 
+The use them in `stringr`, the general format is `function(string , pattern = regexp)`, which you'll see used in practice below. The set of functions from `stringr` we'll cover are listed below
 
 We'll cover a number of helpful `stringr` functions:
 
@@ -320,7 +320,7 @@ str_view_all(addresses, "\\s")
 
 ##### Identify any character (except newline)
 
-To identify any character except for a newline you'll use `"."`. Notice in our addresses example that there are no newlines, so this pattern will match with the entire string. 
+To identify any character except for a newline you'll use `"."`. Notice in our addresses example that there are no newlines, so this pattern will match with the entire string.
 
 ```r
 ## identify any character
@@ -345,7 +345,7 @@ Searches for regular expressions allow you to specify how many times a pattern s
 
 ##### Examples of repetition within regular expressions
 
-Using the definitions above, we can see that the following code will identify patterns within the addresses vector where n shows up one more more times in a string. 
+Using the definitions above, we can see that the following code will identify patterns within the addresses vector where n shows up one more more times in a string.
 
 ```r
 ## identify any time n shows up one or more times
@@ -379,7 +379,7 @@ str_view_all(addresses, "n{2}")
 This could similarly be achieved by specifying to search for the pattern 'nn' one or more times (`+`):
 
 ```r
-## identify any time 'nn' shows up one or more times 
+## identify any time 'nn' shows up one or more times
 str_view_all(addresses, "nn+")
 ```
 {format: png}
@@ -388,10 +388,10 @@ str_view_all(addresses, "nn+")
 You can also specify a range of the number of times to search for a pattern within your string. Below, we see that if we specify n be searched for at least two and at most 3 times, the pattern matches within our string. However, if we increase that to between three and four times, no pattern matching occurs, as there are never three or four n's in a row in our strings.
 
 ```r
-## identify any time n shows up two or three times 
+## identify any time n shows up two or three times
 str_view_all(addresses, "n{2,3}")
 
-## identify any time n shows up three or four times 
+## identify any time n shows up three or four times
 str_view_all(addresses, "n{3,4}")
 ```
 
@@ -413,132 +413,3 @@ This lesson set out to introduce you to how to work with strings within RStudio,
 ![Working with Strings](https://youtu.be/F1YuVyHGwEQ)
 
 * [Slides](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/edit?usp=sharing)
-
-
-{quiz, id: quiz_04_working_with_strings}
-
-### Working with Strings quiz
-
-The best way to learn how to work with strings is to actually practice working with them. Use the following object to answer the questions on this quiz:
-
-```r
-colors <- c('red','orange','yellow','green','blue','violet','#C8C8C8','#000000')
-```
-Note: be sure you scroll to copy the entire vector. It ends with a closed parenthesis.
-
-{choose-answers: 4, points: 2}
-?1 To return the value 'TRUE' for each string that contains numbers in the object `colors`, which would you use?
-
-C) `str_detect(colors, '\\d')`
-m) `str_subset(colors, '[0-9]')`
-o) `str_extract(colors, '\\d')`
-o) `str_extract(colors, '[0-9]')`
-o) `str_view(colors, '\\d')`
-o) `str_view_all(colors, '\\d')`
-
-{choose-answers: 4, points: 2}
-?1 To return the values of each string that contains numbers in the object `colors`, which would you use?
-
-C) `str_subset(colors, '[0-9]')`
-m) `str_detect(colors, '\\d')`
-o) `str_extract(colors, '\\d')`
-o) `str_extract(colors, '[0-9]')`
-o) `str_view(colors, '\\d')`
-o) `str_view_all(colors, '\\d')`
-
-{choose-answers: 4, points: 2}
-?2 To print the values of the `colors` object that start with a lowercase letter, which would you use?
-
-C) `str_subset(colors, '^[a-z]')`
-m) `str_count(colors, '[a-z]')`
-o) `str_view(colors, '[a-z]')`
-o) `str_replace(colors, '[a-z]', '?')`
-o) `str_extract(colors, '\\d')`
-o) `str_extract(colors, '[0-9]')`
-o) `str_view(colors, '\\d')`
-o) `str_view_all(colors, '\\d')`
-
-{choose-answers: 4, points: 2}
-?2 To print the number of lowercase letters in each string within `colors`, which would you use?
-
-C) `str_count(colors, '[a-z]')`
-m) `str_subset(colors, '^[a-z]')`
-o) `str_view(colors, '[a-z]')`
-o) `str_replace(colors, '[a-z]', '?')`
-o) `str_extract(colors, '\\d')`
-o) `str_extract(colors, '[0-9]')`
-o) `str_view(colors, '\\d')`
-o) `str_view_all(colors, '\\d')`
-
-{choose-answers: 4, points: 2}
-?3 What does `str_view_all(colors, "\\d+[A-Z]+")` match?
-
-C) at least one digit followed by at least one capital letter
-C) one or more digits followed by one or more capital letters
-o) any uppercase letter
-o) one digit followed by one capital letter
-o) any digit
-o) any uppercase letter followed by a digit
-o) a string consisting of only uppercase letters
-
-{choose-answers: 4, points: 2}
-?4 What does `str_count(colors, '[a-zA-Z]')` accomplish?
-
-C) counts the number of letters in each string
-C) prints the number of letters in each string
-o) counts the number of characters in each string
-o) counts the number of lowercase letters in each string
-o) counts the number of capital letters in each string
-o) counts the number of digits in each string
-
-{choose-answers: 4, points: 2}
-?5 If you were to identify which strings start with `#`, what would you use?
-
-C) `str_view_all(colors, '^#')`
-m) `str_view_all(colors, 'w$')`
-o) `str_view_all(colors, '#$')`
-o) `str_view_all(colors, '$#')`
-o) `str_view_all(colors, '#^')`
-o) `str_view_all(colors, '!#')`
-o) `str_view_all(colors, '#!')`
-
-{choose-answers: 4, points: 2}
-?5 If you were to identify which strings ends with `w`, what would you use?
-
-C) `str_view_all(colors, 'w$')`
-m) `str_view_all(colors, '^#')`
-o) `str_view_all(colors, '#$')`
-o) `str_view_all(colors, '$#')`
-o) `str_view_all(colors, '#^')`
-o) `str_view_all(colors, '!#')`
-o) `str_view_all(colors, '#!')`
-
-{points: 2}
-?6 Using, str_view_all(), how would you only highlight strings that start with a vowel?
-
-! str_view_all(colors, '^[aeiou]') ; str_view_all(colors, "^[aeiou]") ; str_view_all(colors, "^[AEIOUaeiou]"); str_view_all(colors, "^[aeiouAEIOU]")
-
-
-{points:3}
-?7 Go to the [Cloud-based Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/20345/join?access_code=n4b8J1s0XmWctSy83%2BEXbGAwj7rKcuFMI7WJEJFD) and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) First type `library(swirl)` to load the package and then type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Data Tidying`. Type the number that corresponds to the lesson `L06 Working With Strings Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
-
-! /.+(JXgt|sEJo|4Sc3|DQge|bY9W|V7Nc|1fPu|JAdy|bQSX|EYyj).+/i
-
-
-{points:3}
-?8 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L06 Working With Strings Q02 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
-
-! /.+(f71D|cL3p|sMAo|jiUX|P2iM|UjGX|mlwn|X7nh|ZJyo|jmpi).+/i
-
-{points:3}
-?9 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L06 Working With Strings Q03 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
-
-! /.+(h82q|6iBE|61Od|G9v4|KQdG|H3IP|hucd|P9dC|JpFB|GTUe).+/i
-
-{points:3}
-?10 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L06 Working With Strings Q04 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
-
-! /.+(GqX6|lVl3|ntNL|X18P|j7v5|lduj|YjjB|fSW8|LdDA|YE02).+/i
-
-
-{/quiz}

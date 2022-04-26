@@ -26,7 +26,7 @@ all_months <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "
 some_months <- c("Mar", "Dec", "Jan",  "Apr", "Jul")
 ```
 
-However, if we were to sort this vector, R would sort this vector alphabetically. 
+However, if we were to sort this vector, R would sort this vector alphabetically.
 
 ```r
 sort(some_months)
@@ -84,7 +84,7 @@ sort(mon_inorder)
 
 We see now with `fct_inorder` that even when we sort the output, it does not sort the factor alphabetically, nor does it put it in calendar order. In fact, it stays in the same order as the input, just as we specified.
 
-### Advanced Factoring 
+### Advanced Factoring
 
 For the remainder of this lesson, we're going to return to using a dataset that's in R by default. We'll use the `chickwts` dataset for exploring the remaining advanced functions. This data set includes data from an experiment that was looking to compare the "effectiveness of various feed supplements on the growth rate of chickens."
 
@@ -96,18 +96,18 @@ For the remainder of this lesson, we're going to return to using a dataset that'
 To re-order factor levels by frequency of the value in the dataset, you'll want to use `fct_infreq()`. Below, we see from the output from `tabyl()` that 'soybean' is the most frequent feed in the data set while 'horsebean' is the least frequent. Thus, when we order by frequency, we can expect these two feeds to be at opposite ends for our levels.
 
 ```r
-## take a look at frequency of each level 
+## take a look at frequency of each level
 ## using tabyl() from `janitor` package
 library(janitor)
 tabyl(chickwts$feed)
 
-## order levels by frequency 
+## order levels by frequency
 fct_infreq(chickwts$feed) %>% head()
 ```
 {format: png}
 ![fct_infreq orders levels based on frequency in dataset](https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&pageid=g391e563ea4_0_56)
 
-As expected, soybean, the most frequent level, appears as the first level and horsebean, the least frequent level, appears last. The rest of the levels are sorted by frequency. 
+As expected, soybean, the most frequent level, appears as the first level and horsebean, the least frequent level, appears last. The rest of the levels are sorted by frequency.
 
 ### Reversing order levels : `fct_rev()`
 
@@ -126,9 +126,9 @@ fct_rev(fct_infreq(chickwts$feed)) %>% head()
 At times you may want to reorder levels of a factor by another variable in your dataset. This is often helpful when generating plots (which we'll get to in a future lesson!). To do this you specify the variable you want to reorder, followed by the numeric variable by which you'd like the factor to be re-leveled. Here, we see that we're re-leveling feed by the weight of the chickens.  While we haven't discussed plotting yet, the best way to demonstrate how this works is by plotting the feed against the weights. We can see that the order of the factor is such that those chickens with the lowest median weight (horsebean) are to the left, while those with the highest median weight (casein) are to the right.
 
 ```
-## order levels by a second numeric variable 
+## order levels by a second numeric variable
 chickwts %>%
-  mutate(newfeed = fct_reorder(feed, weight)) %>% 
+  mutate(newfeed = fct_reorder(feed, weight)) %>%
   ggplot(., aes(newfeed,weight)) +
   geom_point()
 ```
@@ -162,12 +162,12 @@ chickwts %>%
 
 ### Converting numeric levels to factors: `ifelse()` + `factor()`
 
-Finally, when working with factors, there are times when you want to convert a numeric variable into a factor. For example, if you were talking about a dataset with BMI for a number of individuals, you may want to categorize people based on whether or not they are underweight (BMI < 18.5), of a healthy weight (BMI between 18.5 and 29.9), or obese (BMI >= 30). When you want to take a numeric variable and turn it into a categorical factor variable, you can accomplish this easily by using `ifelse()` statements. `if{}` statements and `else{}` statements were covered in an earlier lesson. Here we combine those two ideas. Within a single statement we provide R with a condition: `weight <= 200`. With this, we are stating that the condition is if a chicken's weight is less than or equal to 200 grams. Then, if that condition is true, meaning if a chicken's weight is less than or equal to 200 grams, let's assign that chicken to the category `low`. Otherwise, and this is the `else{}` part of the `ifelse()` function, assign that chicken to the category `high`. Finally, we have to let R know that weight_recode is a factor variable, so we call factor() on this new column. This way we take a numeric variable (`weight`), and turn it into a factor variable (`weight_recode`). 
+Finally, when working with factors, there are times when you want to convert a numeric variable into a factor. For example, if you were talking about a dataset with BMI for a number of individuals, you may want to categorize people based on whether or not they are underweight (BMI < 18.5), of a healthy weight (BMI between 18.5 and 29.9), or obese (BMI >= 30). When you want to take a numeric variable and turn it into a categorical factor variable, you can accomplish this easily by using `ifelse()` statements. `if{}` statements and `else{}` statements were covered in an earlier lesson. Here we combine those two ideas. Within a single statement we provide R with a condition: `weight <= 200`. With this, we are stating that the condition is if a chicken's weight is less than or equal to 200 grams. Then, if that condition is true, meaning if a chicken's weight is less than or equal to 200 grams, let's assign that chicken to the category `low`. Otherwise, and this is the `else{}` part of the `ifelse()` function, assign that chicken to the category `high`. Finally, we have to let R know that weight_recode is a factor variable, so we call factor() on this new column. This way we take a numeric variable (`weight`), and turn it into a factor variable (`weight_recode`).
 
 ```r
 ## convert numeric variable to factor
 chickwts %>%
-    mutate(weight_recode = ifelse(weight <= 200, "low", "high"), 
+    mutate(weight_recode = ifelse(weight <= 200, "low", "high"),
            weight_recode = factor(weight_recode)) %>%
     tabyl(weight_recode)
 ```
@@ -193,77 +193,3 @@ Note: [Wrangling Categorical Data in R](https://peerj.com/preprints/3163/) is **
 ![Working with Factors](https://youtu.be/VW-8de5K0UI)
 
 * [Slides](https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/edit?usp=sharing)
-
-
-{quiz, id: quiz_05_working_with_factors}
-
-### Working with Factors quiz
-
-{choose-answers: 4}
-?1 If you wanted to re-order the levels of a factor variable to be ordered by frequency of that variable in the dataset, what function would you use?
-
-C) fct_infreq()
-m) fct_recode()
-o) fct_reorder()
-o) fct_refreq()
-o) fct_forcat()
-o) fct_tabyl()
-
-{choose-answers: 4}
-?1 If you wanted to re-order the levels of a factor variable by hand, what function would you use?
-
-C) fct_recode()
-m) fct_infreq()
-o) fct_reorder()
-o) fct_refreq()
-o) fct_forcat()
-o) fct_tabyl()
-
-{choose-answers: 4}
-?2 Assuming you have a dataframe (`df`) with two columns: `car`, and `size`, what would the code `df %>% fct_reorder(car, size)` accomplish?
-
-C) reorder the levels of the variable `car` based on their median `size`
-C) reorders `car` levels based on their median `size`
-o) sort the data frame of `car` by `size`
-o) arranges the data frame of `car` by `size`
-o) reorder the levels of the variable `size` based on their median `car`
-o) sort the data frame of `size` by `car`
-o) leave the data frame as is
-o) filters out any row with the word `car` or `size`
-
-{choose-answers: 4, points: 2}
-?3 If you were working with the `iris` dataset in r, which functions would you use to add a new column to the dataframe and change the levels of the `Species` variable?  
-
-C) mutate(), fct_recode()
-o) filter(), fct_recode()
-o) mutate(), fct_inorder()
-o) filter(), fct_inorder() 
-o) mutate(), fct_refreq()
-o) filter(), fct_refreq()
-
-{points:3}
-?4 Go to the [Cloud-based Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/20345/join?access_code=n4b8J1s0XmWctSy83%2BEXbGAwj7rKcuFMI7WJEJFD) and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) First type `library(swirl)` to load the package and then type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Data Tidying`. Type the number that corresponds to the lesson `L07 Working With Factors Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
-
-! /.+(IudA|2Drs|i6k5|oVmt|oIMM|sF01|gJnA|SJCk|v4DU|5K90).+/i
-
-
-{points:3}
-?5 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L07 Working With Factors Q02 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
-
-! /.+(xcIW|TfRH|OLYa|c9qt|5WhD|mQsc|HAuP|fhlO|EG6p|6Q7K).+/i
-
-{points:3}
-?6 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L07 Working With Factors Q03 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
-
-! /.+(tZsQ|aHqm|PHy9|5Cdp|aj8T|Ojgy|DSNS|IxbW|Pohj|Si0Y).+/i
-
-{points:3}
-?7 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L07 Working With Factors Q04 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
-
-! /.+(lUnQ|HA2n|19o1|Fw2c|JDFS|8drC|V9hO|WQGh|Tsn2|pcbD).+/i
-
-
-
-
-{/quiz}
-

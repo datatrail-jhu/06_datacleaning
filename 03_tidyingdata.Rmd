@@ -1,8 +1,8 @@
 # Tidying Data
 
-So far we've discussed what tidy and untidy data are. We've (hopefully) convinced you that tidy data are the right type of data to work with. And, more than that, hopefully we've explained that data are not always the tidiest when they come to you at the start of a project. An incredibly important skill of a data scientist is to be able to take data from an untidy format and get it into a tidy format. We've started to discuss how to do this in the last lesson where we learned to reshape data. In this lesson, we'll discuss a number of other ways in which data can be tidied and the necessary tools to **tidy data**. 
+So far we've discussed what tidy and untidy data are. We've (hopefully) convinced you that tidy data are the right type of data to work with. And, more than that, hopefully we've explained that data are not always the tidiest when they come to you at the start of a project. An incredibly important skill of a data scientist is to be able to take data from an untidy format and get it into a tidy format. We've started to discuss how to do this in the last lesson where we learned to reshape data. In this lesson, we'll discuss a number of other ways in which data can be tidied and the necessary tools to **tidy data**.
 
-These skills are often referred to as **data wrangling**. They are skills that allow you to wrangle data from the format they're currently in into the format you actually want them in. 
+These skills are often referred to as **data wrangling**. They are skills that allow you to wrangle data from the format they're currently in into the format you actually want them in.
 
 As this is an incredibly important topic, this will be a long lesson covering a number of packages and topics. Take your time working through it and be sure to understand all of the examples!
 
@@ -20,7 +20,7 @@ Within R, there is a package specifically designed for helping you wrangle data.
 * `rename()` - rename columns
 * `arrange()` - reorder rows
 * `mutate()` - create a new column
-* `group_by()` - group variables 
+* `group_by()` - group variables
 * `summarize()` - summarize information within a dataset
 * `left_join()` - combining data across data frame
 
@@ -152,7 +152,7 @@ filter(msleep, order == "Primates")
 {format: png}
 ![Filtered to only include Primates](https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&pageid=g38bb68a535_0_164)
 
-Here, we have a smaller dataset of only 12 mammals (as opposed to the original 83) and we can see that the `order` variable column only includes "Primates." 
+Here, we have a smaller dataset of only 12 mammals (as opposed to the original 83) and we can see that the `order` variable column only includes "Primates."
 
 But, what if we were only interested in Primates who sleep more than 10 hours total per night? This information is in the `sleep_total` column. Fortunately, `filter()` also works on numeric variables. To accomplish this, you would use the following syntax, separating the multiple filters you want to apply with a comma:
 
@@ -179,7 +179,7 @@ Note that the number of columns hasn't changed. All 11 variables are still shown
 
 #### Selecting Columns
 
-While `filter()` operates on rows, it *is* possible to filter your dataset to only include the columns you're interested in. To select columns so that your dataset only includes variables you're interested in, you will use `select()`. 
+While `filter()` operates on rows, it *is* possible to filter your dataset to only include the columns you're interested in. To select columns so that your dataset only includes variables you're interested in, you will use `select()`.
 
 Let's start with the code we just wrote to only include primates who sleep a lot. What if we only want to include the first column (the name of the mammal) and the sleep information (included in the columns `sleep_total`, `sleep_rem`, and `sleep_cycle`)? We would do this by starting with the code we just used, adding another pipe, and using the function `select()`. Within `select`, we specify which columns we want in our output.
 
@@ -235,7 +235,7 @@ msleep %>%
   select(name, sleep_rem, sleep_cycle, sleep_total)
 ```
 
-Here we see that sleep_rem `name` is displayed first followed by `sleep_rem`, `sleep_cycle`, and `sleep_total`, just as it was specified within `select()`. 
+Here we see that sleep_rem `name` is displayed first followed by `sleep_rem`, `sleep_cycle`, and `sleep_total`, just as it was specified within `select()`.
 
 {format: png}
 ![Data with reordered columns names](https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&pageid=g38bb68a535_0_204)
@@ -268,7 +268,7 @@ By putting `sleep_total` within `desc()`, `arrange()` will now sort your data fr
 {format: png}
 ![Data arranged by total sleep in descending order](https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&pageid=g38bb68a535_0_215)
 
-`arrange()` can also be used to order non-numeric variables. For example, `arrange()` will sort character vectors alphabetically. 
+`arrange()` can also be used to order non-numeric variables. For example, `arrange()` will sort character vectors alphabetically.
 
 ```r
 msleep %>%
@@ -291,7 +291,7 @@ msleep %>%
 
 ### Creating new columns
 
-You will often find when working with data that you need an additional column. For example, if you had two datasets you wanted to combine, you may want to make a new column in each dataset called `dataset`. In one dataset you may put `datasetA` in each row. In the second dataset, you could put `datasetB`. This way, once you combined the data, you would be able to keep track of which dataset each row came from originally. More often, however, you'll likely want to create a new column that calculates a new variable based on information in a column you already have. For example, in our mammal sleep dataset, `sleep_total` is in hours. What if you wanted to have that information in minutes? You could create a new column with this very information! The function `mutate()` was *made* for **all** of these new-column-creating situations. This function has a lot of capabilities. We'll cover the basics here. 
+You will often find when working with data that you need an additional column. For example, if you had two datasets you wanted to combine, you may want to make a new column in each dataset called `dataset`. In one dataset you may put `datasetA` in each row. In the second dataset, you could put `datasetB`. This way, once you combined the data, you would be able to keep track of which dataset each row came from originally. More often, however, you'll likely want to create a new column that calculates a new variable based on information in a column you already have. For example, in our mammal sleep dataset, `sleep_total` is in hours. What if you wanted to have that information in minutes? You could create a new column with this very information! The function `mutate()` was *made* for **all** of these new-column-creating situations. This function has a lot of capabilities. We'll cover the basics here.
 
 Returning to our `msleep` dataset, after filtering and re-ordering, we can create a new column with `mutate()`. Within `mutate()`, we will calculate the number of minutes each mammal sleeps by multiplying the number of hours each animal sleeps by 60 minutes.
 
@@ -306,7 +306,7 @@ msleep %>%
 {format: png}
 ![Mutate to add new column to data](https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&pageid=g38bb68a535_0_242)
 
-### Separating Columns 
+### Separating Columns
 
 Sometimes multiple pieces of information are merged within a single column even though it would be more useful during analysis to have those pieces of information in separate columns. To demonstrate, we'll now move from the `msleep` dataset to talking about another [dataset](https://raw.githubusercontent.com/suzanbaert/Dplyr_Tutorials/master/conservation_explanation.csv) that includes information about conservation abbreviations in a single column.
 
@@ -321,7 +321,7 @@ To read this file into R, we'll use the `httr` package, which will be discussed 
 library(httr)
 library(readr)
 
-## download file 
+## download file
 GET("https://raw.githubusercontent.com/suzanbaert/Dplyr_Tutorials/master/conservation_explanation.csv", write_disk(tf <- tempfile(fileext = ".csv")))
 conservation <- read_csv(tf)
 
@@ -338,7 +338,7 @@ The `separate()` function requires the name of the existing column that you want
 
 ```r
 conservation %>%
-  separate(`conservation abbreviation`, 
+  separate(`conservation abbreviation`,
            into = c("abbreviation", "description"), sep = " = ")
 ```
 
@@ -347,13 +347,13 @@ The output of this code shows that we now have two separate columns with the inf
 {format: png}
 ![Output of separate()](https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&pageid=g38bb68a535_0_261)
 
-### Merging Columns 
+### Merging Columns
 
 The opposite of `separate()` is `unite()`. So, if you have information in two or more different columns but wish it were in one single column, you'll want to use `unite()`. Using the code forming the two separate columns above, we can then add on an extra line of `unite()` code to re-join these separate columns, returning what we started with.
 
 ```r
 conservation %>%
-  separate(`conservation abbreviation`, 
+  separate(`conservation abbreviation`,
            into = c("abbreviation", "description"), sep = " = ") %>%
   unite(united_col, abbreviation, description, sep = " = ")
 ```
@@ -375,12 +375,12 @@ conservation %>%
 
 ### Combining data across data frames
 
-There is often information stored in two separate data frames that you'll want in a single data frame. There are *many* different ways to join separate data frames. They are discussed in more detail in [this tutorial](http://stat545.com/bit001_dplyr-cheatsheet.html) from [Jenny Bryan](https://www.stat.ubc.ca/~jenny/). Here, we'll demonstrate how the `left_join()` function works, as this is used frequently. 
+There is often information stored in two separate data frames that you'll want in a single data frame. There are *many* different ways to join separate data frames. They are discussed in more detail in [this tutorial](http://stat545.com/bit001_dplyr-cheatsheet.html) from [Jenny Bryan](https://www.stat.ubc.ca/~jenny/). Here, we'll demonstrate how the `left_join()` function works, as this is used frequently.
 
 Let's try to combine the information from the two different datasets we've used in this lesson. We have `msleep` and `conservation`. `msleep` contains a column called `conservation`. This column includes lowercase abbreviations that overlap with the uppercase abbreviations in the `abbreviation` column in the `conservation` dataset.
 
-To handle the fact that in one dataset the abbreviations are lowercase and the other they are uppercase, we'll use `mutate()` to take all the lowercase abbreviations to uppercase abbreviations using the function `toupper()`. 
- 
+To handle the fact that in one dataset the abbreviations are lowercase and the other they are uppercase, we'll use `mutate()` to take all the lowercase abbreviations to uppercase abbreviations using the function `toupper()`.
+
 We'll then use `left_join()` which takes all of the rows in the first dataset mentioned (`msleep`, below) and incorporates information from the second dataset mentioned (`conserve`, below), when information in the second dataset is available. The `by = ` argument states what columns to join by in the first ("conservation") and second ("abbreviation") datasets. This join adds the `description` column from the `conserve` dataset onto the original dataset (`msleep`). Note that if there is no information in the second dataset that matches with the information in the first dataset, `left_join()` will add NA. Specifically, for rows where conservation is "DOMESTICATED" below, the `description` column will have NA because "DOMESTICATED"" is not an abbreviation in the `conserve` dataset.
 
 ```r
@@ -388,7 +388,7 @@ We'll then use `left_join()` which takes all of the rows in the first dataset me
 ## into two columns
 ## call that new object `conserve`
 conserve <- conservation %>%
-  separate(`conservation abbreviation`, 
+  separate(`conservation abbreviation`,
            into = c("abbreviation", "description"), sep = " = ")
 
 
@@ -429,7 +429,7 @@ Throughout data cleaning and analysis it will be important to summarize informat
 
 #### summarize()
 
-Continuing on from the previous examples, if you wanted to figure out how many samples are present in your dataset, you could use the `summarize()` function. 
+Continuing on from the previous examples, if you wanted to figure out how many samples are present in your dataset, you could use the `summarize()` function.
 
 ```r
 msleep %>%
@@ -446,7 +446,7 @@ However, if you wanted to count how many of each different `order` of mammal you
 
 ```r
 msleep %>%
-  group_by(order) %>% 
+  group_by(order) %>%
   select(order) %>%
   summarize(N=n())
 ```
@@ -456,13 +456,13 @@ The output from this, like above, includes the column name we specified in summa
 {format: png}
 ![group_by() and summarize with n()](https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&pageid=g38bb68a535_0_293)
 
-There are other ways in which the data can be summarized using `summarize()`. In addition to using n() to count the number of samples within a group, you can also summarize using other helpful functions within R, such as `mean()`, `median()`, `min()`, and `max()`. 
+There are other ways in which the data can be summarized using `summarize()`. In addition to using n() to count the number of samples within a group, you can also summarize using other helpful functions within R, such as `mean()`, `median()`, `min()`, and `max()`.
 
 For example, if we wanted to calculate the average (mean) total sleep each order of mammal got, we could use the following syntax:
 
 ```r
 msleep %>%
-  group_by(order) %>% 
+  group_by(order) %>%
   select(order, sleep_total) %>%
   summarize(N=n(), mean_sleep=mean(sleep_total))
 ```
@@ -472,7 +472,7 @@ msleep %>%
 
 #### tabyl()
 
-In addition to using `summarize()` from `dplyr`, the `tabyl()` function from the `janitor` package can be incredibly helpful for summarizing categorical variables quickly and discerning the output at a glance. Again returning to our `msleep` dataset, if we wanted to get a summary of how many samples are in each order category and what percent of the data fall into each category we could call tabyl on that variable. For example, if we use the following syntax, we easily get a quick snapshot of this variable. 
+In addition to using `summarize()` from `dplyr`, the `tabyl()` function from the `janitor` package can be incredibly helpful for summarizing categorical variables quickly and discerning the output at a glance. Again returning to our `msleep` dataset, if we wanted to get a summary of how many samples are in each order category and what percent of the data fall into each category we could call tabyl on that variable. For example, if we use the following syntax, we easily get a quick snapshot of this variable.
 
 ```r
 msleep %>%
@@ -482,7 +482,7 @@ msleep %>%
 {format: png}
 ![summarize using tabyl() from janitor](https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&pageid=g38bb68a535_0_304)
 
-Note, that `tabyl` assumes categorical variables. If you want to summarize numeric variables `summary()` works well. For example, this code will summarize the values in `msleep$awake` for you. 
+Note, that `tabyl` assumes categorical variables. If you want to summarize numeric variables `summary()` works well. For example, this code will summarize the values in `msleep$awake` for you.
 
 ```r
 summary(msleep$awake)
@@ -511,203 +511,14 @@ We have gone through a number of ways to work with data in this lesson. Masterin
 
 * [dplyr](https://dplyr.tidyverse.org/), part of the [tidyverse](https://www.tidyverse.org/)
 * [janitor](https://cran.r-project.org/web/packages/janitor/index.html), from [Sam Firke](http://samfirke.com/)
-* dplyr tutorials by [Suzan Baert](https://suzan.rbind.io/) [Part 1](https://suzan.rbind.io/2018/01/dplyr-tutorial-1/) [Part 2](https://suzan.rbind.io/2018/02/dplyr-tutorial-2/) [Part 3](https://suzan.rbind.io/2018/02/dplyr-tutorial-3/) [Part 4](https://suzan.rbind.io/2018/04/dplyr-tutorial-4/) 
+* dplyr tutorials by [Suzan Baert](https://suzan.rbind.io/) [Part 1](https://suzan.rbind.io/2018/01/dplyr-tutorial-1/) [Part 2](https://suzan.rbind.io/2018/02/dplyr-tutorial-2/) [Part 3](https://suzan.rbind.io/2018/02/dplyr-tutorial-3/) [Part 4](https://suzan.rbind.io/2018/04/dplyr-tutorial-4/)
 * [janitor tutorial](https://medium.com/@verajosemanuel/janitor-a-good-r-package-for-data-cleaning-f3c733632ad9) by
 * [dplyr join cheatsheet](http://stat545.com/bit001_dplyr-cheatsheet.html) by [Jenny Bryan](https://www.stat.ubc.ca/~jenny/)
 
-**Note**: a lot of the examples in this lesson were modified from the dplyr tutorials by [Suzan Baert](https://suzan.rbind.io/). To get an even **deeper** understanding of how to tidy data using `dplyr`, take a look at all of her dplyr tutorials. 
+**Note**: a lot of the examples in this lesson were modified from the dplyr tutorials by [Suzan Baert](https://suzan.rbind.io/). To get an even **deeper** understanding of how to tidy data using `dplyr`, take a look at all of her dplyr tutorials.
 
 ### Slides and Video
 
 ![Tidying Data](https://youtu.be/-B_jdAi6Eds)
 
 * [Slides](https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/edit?usp=sharing)
-
-
-{quiz, id: quiz_03_tidyingdata}
-
-### Tidying Data quiz
-
-{choose-answers: 4}
-?1 To create a new column which function would you use?
-
-C) mutate()
-m) arrange()
-o) clean_names()
-o) glimpse()
-o) new_column()
-o) new()
-
-{choose-answers: 4}
-?1 To order the rows in a dataframe based on a variable's value, which function would you use?
-
-C) arrange()
-m) mutate()
-o) clean_names()
-o) glimpse()
-o) new_column()
-o) new()
-
-{choose-answers: 4}
-?2 Which of these is not a capability of select()?
-
-C) choose what rows to include in output
-C) filter rows based on a condition
-C) read in a CSV file
-o) choose what columns to include in output
-o) rename columns
-o) reorder columns
-
-{choose-answers: 4}
-?3 To summarize an entire dataset, what *function* would you use?
-
-C) skim()
-m) skimr
-o) summary()
-o) tabyl()
-o) summarize()
-o) janitor
-o) dplyr 
-
-{choose-answers: 4}
-?3 To summarize an entire dataset, you could use the `skim()` function, what package is that in?
-
-C) skimr
-m) skim()
-o) summary()
-o) tabyl()
-o) summarize()
-o) janitor
-o) dplyr
-
-{choose-answers: 4, points: 2}
-?4 If you were to select only the cars in the `mtcars` data set with horsepower > 100 using the code `newdata <- mtcars %>% filter(hp>100)`, how many cars would be left in your data frame?
-
-C) 23
-m) 32
-m) 9
-o) 0
-o) 30
-o) 15
-
-{choose-answers: 4, points: 2}
-?4 If you were to select only the cars in the `mtcars` data set with horsepower > 100 using the code `newdata <- mtcars %>% filter(hp<100)`, how many cars would be left in your data frame?
-
-C) 9
-m) 23
-o) 32
-o) 0
-o) 30
-o) 15
-
-{choose-answers: 4, points: 2}
-?5 How many different types of iris `Species` are included in the `iris` dataset?
-
-C) 3 
-m) 2
-o) 100
-o) 150
-o) 1
-o) 5
-o) 7
-o) 20
-
-{choose-answers: 4, points: 2}
-?5 What's the smallest `Sepal.Width` in the `iris` dataset?
-
-C) 2
-m) 3
-o) 100
-o) 150
-o) 1
-o) 5
-o) 7
-o) 20
-
-{choose-answers: 4, points: 2}
-?6 If you had six different variables in the columns of a dataset (`df`) and wanted to select three of them (height, weight, bmi) and display them in alphabetical order, which of these would achieve that?
-
-C) df %>% select(bmi, height, weight)
-m) df %>% select(height, weight, bmi)
-m) df %>% arrange(height, weight, bmi)
-o) df %>% arrange(bmi, height, weight)
-o) df %>% filter(bmi, height, weight)
-o) df %>% filter(height, weight, bmi)
-o) df %>% mutate(bmi, height, weight)
-o) df %>% mutate(height, weight, bmi)
-
-
-{choose-answers: 4, points: 2}
-?6 If you had a dataset (`df`) and wanted to order your dataframe by height, then by weight, and then by bmi, which of these would you use?
-
-C) df %>% arrange(height, weight, bmi)
-m) df %>% select(bmi, height, weight)
-o) df %>% arrange(bmi, height, weight)
-o) df %>% select(height, weight, bmi)
-o) df %>% filter(bmi, height, weight)
-o) df %>% filter(height, weight, bmi)
-o) df %>% mutate(bmi, height, weight)
-o) df %>% mutate(height, weight, bmi)
-
-{points:3}
-?7 Go to the [Cloud-based Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/20345/join?access_code=n4b8J1s0XmWctSy83%2BEXbGAwj7rKcuFMI7WJEJFD) and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) First type `library(swirl)` to load the package and then type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Data Tidying`. Type the number that corresponds to the lesson `L05 Tidying Data Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
-
-! /.+(4Dkc|Regm|KpNE|IhcI|fzLR|2Z7r|EY6h|bSXm|sliL|6Nv6).+/i
-
-
-{points:3}
-?8 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L05 Tidying Data Q02 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
-
-! /.+(cjs9|gml3|okPQ|Ms3j|X21e|UzhK|pdCy|o4Th|qNfd|iMCI).+/i
-
-{points:3}
-?9 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L05 Tidying Data Q03 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
-
-! /.+(oVKt|sze0|OEJv|rDm0|Z7Pb|TNLo|4tgc|e8TS|NxTp|Uj5A).+/i
-
-{points:3}
-?10 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L05 Tidying Data Q04 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
-
-! /.+(5KvE|Wrjg|3MJx|TZLo|NYom|ReyK|zc8G|X7GL|qAUY|0MIS).+/i
-
-{points:3}
-?11 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L05 Tidying Data Q05 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
-
-! /.+(tOxT|FYPT|aMJM|17hH|JBvr|46ry|E682|zsTI|DYre|fDWg).+/i
-
-{points:3}
-?12 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L05 Tidying Data Q06 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
-
-! /.+(zdvd|fhI3|Mdez|mnzT|bmHF|tRHX|Rie8|c8Ny|xeXD|UdEw).+/i
-
-{points:3}
-?13 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L05 Tidying Data Q07 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
-
-! /.+(w6GG|WRIm|WceH|X01x|QySi|kK3D|f26N|MfPK|SshZ|Ep9P).+/i
-
-{points:3}
-?14 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L05 Tidying Data Q08 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
-
-! /.+(5HlF|HkD7|gQo1|cmBX|9GHk|51n0|efat|oRPB|n6wz|aFbz).+/i
-
-{points:3}
-?15 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L05 Tidying Data Q09 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
-
-! /.+(qD8S|XIBZ|Wqiu|XxqE|TbJk|KPAE|Huob|btsQ|ItNb|Kbuq).+/i
-
-{points:3}
-?16 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L05 Tidying Data Q10 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
-
-! /.+(FoKR|9ofG|emBh|DleF|hsL7|zeDp|UZyk|2Do0|XCzL|RqEr).+/i
-
-{points:3}
-?17 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L05 Tidying Data Q11 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
-
-! /.+(efMA|RdjJ|5cZ1|JUTQ|ikig|0l7n|tvPn|u7XO|XX1s|QUBQ).+/i
-
-{points:3}
-?18 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L05 Tidying Data Q12 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
-
-! /.+(HnIV|Vgdm|hCde|TwLW|enQE|KfKy|OXiJ|wEoQ|iQ1I|OtHi).+/i
-
-{/quiz}

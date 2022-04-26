@@ -14,7 +14,7 @@ The basics of data were covered in the Introductory course, where we defined dat
 
 Generally, there are just two types of data. If data are numerical, consisting of counts or measurements, they're referred to as quantitative data. If they are **not** numerical, they're qualitative. Qualitative data would include words or text, but they could also include photographs, videos, or audio recordings. Every photo you have ever taken with your phone is data, and more specifically, it's qualitative data.
 
-Examples of: 
+Examples of:
 
 * Qualitative data  - eye color, gender, TRUE/FALSE responses, hometown, photos, text files, audio files, videos, etc.
 * Quantitative data  - height, weight, heart rate, daily step count, body temperature, test scores, etc.
@@ -23,7 +23,7 @@ While people often distinguish between qualitative data and quantitative data, t
 
 ### Why is data important?
 
-You generate both qualitative and quantitative data all the time. The taps on a touchscreen at the bank are data. The GPS from the maps app in your phone generate data about you. And, every credit card purchase you have ever made has generated data. Taken together, data can tell you a lot about a person, a company, or an entire population. 
+You generate both qualitative and quantitative data all the time. The taps on a touchscreen at the bank are data. The GPS from the maps app in your phone generate data about you. And, every credit card purchase you have ever made has generated data. Taken together, data can tell you a lot about a person, a company, or an entire population.
 
 Data are being used to make business decisions, to decide who to advertise a product to, and to decide how much someone should pay for insurance. As a data scientist, you will be using data to answer interesting questions. The role of the data scientist is to be able to collect and clean the data, study the data, create models to help understand and answer the question, and to share your findings with other people. We will work through each of these steps throughout this curriculum; however, understanding the importance of data and what qualifies as data is an important first step.
 
@@ -32,45 +32,3 @@ Data are being used to make business decisions, to decide who to advertise a pro
 ![What is data](https://youtu.be/zMFI9z47psg)
 
 * [Slides](https://docs.google.com/presentation/d/1btywbP59z-QJKtRw5yjQn81Gsck8Tc6Q-q3djeCfnYI/edit?usp=sharing)
-
-
-{quiz, id: quiz_00_data}
-
-### What is Data quiz
-
-? Which of these is NOT data?
-
-a) a photo
-b) an audio file
-c) a spreadsheet of people's heights
-d) None are data.
-E) They're all data.
-
-{choose-answers: 4}
-? Which of these is NOT qualitative data?
-
-C) square footage of a house
-C) heights of students in a class
-C) number of members in a family
-o) colors of shirts you wear each day
-o) brand of all the shoes in your closet
-o) photos taken at a baby shower
-o) recorded songs from a band  
-o) names of brands of shoes sold at a department store
-
-{choose-answers: 4}
-? Which of these is NOT quantitative data?
-
-C) color of houses on a block
-C) types of flowers in a garden
-C) type of shoe in your closet
-C) brands sold at each department store
-C) gas station companies in the US
-o) individual's weights
-o) number of daily visitors to a museum  
-o) annual income
-o) prices over time
-o) heights of all your family members
-
-{/quiz}
-

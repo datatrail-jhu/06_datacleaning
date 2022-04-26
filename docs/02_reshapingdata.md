@@ -13,7 +13,7 @@ Wide data has a column for each variable and a row for each observation. Data ar
 
 This is a dataset we've looked at in a previous lesson. As discussed previously, it's a rectangular and tidy dataset. Now, we can also state that it is a wide dataset. Here you can clearly see what measurements were taken for each individual and can get a sense of how many individuals are contained in the dataset.
 
-Specifically, each individual is in a different row with each variable in a different column. At a glance we can quickly see that we have information about four different people and that each person was measured in four different ways. 
+Specifically, each individual is in a different row with each variable in a different column. At a glance we can quickly see that we have information about four different people and that each person was measured in four different ways.
 
 #### Long Data
 
@@ -33,7 +33,7 @@ Converting your data from wide-to-long or from long-to-wide data formats is refe
 {format: png}
 ![Reshaping data](https://docs.google.com/presentation/d/14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI/export/png?id=14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI&pageid=g38bb68a532_0_13)
 
-For these examples, we'll work with the `airquality` dataset available in R. The data in this dataset includes "Daily air quality measurements in New York, May to September 1973." This is a wide dataset because each day is in a separate row and there are multiple columns with each including information about a different variable (ozone, solar.r, wind, temp, month, and day). 
+For these examples, we'll work with the `airquality` dataset available in R. The data in this dataset includes "Daily air quality measurements in New York, May to September 1973." This is a wide dataset because each day is in a separate row and there are multiple columns with each including information about a different variable (ozone, solar.r, wind, temp, month, and day).
 
 We can see the first few lines of this dataset using the following code:
 
@@ -48,12 +48,12 @@ Again, wide data are easy to decipher at a glance. We can see that we have six d
 
 #### tidyr
 
-Within tidyr, there are two functions to help you reshape your data. 
+Within tidyr, there are two functions to help you reshape your data.
 
 * `gather()`: go from wide data to long data
 * `spread()`: go from long data to wide data
 
-To get started, you'll need to be sure that the `tidyr` package is installed and loaded into your RStudio session. 
+To get started, you'll need to be sure that the `tidyr` package is installed and loaded into your RStudio session.
 
 ```r
 install.packages("tidyr")
@@ -94,7 +94,7 @@ head(gathered)
 However, you're likely not interested in your day and month variable being separated out into their own variables within the `key` column. In fact, knowing the day and month associated with a particular data point helps identify that particular data point. To account for this, you can exclude `day` and `month` from the variables being included in the `key` column by specifying all the variables that you *do* want included in the `key` column.  Here, that means specifying `ozone`, `solar.r`, `wind`, and `temp`. This will keep `day` and `month` in their own columns, allowing each row to be identified by the specific day and month being discussed.
 
 ```r
-## in gather(), after key and value, you can specify which variables 
+## in gather(), after key and value, you can specify which variables
 ## you want included in the long format
 ## it will leave the other variables as is
 gathered <- gather(airquality, key="variable", value="value", ozone, solar.r, wind, temp)
@@ -145,7 +145,7 @@ There are two main functions within the `reshape2` package:
 
 ##### melt()
 
-The `melt()` function will allow you to get the data into a long format that will be easy to use for analysis. When you melt a dataset with the default options, `melt()` will take every column, put the column name into a `variable` column, and then put the values of those variables into a `value` column. For the `airquality` data set, below we first assign the melted data frame to the object `melted`. Then we take a look at the top (`head()`) and bottom(`tail()`) of this melted data frame (`melted`). 
+The `melt()` function will allow you to get the data into a long format that will be easy to use for analysis. When you melt a dataset with the default options, `melt()` will take every column, put the column name into a `variable` column, and then put the values of those variables into a `value` column. For the `airquality` data set, below we first assign the melted data frame to the object `melted`. Then we take a look at the top (`head()`) and bottom(`tail()`) of this melted data frame (`melted`).
 
 ```r
 ## puts each column name into the 'variable' column
@@ -182,7 +182,7 @@ Despite the slight change in how the code was specified, the result here using `
 
 ##### cast
 
-You'll likely have to go from long-to-short format less frequently; however, it's good to know there are two approaches to accomplishing this within `reshape2` whenever it is necessary. 
+You'll likely have to go from long-to-short format less frequently; however, it's good to know there are two approaches to accomplishing this within `reshape2` whenever it is necessary.
 
 * `acast()`: taking a long frame and returning a matrix/array/vector
 * `dcast()`: taking a long frame and returning a data frame
@@ -192,7 +192,7 @@ To return our melted data back into its original wide form, we'll use `dcast()`.
 ```r
 ## to get our data back to its original form
 ## specify which columns should be combined to use as identifiers
-## and which column should be used to specify the columns 
+## and which column should be used to specify the columns
 original <- dcast(melted, month + day ~ variable)
 
 head(original)
@@ -210,7 +210,7 @@ While reshaping data may not be the most exciting topic, having this skill will 
 ### Additional Resources
 
 * [tidyr](https://tidyr.tidyverse.org/), part of the [tidyverse](https://www.tidyverse.org/) and developed by [Hadley Wickham](http://hadley.nz/) and [Lionel Henry](https://github.com/lionel-)
-* [reshape2](https://stat.ethz.ch/pipermail/r-packages/2010/001169.html), developed by [Hadley Wickham](http://hadley.nz/) 
+* [reshape2](https://stat.ethz.ch/pipermail/r-packages/2010/001169.html), developed by [Hadley Wickham](http://hadley.nz/)
 * [tidyr tutorial](https://blog.rstudio.com/2014/07/22/introducing-tidyr/) by [Hadley Wickham](http://hadley.nz/)
 * [reshape2 tutorial](http://seananderson.ca/2013/10/19/reshape/) by [Sean C. Anderson](http://seananderson.ca/)
 * [tidyr vs reshape2](http://www.milanor.net/blog/reshape-data-r-tidyr-vs-reshape2/) by [Alberto Giudici](http://www.milanor.net/blog/author/alberto-giudici/)
@@ -220,82 +220,3 @@ While reshaping data may not be the most exciting topic, having this skill will 
 ![Reshaping Data](https://youtu.be/4Y-AdchVDXo)
 
 * [Slides](https://docs.google.com/presentation/d/14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI/edit?usp=sharing)
-
-
-{quiz, id: quiz_02_reshapingdata}
-
-### Reshaping Data quiz
-
-{choose-answers: 4}
-?1 Which package would you use to reshape data?
-
-C) reshape2
-C) tidyr
-o) dplyr
-o) ggplot2
-o) melt
-o) cast
-o) gather
-o) spread
-o) dcast
-
-{choose-answers: 4}
-?2 A dataset where each person's data is in a row and all their medically-relevant measurements (i.e. height, weight, blood_pressure, etc.) are recorded in separate columns is an example of what data format? 
-
-C) wide
-m) long
-o) oblong
-o) large
-o) healthy
-o) circular
-
-
-{choose-answers: 4}
-?2 A dataset where there is a column specifying what variable's data is included in that row and a second column containing the value for that variable is an example of what data format?
-
-C) long
-m) wide
-o) circular
-o) oblong
-o) large
-o) healthy
-
-{choose-answers:4}
-?3 Which of these pairs of functions accomplish a similar goal?
-
-C) gather & melt
-C) spread & dcast
-o) melt & spread
-o) melt & cast
-o) spread & gather
-o) long & wide
-o) to_long & from_wide
-o) to_wide & from_long
-
-{points:3}
-?4 Go to the [Cloud-based Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/20345/join?access_code=n4b8J1s0XmWctSy83%2BEXbGAwj7rKcuFMI7WJEJFD) and click on your copy of the 'swirl' project (If you haven't made a copy yet, do so now.) First type `library(swirl)` to load the package and then type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Data Tidying`. Type the number that corresponds to the lesson `L04 Reshaping Data Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
-
-! /.+(sYaN|dYsx|ztkD|RpuU|fVqf|ooPN|buw2|PdZg|Q2ca|2kgo).+/i
-
-
-{points:3}
-?5 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L04 Reshaping Data Q02 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
-
-! /.+(f2QZ|kESS|pSN8|1UvR|pWD8|1lZx|EzGl|k1LR|F4Qe|YnYC).+/i
-
-
-{points:3}
-?6 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L04 Reshaping Data Q03 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
-
-! /.+(ezVR|epoa|NZQ1|aoNq|sM3X|8tfs|llsW|gNrf|eUa3|lcJ2).+/i
-
-
-{points:3}
-?7 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L04 Reshaping Data Q04 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
-
-! /.+(BBbQ|zDbF|pusZ|uYfc|cmqn|Xvr0|k3b1|74g1|8FFh|0rKq).+/i
-
-
-
-{/quiz}
-

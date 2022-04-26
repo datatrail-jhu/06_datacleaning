@@ -19,14 +19,14 @@ Variables in a spreadsheet are the different categories of data that will be col
 
 #### Observations
 
-The measurements taken from a person for each variable are called observations. Observations for each individual are stored in a single row, with each observation being put in the appropriate column for each variable. 
+The measurements taken from a person for each variable are called observations. Observations for each individual are stored in a single row, with each observation being put in the appropriate column for each variable.
 
 {format: png}
 ![Observations](https://docs.google.com/presentation/d/1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54/export/png?id=1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54&pageid=g326b47e392_0_12)
 
 #### Types
 
-Often, data are collected for the same individuals from multiple sources. For example, when you go to the doctor's office, you fill out a survey about yourself. That would count as one type of data. The measurements a doctor collects at your visit, however, would be a different type of data. 
+Often, data are collected for the same individuals from multiple sources. For example, when you go to the doctor's office, you fill out a survey about yourself. That would count as one type of data. The measurements a doctor collects at your visit, however, would be a different type of data.
 
 {format: png}
 ![Types](https://docs.google.com/presentation/d/1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54/export/png?id=1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54&pageid=g326e316938_0_3)
@@ -70,7 +70,7 @@ We'll go through each of these to make sure we're all clear on what a great tidy
 
 #### Be consistent
 
-Being consistent in data entry and throughout an analysis is key. It minimizes confusion and makes analysis simpler. For example, here we see sex is coded as "female" or "male." Those are the only two ways in which sex was entered into the data. This is an example of consistent data entry. You want to avoid sometimes coding a female's sex as "female" and then entering it as "F" in other cases. Simply, you want to pick a way to code sex and stick to it. 
+Being consistent in data entry and throughout an analysis is key. It minimizes confusion and makes analysis simpler. For example, here we see sex is coded as "female" or "male." Those are the only two ways in which sex was entered into the data. This is an example of consistent data entry. You want to avoid sometimes coding a female's sex as "female" and then entering it as "F" in other cases. Simply, you want to pick a way to code sex and stick to it.
 
 With regard to entering a person's sex, we were talking about how to code observations for a specific variable; however, consistency also matters when you're choosing how to name a variable. If you use the variable name "ID" in one spreadsheet, use the same variable name ("ID") in the next spreadsheet. Do not change it to "id" (capitalization matters!) or "identifier" or anything else in the next spreadsheet. Be consistent!
 
@@ -81,16 +81,16 @@ Consistency matters across every step of the analysis. Name your files in a cons
 
 #### Choose good names for things
 
-Choosing good variable names is important. Generally, avoid spaces in variable names and file names. You'll see why this is important as we learn more about programming, but for now, know that "Doctor Visit 1" is not a good file name. "doctor_visit_v1" is much better. Stick to using underscores instead of spaces or any other symbol when possible. The same thing goes for variable names. "FirstName" is a good variable name while "First Name" with a space in the middle of it is not. 
+Choosing good variable names is important. Generally, avoid spaces in variable names and file names. You'll see why this is important as we learn more about programming, but for now, know that "Doctor Visit 1" is not a good file name. "doctor_visit_v1" is much better. Stick to using underscores instead of spaces or any other symbol when possible. The same thing goes for variable names. "FirstName" is a good variable name while "First Name" with a space in the middle of it is not.
 
-Additionally, make sure that file and variable names are as short as possible while still being meaningful. "F1" is short, but it doesn't really tell you anything about what is in that file. "doctor_visit_v1" is a more meaningful file name. We know now that this spreadsheet contains information about a doctor's visit. 'v1' specifies version 1 allowing for updates to this file later which would create a new file "doctor_visit_v2." 
+Additionally, make sure that file and variable names are as short as possible while still being meaningful. "F1" is short, but it doesn't really tell you anything about what is in that file. "doctor_visit_v1" is a more meaningful file name. We know now that this spreadsheet contains information about a doctor's visit. 'v1' specifies version 1 allowing for updates to this file later which would create a new file "doctor_visit_v2."
 
 {format: png}
 ![Choose good names](https://docs.google.com/presentation/d/1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54/export/png?id=1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54&pageid=g326e316938_0_86)
 
 #### Write dates as YYYY-MM-DD
 
-When entering dates, there is a global 'ISO 8601' standard. Dates should be encoded YYYY-MM-DD. For example if you want to specify that a measurement was taken on February 27th, 2018, you would type 2018-02-27. YYYY refers to the year, 2018. MM refers to the month of February, 02. And DD refers to the day of the month, 27. This standard is used for dates for two main reason. First, it avoids confusion when sharing data across different countries, where date conventions can differ. By all using ISO 8601 standard conventions, there is less room for error in interpretation of dates. Secondly, spreadsheet software often mishandles dates and assumes that non-date information are actually dates and vice versa. By encoding dates as YYYY-MM-DD, this confusion is minimized. 
+When entering dates, there is a global 'ISO 8601' standard. Dates should be encoded YYYY-MM-DD. For example if you want to specify that a measurement was taken on February 27th, 2018, you would type 2018-02-27. YYYY refers to the year, 2018. MM refers to the month of February, 02. And DD refers to the day of the month, 27. This standard is used for dates for two main reason. First, it avoids confusion when sharing data across different countries, where date conventions can differ. By all using ISO 8601 standard conventions, there is less room for error in interpretation of dates. Secondly, spreadsheet software often mishandles dates and assumes that non-date information are actually dates and vice versa. By encoding dates as YYYY-MM-DD, this confusion is minimized.
 
 {format: png}
 ![YYYY-MM-DD](https://docs.google.com/presentation/d/1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54/export/png?id=1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54&pageid=g326e316938_0_91)
@@ -145,83 +145,3 @@ Most importantly, however, remember that tidy data are rectangular data. The dat
 ![Tidy Data](https://youtu.be/zdbw5RDeT3c)
 
 * [Slides](https://docs.google.com/presentation/d/1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54/edit?usp=sharing)
-
-
-{quiz, id: quiz_00_tidydata}
-
-### Tidy Data quiz
-
-This is the Tidy Data quiz.
-
-{choose-answers:4}
-?1 Which is the best filename?
-
-C) baseball_analysis_v1.txt
-C) baseball_analysis_v2.txt
-o) baseball_analysis_final.txt
-o) baseball.txt
-o) baseball analysis.txt
-o) baseball_analysis.txt
-
-
-{choose-answers:4}
-?1 Which is the best filename?
-
-C) familial_analysis_v1.txt
-C) familial_analysis_v2.txt
-o) familial_analysis_final.txt
-o) familial.txt
-o) familial analysis.txt
-o) familial_analysis.txt
-
-{choose-answers:4}
-?2 Which of these is NOT a feature of tidy data?
-
-C) empty cells
-C) using color to highlight information in a cell
-o) rectangular
-o) single variable per column
-o) one thing per cell
-
-{choose-answers:4}
-?3 If a tidy dataset has 15 rows and 4 columns, from how many different people/items/timepoints/etc. were observations collected?
-
-C) 15
-m) 30
-m) 4
-o) 11
-o) 60
-o) 19
-
-
-{choose-answers:4}
-?3 If a tidy dataset has 30 rows and 4 columns, from how many different people/items/timepoints/etc. were observations collected?
-
-C) 30
-m) 15
-m) 4
-o) 26
-o) 120
-o) 34
-
-{choose-answers:4}
-?4 If a tidy dataset has 15 rows and 4 columns, how many different variables are there in the dataset?
-
-C) 4
-m) 15
-m) 30
-o) 11
-o) 60
-o) 19
-
-{choose-answers:4}
-?4 If a dataset has 30 rows and 6 columns, how many different variables are there in the dataset?
-
-C) 6
-m) 4
-m) 30
-o) 24
-o) 36
-o) 19
-
-{/quiz}

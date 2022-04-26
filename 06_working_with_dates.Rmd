@@ -1,6 +1,6 @@
 # Working with Dates
 
-In lessons an earlier course, you were introduced to different types of objects in R, such as characters, numeric, and logicals. Then, in earlier lessons in this course, we covered how to work with strings and factors in detail. The remaining type of variable we haven't yet covered is how to work with dates and time in R. 
+In lessons an earlier course, you were introduced to different types of objects in R, such as characters, numeric, and logicals. Then, in earlier lessons in this course, we covered how to work with strings and factors in detail. The remaining type of variable we haven't yet covered is how to work with dates and time in R.
 
 As with strings and factors, there is a tidyverse package to help you work with dates more easily. The `lubridate` package will make working with dates and times easier. Before working through this lesson, you'll want to be sure that `lubridate` has been installed and loaded in:
 
@@ -11,7 +11,7 @@ library(lubridate)
 
 ### Dates and time basics
 
-When working with dates and times in R, you can consider either **dates**, **times**, or **date-times**. Date-times refer to dates plus times, specifying an exact moment in time. It's always best to work with the simplest possible object for your needs. So, if you don't need to refer to date-times specifically, it's best to work with dates. 
+When working with dates and times in R, you can consider either **dates**, **times**, or **date-times**. Date-times refer to dates plus times, specifying an exact moment in time. It's always best to work with the simplest possible object for your needs. So, if you don't need to refer to date-times specifically, it's best to work with dates.
 
 ### Creating dates and date-time objects
 
@@ -49,13 +49,13 @@ library(nycflights13)
 
 Loading this package makes a data frame called `flights`, which includes "on-time data for all flights that departed NYC in 2013," available. We will work with this dataset to demonstrate how to create a date and date-time object from a dataset where the information is spread across multiple columns.
 
-First, to create a new column, as we've done throughout the lessons in this course, we will use `mutate()`. To create a `date` object, we'll use the function `make_date()`. We just then need to supply the names of the columns containing the year, month, and day information to this function. 
+First, to create a new column, as we've done throughout the lessons in this course, we will use `mutate()`. To create a `date` object, we'll use the function `make_date()`. We just then need to supply the names of the columns containing the year, month, and day information to this function.
 
 ```r
-## make_date() creates a date object 
+## make_date() creates a date object
 ## from information in separate columns
-flights %>% 
-  select(year, month, day) %>% 
+flights %>%
+  select(year, month, day) %>%
   mutate(departure = make_date(year, month, day))
 ```
 
@@ -65,10 +65,10 @@ flights %>%
 A similar procedure is used to create a date-time object; however, this requires the function `make_datetime()` and requires columns with information about time be specified. Below, `hour` and `minute` are included to the function's input.
 
 ```r
-## make_datetime() creates a date-time object 
+## make_datetime() creates a date-time object
 ## from information in separate columns
-flights %>% 
-  select(year, month, day, hour, minute) %>% 
+flights %>%
+  select(year, month, day, hour, minute) %>%
   mutate(departure = make_datetime(year, month, day, hour, minute))
 ```
 {format: png}
@@ -77,11 +77,11 @@ flights %>%
 
 ### Working with dates
 
-The reason we've dedicated an entire lesson to working with dates and have shown you how to create date and date-time objects in this lesson is because you often want to plot data over time or calculate how long something has taken. Being able to accomplish these tasks is an important job for a data scientist. So, now that you know how to create date and date-time objects, we'll work through a few examples of how to work with these objects 
+The reason we've dedicated an entire lesson to working with dates and have shown you how to create date and date-time objects in this lesson is because you often want to plot data over time or calculate how long something has taken. Being able to accomplish these tasks is an important job for a data scientist. So, now that you know how to create date and date-time objects, we'll work through a few examples of how to work with these objects
 
 #### Getting components of dates
 
-Often you're most interested in grouping your data by year, or just looking at monthly or weekly trends. To accomplish this, you have to be able to extract just a component of your date object. You can do this with the functions: `year()`, `month()`, `mday()`,`wday()`, `hour()`, `minute()` and `second()`. Each will extract the specified piece of information from the date or date-time object. 
+Often you're most interested in grouping your data by year, or just looking at monthly or weekly trends. To accomplish this, you have to be able to extract just a component of your date object. You can do this with the functions: `year()`, `month()`, `mday()`,`wday()`, `hour()`, `minute()` and `second()`. Each will extract the specified piece of information from the date or date-time object.
 
 ```r
 mydate <- ymd("1988-09-29")
@@ -139,104 +139,3 @@ This lesson has not covered how to work with times, much detail about how to ope
 ![Working with Dates](https://youtu.be/OaVuMHSR0T0)
 
 * [Slides](https://docs.google.com/presentation/d/1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c/edit?usp=sharing)
-
-
-{quiz, id: quiz_06_working_with_dates}
-
-### Working with Dates quiz
-
-{choose-answers: 4}
-?1 To obtain the day of the week of your birthday, which function would you use?
-
-C) wday()
-m) mday()
-o) d()
-o) date()
-o) day()
-o) Day()
-o) weekday()
-o) birthday()
-o) bday()
-
-{choose-answers: 4}
-?1 To obtain the date of the month of your birthday, which function could you use?
-
-C) mday()
-m) wday()
-o) d()
-o) date()
-o) day()
-o) Day()
-o) weekday()
-o) birthday()
-o) bday()
-
-{choose-answers: 4}
-?2 What information does `year("1985-05-04") - year("1988-09-29")` give you?
-
-C) the number of years difference between the two dates
-o) the number of days difference between the two dates
-o) the number of minutes difference between the two dates
-o) the number of seconds difference between the two dates
-o) the number of months difference between the two dates 
-o) the years 1985 and 1988 added together 
-
-
-{choose-answers: 4, points: 2}
-?3 What code would you use to tell you what day of the week December 28th, 1992 was?
-
-C) wday(ymd("1992-12-28"))
-C) wday(ydm("1992-28-12"))
-m) wday(ymd("1992-28-12"))
-o) wday(ydm("1992-12-28"))
-o) mday(ymd("1992-12-28"))
-o) mday(ydm("1992-28-12"))
-o) mday(ymd("1992-28-12"))
-o) mday(ydm("1992-12-28"))
-
-{choose-answers: 4, points: 2}
-?3 What code would you use to tell you what day of the week May 4th, 1985 was?
-
-C) wday(ymd("1985-05-04"))
-C) wday(ydm("1985-04-05"))
-m) wday(ymd("1985-04-05"))
-o) wday(ydm("1985-05-04"))
-o) mday(ymd("1985-05-04"))
-o) mday(ydm("1985-04-05"))
-o) mday(ymd("1985-04-05"))
-o) mday(ydm("1985-05-04"))
-
-{choose-answers: 4}
-?4 What day of the week was December 28th, 1992?
-
-C) Mon
-m) Sat
-o) Tues
-o) Wed
-o) Thurs
-o) Fri
-o) Sun
-
-{choose-answers: 4}
-?4 What day of the week was May 4th, 1985?
-
-C) Sat
-m) Mon
-o) Tues
-o) Wed
-o) Thurs
-o) Fri
-o) Sun
-
-{points:3}
-?5 Go to the [Cloud-based Data Science Space on RStudio Cloud](https://rstudio.cloud/spaces/20345/join?access_code=n4b8J1s0XmWctSy83%2BEXbGAwj7rKcuFMI7WJEJFD) and click on your copy of the 'swirl' project. (If you haven't made a copy yet, do so now.) First type `library(swirl)` to load the package and then type `swirl()` to get started. Tell Swirl your first name when it asks what to call you. Then, type the number that corresponds to the course `CBDS Data Tidying`. Type the number that corresponds to the lesson `L08 Working With Dates Q01 Swirl`. Do this swirl module! Once complete, paste the code at the end of the lesson here.
-
-! /.+(LB51|VieR|uI3f|HhIT|NHRJ|ClbO|jCCy|VYKM|0IMK|AAwD).+/i
-
-
-{points:3}
-?6 Within the same course on swirl: `CBDS Data Tidying`, navigate to the lesson `L08 Working With Dates Q02 Swirl`. Do this swirl module! Once complete, paste the code provided at the end of the swirl module here.
-
-! /.+(HFgx|8POP|GAXk|GY2t|mhna|7kqz|NR1J|TFpX|K6kS|8qsA).+/i
-
-{/quiz}

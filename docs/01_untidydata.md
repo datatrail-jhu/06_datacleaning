@@ -23,7 +23,7 @@ In each of these examples, we see the principles of tidy data being broken. Each
 {format: png}
 ![Examples from Data Organization in Spreadsheets](https://docs.google.com/presentation/d/1SS0PYUE9_dE1MIWt6CZePEMUFL2P2Zy_3BidNWSq7hs/export/png?id=1SS0PYUE9_dE1MIWt6CZePEMUFL2P2Zy_3BidNWSq7hs&pageid=g2bfdb07292_0_151)
 
-For a specific example, [Miles McBain](https://www.milesmcbain.com/), a data scientist from Brisbane, Australia set out to analyze Australian survey data on Same Sex marriage. Before he could do the analysis, however, he had a lot of tidying to do. He annotated all the ways in which the data were untidy, including the use of commas in numerical data entry, blank cells, junk at the top of the spreadsheet, and merged cells. All of these would have stopped him from being able to analyze the data had he not taken the time to first tidy the data. Luckily, he wrote a [Medium piece](https://medium.com/@miles.mcbain/tidying-the-australian-same-sex-marriage-postal-survey-data-with-r-5d35cea07962) including all the steps he took to tidy the data. 
+For a specific example, [Miles McBain](https://www.milesmcbain.com/), a data scientist from Brisbane, Australia set out to analyze Australian survey data on Same Sex marriage. Before he could do the analysis, however, he had a lot of tidying to do. He annotated all the ways in which the data were untidy, including the use of commas in numerical data entry, blank cells, junk at the top of the spreadsheet, and merged cells. All of these would have stopped him from being able to analyze the data had he not taken the time to first tidy the data. Luckily, he wrote a [Medium piece](https://medium.com/@miles.mcbain/tidying-the-australian-same-sex-marriage-postal-survey-data-with-r-5d35cea07962) including all the steps he took to tidy the data.
 
 {format: png}
 ![Miles McBain's' tidying of Australian Same Sex Marriage Postal Survey Data](https://docs.google.com/presentation/d/1SS0PYUE9_dE1MIWt6CZePEMUFL2P2Zy_3BidNWSq7hs/export/png?id=1SS0PYUE9_dE1MIWt6CZePEMUFL2P2Zy_3BidNWSq7hs&pageid=g326b2fc90a_0_6)
@@ -50,56 +50,3 @@ To address this, these data can be split into two different spreadsheets, one fo
 ![Tidy Data](https://youtu.be/XO-goK_loFw)
 
 * [Slides](https://docs.google.com/presentation/d/1SS0PYUE9_dE1MIWt6CZePEMUFL2P2Zy_3BidNWSq7hs/edit?usp=sharing)
-
-
-{quiz, id: quiz_01_untidydata}
-
-### Untidy Data quiz
-
-{choose-answers: 4}
-?1 Which of these would indicate a messy data set?
-
-C) Not rectangular data
-C) Multiple values in a single cell
-C) Multiple pieces of information in a single cell
-o) One variable per column
-o) One piece of information per cell
-o) Column names with no extra spaces
-o) A numeric value in a cell
-o) A text value in a cell
-
-{choose-answers: 4}
-?2 What *must* each spreadsheet for a multiple-spreadsheet project have?
-
-C) A column with the same column name and IDs in each spreadsheet
-o) The ability to guess what the units are for each variable
-o) Observations that can be summed to one
-o) At least five columns
-o) A first line that starts with a pound sign (#)
-o) A column named "name"
-o) A column named "id"
-
-{choose-answers: 4}
-?3 If the ID column for a multiple-spreadsheet project has the column name "id" in the first spreadsheet, what should the name of the column with the same information in the second worksheet be?
-
-C) "id"
-m) "ID"
-o) "identification"
-o) "names""
-o) "observations"
-o) "i_d"
-o) "I_D"
-
-{choose-answers: 4}
-?3 If the ID column for a multiple-spreadsheet project has the column name "ID" in the first spreadsheet, what should the name of the column with the same information in the second worksheet be?
-
-C) "ID"
-m) "id"
-o) "identification"
-o) "names""
-o) "observations"
-o) "i_d"
-o) "I_D"
-
-
-{/quiz}
