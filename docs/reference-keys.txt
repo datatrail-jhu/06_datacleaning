@@ -2,7 +2,6 @@ what-is-data
 types-of-data
 why-is-data-important
 slides-and-video
-what-is-data-quiz
 data-in-r
 file-types-in-r
 r-script-file-.r
@@ -16,7 +15,6 @@ other-types-of-data-in-r
 summary
 additional-resources
 slides-and-video-1
-data-in-r-quiz
 tidy-data
 why-tidy-data
 data-terminology
@@ -35,14 +33,12 @@ save-the-data-as-plain-text-files
 tidy-data-summary
 additional-resources-1
 slides-and-video-2
-tidy-data-quiz
 untidy-data
 common-problems-with-messy-data-sets
 examples-of-untidy-data
 examples-from-data-organization-in-spreadsheets
 tidying-untidy-data
 slides-and-video-3
-untidy-data-quiz
 reshaping-data
 data-formats
 wide-data
@@ -56,7 +52,6 @@ melt
 cast
 additional-resources-2
 slides-and-video-4
-reshaping-data-quiz
 tidying-data
 dplyr
 tidyr-1
@@ -84,7 +79,6 @@ skim
 conclusion
 additional-resources-3
 slides-and-video-5
-tidying-data-quiz
 working-with-strings
 strings-review
 stringr
@@ -113,7 +107,6 @@ examples-of-repetition-within-regular-expressions
 conclusion-1
 additional-resources-4
 slides-and-video-6
-working-with-strings-quiz
 working-with-factors
 factor-basics
 manually-change-the-labels-of-factor-levels-fct_relevel
@@ -127,7 +120,6 @@ converting-numeric-levels-to-factors-ifelse-factor
 conclusions
 additional-resources-5
 slides-and-video-7
-working-with-factors-quiz
 working-with-dates
 dates-and-time-basics
 creating-dates-and-date-time-objects
@@ -139,7 +131,6 @@ time-spans
 whats-not-covered-in-this-lesson
 additional-resources-6
 slides-and-video-8
-working-with-dates-quiz
 data-tidying-project
 data-tidying-project-1
 github-setup
