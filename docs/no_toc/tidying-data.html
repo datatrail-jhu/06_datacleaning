@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Tidying Data | Course Name</title>
+  <meta name="description" content="Description about Course/Book." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Tidying Data | Course Name" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Description about Course/Book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Tidying Data | Course Name" />
+  
+  <meta name="twitter:description" content="Description about Course/Book." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="assets/DataTrail_favicon.ico" type="image/x-icon" />
+<link rel="prev" href="reshaping-data.html"/>
+<link rel="next" href="working-with-strings.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="assets/style_DataTrail.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<a href="https://www.datatrail.org/"><img src="https://github.com/datatrail-jhu/DataTrail_Template/raw/main/assets/DataTrail_logo.jpg" style="padding-left: 0px; padding-top: 8px;"</a>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Course</a></li>
+<li class="chapter" data-level="1" data-path="what-is-data.html"><a href="what-is-data.html"><i class="fa fa-check"></i><b>1</b> What is data?</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="what-is-data.html"><a href="what-is-data.html#types-of-data"><i class="fa fa-check"></i><b>1.0.1</b> Types of data</a></li>
+<li class="chapter" data-level="1.0.2" data-path="what-is-data.html"><a href="what-is-data.html#why-is-data-important"><i class="fa fa-check"></i><b>1.0.2</b> Why is data important?</a></li>
+<li class="chapter" data-level="1.0.3" data-path="what-is-data.html"><a href="what-is-data.html#slides-and-video"><i class="fa fa-check"></i><b>1.0.3</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-in-r.html"><a href="data-in-r.html"><i class="fa fa-check"></i><b>2</b> Data in R</a>
+<ul>
+<li class="chapter" data-level="2.0.1" data-path="data-in-r.html"><a href="data-in-r.html#file-types-in-r"><i class="fa fa-check"></i><b>2.0.1</b> File Types in R</a></li>
+<li class="chapter" data-level="2.0.2" data-path="data-in-r.html"><a href="data-in-r.html#datasets-in-r"><i class="fa fa-check"></i><b>2.0.2</b> Datasets in R</a></li>
+<li class="chapter" data-level="2.0.3" data-path="data-in-r.html"><a href="data-in-r.html#datasets-in-packages"><i class="fa fa-check"></i><b>2.0.3</b> Datasets in Packages</a></li>
+<li class="chapter" data-level="2.0.4" data-path="data-in-r.html"><a href="data-in-r.html#other-types-of-data-in-r"><i class="fa fa-check"></i><b>2.0.4</b> Other types of data in R</a></li>
+<li class="chapter" data-level="2.0.5" data-path="data-in-r.html"><a href="data-in-r.html#summary"><i class="fa fa-check"></i><b>2.0.5</b> Summary</a></li>
+<li class="chapter" data-level="2.0.6" data-path="data-in-r.html"><a href="data-in-r.html#additional-resources"><i class="fa fa-check"></i><b>2.0.6</b> Additional Resources</a></li>
+<li class="chapter" data-level="2.0.7" data-path="data-in-r.html"><a href="data-in-r.html#slides-and-video-1"><i class="fa fa-check"></i><b>2.0.7</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="tidy-data.html"><a href="tidy-data.html"><i class="fa fa-check"></i><b>3</b> Tidy Data</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="tidy-data.html"><a href="tidy-data.html#why-tidy-data"><i class="fa fa-check"></i><b>3.0.1</b> Why Tidy Data?</a></li>
+<li class="chapter" data-level="3.0.2" data-path="tidy-data.html"><a href="tidy-data.html#data-terminology"><i class="fa fa-check"></i><b>3.0.2</b> Data Terminology</a></li>
+<li class="chapter" data-level="3.0.3" data-path="tidy-data.html"><a href="tidy-data.html#principles-of-tidy-data"><i class="fa fa-check"></i><b>3.0.3</b> Principles of Tidy Data</a></li>
+<li class="chapter" data-level="3.0.4" data-path="tidy-data.html"><a href="tidy-data.html#rules-for-tidy-spreadsheets"><i class="fa fa-check"></i><b>3.0.4</b> Rules for Tidy Spreadsheets</a></li>
+<li class="chapter" data-level="3.0.5" data-path="tidy-data.html"><a href="tidy-data.html#additional-resources-1"><i class="fa fa-check"></i><b>3.0.5</b> Additional resources</a></li>
+<li class="chapter" data-level="3.0.6" data-path="tidy-data.html"><a href="tidy-data.html#slides-and-video-2"><i class="fa fa-check"></i><b>3.0.6</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="untidy-data.html"><a href="untidy-data.html"><i class="fa fa-check"></i><b>4</b> Untidy Data</a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="untidy-data.html"><a href="untidy-data.html#common-problems-with-messy-data-sets"><i class="fa fa-check"></i><b>4.0.1</b> Common problems with messy data sets</a></li>
+<li class="chapter" data-level="4.0.2" data-path="untidy-data.html"><a href="untidy-data.html#examples-of-untidy-data"><i class="fa fa-check"></i><b>4.0.2</b> Examples of untidy data</a></li>
+<li class="chapter" data-level="4.0.3" data-path="untidy-data.html"><a href="untidy-data.html#tidying-untidy-data"><i class="fa fa-check"></i><b>4.0.3</b> Tidying untidy data</a></li>
+<li class="chapter" data-level="4.0.4" data-path="untidy-data.html"><a href="untidy-data.html#slides-and-video-3"><i class="fa fa-check"></i><b>4.0.4</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="reshaping-data.html"><a href="reshaping-data.html"><i class="fa fa-check"></i><b>5</b> Reshaping Data</a>
+<ul>
+<li class="chapter" data-level="5.0.1" data-path="reshaping-data.html"><a href="reshaping-data.html#data-formats"><i class="fa fa-check"></i><b>5.0.1</b> Data Formats</a></li>
+<li class="chapter" data-level="5.0.2" data-path="reshaping-data.html"><a href="reshaping-data.html#r-packages"><i class="fa fa-check"></i><b>5.0.2</b> R Packages</a></li>
+<li class="chapter" data-level="5.0.3" data-path="reshaping-data.html"><a href="reshaping-data.html#additional-resources-2"><i class="fa fa-check"></i><b>5.0.3</b> Additional Resources</a></li>
+<li class="chapter" data-level="5.0.4" data-path="reshaping-data.html"><a href="reshaping-data.html#slides-and-video-4"><i class="fa fa-check"></i><b>5.0.4</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tidying-data.html"><a href="tidying-data.html"><i class="fa fa-check"></i><b>6</b> Tidying Data</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="tidying-data.html"><a href="tidying-data.html#dplyr"><i class="fa fa-check"></i><b>6.0.1</b> dplyr</a></li>
+<li class="chapter" data-level="6.0.2" data-path="tidying-data.html"><a href="tidying-data.html#tidyr-1"><i class="fa fa-check"></i><b>6.0.2</b> tidyr</a></li>
+<li class="chapter" data-level="6.0.3" data-path="tidying-data.html"><a href="tidying-data.html#janitor"><i class="fa fa-check"></i><b>6.0.3</b> janitor</a></li>
+<li class="chapter" data-level="6.0.4" data-path="tidying-data.html"><a href="tidying-data.html#skimr"><i class="fa fa-check"></i><b>6.0.4</b> skimr</a></li>
+<li class="chapter" data-level="6.0.5" data-path="tidying-data.html"><a href="tidying-data.html#the-pipe-operator"><i class="fa fa-check"></i><b>6.0.5</b> The Pipe Operator</a></li>
+<li class="chapter" data-level="6.0.6" data-path="tidying-data.html"><a href="tidying-data.html#filtering-data"><i class="fa fa-check"></i><b>6.0.6</b> Filtering Data</a></li>
+<li class="chapter" data-level="6.0.7" data-path="tidying-data.html"><a href="tidying-data.html#reordering"><i class="fa fa-check"></i><b>6.0.7</b> Reordering</a></li>
+<li class="chapter" data-level="6.0.8" data-path="tidying-data.html"><a href="tidying-data.html#creating-new-columns"><i class="fa fa-check"></i><b>6.0.8</b> Creating new columns</a></li>
+<li class="chapter" data-level="6.0.9" data-path="tidying-data.html"><a href="tidying-data.html#separating-columns"><i class="fa fa-check"></i><b>6.0.9</b> Separating Columns</a></li>
+<li class="chapter" data-level="6.0.10" data-path="tidying-data.html"><a href="tidying-data.html#merging-columns"><i class="fa fa-check"></i><b>6.0.10</b> Merging Columns</a></li>
+<li class="chapter" data-level="6.0.11" data-path="tidying-data.html"><a href="tidying-data.html#cleaning-up-column-names"><i class="fa fa-check"></i><b>6.0.11</b> Cleaning up column names</a></li>
+<li class="chapter" data-level="6.0.12" data-path="tidying-data.html"><a href="tidying-data.html#combining-data-across-data-frames"><i class="fa fa-check"></i><b>6.0.12</b> Combining data across data frames</a></li>
+<li class="chapter" data-level="6.0.13" data-path="tidying-data.html"><a href="tidying-data.html#grouping-data"><i class="fa fa-check"></i><b>6.0.13</b> Grouping Data</a></li>
+<li class="chapter" data-level="6.0.14" data-path="tidying-data.html"><a href="tidying-data.html#summarizing-data"><i class="fa fa-check"></i><b>6.0.14</b> Summarizing Data</a></li>
+<li class="chapter" data-level="6.0.15" data-path="tidying-data.html"><a href="tidying-data.html#conclusion"><i class="fa fa-check"></i><b>6.0.15</b> Conclusion</a></li>
+<li class="chapter" data-level="6.0.16" data-path="tidying-data.html"><a href="tidying-data.html#additional-resources-3"><i class="fa fa-check"></i><b>6.0.16</b> Additional Resources</a></li>
+<li class="chapter" data-level="6.0.17" data-path="tidying-data.html"><a href="tidying-data.html#slides-and-video-5"><i class="fa fa-check"></i><b>6.0.17</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="working-with-strings.html"><a href="working-with-strings.html"><i class="fa fa-check"></i><b>7</b> Working with Strings</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="working-with-strings.html"><a href="working-with-strings.html#strings-review"><i class="fa fa-check"></i><b>7.0.1</b> Strings review</a></li>
+<li class="chapter" data-level="7.0.2" data-path="working-with-strings.html"><a href="working-with-strings.html#stringr"><i class="fa fa-check"></i><b>7.0.2</b> stringr</a></li>
+<li class="chapter" data-level="7.0.3" data-path="working-with-strings.html"><a href="working-with-strings.html#string-basics"><i class="fa fa-check"></i><b>7.0.3</b> String basics</a></li>
+<li class="chapter" data-level="7.0.4" data-path="working-with-strings.html"><a href="working-with-strings.html#regular-expressions"><i class="fa fa-check"></i><b>7.0.4</b> Regular expressions</a></li>
+<li class="chapter" data-level="7.0.5" data-path="working-with-strings.html"><a href="working-with-strings.html#conclusion-1"><i class="fa fa-check"></i><b>7.0.5</b> Conclusion</a></li>
+<li class="chapter" data-level="7.0.6" data-path="working-with-strings.html"><a href="working-with-strings.html#additional-resources-4"><i class="fa fa-check"></i><b>7.0.6</b> Additional Resources</a></li>
+<li class="chapter" data-level="7.0.7" data-path="working-with-strings.html"><a href="working-with-strings.html#slides-and-video-6"><i class="fa fa-check"></i><b>7.0.7</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="working-with-factors.html"><a href="working-with-factors.html"><i class="fa fa-check"></i><b>8</b> Working with Factors</a>
+<ul>
+<li class="chapter" data-level="8.0.1" data-path="working-with-factors.html"><a href="working-with-factors.html#factor-basics"><i class="fa fa-check"></i><b>8.0.1</b> Factor basics</a></li>
+<li class="chapter" data-level="8.0.2" data-path="working-with-factors.html"><a href="working-with-factors.html#manually-change-the-labels-of-factor-levels-fct_relevel"><i class="fa fa-check"></i><b>8.0.2</b> Manually change the labels of factor levels : <code>fct_relevel()</code></a></li>
+<li class="chapter" data-level="8.0.3" data-path="working-with-factors.html"><a href="working-with-factors.html#keep-the-order-of-the-factor-levels-fct_inorder"><i class="fa fa-check"></i><b>8.0.3</b> Keep the order of the factor levels : <code>fct_inorder()</code></a></li>
+<li class="chapter" data-level="8.0.4" data-path="working-with-factors.html"><a href="working-with-factors.html#advanced-factoring"><i class="fa fa-check"></i><b>8.0.4</b> Advanced Factoring</a></li>
+<li class="chapter" data-level="8.0.5" data-path="working-with-factors.html"><a href="working-with-factors.html#re-ordering-factor-levels-by-frequency-fct_infreq"><i class="fa fa-check"></i><b>8.0.5</b> Re-ordering factor levels by frequency : <code>fct_infreq()</code></a></li>
+<li class="chapter" data-level="8.0.6" data-path="working-with-factors.html"><a href="working-with-factors.html#reversing-order-levels-fct_rev"><i class="fa fa-check"></i><b>8.0.6</b> Reversing order levels : <code>fct_rev()</code></a></li>
+<li class="chapter" data-level="8.0.7" data-path="working-with-factors.html"><a href="working-with-factors.html#re-ordering-factor-levels-by-another-variable-fct_reorder"><i class="fa fa-check"></i><b>8.0.7</b> Re-ordering factor levels by another variable : <code>fct_reorder()</code></a></li>
+<li class="chapter" data-level="8.0.8" data-path="working-with-factors.html"><a href="working-with-factors.html#combining-several-levels-into-one-fct_recode"><i class="fa fa-check"></i><b>8.0.8</b> Combining several levels into one: <code>fct_recode()</code></a></li>
+<li class="chapter" data-level="8.0.9" data-path="working-with-factors.html"><a href="working-with-factors.html#converting-numeric-levels-to-factors-ifelse-factor"><i class="fa fa-check"></i><b>8.0.9</b> Converting numeric levels to factors: <code>ifelse()</code> + <code>factor()</code></a></li>
+<li class="chapter" data-level="8.0.10" data-path="working-with-factors.html"><a href="working-with-factors.html#conclusions"><i class="fa fa-check"></i><b>8.0.10</b> Conclusions</a></li>
+<li class="chapter" data-level="8.0.11" data-path="working-with-factors.html"><a href="working-with-factors.html#additional-resources-5"><i class="fa fa-check"></i><b>8.0.11</b> Additional Resources</a></li>
+<li class="chapter" data-level="8.0.12" data-path="working-with-factors.html"><a href="working-with-factors.html#slides-and-video-7"><i class="fa fa-check"></i><b>8.0.12</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="working-with-dates.html"><a href="working-with-dates.html"><i class="fa fa-check"></i><b>9</b> Working with Dates</a>
+<ul>
+<li class="chapter" data-level="9.0.1" data-path="working-with-dates.html"><a href="working-with-dates.html#dates-and-time-basics"><i class="fa fa-check"></i><b>9.0.1</b> Dates and time basics</a></li>
+<li class="chapter" data-level="9.0.2" data-path="working-with-dates.html"><a href="working-with-dates.html#creating-dates-and-date-time-objects"><i class="fa fa-check"></i><b>9.0.2</b> Creating dates and date-time objects</a></li>
+<li class="chapter" data-level="9.0.3" data-path="working-with-dates.html"><a href="working-with-dates.html#working-with-dates-1"><i class="fa fa-check"></i><b>9.0.3</b> Working with dates</a></li>
+<li class="chapter" data-level="9.0.4" data-path="working-with-dates.html"><a href="working-with-dates.html#time-spans"><i class="fa fa-check"></i><b>9.0.4</b> Time spans</a></li>
+<li class="chapter" data-level="9.0.5" data-path="working-with-dates.html"><a href="working-with-dates.html#whats-not-covered-in-this-lesson"><i class="fa fa-check"></i><b>9.0.5</b> What’s not covered in this lesson</a></li>
+<li class="chapter" data-level="9.0.6" data-path="working-with-dates.html"><a href="working-with-dates.html#additional-resources-6"><i class="fa fa-check"></i><b>9.0.6</b> Additional Resources</a></li>
+<li class="chapter" data-level="9.0.7" data-path="working-with-dates.html"><a href="working-with-dates.html#slides-and-video-8"><i class="fa fa-check"></i><b>9.0.7</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="data-tidying-project.html"><a href="data-tidying-project.html"><i class="fa fa-check"></i><b>10</b> Data Tidying Project</a>
+<ul>
+<li class="chapter" data-level="10.0.1" data-path="data-tidying-project.html"><a href="data-tidying-project.html#data-tidying-project-1"><i class="fa fa-check"></i><b>10.0.1</b> Data Tidying Project</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the Authors</a></li>
+<li class="chapter" data-level="11" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>11</b> References</a></li>
+<li class="divider"></li>
+<p style="text-align:center;"> <a href="https://github.com/jhudsl/OTTR_Template" target="blank" > This content was published with</a> <a href="https://bookdown.org/" target="blank"> bookdown by: </a> </p>
+<p style="text-align:center;"> <a href="https://www.datatrail.org/"> Data Trail </a></p>
+<a href="https://www.datatrail.org/"><img src="https://github.com/datatrail-jhu/DataTrail_Template/raw/main/assets/DataTrail_logo.jpg" style=" width: 80%; filter: grayscale(100%); padding-left: 40px; padding-top: 8px; vertical-align: top "</a>
+<p style="text-align:center; font-size: 12px;"> <a href="https://github.com/rstudio4edu/rstudio4edu-book/"> Style adapted from: rstudio4edu-book </a> <a href ="https://creativecommons.org/licenses/by/2.0/"> (CC-BY 2.0) </a></p>
+<p style="padding-left: 40px;"><div class="trapezoid" style = "padding-left: 40px;"><span>  <a href="https://forms.gle/VWaJYc3zATe3qxYC9"> Click here to provide feedback</a> <img src="assets/itcr_arrow.png" style=" width: 10%" ></span></div></p>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Course Name</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<head>
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+  <!--script src="https://kit.fontawesome.com/6a26f47516.js"></script-->
+  <!--<script src="assets/hideOutput.js"></script>-->
+  <link href="assets/style_DataTrail.css" rel="stylesheet">
+</head>
+        
+
+
+<div class="hero-image-container"> 
+  <img class= "hero-image" src="assets/DataTrail.jpg">
+</div>
+<div id="tidying-data" class="section level1" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Tidying Data</h1>
+<p>So far we’ve discussed what tidy and untidy data are. We’ve (hopefully) convinced you that tidy data are the right type of data to work with. And, more than that, hopefully we’ve explained that data are not always the tidiest when they come to you at the start of a project. An incredibly important skill of a data scientist is to be able to take data from an untidy format and get it into a tidy format. We’ve started to discuss how to do this in the last lesson where we learned to reshape data. In this lesson, we’ll discuss a number of other ways in which data can be tidied and the necessary tools to <strong>tidy data</strong>.</p>
+<p>These skills are often referred to as <strong>data wrangling</strong>. They are skills that allow you to wrangle data from the format they’re currently in into the format you actually want them in.</p>
+<p>As this is an incredibly important topic, this will be a long lesson covering a number of packages and topics. Take your time working through it and be sure to understand all of the examples!</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_1" alt="data wrangling example" /></p>
+<div id="dplyr" class="section level3" number="6.0.1">
+<h3><span class="header-section-number">6.0.1</span> dplyr</h3>
+<p>Within R, there is a package specifically designed for helping you wrangle data. This package is called <a href="https://dplyr.tidyverse.org/"><code>dplyr</code></a> and will allow you to easily accomplish many of the data wrangling tasks necessary. In this lesson, we will cover a number of functions that will help you wrangle data using <code>dplyr</code>:</p>
+<ul>
+<li><code>%&gt;%</code> - pipe operator for chaining a sequence of operations</li>
+<li><code>glimpse()</code> - get an overview of what’s included in dataset</li>
+<li><code>filter()</code> - filter rows</li>
+<li><code>select()</code> - select, rename, and reorder columns</li>
+<li><code>rename()</code> - rename columns</li>
+<li><code>arrange()</code> - reorder rows</li>
+<li><code>mutate()</code> - create a new column</li>
+<li><code>group_by()</code> - group variables</li>
+<li><code>summarize()</code> - summarize information within a dataset</li>
+<li><code>left_join()</code> - combining data across data frame</li>
+</ul>
+<p>If you have not already, you’ll want to be sure this package is installed and loaded:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="tidying-data.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;dplyr&#39;</span>)</span>
+<span id="cb19-2"><a href="tidying-data.html#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
+</div>
+<div id="tidyr-1" class="section level3" number="6.0.2">
+<h3><span class="header-section-number">6.0.2</span> tidyr</h3>
+<p>We will also return to the <code>tidyr</code> package. The same package that we used to reshape our data will be helpful when tidying data. The main functions we’ll cover from <code>tidyr</code> are:</p>
+<ul>
+<li><code>unite()</code> - combine contents of two or more columns into a single column</li>
+<li><code>separate()</code> - separate contents of a column into two or more columns</li>
+</ul>
+<p>If you have not already, you’ll want to be sure this package is installed and loaded:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="tidying-data.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tidyr&#39;</span>)</span>
+<span id="cb20-2"><a href="tidying-data.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span></code></pre></div>
+</div>
+<div id="janitor" class="section level3" number="6.0.3">
+<h3><span class="header-section-number">6.0.3</span> janitor</h3>
+<p>The third package we’ll include here is the <code>janitor</code> package. This package provides tools for cleaning messy data. The main functions we’ll cover from janitor are:</p>
+<ul>
+<li><code>clean_names()</code> - clean names of a data frame</li>
+<li><code>tabyl()</code> - get a helpful summary of a variable</li>
+</ul>
+<p>If you have not already, you’ll want to be sure this package is installed and loaded:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="tidying-data.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;janitor&#39;</span>)</span>
+<span id="cb21-2"><a href="tidying-data.html#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code></pre></div>
+</div>
+<div id="skimr" class="section level3" number="6.0.4">
+<h3><span class="header-section-number">6.0.4</span> skimr</h3>
+<p>The final package we’ll discuss here is the <code>skimr</code> package. This package provides a quick way to summarize a data frame. We’ll discuss its most useful function here:</p>
+<ul>
+<li><code>skim()</code> - summarize a data frame</li>
+</ul>
+<p>If you have not already, you’ll want to be sure this package is installed and loaded:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="tidying-data.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;skimr&#39;</span>)</span>
+<span id="cb22-2"><a href="tidying-data.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span></code></pre></div>
+</div>
+<div id="the-pipe-operator" class="section level3" number="6.0.5">
+<h3><span class="header-section-number">6.0.5</span> The Pipe Operator</h3>
+<p>Before we get into the important functions within <code>dplyr</code>, it will be very useful to discuss what is known as the <strong>pipe operator</strong>. The pipe operator looks like this in R: <code>%&gt;%</code>. Whenever you see the pipe <code>%&gt;%</code>, think of the word “then”, so if you saw the sentence “I went to the the store and %&gt;% I went back to my house,” you would read this as I went to the store and <em>then</em> I went back to my house. The pipe tells you to do one thing and <em>then</em> do another.</p>
+<p>Generally, the pipe operator allows you to string a number of different functions together in a particular order. If you wanted to take data frame A and carry out function B on it in R, you could depict this with an arrow pointing from A to B:</p>
+<p>A –&gt; B</p>
+<p>Here you are saying, “Take A and <em>then</em> feed it into function B.”</p>
+<p>In R syntax, from what you’ve seen so far, what is depicted by the arrow above would be carried out by calling the function B on the data frame object A:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="tidying-data.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">B</span>(A)</span></code></pre></div>
+<p>Alternatively, you could use the pipe operator (<code>%&gt;%</code>):</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="tidying-data.html#cb24-1" aria-hidden="true" tabindex="-1"></a>A <span class="sc">%&gt;%</span> B</span></code></pre></div>
+<p>However, often you are not performing just one action on a data frame, but rather you are looking to carry out multiple functions. We can again depict this with an arrow diagram.</p>
+<p>A –&gt; B –&gt; C –&gt; D</p>
+<p>Here you are saying that you want to take data frame A and carry out function B, <em>then</em> you want to take the output from that and <em>then</em> carry out function C. Subsequently you want to take the output of that and <em>then</em> carry out function D. In R syntax, we would first apply function B to data frame A, then apply function C to this output, then apply function D to this output. This results in the following syntax that is hard to read because multiple calls to functions are nested within each other:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="tidying-data.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">D</span>(<span class="fu">C</span>(<span class="fu">B</span>(A)))</span></code></pre></div>
+<p>Alternatively, you could use the pipe operator. Each time you want take the output of one function and carry out something new on that output, you will use the pipe operator:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="tidying-data.html#cb26-1" aria-hidden="true" tabindex="-1"></a>A <span class="sc">%&gt;%</span> B <span class="sc">%&gt;%</span> C <span class="sc">%&gt;%</span> D</span></code></pre></div>
+<p>Below we’ll use this pipe operator a lot. Essentially, it takes output from the left hand side and feeds it into a function on the right hand side. You’ll get a better understanding of how it works as you run the code below. But, when in doubt remember that the pipe operator should be read as <em>then</em>.</p>
+</div>
+<div id="filtering-data" class="section level3" number="6.0.6">
+<h3><span class="header-section-number">6.0.6</span> Filtering Data</h3>
+<p>When working with a large dataset, you’re often interested in only working with a portion of the data at any one time. For example, if you had data on people from ages 0 to 100 years old, but you wanted to ask a question that only pertained to children, you would likely want to only work with data from those individuals who were less than 18 years old. To do this, you would want to <strong>filter</strong> your dataset to only include data from these select individuals. Filtering can be done by row or by column. We’ll discuss the syntax in R for doing both. Please note that the examples in this lesson and the organization for this lesson were adapted from <a href="https://suzan.rbind.io/">Suzan Baert’s</a> wonderful <code>dplyr</code> tutorials. Links to the all four tutorials can be found in the “Additional Resources” section at the bottom of this lesson.</p>
+<p>For the examples below, we’ll be using a dataset from the <code>ggplot2</code> package called <code>msleep</code>. (You’ll learn more about this package in a later course on data visualization.) This dataset includes sleep times and weights from a number of different mammals. It has 83 rows, with each row including information about a different type of animal, and 11 variables. As each row is a different animal and each column includes information about that animal, this is a <strong>wide</strong> dataset.</p>
+<p>To get an idea of what variables are included in this data frame, you can use <code>glimpse()</code>. This function summarizes how many rows there are (<code>Observations</code>) and how many columns there are (<code>Variables</code>). Additionally, it gives you a glimpse into the type of data contained in each column. Specifically, in this data set, we know that the first column is <code>name</code> and that it contains a character vector (<code>chr</code>) and that the first three entires are “Cheetah”, “Owl monkey”, and “Mountain beaver.” It works similarly to the <code>summary()</code> function covered in an earlier course.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="tidying-data.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="do">## install packages if you haven&#39;t already</span></span>
+<span id="cb27-2"><a href="tidying-data.html#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;ggplot2&#39;</span>)</span>
+<span id="cb27-3"><a href="tidying-data.html#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="tidying-data.html#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="do">## load package</span></span>
+<span id="cb27-5"><a href="tidying-data.html#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb27-6"><a href="tidying-data.html#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-7"><a href="tidying-data.html#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="do">## take a look at the data</span></span>
+<span id="cb27-8"><a href="tidying-data.html#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(msleep)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_133" alt="Glimpse of msleep dataset" /></p>
+<div id="filtering-rows" class="section level4" number="6.0.6.1">
+<h4><span class="header-section-number">6.0.6.1</span> Filtering Rows</h4>
+<p>If you were only interested in learning more about the sleep times of “Primates,” we could filter this dataset to include only data about those mammals that are also Primates. As we can see from <code>glimpse()</code>, this information is contained within the <code>order</code> variable. So to do this within R, we use the following syntax:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="tidying-data.html#cb28-1" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
+<span id="cb28-2"><a href="tidying-data.html#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(order <span class="sc">==</span> <span class="st">&quot;Primates&quot;</span>)</span></code></pre></div>
+<p>Note that we are using the equality <code>==</code> comparison operator that you learned about in the previous course. Also note that we have used the pipe operator to feed the <code>msleep</code> data frame into the <code>filter()</code> function. This is shorthand for:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="tidying-data.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(msleep, order <span class="sc">==</span> <span class="st">&quot;Primates&quot;</span>)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_164" alt="Filtered to only include Primates" /></p>
+<p>Here, we have a smaller dataset of only 12 mammals (as opposed to the original 83) and we can see that the <code>order</code> variable column only includes “Primates.”</p>
+<p>But, what if we were only interested in Primates who sleep more than 10 hours total per night? This information is in the <code>sleep_total</code> column. Fortunately, <code>filter()</code> also works on numeric variables. To accomplish this, you would use the following syntax, separating the multiple filters you want to apply with a comma:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="tidying-data.html#cb30-1" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
+<span id="cb30-2"><a href="tidying-data.html#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(order <span class="sc">==</span> <span class="st">&quot;Primates&quot;</span>, sleep_total <span class="sc">&gt;</span> <span class="dv">10</span>)</span></code></pre></div>
+<p>Note that we have used the “greater than” comparison operator with <code>sleep_total</code>.</p>
+<p>Now, we have a dataset focused in on only 5 mammals, all of which are primates who sleep for more than 10 hours a night total.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_179" alt="Numerically filtered dataset" /></p>
+<p>We can obtain the same result with the AND <code>&amp;</code> logical operator instead of separating filtering conditions with a comma:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="tidying-data.html#cb31-1" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
+<span id="cb31-2"><a href="tidying-data.html#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(order <span class="sc">==</span> <span class="st">&quot;Primates&quot;</span> <span class="sc">&amp;</span> sleep_total <span class="sc">&gt;</span> <span class="dv">10</span>)</span></code></pre></div>
+<p>Note that the number of columns hasn’t changed. All 11 variables are still shown in columns because the function <code>filter()</code> filters on rows, not columns.</p>
+</div>
+<div id="selecting-columns" class="section level4" number="6.0.6.2">
+<h4><span class="header-section-number">6.0.6.2</span> Selecting Columns</h4>
+<p>While <code>filter()</code> operates on rows, it <em>is</em> possible to filter your dataset to only include the columns you’re interested in. To select columns so that your dataset only includes variables you’re interested in, you will use <code>select()</code>.</p>
+<p>Let’s start with the code we just wrote to only include primates who sleep a lot. What if we only want to include the first column (the name of the mammal) and the sleep information (included in the columns <code>sleep_total</code>, <code>sleep_rem</code>, and <code>sleep_cycle</code>)? We would do this by starting with the code we just used, adding another pipe, and using the function <code>select()</code>. Within <code>select</code>, we specify which columns we want in our output.</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="tidying-data.html#cb32-1" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
+<span id="cb32-2"><a href="tidying-data.html#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(order <span class="sc">==</span> <span class="st">&quot;Primates&quot;</span>, sleep_total <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb32-3"><a href="tidying-data.html#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, sleep_total, sleep_rem, sleep_cycle)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_187" alt="Data with selected columns" /></p>
+<p>Now, using <code>select()</code> we see that we still have the five rows we filtered to before, but we only have the four columns specified using <code>select()</code>. Here you can hopefully see the power of the pipe operator to chain together several commands in a row. Without the pipe operator, the full command would look like this:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="tidying-data.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(<span class="fu">filter</span>(msleep, order <span class="sc">==</span> <span class="st">&quot;Primates&quot;</span>, sleep_total <span class="sc">&gt;</span> <span class="dv">10</span>), name, sleep_total, sleep_rem, sleep_cycle)</span></code></pre></div>
+</div>
+<div id="renaming-columns" class="section level4" number="6.0.6.3">
+<h4><span class="header-section-number">6.0.6.3</span> Renaming Columns</h4>
+<p><code>select()</code> can also be used to rename columns. To do so, you use the syntax: <code>new_column_name = old_column_name</code> within <code>select</code>. For example, to select the same columns and rename them <code>total</code>, <code>rem</code> and <code>cycle</code>, you would use the following syntax:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="tidying-data.html#cb34-1" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
+<span id="cb34-2"><a href="tidying-data.html#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(order <span class="sc">==</span> <span class="st">&quot;Primates&quot;</span>, sleep_total <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb34-3"><a href="tidying-data.html#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, <span class="at">total=</span>sleep_total, <span class="at">rem=</span>sleep_rem, <span class="at">cycle=</span>sleep_cycle)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_194" alt="Data with renamed columns names with select()" /></p>
+<p>It’s important to keep in mind that when using <code>select()</code> to rename columns, only the specified columns will be included and renamed in the output. If you, instead, want to change the names of a few columns but return <em>all</em> columns in your output, you’ll want to use <code>rename()</code>. For example, the following, returns a data frame with all 11 columns, where the column names for three columns specified within <code>rename()</code> function have been renamed.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="tidying-data.html#cb35-1" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
+<span id="cb35-2"><a href="tidying-data.html#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(order <span class="sc">==</span> <span class="st">&quot;Primates&quot;</span>, sleep_total <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb35-3"><a href="tidying-data.html#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">total=</span>sleep_total, <span class="at">rem=</span>sleep_rem, <span class="at">cycle=</span>sleep_cycle)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g4518ccec72_0_0" alt="Data with renamed columns names using rename()" /></p>
+</div>
+</div>
+<div id="reordering" class="section level3" number="6.0.7">
+<h3><span class="header-section-number">6.0.7</span> Reordering</h3>
+<p>In addition to filtering rows and columns, often, you’ll want the data arranged in a particular order. It may order the columns in a logical way, or it could be to sort the data so that the data are sorted by value, with those having the smallest value in the first row and the largest value in the last row. All of this can be achieved with a few simple functions.</p>
+<div id="reordering-columns" class="section level4" number="6.0.7.1">
+<h4><span class="header-section-number">6.0.7.1</span> Reordering Columns</h4>
+<p>The <code>select()</code> function is powerful. Not only will it filter and rename columns, but it can also be used to reorder your columns. Using our example from above, if you wanted <code>sleep_rem</code> to be the first sleep column and <code>sleep_total</code> to be the last column, all you have to do is reorder them within <code>select()</code>. The output from <code>select()</code> would then be reordered to match the order specified within <code>select()</code>.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="tidying-data.html#cb36-1" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
+<span id="cb36-2"><a href="tidying-data.html#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(order <span class="sc">==</span> <span class="st">&quot;Primates&quot;</span>, sleep_total <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb36-3"><a href="tidying-data.html#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, sleep_rem, sleep_cycle, sleep_total)</span></code></pre></div>
+<p>Here we see that sleep_rem <code>name</code> is displayed first followed by <code>sleep_rem</code>, <code>sleep_cycle</code>, and <code>sleep_total</code>, just as it was specified within <code>select()</code>.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_204" alt="Data with reordered columns names" /></p>
+</div>
+<div id="reordering-rows" class="section level4" number="6.0.7.2">
+<h4><span class="header-section-number">6.0.7.2</span> Reordering Rows</h4>
+<p>Rows can also be reordered. To reorder a variable in ascending order (from smallest to largest), you’ll want to use <code>arrange()</code>. Continuing on from our example above, to now sort our rows by the amount of total sleep each mammal gets, we would use the following syntax:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="tidying-data.html#cb37-1" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
+<span id="cb37-2"><a href="tidying-data.html#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(order <span class="sc">==</span> <span class="st">&quot;Primates&quot;</span>, sleep_total <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb37-3"><a href="tidying-data.html#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, sleep_rem, sleep_cycle, sleep_total) <span class="sc">%&gt;%</span></span>
+<span id="cb37-4"><a href="tidying-data.html#cb37-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(sleep_total)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_215" alt="Data arranged by total sleep in ascending order" /></p>
+<p>While <code>arrange</code> sorts variables in ascending order, it’s also possible to sort in descending (largest to smallest) order. To do this you just use <code>desc()</code> with the following syntax:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="tidying-data.html#cb38-1" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
+<span id="cb38-2"><a href="tidying-data.html#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(order <span class="sc">==</span> <span class="st">&quot;Primates&quot;</span>, sleep_total <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb38-3"><a href="tidying-data.html#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, sleep_rem, sleep_cycle, sleep_total) <span class="sc">%&gt;%</span></span>
+<span id="cb38-4"><a href="tidying-data.html#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(sleep_total))</span></code></pre></div>
+<p>By putting <code>sleep_total</code> within <code>desc()</code>, <code>arrange()</code> will now sort your data from the primates with the longest total sleep to the shortest.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_215" alt="Data arranged by total sleep in descending order" /></p>
+<p><code>arrange()</code> can also be used to order non-numeric variables. For example, <code>arrange()</code> will sort character vectors alphabetically.</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="tidying-data.html#cb39-1" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
+<span id="cb39-2"><a href="tidying-data.html#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(order <span class="sc">==</span> <span class="st">&quot;Primates&quot;</span>, sleep_total <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb39-3"><a href="tidying-data.html#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, sleep_rem, sleep_cycle, sleep_total) <span class="sc">%&gt;%</span></span>
+<span id="cb39-4"><a href="tidying-data.html#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(name)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_234" alt="Data arranged alphabetically by name" /></p>
+<p>If you would like to reorder rows based on information in multiple columns, you can specify them separated by commas. This is useful if you have repeated labels in one column and want to sort within a category based on information in another column. In the example here, if there were repeated primates, this would sort the repeats based on their total sleep.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="tidying-data.html#cb40-1" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
+<span id="cb40-2"><a href="tidying-data.html#cb40-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(order <span class="sc">==</span> <span class="st">&quot;Primates&quot;</span>, sleep_total <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb40-3"><a href="tidying-data.html#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, sleep_rem, sleep_cycle, sleep_total) <span class="sc">%&gt;%</span></span>
+<span id="cb40-4"><a href="tidying-data.html#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(name, sleep_total)</span></code></pre></div>
+</div>
+</div>
+<div id="creating-new-columns" class="section level3" number="6.0.8">
+<h3><span class="header-section-number">6.0.8</span> Creating new columns</h3>
+<p>You will often find when working with data that you need an additional column. For example, if you had two datasets you wanted to combine, you may want to make a new column in each dataset called <code>dataset</code>. In one dataset you may put <code>datasetA</code> in each row. In the second dataset, you could put <code>datasetB</code>. This way, once you combined the data, you would be able to keep track of which dataset each row came from originally. More often, however, you’ll likely want to create a new column that calculates a new variable based on information in a column you already have. For example, in our mammal sleep dataset, <code>sleep_total</code> is in hours. What if you wanted to have that information in minutes? You could create a new column with this very information! The function <code>mutate()</code> was <em>made</em> for <strong>all</strong> of these new-column-creating situations. This function has a lot of capabilities. We’ll cover the basics here.</p>
+<p>Returning to our <code>msleep</code> dataset, after filtering and re-ordering, we can create a new column with <code>mutate()</code>. Within <code>mutate()</code>, we will calculate the number of minutes each mammal sleeps by multiplying the number of hours each animal sleeps by 60 minutes.</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="tidying-data.html#cb41-1" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
+<span id="cb41-2"><a href="tidying-data.html#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(order <span class="sc">==</span> <span class="st">&quot;Primates&quot;</span>, sleep_total <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb41-3"><a href="tidying-data.html#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, sleep_rem, sleep_cycle, sleep_total) <span class="sc">%&gt;%</span></span>
+<span id="cb41-4"><a href="tidying-data.html#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(name) <span class="sc">%&gt;%</span></span>
+<span id="cb41-5"><a href="tidying-data.html#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sleep_total_min =</span> sleep_total <span class="sc">*</span> <span class="dv">60</span>)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_242" alt="Mutate to add new column to data" /></p>
+</div>
+<div id="separating-columns" class="section level3" number="6.0.9">
+<h3><span class="header-section-number">6.0.9</span> Separating Columns</h3>
+<p>Sometimes multiple pieces of information are merged within a single column even though it would be more useful during analysis to have those pieces of information in separate columns. To demonstrate, we’ll now move from the <code>msleep</code> dataset to talking about another <a href="https://raw.githubusercontent.com/suzanbaert/Dplyr_Tutorials/master/conservation_explanation.csv">dataset</a> that includes information about conservation abbreviations in a single column.</p>
+<p>To read this file into R, we’ll use the <code>httr</code> package, which will be discussed in detail in a future lesson. For now, however, know that we’re using this to read in a file from the Internet using the code below.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="tidying-data.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="do">## if not already installed, you&#39;ll have to run the following line of code</span></span>
+<span id="cb42-2"><a href="tidying-data.html#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="do">## install.packages(&#39;httr&#39;)</span></span>
+<span id="cb42-3"><a href="tidying-data.html#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="do">## install.packages(&#39;readr&#39;)</span></span>
+<span id="cb42-4"><a href="tidying-data.html#cb42-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-5"><a href="tidying-data.html#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="do">## load the libraries</span></span>
+<span id="cb42-6"><a href="tidying-data.html#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(httr)</span>
+<span id="cb42-7"><a href="tidying-data.html#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb42-8"><a href="tidying-data.html#cb42-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-9"><a href="tidying-data.html#cb42-9" aria-hidden="true" tabindex="-1"></a><span class="do">## download file</span></span>
+<span id="cb42-10"><a href="tidying-data.html#cb42-10" aria-hidden="true" tabindex="-1"></a><span class="fu">GET</span>(<span class="st">&quot;https://raw.githubusercontent.com/suzanbaert/Dplyr_Tutorials/master/conservation_explanation.csv&quot;</span>, <span class="fu">write_disk</span>(tf <span class="ot">&lt;-</span> <span class="fu">tempfile</span>(<span class="at">fileext =</span> <span class="st">&quot;.csv&quot;</span>)))</span>
+<span id="cb42-11"><a href="tidying-data.html#cb42-11" aria-hidden="true" tabindex="-1"></a>conservation <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(tf)</span>
+<span id="cb42-12"><a href="tidying-data.html#cb42-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-13"><a href="tidying-data.html#cb42-13" aria-hidden="true" tabindex="-1"></a><span class="do">## take a look at this file</span></span>
+<span id="cb42-14"><a href="tidying-data.html#cb42-14" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(conservation)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_250" alt="Conservation data set" /></p>
+<p>In this dataset, we see that there is a single column that includes <em>both</em> the abbreviation for the conservation term as well as what that abbreviation means. Recall that this violates one of the tidy data principles covered in the first lesson: Put just one thing in a cell. To work with these data, you could imagine that you may want these two pieces of information (the abbreviation and the description) in two different columns. To accomplish this in R, you’ll want to use <code>separate()</code> from <code>tidyr</code>.</p>
+<p>The <code>separate()</code> function requires the name of the existing column that you want to separate (<code>conservation abbreviation</code>), the desired column names of the resulting separated columns (<code>into = c("abbreviation", "description")</code>), and the characters that currently separate the pieces of information (<code>sep = " = "</code>). We have to put <code>conservation abbreviation</code> in back ticks in the code below because the column name contains a space. Without the back ticks, R would think that <code>conservation</code> and <code>abbreviation</code> were two separate things. This is another violation of tidy data! Variable names should have underscores, not spaces!</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="tidying-data.html#cb43-1" aria-hidden="true" tabindex="-1"></a>conservation <span class="sc">%&gt;%</span></span>
+<span id="cb43-2"><a href="tidying-data.html#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="st">`</span><span class="at">conservation abbreviation</span><span class="st">`</span>,</span>
+<span id="cb43-3"><a href="tidying-data.html#cb43-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;abbreviation&quot;</span>, <span class="st">&quot;description&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; = &quot;</span>)</span></code></pre></div>
+<p>The output of this code shows that we now have two separate columns with the information in the original column separated out into <code>abbreviation</code> and <code>description</code>.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_261" alt="Output of separate()" /></p>
+</div>
+<div id="merging-columns" class="section level3" number="6.0.10">
+<h3><span class="header-section-number">6.0.10</span> Merging Columns</h3>
+<p>The opposite of <code>separate()</code> is <code>unite()</code>. So, if you have information in two or more different columns but wish it were in one single column, you’ll want to use <code>unite()</code>. Using the code forming the two separate columns above, we can then add on an extra line of <code>unite()</code> code to re-join these separate columns, returning what we started with.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="tidying-data.html#cb44-1" aria-hidden="true" tabindex="-1"></a>conservation <span class="sc">%&gt;%</span></span>
+<span id="cb44-2"><a href="tidying-data.html#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="st">`</span><span class="at">conservation abbreviation</span><span class="st">`</span>,</span>
+<span id="cb44-3"><a href="tidying-data.html#cb44-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;abbreviation&quot;</span>, <span class="st">&quot;description&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; = &quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb44-4"><a href="tidying-data.html#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unite</span>(united_col, abbreviation, description, <span class="at">sep =</span> <span class="st">&quot; = &quot;</span>)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_408" alt="Output of unite()" /></p>
+</div>
+<div id="cleaning-up-column-names" class="section level3" number="6.0.11">
+<h3><span class="header-section-number">6.0.11</span> Cleaning up column names</h3>
+<p>While maybe not quite as important as some of the other functions mentioned in this lesson, a function that will likely prove very helpful as you start analyzing lots of different datasets is <code>clean_names()</code> from the <code>janitor</code> package. This function takes the existing column names of your dataset, converts them all to lowercase letters and numbers, and separates all words using the underscore character. For example, there is a space in the column name for conservation. <code>clean_names()</code> will convert <code>conservation abbreviation</code> to <code>conservation_abbreviation</code>. These cleaned up column names are a lot easier to work with when you have large datasets.</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="tidying-data.html#cb45-1" aria-hidden="true" tabindex="-1"></a>conservation <span class="sc">%&gt;%</span></span>
+<span id="cb45-2"><a href="tidying-data.html#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_329" alt="clean_names() output" /></p>
+</div>
+<div id="combining-data-across-data-frames" class="section level3" number="6.0.12">
+<h3><span class="header-section-number">6.0.12</span> Combining data across data frames</h3>
+<p>There is often information stored in two separate data frames that you’ll want in a single data frame. There are <em>many</em> different ways to join separate data frames. They are discussed in more detail in <a href="http://stat545.com/bit001_dplyr-cheatsheet.html">this tutorial</a> from <a href="https://www.stat.ubc.ca/~jenny/">Jenny Bryan</a>. Here, we’ll demonstrate how the <code>left_join()</code> function works, as this is used frequently.</p>
+<p>Let’s try to combine the information from the two different datasets we’ve used in this lesson. We have <code>msleep</code> and <code>conservation</code>. <code>msleep</code> contains a column called <code>conservation</code>. This column includes lowercase abbreviations that overlap with the uppercase abbreviations in the <code>abbreviation</code> column in the <code>conservation</code> dataset.</p>
+<p>To handle the fact that in one dataset the abbreviations are lowercase and the other they are uppercase, we’ll use <code>mutate()</code> to take all the lowercase abbreviations to uppercase abbreviations using the function <code>toupper()</code>.</p>
+<p>We’ll then use <code>left_join()</code> which takes all of the rows in the first dataset mentioned (<code>msleep</code>, below) and incorporates information from the second dataset mentioned (<code>conserve</code>, below), when information in the second dataset is available. The <code>by =</code> argument states what columns to join by in the first (“conservation”) and second (“abbreviation”) datasets. This join adds the <code>description</code> column from the <code>conserve</code> dataset onto the original dataset (<code>msleep</code>). Note that if there is no information in the second dataset that matches with the information in the first dataset, <code>left_join()</code> will add NA. Specifically, for rows where conservation is “DOMESTICATED” below, the <code>description</code> column will have NA because “DOMESTICATED”” is not an abbreviation in the <code>conserve</code> dataset.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="tidying-data.html#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="do">## take conservation dataset and separate information</span></span>
+<span id="cb46-2"><a href="tidying-data.html#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="do">## into two columns</span></span>
+<span id="cb46-3"><a href="tidying-data.html#cb46-3" aria-hidden="true" tabindex="-1"></a><span class="do">## call that new object `conserve`</span></span>
+<span id="cb46-4"><a href="tidying-data.html#cb46-4" aria-hidden="true" tabindex="-1"></a>conserve <span class="ot">&lt;-</span> conservation <span class="sc">%&gt;%</span></span>
+<span id="cb46-5"><a href="tidying-data.html#cb46-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="st">`</span><span class="at">conservation abbreviation</span><span class="st">`</span>,</span>
+<span id="cb46-6"><a href="tidying-data.html#cb46-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;abbreviation&quot;</span>, <span class="st">&quot;description&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; = &quot;</span>)</span>
+<span id="cb46-7"><a href="tidying-data.html#cb46-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-8"><a href="tidying-data.html#cb46-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-9"><a href="tidying-data.html#cb46-9" aria-hidden="true" tabindex="-1"></a><span class="do">## now lets join the two datasets together</span></span>
+<span id="cb46-10"><a href="tidying-data.html#cb46-10" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
+<span id="cb46-11"><a href="tidying-data.html#cb46-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">conservation =</span> <span class="fu">toupper</span>(conservation)) <span class="sc">%&gt;%</span></span>
+<span id="cb46-12"><a href="tidying-data.html#cb46-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(conserve, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;conservation&quot;</span> <span class="ot">=</span> <span class="st">&quot;abbreviation&quot;</span>))</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_265" alt="Data resulting from left_join" /></p>
+<p>It’s important to note that there are many other ways to join data, which are covered in more detail on this <a href="http://stat545.com/bit001_dplyr-cheatsheet.html">dplyr join cheatsheet</a> from Jenny Bryan. For now, it’s important to know that joining datasets is done easily in R using tools in <code>dplyr</code>. As you join data frames in your own work, it’s a good idea to refer back to this cheatsheet for assistance.</p>
+</div>
+<div id="grouping-data" class="section level3" number="6.0.13">
+<h3><span class="header-section-number">6.0.13</span> Grouping Data</h3>
+<p>Often, data scientists will want to summarize information in their dataset. You may want to know how many people are in a dataset. However, more often, you’ll want to know how many people there are within a group in your dataset. For example, you may want to know how many males and how many females there are. To do this, grouping your data is necessary. Rather than looking at the total number of individuals, to accomplish this, you first have to <strong>group the data</strong> by the gender of the individuals. Then, you count within those groups. Grouping by variables within <code>dplyr</code> is straightforward.</p>
+<div id="group_by" class="section level4" number="6.0.13.1">
+<h4><span class="header-section-number">6.0.13.1</span> group_by()</h4>
+<p>There is an incredibly helpful function within <code>dplyr</code> called <code>group_by()</code>. <code>group_by()</code> groups a dataset by one or more variables. On its own, it does not appear to change the dataset very much. The difference between the two outputs below is subtle:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="tidying-data.html#cb47-1" aria-hidden="true" tabindex="-1"></a>msleep</span>
+<span id="cb47-2"><a href="tidying-data.html#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="tidying-data.html#cb47-3" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
+<span id="cb47-4"><a href="tidying-data.html#cb47-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(order)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_278" alt="group_by() output" /></p>
+<p>In fact, the only aspect of the output that is different is that the number of different orders is now printed on your screen. However, in the next section, you’ll see that the output from any further functions you carry out at this point will differ between the two datasets.</p>
+</div>
+</div>
+<div id="summarizing-data" class="section level3" number="6.0.14">
+<h3><span class="header-section-number">6.0.14</span> Summarizing Data</h3>
+<p>Throughout data cleaning and analysis it will be important to summarize information in your dataset. This may be for a formal report or for checking the results of a data tidying operation.</p>
+<div id="summarize" class="section level4" number="6.0.14.1">
+<h4><span class="header-section-number">6.0.14.1</span> summarize()</h4>
+<p>Continuing on from the previous examples, if you wanted to figure out how many samples are present in your dataset, you could use the <code>summarize()</code> function.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="tidying-data.html#cb48-1" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
+<span id="cb48-2"><a href="tidying-data.html#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(order) <span class="sc">%&gt;%</span></span>
+<span id="cb48-3"><a href="tidying-data.html#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">N=</span><span class="fu">n</span>())</span></code></pre></div>
+<p>This provides a summary of the data with the new column name we specified above (<code>N</code>) and the number of samples in the dataset. Note that we could also obtain the same information by directly obtaining the number of rows in the data frame with <code>nrow(msleep)</code>.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_285" alt="Summarize with n()" /></p>
+<p>However, if you wanted to count how many of each different <code>order</code> of mammal you had. You would first <code>group_by(order)</code> and then use <code>summarize()</code>. This will summarize within group.</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="tidying-data.html#cb49-1" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
+<span id="cb49-2"><a href="tidying-data.html#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(order) <span class="sc">%&gt;%</span></span>
+<span id="cb49-3"><a href="tidying-data.html#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(order) <span class="sc">%&gt;%</span></span>
+<span id="cb49-4"><a href="tidying-data.html#cb49-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">N=</span><span class="fu">n</span>())</span></code></pre></div>
+<p>The output from this, like above, includes the column name we specified in summarize (<code>N</code>). However, it includes the number of samples in the group_by variable we specified (<code>order</code>).</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_293" alt="group_by() and summarize with n()" /></p>
+<p>There are other ways in which the data can be summarized using <code>summarize()</code>. In addition to using n() to count the number of samples within a group, you can also summarize using other helpful functions within R, such as <code>mean()</code>, <code>median()</code>, <code>min()</code>, and <code>max()</code>.</p>
+<p>For example, if we wanted to calculate the average (mean) total sleep each order of mammal got, we could use the following syntax:</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="tidying-data.html#cb50-1" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
+<span id="cb50-2"><a href="tidying-data.html#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(order) <span class="sc">%&gt;%</span></span>
+<span id="cb50-3"><a href="tidying-data.html#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(order, sleep_total) <span class="sc">%&gt;%</span></span>
+<span id="cb50-4"><a href="tidying-data.html#cb50-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">N=</span><span class="fu">n</span>(), <span class="at">mean_sleep=</span><span class="fu">mean</span>(sleep_total))</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_300" alt="summarize using mean()" /></p>
+</div>
+<div id="tabyl" class="section level4" number="6.0.14.2">
+<h4><span class="header-section-number">6.0.14.2</span> tabyl()</h4>
+<p>In addition to using <code>summarize()</code> from <code>dplyr</code>, the <code>tabyl()</code> function from the <code>janitor</code> package can be incredibly helpful for summarizing categorical variables quickly and discerning the output at a glance. Again returning to our <code>msleep</code> dataset, if we wanted to get a summary of how many samples are in each order category and what percent of the data fall into each category we could call tabyl on that variable. For example, if we use the following syntax, we easily get a quick snapshot of this variable.</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="tidying-data.html#cb51-1" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
+<span id="cb51-2"><a href="tidying-data.html#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabyl</span>(order)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_304" alt="summarize using tabyl() from janitor" /></p>
+<p>Note, that <code>tabyl</code> assumes categorical variables. If you want to summarize numeric variables <code>summary()</code> works well. For example, this code will summarize the values in <code>msleep$awake</code> for you.</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="tidying-data.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(msleep<span class="sc">$</span>awake)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_320" alt="summarize numeric variables" /></p>
+</div>
+<div id="skim" class="section level4" number="6.0.14.3">
+<h4><span class="header-section-number">6.0.14.3</span> skim()</h4>
+<p>When you would rather get a snapshot of the entire dataset, rather than just one variable, the <code>skim()</code> function from the <code>skimr</code> package can be very helpful. The output from <code>skim()</code> breaks the data up by variable type. For example, the <code>msleep</code> data set is broken up into <code>character</code> and <code>numeric</code> variable types. The data are then summarized in a meaningful way for each. This function provides a lot of information about the entire data set. So, when you want a summarize a dataset and quickly get a sense of your data, <code>skim()</code> is a great option!</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="tidying-data.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">skim</span>(msleep)</span></code></pre></div>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_313" alt="summarize entire dataset using skim() from skimr" /></p>
+</div>
+</div>
+<div id="conclusion" class="section level3" number="6.0.15">
+<h3><span class="header-section-number">6.0.15</span> Conclusion</h3>
+<p>We have gone through a number of ways to work with data in this lesson. Mastering the skills in this lesson will provide you with a number of critical data science skills. Thus, running the examples in this lesson and practicing on your own with other data sets will be essential to succeeding as a data scientist.</p>
+</div>
+<div id="additional-resources-3" class="section level3" number="6.0.16">
+<h3><span class="header-section-number">6.0.16</span> Additional Resources</h3>
+<ul>
+<li><a href="https://dplyr.tidyverse.org/">dplyr</a>, part of the <a href="https://www.tidyverse.org/">tidyverse</a></li>
+<li><a href="https://cran.r-project.org/web/packages/janitor/index.html">janitor</a>, from <a href="http://samfirke.com/">Sam Firke</a></li>
+<li>dplyr tutorials by <a href="https://suzan.rbind.io/">Suzan Baert</a> <a href="https://suzan.rbind.io/2018/01/dplyr-tutorial-1/">Part 1</a> <a href="https://suzan.rbind.io/2018/02/dplyr-tutorial-2/">Part 2</a> <a href="https://suzan.rbind.io/2018/02/dplyr-tutorial-3/">Part 3</a> <a href="https://suzan.rbind.io/2018/04/dplyr-tutorial-4/">Part 4</a></li>
+<li><a href="https://medium.com/@verajosemanuel/janitor-a-good-r-package-for-data-cleaning-f3c733632ad9">janitor tutorial</a> by</li>
+<li><a href="http://stat545.com/bit001_dplyr-cheatsheet.html">dplyr join cheatsheet</a> by <a href="https://www.stat.ubc.ca/~jenny/">Jenny Bryan</a></li>
+</ul>
+<p><strong>Note</strong>: a lot of the examples in this lesson were modified from the dplyr tutorials by <a href="https://suzan.rbind.io/">Suzan Baert</a>. To get an even <strong>deeper</strong> understanding of how to tidy data using <code>dplyr</code>, take a look at all of her dplyr tutorials.</p>
+</div>
+<div id="slides-and-video-5" class="section level3" number="6.0.17">
+<h3><span class="header-section-number">6.0.17</span> Slides and Video</h3>
+<div class="figure">
+<img src="https://youtu.be/-B_jdAi6Eds" alt="" />
+<p class="caption">Tidying Data</p>
+</div>
+<ul>
+<li><a href="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/edit?usp=sharing">Slides</a></li>
+</ul>
+
+</div>
+</div>
+<hr>
+<center> 
+  <div class="footer">
+      All illustrations <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY. </a>
+      <br>
+      All other materials <a href= "https://creativecommons.org/licenses/by/4.0/"> CC-BY </a> unless noted otherwise.
+  </div>
+</center>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="reshaping-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="working-with-strings.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

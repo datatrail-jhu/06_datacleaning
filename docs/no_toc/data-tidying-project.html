@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 10 Data Tidying Project | Course Name</title>
+  <meta name="description" content="Description about Course/Book." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 10 Data Tidying Project | Course Name" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Description about Course/Book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 10 Data Tidying Project | Course Name" />
+  
+  <meta name="twitter:description" content="Description about Course/Book." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="assets/DataTrail_favicon.ico" type="image/x-icon" />
+<link rel="prev" href="working-with-dates.html"/>
+<link rel="next" href="about-the-authors.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="assets/style_DataTrail.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<a href="https://www.datatrail.org/"><img src="https://github.com/datatrail-jhu/DataTrail_Template/raw/main/assets/DataTrail_logo.jpg" style="padding-left: 0px; padding-top: 8px;"</a>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Course</a></li>
+<li class="chapter" data-level="1" data-path="what-is-data.html"><a href="what-is-data.html"><i class="fa fa-check"></i><b>1</b> What is data?</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="what-is-data.html"><a href="what-is-data.html#types-of-data"><i class="fa fa-check"></i><b>1.0.1</b> Types of data</a></li>
+<li class="chapter" data-level="1.0.2" data-path="what-is-data.html"><a href="what-is-data.html#why-is-data-important"><i class="fa fa-check"></i><b>1.0.2</b> Why is data important?</a></li>
+<li class="chapter" data-level="1.0.3" data-path="what-is-data.html"><a href="what-is-data.html#slides-and-video"><i class="fa fa-check"></i><b>1.0.3</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-in-r.html"><a href="data-in-r.html"><i class="fa fa-check"></i><b>2</b> Data in R</a>
+<ul>
+<li class="chapter" data-level="2.0.1" data-path="data-in-r.html"><a href="data-in-r.html#file-types-in-r"><i class="fa fa-check"></i><b>2.0.1</b> File Types in R</a></li>
+<li class="chapter" data-level="2.0.2" data-path="data-in-r.html"><a href="data-in-r.html#datasets-in-r"><i class="fa fa-check"></i><b>2.0.2</b> Datasets in R</a></li>
+<li class="chapter" data-level="2.0.3" data-path="data-in-r.html"><a href="data-in-r.html#datasets-in-packages"><i class="fa fa-check"></i><b>2.0.3</b> Datasets in Packages</a></li>
+<li class="chapter" data-level="2.0.4" data-path="data-in-r.html"><a href="data-in-r.html#other-types-of-data-in-r"><i class="fa fa-check"></i><b>2.0.4</b> Other types of data in R</a></li>
+<li class="chapter" data-level="2.0.5" data-path="data-in-r.html"><a href="data-in-r.html#summary"><i class="fa fa-check"></i><b>2.0.5</b> Summary</a></li>
+<li class="chapter" data-level="2.0.6" data-path="data-in-r.html"><a href="data-in-r.html#additional-resources"><i class="fa fa-check"></i><b>2.0.6</b> Additional Resources</a></li>
+<li class="chapter" data-level="2.0.7" data-path="data-in-r.html"><a href="data-in-r.html#slides-and-video-1"><i class="fa fa-check"></i><b>2.0.7</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="tidy-data.html"><a href="tidy-data.html"><i class="fa fa-check"></i><b>3</b> Tidy Data</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="tidy-data.html"><a href="tidy-data.html#why-tidy-data"><i class="fa fa-check"></i><b>3.0.1</b> Why Tidy Data?</a></li>
+<li class="chapter" data-level="3.0.2" data-path="tidy-data.html"><a href="tidy-data.html#data-terminology"><i class="fa fa-check"></i><b>3.0.2</b> Data Terminology</a></li>
+<li class="chapter" data-level="3.0.3" data-path="tidy-data.html"><a href="tidy-data.html#principles-of-tidy-data"><i class="fa fa-check"></i><b>3.0.3</b> Principles of Tidy Data</a></li>
+<li class="chapter" data-level="3.0.4" data-path="tidy-data.html"><a href="tidy-data.html#rules-for-tidy-spreadsheets"><i class="fa fa-check"></i><b>3.0.4</b> Rules for Tidy Spreadsheets</a></li>
+<li class="chapter" data-level="3.0.5" data-path="tidy-data.html"><a href="tidy-data.html#additional-resources-1"><i class="fa fa-check"></i><b>3.0.5</b> Additional resources</a></li>
+<li class="chapter" data-level="3.0.6" data-path="tidy-data.html"><a href="tidy-data.html#slides-and-video-2"><i class="fa fa-check"></i><b>3.0.6</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="untidy-data.html"><a href="untidy-data.html"><i class="fa fa-check"></i><b>4</b> Untidy Data</a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="untidy-data.html"><a href="untidy-data.html#common-problems-with-messy-data-sets"><i class="fa fa-check"></i><b>4.0.1</b> Common problems with messy data sets</a></li>
+<li class="chapter" data-level="4.0.2" data-path="untidy-data.html"><a href="untidy-data.html#examples-of-untidy-data"><i class="fa fa-check"></i><b>4.0.2</b> Examples of untidy data</a></li>
+<li class="chapter" data-level="4.0.3" data-path="untidy-data.html"><a href="untidy-data.html#tidying-untidy-data"><i class="fa fa-check"></i><b>4.0.3</b> Tidying untidy data</a></li>
+<li class="chapter" data-level="4.0.4" data-path="untidy-data.html"><a href="untidy-data.html#slides-and-video-3"><i class="fa fa-check"></i><b>4.0.4</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="reshaping-data.html"><a href="reshaping-data.html"><i class="fa fa-check"></i><b>5</b> Reshaping Data</a>
+<ul>
+<li class="chapter" data-level="5.0.1" data-path="reshaping-data.html"><a href="reshaping-data.html#data-formats"><i class="fa fa-check"></i><b>5.0.1</b> Data Formats</a></li>
+<li class="chapter" data-level="5.0.2" data-path="reshaping-data.html"><a href="reshaping-data.html#r-packages"><i class="fa fa-check"></i><b>5.0.2</b> R Packages</a></li>
+<li class="chapter" data-level="5.0.3" data-path="reshaping-data.html"><a href="reshaping-data.html#additional-resources-2"><i class="fa fa-check"></i><b>5.0.3</b> Additional Resources</a></li>
+<li class="chapter" data-level="5.0.4" data-path="reshaping-data.html"><a href="reshaping-data.html#slides-and-video-4"><i class="fa fa-check"></i><b>5.0.4</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tidying-data.html"><a href="tidying-data.html"><i class="fa fa-check"></i><b>6</b> Tidying Data</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="tidying-data.html"><a href="tidying-data.html#dplyr"><i class="fa fa-check"></i><b>6.0.1</b> dplyr</a></li>
+<li class="chapter" data-level="6.0.2" data-path="tidying-data.html"><a href="tidying-data.html#tidyr-1"><i class="fa fa-check"></i><b>6.0.2</b> tidyr</a></li>
+<li class="chapter" data-level="6.0.3" data-path="tidying-data.html"><a href="tidying-data.html#janitor"><i class="fa fa-check"></i><b>6.0.3</b> janitor</a></li>
+<li class="chapter" data-level="6.0.4" data-path="tidying-data.html"><a href="tidying-data.html#skimr"><i class="fa fa-check"></i><b>6.0.4</b> skimr</a></li>
+<li class="chapter" data-level="6.0.5" data-path="tidying-data.html"><a href="tidying-data.html#the-pipe-operator"><i class="fa fa-check"></i><b>6.0.5</b> The Pipe Operator</a></li>
+<li class="chapter" data-level="6.0.6" data-path="tidying-data.html"><a href="tidying-data.html#filtering-data"><i class="fa fa-check"></i><b>6.0.6</b> Filtering Data</a></li>
+<li class="chapter" data-level="6.0.7" data-path="tidying-data.html"><a href="tidying-data.html#reordering"><i class="fa fa-check"></i><b>6.0.7</b> Reordering</a></li>
+<li class="chapter" data-level="6.0.8" data-path="tidying-data.html"><a href="tidying-data.html#creating-new-columns"><i class="fa fa-check"></i><b>6.0.8</b> Creating new columns</a></li>
+<li class="chapter" data-level="6.0.9" data-path="tidying-data.html"><a href="tidying-data.html#separating-columns"><i class="fa fa-check"></i><b>6.0.9</b> Separating Columns</a></li>
+<li class="chapter" data-level="6.0.10" data-path="tidying-data.html"><a href="tidying-data.html#merging-columns"><i class="fa fa-check"></i><b>6.0.10</b> Merging Columns</a></li>
+<li class="chapter" data-level="6.0.11" data-path="tidying-data.html"><a href="tidying-data.html#cleaning-up-column-names"><i class="fa fa-check"></i><b>6.0.11</b> Cleaning up column names</a></li>
+<li class="chapter" data-level="6.0.12" data-path="tidying-data.html"><a href="tidying-data.html#combining-data-across-data-frames"><i class="fa fa-check"></i><b>6.0.12</b> Combining data across data frames</a></li>
+<li class="chapter" data-level="6.0.13" data-path="tidying-data.html"><a href="tidying-data.html#grouping-data"><i class="fa fa-check"></i><b>6.0.13</b> Grouping Data</a></li>
+<li class="chapter" data-level="6.0.14" data-path="tidying-data.html"><a href="tidying-data.html#summarizing-data"><i class="fa fa-check"></i><b>6.0.14</b> Summarizing Data</a></li>
+<li class="chapter" data-level="6.0.15" data-path="tidying-data.html"><a href="tidying-data.html#conclusion"><i class="fa fa-check"></i><b>6.0.15</b> Conclusion</a></li>
+<li class="chapter" data-level="6.0.16" data-path="tidying-data.html"><a href="tidying-data.html#additional-resources-3"><i class="fa fa-check"></i><b>6.0.16</b> Additional Resources</a></li>
+<li class="chapter" data-level="6.0.17" data-path="tidying-data.html"><a href="tidying-data.html#slides-and-video-5"><i class="fa fa-check"></i><b>6.0.17</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="working-with-strings.html"><a href="working-with-strings.html"><i class="fa fa-check"></i><b>7</b> Working with Strings</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="working-with-strings.html"><a href="working-with-strings.html#strings-review"><i class="fa fa-check"></i><b>7.0.1</b> Strings review</a></li>
+<li class="chapter" data-level="7.0.2" data-path="working-with-strings.html"><a href="working-with-strings.html#stringr"><i class="fa fa-check"></i><b>7.0.2</b> stringr</a></li>
+<li class="chapter" data-level="7.0.3" data-path="working-with-strings.html"><a href="working-with-strings.html#string-basics"><i class="fa fa-check"></i><b>7.0.3</b> String basics</a></li>
+<li class="chapter" data-level="7.0.4" data-path="working-with-strings.html"><a href="working-with-strings.html#regular-expressions"><i class="fa fa-check"></i><b>7.0.4</b> Regular expressions</a></li>
+<li class="chapter" data-level="7.0.5" data-path="working-with-strings.html"><a href="working-with-strings.html#conclusion-1"><i class="fa fa-check"></i><b>7.0.5</b> Conclusion</a></li>
+<li class="chapter" data-level="7.0.6" data-path="working-with-strings.html"><a href="working-with-strings.html#additional-resources-4"><i class="fa fa-check"></i><b>7.0.6</b> Additional Resources</a></li>
+<li class="chapter" data-level="7.0.7" data-path="working-with-strings.html"><a href="working-with-strings.html#slides-and-video-6"><i class="fa fa-check"></i><b>7.0.7</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="working-with-factors.html"><a href="working-with-factors.html"><i class="fa fa-check"></i><b>8</b> Working with Factors</a>
+<ul>
+<li class="chapter" data-level="8.0.1" data-path="working-with-factors.html"><a href="working-with-factors.html#factor-basics"><i class="fa fa-check"></i><b>8.0.1</b> Factor basics</a></li>
+<li class="chapter" data-level="8.0.2" data-path="working-with-factors.html"><a href="working-with-factors.html#manually-change-the-labels-of-factor-levels-fct_relevel"><i class="fa fa-check"></i><b>8.0.2</b> Manually change the labels of factor levels : <code>fct_relevel()</code></a></li>
+<li class="chapter" data-level="8.0.3" data-path="working-with-factors.html"><a href="working-with-factors.html#keep-the-order-of-the-factor-levels-fct_inorder"><i class="fa fa-check"></i><b>8.0.3</b> Keep the order of the factor levels : <code>fct_inorder()</code></a></li>
+<li class="chapter" data-level="8.0.4" data-path="working-with-factors.html"><a href="working-with-factors.html#advanced-factoring"><i class="fa fa-check"></i><b>8.0.4</b> Advanced Factoring</a></li>
+<li class="chapter" data-level="8.0.5" data-path="working-with-factors.html"><a href="working-with-factors.html#re-ordering-factor-levels-by-frequency-fct_infreq"><i class="fa fa-check"></i><b>8.0.5</b> Re-ordering factor levels by frequency : <code>fct_infreq()</code></a></li>
+<li class="chapter" data-level="8.0.6" data-path="working-with-factors.html"><a href="working-with-factors.html#reversing-order-levels-fct_rev"><i class="fa fa-check"></i><b>8.0.6</b> Reversing order levels : <code>fct_rev()</code></a></li>
+<li class="chapter" data-level="8.0.7" data-path="working-with-factors.html"><a href="working-with-factors.html#re-ordering-factor-levels-by-another-variable-fct_reorder"><i class="fa fa-check"></i><b>8.0.7</b> Re-ordering factor levels by another variable : <code>fct_reorder()</code></a></li>
+<li class="chapter" data-level="8.0.8" data-path="working-with-factors.html"><a href="working-with-factors.html#combining-several-levels-into-one-fct_recode"><i class="fa fa-check"></i><b>8.0.8</b> Combining several levels into one: <code>fct_recode()</code></a></li>
+<li class="chapter" data-level="8.0.9" data-path="working-with-factors.html"><a href="working-with-factors.html#converting-numeric-levels-to-factors-ifelse-factor"><i class="fa fa-check"></i><b>8.0.9</b> Converting numeric levels to factors: <code>ifelse()</code> + <code>factor()</code></a></li>
+<li class="chapter" data-level="8.0.10" data-path="working-with-factors.html"><a href="working-with-factors.html#conclusions"><i class="fa fa-check"></i><b>8.0.10</b> Conclusions</a></li>
+<li class="chapter" data-level="8.0.11" data-path="working-with-factors.html"><a href="working-with-factors.html#additional-resources-5"><i class="fa fa-check"></i><b>8.0.11</b> Additional Resources</a></li>
+<li class="chapter" data-level="8.0.12" data-path="working-with-factors.html"><a href="working-with-factors.html#slides-and-video-7"><i class="fa fa-check"></i><b>8.0.12</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="working-with-dates.html"><a href="working-with-dates.html"><i class="fa fa-check"></i><b>9</b> Working with Dates</a>
+<ul>
+<li class="chapter" data-level="9.0.1" data-path="working-with-dates.html"><a href="working-with-dates.html#dates-and-time-basics"><i class="fa fa-check"></i><b>9.0.1</b> Dates and time basics</a></li>
+<li class="chapter" data-level="9.0.2" data-path="working-with-dates.html"><a href="working-with-dates.html#creating-dates-and-date-time-objects"><i class="fa fa-check"></i><b>9.0.2</b> Creating dates and date-time objects</a></li>
+<li class="chapter" data-level="9.0.3" data-path="working-with-dates.html"><a href="working-with-dates.html#working-with-dates-1"><i class="fa fa-check"></i><b>9.0.3</b> Working with dates</a></li>
+<li class="chapter" data-level="9.0.4" data-path="working-with-dates.html"><a href="working-with-dates.html#time-spans"><i class="fa fa-check"></i><b>9.0.4</b> Time spans</a></li>
+<li class="chapter" data-level="9.0.5" data-path="working-with-dates.html"><a href="working-with-dates.html#whats-not-covered-in-this-lesson"><i class="fa fa-check"></i><b>9.0.5</b> What’s not covered in this lesson</a></li>
+<li class="chapter" data-level="9.0.6" data-path="working-with-dates.html"><a href="working-with-dates.html#additional-resources-6"><i class="fa fa-check"></i><b>9.0.6</b> Additional Resources</a></li>
+<li class="chapter" data-level="9.0.7" data-path="working-with-dates.html"><a href="working-with-dates.html#slides-and-video-8"><i class="fa fa-check"></i><b>9.0.7</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="data-tidying-project.html"><a href="data-tidying-project.html"><i class="fa fa-check"></i><b>10</b> Data Tidying Project</a>
+<ul>
+<li class="chapter" data-level="10.0.1" data-path="data-tidying-project.html"><a href="data-tidying-project.html#data-tidying-project-1"><i class="fa fa-check"></i><b>10.0.1</b> Data Tidying Project</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the Authors</a></li>
+<li class="chapter" data-level="11" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>11</b> References</a></li>
+<li class="divider"></li>
+<p style="text-align:center;"> <a href="https://github.com/jhudsl/OTTR_Template" target="blank" > This content was published with</a> <a href="https://bookdown.org/" target="blank"> bookdown by: </a> </p>
+<p style="text-align:center;"> <a href="https://www.datatrail.org/"> Data Trail </a></p>
+<a href="https://www.datatrail.org/"><img src="https://github.com/datatrail-jhu/DataTrail_Template/raw/main/assets/DataTrail_logo.jpg" style=" width: 80%; filter: grayscale(100%); padding-left: 40px; padding-top: 8px; vertical-align: top "</a>
+<p style="text-align:center; font-size: 12px;"> <a href="https://github.com/rstudio4edu/rstudio4edu-book/"> Style adapted from: rstudio4edu-book </a> <a href ="https://creativecommons.org/licenses/by/2.0/"> (CC-BY 2.0) </a></p>
+<p style="padding-left: 40px;"><div class="trapezoid" style = "padding-left: 40px;"><span>  <a href="https://forms.gle/VWaJYc3zATe3qxYC9"> Click here to provide feedback</a> <img src="assets/itcr_arrow.png" style=" width: 10%" ></span></div></p>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Course Name</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<head>
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+  <!--script src="https://kit.fontawesome.com/6a26f47516.js"></script-->
+  <!--<script src="assets/hideOutput.js"></script>-->
+  <link href="assets/style_DataTrail.css" rel="stylesheet">
+</head>
+        
+
+
+<div class="hero-image-container"> 
+  <img class= "hero-image" src="assets/DataTrail.jpg">
+</div>
+<div id="data-tidying-project" class="section level1" number="10">
+<h1><span class="header-section-number">Chapter 10</span> Data Tidying Project</h1>
+<p>Throughout this course set, we’ll have a number of projects for you to complete. These will be included as Exercises. This means they will <em>not</em> be required to pass the course and receive your certificate; however, completing them will <em>really</em> help to improve your understanding of the material covered and to ensure that you’ve begun to master the skills needed to be a data scientist.</p>
+<p>In each project, we’ll aim to get you started and to ask questions that will help guide you through the project. But, we’ll intentionally leave pieces out where you have to figure out what needs to be done.</p>
+<p>This first project will require you to:</p>
+<ul>
+<li>use version control</li>
+<li>demonstrate the skills you’ve learned programming in R</li>
+<li>wrangle data</li>
+</ul>
+<p>You can access the first project by going to the exercise accompanying this lesson.</p>
+<p>{exercise, id: project_data_tidying}</p>
+<div id="data-tidying-project-1" class="section level3" number="10.0.1">
+<h3><span class="header-section-number">10.0.1</span> Data Tidying Project</h3>
+<p>Often times, data scientists are handed data and asked to make sense of them. The data scientist may be asked to figure out why people are getting sick in a city or how their employer can save money. No matter the situation, these data aren’t always in the most usable format. <strong>Data wrangling</strong> is required before any pretty visualizations can be made or interesting questions can be answered.</p>
+<p>As such, this exercise has been generated to practice your, GitHub, terminal navigation, RStudio, and data wrangling skills.</p>
+<div id="github-setup" class="section level4" number="10.0.1.1">
+<h4><span class="header-section-number">10.0.1.1</span> GitHub Setup</h4>
+<p>To get started, you’ll want to go to GitHub and start a new repository:</p>
+<ul>
+<li>Call this repository <code>data_tidying_project</code>.</li>
+<li>Add a short description</li>
+<li>Check the box to “Initialize this repository with a README.</li>
+<li>Click <code>Create Repository</code></li>
+</ul>
+<p>Once the repository has been created, Click on <code>Clone or download</code> and copy the “Clone with HTTPS” link provided. You’ll use this to clone your repo in RStudio Cloud.</p>
+<p><strong>Note</strong>: If you’re stuck on this, these steps were covered in detail in an earlier course: <a href="https://leanpub.com/universities/courses/jhu/cbds-version-control">Version Control</a>. Refer to the materials in this course if you’re stuck on this part of the project.</p>
+</div>
+<div id="rstudio-cloud-setup" class="section level4" number="10.0.1.2">
+<h4><span class="header-section-number">10.0.1.2</span> RStudio Cloud Setup</h4>
+<ul>
+<li>Go to the <a href="https://rstudio.cloud/spaces/20345/join?access_code=n4b8J1s0XmWctSy83%2BEXbGAwj7rKcuFMI7WJEJFD" target="_blank">Cloud-based Data Science Space on RStudio Cloud</a></li>
+<li>Click on the “Projects” tab at the top of the workspace</li>
+<li>Make a copy of the project: <code>data_tidying_project</code></li>
+</ul>
+<p>In this project you should see a <code>data_tidying_project.Rmd</code> file. You’ll use this to get started working on your project!</p>
+<p><em>Note</em>: If you try to Knit this document at this time, you <em>will</em> get an error because there is code in this document that has to be edited (by you!) before it will be able to successfully knit!</p>
+<p>To start using version control, you’ll want to clone the GitHub repository you just created into this workspace. To do so, go to the Terminal and clone your project into this workspace.</p>
+<p>A new directory with the name of your GitHub repository should now be viewable in the Files tab of RStudio Cloud. You are now set up to track your project with git.</p>
+<p>{words: 20}
+? Why did you clone your GitHub repository into RStudio Cloud?</p>
+<p>! Allows project to be version controlled ; /.+(version).+/i; /.+(track).+/i</p>
+</div>
+<div id="data-science-project-setup" class="section level4" number="10.0.1.3">
+<h4><span class="header-section-number">10.0.1.3</span> Data Science Project Setup</h4>
+<p>As discussed previously, you’ll want all your data science projects you be organized from the very beginning. Let’s do that now!</p>
+<p>First, use <code>cd</code> to get yourself into the directory of your GitHub Project.</p>
+<p>Once in the correct directory, use <code>mkdir</code> in the terminal to create folders with the following structure:</p>
+<p>- data/
+- raw_data/
+- tidy_data/
+- code/
+- raw_code/
+- final_code/
+- figures/
+- exploratory_figures/
+- explanatory_figures/
+- products/</p>
+<p>Now that your directories are set up you’ll want to use the Terminal (or ‘More’ drop-down menu in the Files tab) to move (<code>mv</code>) the <code>data_tidying_project.Rmd</code> file into <code>code/raw_code</code>. This ensures that your code file is in the correct directory.</p>
+<p>? In what directory did you save <code>data_tidying_project.Rmd</code>?</p>
+<p>! code/raw_code ; /cloud/project/code/rawcode</p>
+<p>Once the .Rmd document is in the correct folder, you’ll want to change the author of this document to your name at the top of the .Rmd document (in the YAML). Save this change before moving to the next step.</p>
+<p><strong>Note</strong>: If you’re stuck on this, these steps were covered in detail in an earlier course: <a href="https://leanpub.com/universities/courses/jhu/cbds-organizing">Organizing Data Science Projects</a>. Refer to the materials in this course if you’re stuck on this part of the project.</p>
+</div>
+<div id="pushing-to-github" class="section level4" number="10.0.1.4">
+<h4><span class="header-section-number">10.0.1.4</span> Pushing to GitHub</h4>
+<p>You’ll want to save changes to your project regularly by pushing them to GitHub. Now that you’ve got your file structure set up and have added an R Markdown document to your code/raw_code directory, it’s a good time to stage, commit, and push these changes to GitHub. Do so now, and then take a long on GitHub to see the changes on their website!</p>
+<p>? After this initial push, how many of the directories you created are visible on GitHub?</p>
+<p>! 1 ; one</p>
+<p><strong>Note</strong>: If you’re stuck on this, these steps were covered in detail in an earlier course: <a href="https://leanpub.com/universities/courses/jhu/cbds-version-control">Version Control</a>. Refer to the materials in this course if you’re stuck on this part of the project.</p>
+</div>
+<div id="the-data" class="section level4" number="10.0.1.5">
+<h4><span class="header-section-number">10.0.1.5</span> The Data</h4>
+<p>To get you started, let’s get you acquainted with the data. The data you’ll be working with are hosted at <a href="data.world">data.world</a> and contain information about Sales in the US. You’ll be working with two datasets.</p>
+<p><a href="https://data.world/retail/department-store-sales">Data Set 1</a>: Sales from the Retail Trade and Food Services Report from the US Census. This dataset only covers Department Stores, though the report covers a wide range of retail types. [1992-2016]</p>
+<p><a href="https://data.world/garyhoov/retail-sales-growth">Data Set 2</a> US Retail Sales by Store Type with Growth Rate [2009-2014]</p>
+</div>
+<div id="getting-the-data-into-r" class="section level4" number="10.0.1.6">
+<h4><span class="header-section-number">10.0.1.6</span> Getting the Data into R</h4>
+<p>To get the data read into R, we’re going to use two packages: <code>httr</code> and <code>readxl</code>. These packages will be covered in the next course. As they haven’t been taught yet, we’ll have you use them here, but we’ll provide all the code you need in order to use them, rather than having you figure this part out on your own.</p>
+<p>You can see the code to get these data read into RStudio in the second code chunk (<code>data</code>) provided within <code>data_tidying_project.Rmd</code>. To read the data in, first run the code in the first code chunk ( <code>setup</code>) to get the necessary packages loaded into R. Then, run the code in the second code chunk (<code>data</code>) to load the data into R. In your Environment tab, you will see that there are two new objects, <code>df1</code> and <code>df2</code> that have been created.</p>
+<p>Once the data are read in, to take a look at these data you can use the <code>glimpse()</code> or <code>View()</code> functions in RStudio Cloud (i.e. <code>View(df1)</code> or <code>glimpse(df1</code>)</p>
+</div>
+<div id="saving-the-raw-data" class="section level4" number="10.0.1.7">
+<h4><span class="header-section-number">10.0.1.7</span> Saving the Raw Data</h4>
+<p>While the data are available on the Internet, what if in the future they take them down? Then, you’ll have lost the data for your project or at the very least you won’t have access to it. To avoid this being a problem in the future, let’s save a copy of the data on RStudio Cloud now.</p>
+<p>You’ll want to save these data in the data/raw_data folder you created. We’ll save these as .rds objects. This means that each has to be saved separately using the <code>saveRDS()</code> function.</p>
+<p>Add the code to do this to the <code>save-data</code> code chunk in your <code>data_tidying_project.Rmd</code> document. Save <code>df1</code> as ‘df_department.rds’ and <code>df2</code> as <code>df_retail.rds</code>.</p>
+<p>? What line of code did you use to save <code>df1</code>?</p>
+<p>! saveRDS(df1, file=“data/raw_data/df_department.rds”) ; saveRDS(df1, file=‘data/raw_data/df_department.rds’) ; saveRDS(df1, file=‘/cloud/project/data_tidying_project/data/raw_data/df_department.rds’) ; saveRDS(df1, file=“/cloud/project/data_tidying_project/data/raw_data/df_department.rds”)</p>
+</div>
+<div id="wrangle-the-data" class="section level4" number="10.0.1.8">
+<h4><span class="header-section-number">10.0.1.8</span> Wrangle the Data</h4>
+<p>We’ll now work with the two datasets you read in, so that they’re in a usable (long) data format and can be merged into a single data frame.</p>
+<p>The wrangling portion of this project will use the skills you learned in <a href="https://leanpub.com/universities/courses/jhu/cbds-intro-r">Introduction to R</a> and this course <a href="https://leanpub.com/universities/courses/jhu/cbds-tidying">Data Tidying</a>. Feel free to refer back to these materials for reference as you complete the project.</p>
+<div id="the-retail-data-df2" class="section level5" number="10.0.1.8.1">
+<h5><span class="header-section-number">10.0.1.8.1</span> The retail data: <code>df2</code></h5>
+<p>Now that you have the data in RStudio Cloud and have saved the raw data to your data/raw_data file, we’re ready to start wrangling data.</p>
+<p>To get you acquainted with the dataset, we’ll first have you answer a few questions about the dataset: <code>df2</code></p>
+<p>? How many rows are there in <code>df2</code></p>
+<p>! 92</p>
+<p>? How many columns are there in <code>df2</code></p>
+<p>! 30</p>
+<p>? In 2014, what were the sales for used car dealers?</p>
+<p>! 90385 ; 90,385</p>
+<p>Now, the goal of wrangling these data will be to take this data frame, which is currently in the <strong>wide</strong> data format and wrangle it into a <strong>long</strong> data format. The resulting data frame from your wrangling will have three columns: <code>business</code>, <code>year</code>, and <code>n</code>. In the <code>data_tidying_project.Rmd</code> document, you’ll see the code required to accomplish this in the <code>wrangle-df2</code> code chunk.</p>
+<p>We recommend running each line at a time. For example, start by running:</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="data-tidying-project.html#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="do">## an example working with df2</span></span>
+<span id="cb102-2"><a href="data-tidying-project.html#cb102-2" aria-hidden="true" tabindex="-1"></a><span class="do">## let&#39;s wrangle!</span></span>
+<span id="cb102-3"><a href="data-tidying-project.html#cb102-3" aria-hidden="true" tabindex="-1"></a>df_retail <span class="ot">&lt;-</span> df2 <span class="sc">%&gt;%</span></span>
+<span id="cb102-4"><a href="data-tidying-project.html#cb102-4" aria-hidden="true" tabindex="-1"></a>  <span class="do">## remove the r from the column names of df2</span></span>
+<span id="cb102-5"><a href="data-tidying-project.html#cb102-5" aria-hidden="true" tabindex="-1"></a>  magrittr<span class="sc">::</span><span class="fu">set_colnames</span>(<span class="fu">gsub</span>(<span class="st">&quot;r&quot;</span>,<span class="st">&quot;&quot;</span>,df2[<span class="dv">1</span>,]))</span></code></pre></div>
+<p>Take a look at the output variable <code>df_retail</code> (using <code>glimpse()</code>, <code>View()</code>, or <code>skim()</code>) to see what the <code>magrittr::set_colnames()</code> code accomplishes. Once you understand this line, then move onto the next line and run:</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="data-tidying-project.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="do">## an example working with df2</span></span>
+<span id="cb103-2"><a href="data-tidying-project.html#cb103-2" aria-hidden="true" tabindex="-1"></a><span class="do">## let&#39;s wrangle!</span></span>
+<span id="cb103-3"><a href="data-tidying-project.html#cb103-3" aria-hidden="true" tabindex="-1"></a>df_retail <span class="ot">&lt;-</span> df2 <span class="sc">%&gt;%</span></span>
+<span id="cb103-4"><a href="data-tidying-project.html#cb103-4" aria-hidden="true" tabindex="-1"></a>  <span class="do">## remove the r from the column names of df2</span></span>
+<span id="cb103-5"><a href="data-tidying-project.html#cb103-5" aria-hidden="true" tabindex="-1"></a>  magrittr<span class="sc">::</span><span class="fu">set_colnames</span>(<span class="fu">gsub</span>(<span class="st">&quot;r&quot;</span>,<span class="st">&quot;&quot;</span>,df2[<span class="dv">1</span>,])) <span class="sc">%&gt;%</span></span>
+<span id="cb103-6"><a href="data-tidying-project.html#cb103-6" aria-hidden="true" tabindex="-1"></a>  <span class="do">## add a new column called &quot;business&quot;</span></span>
+<span id="cb103-7"><a href="data-tidying-project.html#cb103-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">business =</span> <span class="fu">gsub</span>(<span class="st">&quot;[?]|[.]&quot;</span>,<span class="st">&quot;&quot;</span>,<span class="st">`</span><span class="at">Kind of business</span><span class="st">`</span>))</span></code></pre></div>
+<p>Again, take a look at the output variable <code>df_retail</code> to understand this additional line of code. This will help you understand what each line of code does! And, you’ll understand <em>why</em> each step was taken to get the data into it’s final format. Continue this process until you understand the entire chunk of code in <code>wrangle-df2</code>.</p>
+<p>{words: 20}
+? If you were to change the line <code>mutate(business = gsub("[?]|[.]","",</code>Kind of business<code>))</code> to <code>mutate(biz = gsub("[?]|[.]","",</code>Kind of business<code>))</code>, what would change?</p>
+<p>! It would create a column called “biz” instead of “business”</p>
+<p>{words: 20}
+? What information is in the column <code>n</code>?</p>
+<p>! Sales for the business type and year for that row</p>
+<p>{words: 20}
+? What does <code>filter(business == "Retail sales, total "| business=="Department stores ")</code> accomplish?</p>
+<p>! It only includes those two kinds of businesses in the final data frame</p>
+</div>
+<div id="the-department-store-data-df1" class="section level5" number="10.0.1.8.2">
+<h5><span class="header-section-number">10.0.1.8.2</span> The department store data: <code>df1</code></h5>
+<p>Having had all the code to wrangle <code>df2</code> and being able to understand what each line did, now it’s your turn to wrangle a data frame! You’ll take We’ll first ask a few questions to get you acquainted with <code>df1</code>.</p>
+<p>? How many rows are there in <code>df1</code></p>
+<p>! 298</p>
+<p>? How many columns are there in <code>df1</code></p>
+<p>! 2</p>
+<p>? In <code>Jun-1992</code>, what were retail sales (in millions)?</p>
+<p>! 13354 ; 13,354</p>
+<p>Now that you have an idea of what data are in the data frame <code>df</code>, it’s time to wrangle! The goal of wrangling this data set is to mirror (or mimic) what we did in the first data set. This means, that by the end of data wrangling, you should have three columns with the same names as <code>df_retail</code>: <code>business</code>, <code>year</code>, and <code>n</code>.</p>
+<p>To accomplish this goal, you’ll have to figure out what code should replace <code>function_name</code> for each line in the code chunk <code>wrangle-df1</code>. A different <code>function_name</code> will be called in each line of missing code. The arguments necessary to be included within the parentheses will also have to be added.</p>
+<p>For example, for the first part of the code, you currently see in the</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="data-tidying-project.html#cb104-1" aria-hidden="true" tabindex="-1"></a>df_department <span class="ot">&lt;-</span> df1 <span class="sc">%&gt;%</span></span>
+<span id="cb104-2"><a href="data-tidying-project.html#cb104-2" aria-hidden="true" tabindex="-1"></a>  <span class="do">## split Period column into one column called &quot;month&quot; and one called &quot;year&quot;</span></span>
+<span id="cb104-3"><a href="data-tidying-project.html#cb104-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">function_name</span>()</span></code></pre></div>
+<p>The comment <code>## split Period column into one column called "month" and one called "year"</code> tells you what you’ll want to accomplish in the next line of code.</p>
+<p>So, you may try adding the following:</p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="data-tidying-project.html#cb105-1" aria-hidden="true" tabindex="-1"></a>df_department <span class="ot">&lt;-</span> df1 <span class="sc">%&gt;%</span></span>
+<span id="cb105-2"><a href="data-tidying-project.html#cb105-2" aria-hidden="true" tabindex="-1"></a>  <span class="do">## split Period column into one column called &quot;month&quot; and one called &quot;year&quot;</span></span>
+<span id="cb105-3"><a href="data-tidying-project.html#cb105-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(Period, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&#39;month&#39;</span>,<span class="st">&#39;year&#39;</span>), <span class="at">extra =</span> <span class="st">&#39;drop&#39;</span>, <span class="at">remove =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p>By changing <code>function_name()</code> to the appropriate function <code>separate()</code> and including the necessary code within the parentheses, we are able to accomplish exactly what the comment says we wanted to do!</p>
+<p>Before you get started on the rest of this, a quick note on data wrangling : As you master these skills, you <em>will</em> write code that errors and things <em>will</em> take you multiple tries before you get it right. If you’re frustrated, that’s ok! It’s part of the process. Use the material in this course or places like <a href="https://stackoverflow.com/">StackOverflow</a> to help you if you find answers if you get stuck!.</p>
+<p>OK, now it’s your job to work line by line to change <code>function_name</code> to the appropriate function in order to accomplish what the comments state you want to accomplish. Work through this code chunk line by line until you have a long data set called <code>df_department</code> with three columns: <code>business</code>, <code>year</code>, and <code>n</code>.</p>
+<p>? What function did you use to group the data by the <code>year</code> column?</p>
+<p>! group_by ; group_by()</p>
+<p>? What function did you use to add the column name <code>value</code>?</p>
+<p>! mutate() ; mutate</p>
+<p>? What function did you use to reorder the column names?</p>
+<p>! select() ; select</p>
+</div>
+<div id="pushing-to-github-1" class="section level5" number="10.0.1.8.3">
+<h5><span class="header-section-number">10.0.1.8.3</span> Pushing to GitHub</h5>
+<p>You’ve written a lot of code at this point, so it’d be great to add this to GitHub at this point. Use <code>git add</code>, <code>git commit</code>, and <code>git push</code> to add the file changes to your GitHub repository.</p>
+</div>
+<div id="merging-the-data" class="section level5" number="10.0.1.8.4">
+<h5><span class="header-section-number">10.0.1.8.4</span> Merging the data</h5>
+<p>Once you have wrangled both <code>df1</code> and <code>df2</code>, you should be able to join them by binding the rows of <code>df_retail</code> and <code>df_department</code>. Change the code in the <code>merge-data</code> code chunk to generate an object called <code>df_total</code>. This should only take one function to accomplish.</p>
+</div>
+<div id="plotting-your-data" class="section level5" number="10.0.1.8.5">
+<h5><span class="header-section-number">10.0.1.8.5</span> Plotting Your Data</h5>
+<p>While data visualization is coming up in a later course, we’ve included a few lines of code to plot the data from the three data frames you created (<code>df_retail</code>, <code>df_department</code>, <code>df_total</code>). For this you’ll use the R package <code>ggplot2</code>. Try running these lines of code in the <code>plot</code> chunk and take a look at the plots generated in the “Plots” tab of RStudio Cloud. However, don’t stress if you’re not exactly sure what’s going on. We’ll cover all of this in an upcoming course!</p>
+</div>
+</div>
+<div id="add-markdown-text-to-.rmd" class="section level4" number="10.0.1.9">
+<h4><span class="header-section-number">10.0.1.9</span> Add Markdown Text to .Rmd</h4>
+<p>Before finalizing your project you’ll want to add some text outside of your code chunks to explain what you’re doing in each code chunk. These explanations are incredibly helpful for someone who doesn’t code.</p>
+<p><strong>Note</strong>: If you’re stuck on this, these steps were covered in detail in an earlier course: <a href="https://leanpub.com/universities/courses/jhu/cbds-intro-r">Introduction to R</a>. Refer to the R Markdown lesson in this course if you’re stuck on this part (or the next part) of the project.</p>
+</div>
+<div id="knit-your-r-markdown-document" class="section level4" number="10.0.1.10">
+<h4><span class="header-section-number">10.0.1.10</span> Knit your R Markdown Document</h4>
+<p>Last but not least, you’ll want to Knit your .Rmd document into an HTML document. If you get an error, take a look at what the error says and edit your .Rmd document. Then, try to Knit again! Troubleshooting these error messages will teach you a lot about coding in R.</p>
+</div>
+<div id="final-push-to-github" class="section level4" number="10.0.1.11">
+<h4><span class="header-section-number">10.0.1.11</span> Final <code>push</code> to GitHub</h4>
+<p>Now that you’ve finalized your project, you’ll do one final push to GitHub. add, commit, and push your work to GitHub. Navigate to your GitHub repository, and answer the final question below!</p>
+<p><strong>Note</strong>: If you’re stuck on this, these steps were covered in detail in an earlier course: <a href="https://leanpub.com/universities/courses/jhu/cbds-version-control">Version Control</a>. Refer to the materials in this course if you’re stuck on this part of the project.</p>
+<p>? Submit the URL to your <code>data_tidying_project</code> GitHub repository below.</p>
+<p>! /(<a href="https:\/\/github.com.+\/data_tidying_project)/i" class="uri">https:\/\/github.com.+\/data_tidying_project)/i</a></p>
+<p><strong>Congrats on finishing your first Data Science Project</strong></p>
+<p>{/exercise}</p>
+
+</div>
+</div>
+</div>
+<hr>
+<center> 
+  <div class="footer">
+      All illustrations <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY. </a>
+      <br>
+      All other materials <a href= "https://creativecommons.org/licenses/by/4.0/"> CC-BY </a> unless noted otherwise.
+  </div>
+</center>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="working-with-dates.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="about-the-authors.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

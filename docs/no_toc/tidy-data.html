@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Tidy Data | Course Name</title>
+  <meta name="description" content="Description about Course/Book." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Tidy Data | Course Name" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Description about Course/Book." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Tidy Data | Course Name" />
+  
+  <meta name="twitter:description" content="Description about Course/Book." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="assets/DataTrail_favicon.ico" type="image/x-icon" />
+<link rel="prev" href="data-in-r.html"/>
+<link rel="next" href="untidy-data.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="assets/style_DataTrail.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<a href="https://www.datatrail.org/"><img src="https://github.com/datatrail-jhu/DataTrail_Template/raw/main/assets/DataTrail_logo.jpg" style="padding-left: 0px; padding-top: 8px;"</a>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Course</a></li>
+<li class="chapter" data-level="1" data-path="what-is-data.html"><a href="what-is-data.html"><i class="fa fa-check"></i><b>1</b> What is data?</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="what-is-data.html"><a href="what-is-data.html#types-of-data"><i class="fa fa-check"></i><b>1.0.1</b> Types of data</a></li>
+<li class="chapter" data-level="1.0.2" data-path="what-is-data.html"><a href="what-is-data.html#why-is-data-important"><i class="fa fa-check"></i><b>1.0.2</b> Why is data important?</a></li>
+<li class="chapter" data-level="1.0.3" data-path="what-is-data.html"><a href="what-is-data.html#slides-and-video"><i class="fa fa-check"></i><b>1.0.3</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-in-r.html"><a href="data-in-r.html"><i class="fa fa-check"></i><b>2</b> Data in R</a>
+<ul>
+<li class="chapter" data-level="2.0.1" data-path="data-in-r.html"><a href="data-in-r.html#file-types-in-r"><i class="fa fa-check"></i><b>2.0.1</b> File Types in R</a></li>
+<li class="chapter" data-level="2.0.2" data-path="data-in-r.html"><a href="data-in-r.html#datasets-in-r"><i class="fa fa-check"></i><b>2.0.2</b> Datasets in R</a></li>
+<li class="chapter" data-level="2.0.3" data-path="data-in-r.html"><a href="data-in-r.html#datasets-in-packages"><i class="fa fa-check"></i><b>2.0.3</b> Datasets in Packages</a></li>
+<li class="chapter" data-level="2.0.4" data-path="data-in-r.html"><a href="data-in-r.html#other-types-of-data-in-r"><i class="fa fa-check"></i><b>2.0.4</b> Other types of data in R</a></li>
+<li class="chapter" data-level="2.0.5" data-path="data-in-r.html"><a href="data-in-r.html#summary"><i class="fa fa-check"></i><b>2.0.5</b> Summary</a></li>
+<li class="chapter" data-level="2.0.6" data-path="data-in-r.html"><a href="data-in-r.html#additional-resources"><i class="fa fa-check"></i><b>2.0.6</b> Additional Resources</a></li>
+<li class="chapter" data-level="2.0.7" data-path="data-in-r.html"><a href="data-in-r.html#slides-and-video-1"><i class="fa fa-check"></i><b>2.0.7</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="tidy-data.html"><a href="tidy-data.html"><i class="fa fa-check"></i><b>3</b> Tidy Data</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="tidy-data.html"><a href="tidy-data.html#why-tidy-data"><i class="fa fa-check"></i><b>3.0.1</b> Why Tidy Data?</a></li>
+<li class="chapter" data-level="3.0.2" data-path="tidy-data.html"><a href="tidy-data.html#data-terminology"><i class="fa fa-check"></i><b>3.0.2</b> Data Terminology</a></li>
+<li class="chapter" data-level="3.0.3" data-path="tidy-data.html"><a href="tidy-data.html#principles-of-tidy-data"><i class="fa fa-check"></i><b>3.0.3</b> Principles of Tidy Data</a></li>
+<li class="chapter" data-level="3.0.4" data-path="tidy-data.html"><a href="tidy-data.html#rules-for-tidy-spreadsheets"><i class="fa fa-check"></i><b>3.0.4</b> Rules for Tidy Spreadsheets</a></li>
+<li class="chapter" data-level="3.0.5" data-path="tidy-data.html"><a href="tidy-data.html#additional-resources-1"><i class="fa fa-check"></i><b>3.0.5</b> Additional resources</a></li>
+<li class="chapter" data-level="3.0.6" data-path="tidy-data.html"><a href="tidy-data.html#slides-and-video-2"><i class="fa fa-check"></i><b>3.0.6</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="untidy-data.html"><a href="untidy-data.html"><i class="fa fa-check"></i><b>4</b> Untidy Data</a>
+<ul>
+<li class="chapter" data-level="4.0.1" data-path="untidy-data.html"><a href="untidy-data.html#common-problems-with-messy-data-sets"><i class="fa fa-check"></i><b>4.0.1</b> Common problems with messy data sets</a></li>
+<li class="chapter" data-level="4.0.2" data-path="untidy-data.html"><a href="untidy-data.html#examples-of-untidy-data"><i class="fa fa-check"></i><b>4.0.2</b> Examples of untidy data</a></li>
+<li class="chapter" data-level="4.0.3" data-path="untidy-data.html"><a href="untidy-data.html#tidying-untidy-data"><i class="fa fa-check"></i><b>4.0.3</b> Tidying untidy data</a></li>
+<li class="chapter" data-level="4.0.4" data-path="untidy-data.html"><a href="untidy-data.html#slides-and-video-3"><i class="fa fa-check"></i><b>4.0.4</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="reshaping-data.html"><a href="reshaping-data.html"><i class="fa fa-check"></i><b>5</b> Reshaping Data</a>
+<ul>
+<li class="chapter" data-level="5.0.1" data-path="reshaping-data.html"><a href="reshaping-data.html#data-formats"><i class="fa fa-check"></i><b>5.0.1</b> Data Formats</a></li>
+<li class="chapter" data-level="5.0.2" data-path="reshaping-data.html"><a href="reshaping-data.html#r-packages"><i class="fa fa-check"></i><b>5.0.2</b> R Packages</a></li>
+<li class="chapter" data-level="5.0.3" data-path="reshaping-data.html"><a href="reshaping-data.html#additional-resources-2"><i class="fa fa-check"></i><b>5.0.3</b> Additional Resources</a></li>
+<li class="chapter" data-level="5.0.4" data-path="reshaping-data.html"><a href="reshaping-data.html#slides-and-video-4"><i class="fa fa-check"></i><b>5.0.4</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tidying-data.html"><a href="tidying-data.html"><i class="fa fa-check"></i><b>6</b> Tidying Data</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="tidying-data.html"><a href="tidying-data.html#dplyr"><i class="fa fa-check"></i><b>6.0.1</b> dplyr</a></li>
+<li class="chapter" data-level="6.0.2" data-path="tidying-data.html"><a href="tidying-data.html#tidyr-1"><i class="fa fa-check"></i><b>6.0.2</b> tidyr</a></li>
+<li class="chapter" data-level="6.0.3" data-path="tidying-data.html"><a href="tidying-data.html#janitor"><i class="fa fa-check"></i><b>6.0.3</b> janitor</a></li>
+<li class="chapter" data-level="6.0.4" data-path="tidying-data.html"><a href="tidying-data.html#skimr"><i class="fa fa-check"></i><b>6.0.4</b> skimr</a></li>
+<li class="chapter" data-level="6.0.5" data-path="tidying-data.html"><a href="tidying-data.html#the-pipe-operator"><i class="fa fa-check"></i><b>6.0.5</b> The Pipe Operator</a></li>
+<li class="chapter" data-level="6.0.6" data-path="tidying-data.html"><a href="tidying-data.html#filtering-data"><i class="fa fa-check"></i><b>6.0.6</b> Filtering Data</a></li>
+<li class="chapter" data-level="6.0.7" data-path="tidying-data.html"><a href="tidying-data.html#reordering"><i class="fa fa-check"></i><b>6.0.7</b> Reordering</a></li>
+<li class="chapter" data-level="6.0.8" data-path="tidying-data.html"><a href="tidying-data.html#creating-new-columns"><i class="fa fa-check"></i><b>6.0.8</b> Creating new columns</a></li>
+<li class="chapter" data-level="6.0.9" data-path="tidying-data.html"><a href="tidying-data.html#separating-columns"><i class="fa fa-check"></i><b>6.0.9</b> Separating Columns</a></li>
+<li class="chapter" data-level="6.0.10" data-path="tidying-data.html"><a href="tidying-data.html#merging-columns"><i class="fa fa-check"></i><b>6.0.10</b> Merging Columns</a></li>
+<li class="chapter" data-level="6.0.11" data-path="tidying-data.html"><a href="tidying-data.html#cleaning-up-column-names"><i class="fa fa-check"></i><b>6.0.11</b> Cleaning up column names</a></li>
+<li class="chapter" data-level="6.0.12" data-path="tidying-data.html"><a href="tidying-data.html#combining-data-across-data-frames"><i class="fa fa-check"></i><b>6.0.12</b> Combining data across data frames</a></li>
+<li class="chapter" data-level="6.0.13" data-path="tidying-data.html"><a href="tidying-data.html#grouping-data"><i class="fa fa-check"></i><b>6.0.13</b> Grouping Data</a></li>
+<li class="chapter" data-level="6.0.14" data-path="tidying-data.html"><a href="tidying-data.html#summarizing-data"><i class="fa fa-check"></i><b>6.0.14</b> Summarizing Data</a></li>
+<li class="chapter" data-level="6.0.15" data-path="tidying-data.html"><a href="tidying-data.html#conclusion"><i class="fa fa-check"></i><b>6.0.15</b> Conclusion</a></li>
+<li class="chapter" data-level="6.0.16" data-path="tidying-data.html"><a href="tidying-data.html#additional-resources-3"><i class="fa fa-check"></i><b>6.0.16</b> Additional Resources</a></li>
+<li class="chapter" data-level="6.0.17" data-path="tidying-data.html"><a href="tidying-data.html#slides-and-video-5"><i class="fa fa-check"></i><b>6.0.17</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="working-with-strings.html"><a href="working-with-strings.html"><i class="fa fa-check"></i><b>7</b> Working with Strings</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="working-with-strings.html"><a href="working-with-strings.html#strings-review"><i class="fa fa-check"></i><b>7.0.1</b> Strings review</a></li>
+<li class="chapter" data-level="7.0.2" data-path="working-with-strings.html"><a href="working-with-strings.html#stringr"><i class="fa fa-check"></i><b>7.0.2</b> stringr</a></li>
+<li class="chapter" data-level="7.0.3" data-path="working-with-strings.html"><a href="working-with-strings.html#string-basics"><i class="fa fa-check"></i><b>7.0.3</b> String basics</a></li>
+<li class="chapter" data-level="7.0.4" data-path="working-with-strings.html"><a href="working-with-strings.html#regular-expressions"><i class="fa fa-check"></i><b>7.0.4</b> Regular expressions</a></li>
+<li class="chapter" data-level="7.0.5" data-path="working-with-strings.html"><a href="working-with-strings.html#conclusion-1"><i class="fa fa-check"></i><b>7.0.5</b> Conclusion</a></li>
+<li class="chapter" data-level="7.0.6" data-path="working-with-strings.html"><a href="working-with-strings.html#additional-resources-4"><i class="fa fa-check"></i><b>7.0.6</b> Additional Resources</a></li>
+<li class="chapter" data-level="7.0.7" data-path="working-with-strings.html"><a href="working-with-strings.html#slides-and-video-6"><i class="fa fa-check"></i><b>7.0.7</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="working-with-factors.html"><a href="working-with-factors.html"><i class="fa fa-check"></i><b>8</b> Working with Factors</a>
+<ul>
+<li class="chapter" data-level="8.0.1" data-path="working-with-factors.html"><a href="working-with-factors.html#factor-basics"><i class="fa fa-check"></i><b>8.0.1</b> Factor basics</a></li>
+<li class="chapter" data-level="8.0.2" data-path="working-with-factors.html"><a href="working-with-factors.html#manually-change-the-labels-of-factor-levels-fct_relevel"><i class="fa fa-check"></i><b>8.0.2</b> Manually change the labels of factor levels : <code>fct_relevel()</code></a></li>
+<li class="chapter" data-level="8.0.3" data-path="working-with-factors.html"><a href="working-with-factors.html#keep-the-order-of-the-factor-levels-fct_inorder"><i class="fa fa-check"></i><b>8.0.3</b> Keep the order of the factor levels : <code>fct_inorder()</code></a></li>
+<li class="chapter" data-level="8.0.4" data-path="working-with-factors.html"><a href="working-with-factors.html#advanced-factoring"><i class="fa fa-check"></i><b>8.0.4</b> Advanced Factoring</a></li>
+<li class="chapter" data-level="8.0.5" data-path="working-with-factors.html"><a href="working-with-factors.html#re-ordering-factor-levels-by-frequency-fct_infreq"><i class="fa fa-check"></i><b>8.0.5</b> Re-ordering factor levels by frequency : <code>fct_infreq()</code></a></li>
+<li class="chapter" data-level="8.0.6" data-path="working-with-factors.html"><a href="working-with-factors.html#reversing-order-levels-fct_rev"><i class="fa fa-check"></i><b>8.0.6</b> Reversing order levels : <code>fct_rev()</code></a></li>
+<li class="chapter" data-level="8.0.7" data-path="working-with-factors.html"><a href="working-with-factors.html#re-ordering-factor-levels-by-another-variable-fct_reorder"><i class="fa fa-check"></i><b>8.0.7</b> Re-ordering factor levels by another variable : <code>fct_reorder()</code></a></li>
+<li class="chapter" data-level="8.0.8" data-path="working-with-factors.html"><a href="working-with-factors.html#combining-several-levels-into-one-fct_recode"><i class="fa fa-check"></i><b>8.0.8</b> Combining several levels into one: <code>fct_recode()</code></a></li>
+<li class="chapter" data-level="8.0.9" data-path="working-with-factors.html"><a href="working-with-factors.html#converting-numeric-levels-to-factors-ifelse-factor"><i class="fa fa-check"></i><b>8.0.9</b> Converting numeric levels to factors: <code>ifelse()</code> + <code>factor()</code></a></li>
+<li class="chapter" data-level="8.0.10" data-path="working-with-factors.html"><a href="working-with-factors.html#conclusions"><i class="fa fa-check"></i><b>8.0.10</b> Conclusions</a></li>
+<li class="chapter" data-level="8.0.11" data-path="working-with-factors.html"><a href="working-with-factors.html#additional-resources-5"><i class="fa fa-check"></i><b>8.0.11</b> Additional Resources</a></li>
+<li class="chapter" data-level="8.0.12" data-path="working-with-factors.html"><a href="working-with-factors.html#slides-and-video-7"><i class="fa fa-check"></i><b>8.0.12</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="working-with-dates.html"><a href="working-with-dates.html"><i class="fa fa-check"></i><b>9</b> Working with Dates</a>
+<ul>
+<li class="chapter" data-level="9.0.1" data-path="working-with-dates.html"><a href="working-with-dates.html#dates-and-time-basics"><i class="fa fa-check"></i><b>9.0.1</b> Dates and time basics</a></li>
+<li class="chapter" data-level="9.0.2" data-path="working-with-dates.html"><a href="working-with-dates.html#creating-dates-and-date-time-objects"><i class="fa fa-check"></i><b>9.0.2</b> Creating dates and date-time objects</a></li>
+<li class="chapter" data-level="9.0.3" data-path="working-with-dates.html"><a href="working-with-dates.html#working-with-dates-1"><i class="fa fa-check"></i><b>9.0.3</b> Working with dates</a></li>
+<li class="chapter" data-level="9.0.4" data-path="working-with-dates.html"><a href="working-with-dates.html#time-spans"><i class="fa fa-check"></i><b>9.0.4</b> Time spans</a></li>
+<li class="chapter" data-level="9.0.5" data-path="working-with-dates.html"><a href="working-with-dates.html#whats-not-covered-in-this-lesson"><i class="fa fa-check"></i><b>9.0.5</b> What’s not covered in this lesson</a></li>
+<li class="chapter" data-level="9.0.6" data-path="working-with-dates.html"><a href="working-with-dates.html#additional-resources-6"><i class="fa fa-check"></i><b>9.0.6</b> Additional Resources</a></li>
+<li class="chapter" data-level="9.0.7" data-path="working-with-dates.html"><a href="working-with-dates.html#slides-and-video-8"><i class="fa fa-check"></i><b>9.0.7</b> Slides and Video</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="data-tidying-project.html"><a href="data-tidying-project.html"><i class="fa fa-check"></i><b>10</b> Data Tidying Project</a>
+<ul>
+<li class="chapter" data-level="10.0.1" data-path="data-tidying-project.html"><a href="data-tidying-project.html#data-tidying-project-1"><i class="fa fa-check"></i><b>10.0.1</b> Data Tidying Project</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about-the-authors.html"><a href="about-the-authors.html"><i class="fa fa-check"></i>About the Authors</a></li>
+<li class="chapter" data-level="11" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>11</b> References</a></li>
+<li class="divider"></li>
+<p style="text-align:center;"> <a href="https://github.com/jhudsl/OTTR_Template" target="blank" > This content was published with</a> <a href="https://bookdown.org/" target="blank"> bookdown by: </a> </p>
+<p style="text-align:center;"> <a href="https://www.datatrail.org/"> Data Trail </a></p>
+<a href="https://www.datatrail.org/"><img src="https://github.com/datatrail-jhu/DataTrail_Template/raw/main/assets/DataTrail_logo.jpg" style=" width: 80%; filter: grayscale(100%); padding-left: 40px; padding-top: 8px; vertical-align: top "</a>
+<p style="text-align:center; font-size: 12px;"> <a href="https://github.com/rstudio4edu/rstudio4edu-book/"> Style adapted from: rstudio4edu-book </a> <a href ="https://creativecommons.org/licenses/by/2.0/"> (CC-BY 2.0) </a></p>
+<p style="padding-left: 40px;"><div class="trapezoid" style = "padding-left: 40px;"><span>  <a href="https://forms.gle/VWaJYc3zATe3qxYC9"> Click here to provide feedback</a> <img src="assets/itcr_arrow.png" style=" width: 10%" ></span></div></p>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Course Name</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<head>
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+  <!--script src="https://kit.fontawesome.com/6a26f47516.js"></script-->
+  <!--<script src="assets/hideOutput.js"></script>-->
+  <link href="assets/style_DataTrail.css" rel="stylesheet">
+</head>
+        
+
+
+<div class="hero-image-container"> 
+  <img class= "hero-image" src="assets/DataTrail.jpg">
+</div>
+<div id="tidy-data" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Tidy Data</h1>
+<p>The idea of tidy data was formalized in 2014 in a <a href="http://vita.had.co.nz/papers/tidy-data.pdf">paper</a> written by a leader in the data science field, <a href="http://hadley.nz/">Hadley Wickham</a>. The principles of tidy data, which are discussed below, provide a standard way of formatting a data set. A tidy dataset follows a number of rules relating to how rows, columns, and spreadsheets are matched up with observations, variables, and types.</p>
+<div id="why-tidy-data" class="section level3" number="3.0.1">
+<h3><span class="header-section-number">3.0.1</span> Why Tidy Data?</h3>
+<p>Tidy data-sets, by design, are easier to manipulate, model, and visualize. By starting with data that are already in a tidy format <em>or</em> by spending the time at the beginning of a project to get data into a tidy format, the remaining steps of your data science project will be easier.</p>
+</div>
+<div id="data-terminology" class="section level3" number="3.0.2">
+<h3><span class="header-section-number">3.0.2</span> Data Terminology</h3>
+<p>We’ve previously discussed what the rows and columns in a spreadsheet are. Here, we’ll discuss what is meant by <strong>observations</strong>, <strong>variables</strong>, and <strong>types</strong>, all of which are used to explain the principles of tidy data.</p>
+<div id="variables" class="section level4" number="3.0.2.1">
+<h4><span class="header-section-number">3.0.2.1</span> Variables</h4>
+<p>Variables in a spreadsheet are the different categories of data that will be collected. They are the different pieces of information that can be collected or measured on each person. Here, we see there are 7 different variables: ID, LastName, FirstName, Sex, City, State, and Occupation. The names for variables are put in the first row of the spreadsheet.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54/export/png?id=1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54&amp;pageid=g2bfdb07292_0_151" alt="Variables" /></p>
+</div>
+<div id="observations" class="section level4" number="3.0.2.2">
+<h4><span class="header-section-number">3.0.2.2</span> Observations</h4>
+<p>The measurements taken from a person for each variable are called observations. Observations for each individual are stored in a single row, with each observation being put in the appropriate column for each variable.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54/export/png?id=1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54&amp;pageid=g326b47e392_0_12" alt="Observations" /></p>
+</div>
+<div id="types" class="section level4" number="3.0.2.3">
+<h4><span class="header-section-number">3.0.2.3</span> Types</h4>
+<p>Often, data are collected for the same individuals from multiple sources. For example, when you go to the doctor’s office, you fill out a survey about yourself. That would count as one type of data. The measurements a doctor collects at your visit, however, would be a different type of data.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54/export/png?id=1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54&amp;pageid=g326e316938_0_3" alt="Types" /></p>
+</div>
+</div>
+<div id="principles-of-tidy-data" class="section level3" number="3.0.3">
+<h3><span class="header-section-number">3.0.3</span> Principles of Tidy Data</h3>
+<ol style="list-style-type: decimal">
+<li>Each variable you measure should be in one column.</li>
+</ol>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54/export/png?id=1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54&amp;pageid=g326e316938_0_44" alt="Principle #1 of Tidy Data" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Each different observation of that variable should be in a different row.</li>
+</ol>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54/export/png?id=1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54&amp;pageid=g326e316938_0_36" alt="Principle #2 of Tidy Data" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>There should be one spreadsheet for each “type” of data.</li>
+</ol>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54/export/png?id=1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54&amp;pageid=g326e316938_0_57" alt="Principle #3 of Tidy Data" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li>If you have multiple spreadsheets, they should include a column in each spreadsheet (with the same column label!) that allows them to be joined or merged.</li>
+</ol>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54/export/png?id=1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54&amp;pageid=g326e316938_0_40" alt="Principle #4 of Tidy Data" /></p>
+</div>
+<div id="rules-for-tidy-spreadsheets" class="section level3" number="3.0.4">
+<h3><span class="header-section-number">3.0.4</span> Rules for Tidy Spreadsheets</h3>
+<p>In addition to these four principles, there are a number of rules to follow when entering data into a spreadsheet, or when re-organizing untidy data that you have already been given for a project into a tidy format. They are rules that will help make data analysis and visualization easier down the road. They were formalized in a paper called <a href="https://peerj.com/preprints/3183/">“Data organization in spreadsheets”</a>, written by two prominent data scientists, <a href="http://kbroman.org/">Karl Broman</a> and <a href="http://karawoo.com/">Kara Woo</a>. In this paper, in addition to ensuring that the data are tidy, they suggest following these guidelines when entering data into spreadsheets:</p>
+<ol style="list-style-type: decimal">
+<li>Be consistent</li>
+<li>Choose good names for things</li>
+<li>Write dates as YYYY-MM-DD</li>
+<li>No empty cells</li>
+<li>Put just one thing in a cell</li>
+<li>Don’t use font color or highlighting as data</li>
+<li>Save the data as plain text files</li>
+</ol>
+<p>We’ll go through each of these to make sure we’re all clear on what a great tidy spreadsheet looks like.</p>
+<div id="be-consistent" class="section level4" number="3.0.4.1">
+<h4><span class="header-section-number">3.0.4.1</span> Be consistent</h4>
+<p>Being consistent in data entry and throughout an analysis is key. It minimizes confusion and makes analysis simpler. For example, here we see sex is coded as “female” or “male.” Those are the only two ways in which sex was entered into the data. This is an example of consistent data entry. You want to avoid sometimes coding a female’s sex as “female” and then entering it as “F” in other cases. Simply, you want to pick a way to code sex and stick to it.</p>
+<p>With regard to entering a person’s sex, we were talking about how to code observations for a specific variable; however, consistency also matters when you’re choosing how to name a variable. If you use the variable name “ID” in one spreadsheet, use the same variable name (“ID”) in the next spreadsheet. Do not change it to “id” (capitalization matters!) or “identifier” or anything else in the next spreadsheet. Be consistent!</p>
+<p>Consistency matters across every step of the analysis. Name your files in a consistent format. Always code dates in a consistent format (discussed further below). Avoid extra spaces in cells. If you’re careful about and consistent in data entry, it will be incredibly helpful when you get to analysis.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54/export/png?id=1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54&amp;pageid=g326e316938_0_81" alt="Be Consistent!" /></p>
+</div>
+<div id="choose-good-names-for-things" class="section level4" number="3.0.4.2">
+<h4><span class="header-section-number">3.0.4.2</span> Choose good names for things</h4>
+<p>Choosing good variable names is important. Generally, avoid spaces in variable names and file names. You’ll see why this is important as we learn more about programming, but for now, know that “Doctor Visit 1” is not a good file name. “doctor_visit_v1” is much better. Stick to using underscores instead of spaces or any other symbol when possible. The same thing goes for variable names. “FirstName” is a good variable name while “First Name” with a space in the middle of it is not.</p>
+<p>Additionally, make sure that file and variable names are as short as possible while still being meaningful. “F1” is short, but it doesn’t really tell you anything about what is in that file. “doctor_visit_v1” is a more meaningful file name. We know now that this spreadsheet contains information about a doctor’s visit. ‘v1’ specifies version 1 allowing for updates to this file later which would create a new file “doctor_visit_v2.”</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54/export/png?id=1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54&amp;pageid=g326e316938_0_86" alt="Choose good names" /></p>
+</div>
+<div id="write-dates-as-yyyy-mm-dd" class="section level4" number="3.0.4.3">
+<h4><span class="header-section-number">3.0.4.3</span> Write dates as YYYY-MM-DD</h4>
+<p>When entering dates, there is a global ‘ISO 8601’ standard. Dates should be encoded YYYY-MM-DD. For example if you want to specify that a measurement was taken on February 27th, 2018, you would type 2018-02-27. YYYY refers to the year, 2018. MM refers to the month of February, 02. And DD refers to the day of the month, 27. This standard is used for dates for two main reason. First, it avoids confusion when sharing data across different countries, where date conventions can differ. By all using ISO 8601 standard conventions, there is less room for error in interpretation of dates. Secondly, spreadsheet software often mishandles dates and assumes that non-date information are actually dates and vice versa. By encoding dates as YYYY-MM-DD, this confusion is minimized.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54/export/png?id=1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54&amp;pageid=g326e316938_0_91" alt="YYYY-MM-DD" /></p>
+</div>
+<div id="no-empty-cells" class="section level4" number="3.0.4.4">
+<h4><span class="header-section-number">3.0.4.4</span> No empty cells</h4>
+<p>Simply, fill in every cell. If the data is unknown for that cell, put ‘NA.’ Without information in each cell, the analyst is often left guessing. In the spreadsheets below, on the left, is the analyst to assume that the empty cells should use the date from the cell above? Or are we to assume that the date for that measurement is unknown? Fill in the date if it is known or type ‘NA’ if it is not. That will clear up the need for any guessing on behalf of the analyst. On the spreadsheet to the right, the first two rows have a lot of empty cells. This is problematic for the analysis. This spreadsheet does not follow the rules for tidy data. There is not a single variable per column with a single entry per row. These data would have to be reformatted before they could be used in analysis.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54/export/png?id=1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54&amp;pageid=g326e316938_0_96" alt="No empty cells" /></p>
+</div>
+<div id="put-just-one-thing-in-a-cell" class="section level4" number="3.0.4.5">
+<h4><span class="header-section-number">3.0.4.5</span> Put just one thing in a cell</h4>
+<p>Sometimes people are tempted to include a number and a unit in a single cell. For weight, someone may <em>want</em> to put ‘165 lbs’ in that cell. Avoid this temptation! Keep numbers and units separate. In this case, put one piece of information in the cell (the person’s weight) and either put the unit in a separate column, or better yet, make the variable name weight_lbs. That clears everything up for the analyst and avoids a number and a unit from both being put in a single cell. As analysts, we prefer weight information to be in number form if we want to make calculations or figures. This is facilitated by the first column called “Weight_lbs” because it will be read into R as a numeric object. The second column called “Weight”, however, will be read into R as a character object because of the “lbs”, which makes our desired tasks more difficult.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54/export/png?id=1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54&amp;pageid=g326e316938_0_101" alt="One thing per cell" /></p>
+</div>
+<div id="dont-use-font-color-or-highlighting-as-data" class="section level4" number="3.0.4.6">
+<h4><span class="header-section-number">3.0.4.6</span> Don’t use font color or highlighting as data</h4>
+<p>Avoid the temptation to highlight particular cells with a color to specify something about the data. Instead, add another column to convey that information. In the example below, 1.1 looks like an incorrect value for an individual’s glucose measure. Instead of highlighting the value in red, create a new variable. Here, on the right, this column has been named ‘outlier.’ Including ‘TRUE’ for this individual suggests that this individual may be an outlier to the data analyst. Doing it in this way ensures that this information will not be lost. Using font color or highlighting however can easily be lost in data processing, as you will see in future lessons.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54/export/png?id=1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54&amp;pageid=g326e316938_0_106" alt="No highlighting or font color" /></p>
+</div>
+<div id="save-the-data-as-plain-text-files" class="section level4" number="3.0.4.7">
+<h4><span class="header-section-number">3.0.4.7</span> Save the data as plain text files</h4>
+<p>The following lessons will go into detail about which file formats are ideal for saving data, such as text files (.txt) and comma-delimited files (.csv). These file formats can easily be opened and will never require special software, ensuring that they will be usable no matter what computer or analyst is looking at the data.</p>
+</div>
+<div id="tidy-data-summary" class="section level4" number="3.0.4.8">
+<h4><span class="header-section-number">3.0.4.8</span> Tidy Data Summary</h4>
+<p>The data entry guidelines discussed here and a few additional rules have been summarized below and are <a href="https://doi.org/10.7287/peerj.preprints.3139v5">available online for reference</a>.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54/export/png?id=1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54&amp;pageid=g326e316938_0_134" alt="Naming Guidelines" /></p>
+<p>Most importantly, however, remember that tidy data are rectangular data. The data should be a rectangle with each variable in a separate column and each entry in a different row. All cells should contain some text, so that the spreadsheet looks like a rectangle with something in every cell.</p>
+<p>{format: png}
+<img src="https://docs.google.com/presentation/d/1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54/export/png?id=1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54&amp;pageid=g326e316938_1_6" alt="Tidy Data = rectangular data" /></p>
+</div>
+</div>
+<div id="additional-resources-1" class="section level3" number="3.0.5">
+<h3><span class="header-section-number">3.0.5</span> Additional resources</h3>
+<ul>
+<li><a href="http://vita.had.co.nz/papers/tidy-data.pdf">Hadley Wickham’s paper on Tidy Data</a></li>
+<li><a href="https://peerj.com/preprints/3183/">Data Organization in Spreadsheets</a></li>
+<li><a href="https://doi.org/10.7287/peerj.preprints.3139v5">How to Share Data for Collaboration</a></li>
+<li><a href="http://www.datacarpentry.org/spreadsheet-ecology-lesson/02-common-mistakes/">Data Carpentry’s Data Organization in Spreadsheets</a></li>
+<li><a href="http://kbroman.org/dataorg/">Karl Broman’s Data Organization blog post</a></li>
+</ul>
+</div>
+<div id="slides-and-video-2" class="section level3" number="3.0.6">
+<h3><span class="header-section-number">3.0.6</span> Slides and Video</h3>
+<div class="figure">
+<img src="https://youtu.be/zdbw5RDeT3c" alt="" />
+<p class="caption">Tidy Data</p>
+</div>
+<ul>
+<li><a href="https://docs.google.com/presentation/d/1JTG8Kt9htfyNsGQcsleHZNNXHKLe1zUlOb-SsnVNf54/edit?usp=sharing">Slides</a></li>
+</ul>
+
+</div>
+</div>
+<hr>
+<center> 
+  <div class="footer">
+      All illustrations <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY. </a>
+      <br>
+      All other materials <a href= "https://creativecommons.org/licenses/by/4.0/"> CC-BY </a> unless noted otherwise.
+  </div>
+</center>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-in-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="untidy-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
