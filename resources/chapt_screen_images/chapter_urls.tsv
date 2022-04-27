@@ -1,0 +1,14 @@
+url	chapt_title	img_path
+https://datatrail-jhu.github.io/06_datacleaning/no_toc/index.html	About this Course	resources/chapt_screen_images/index.png
+https://datatrail-jhu.github.io/06_datacleaning/no_toc/what-is-data.html	1 What is data?	resources/chapt_screen_images/what-is-data.png
+https://datatrail-jhu.github.io/06_datacleaning/no_toc/data-in-r.html	2 Data in R	resources/chapt_screen_images/data-in-r.png
+https://datatrail-jhu.github.io/06_datacleaning/no_toc/tidy-data.html	3 Tidy Data	resources/chapt_screen_images/tidy-data.png
+https://datatrail-jhu.github.io/06_datacleaning/no_toc/untidy-data.html	4 Untidy Data	resources/chapt_screen_images/untidy-data.png
+https://datatrail-jhu.github.io/06_datacleaning/no_toc/reshaping-data.html	5 Reshaping Data	resources/chapt_screen_images/reshaping-data.png
+https://datatrail-jhu.github.io/06_datacleaning/no_toc/tidying-data.html	6 Tidying Data	resources/chapt_screen_images/tidying-data.png
+https://datatrail-jhu.github.io/06_datacleaning/no_toc/working-with-strings.html	7 Working with Strings	resources/chapt_screen_images/working-with-strings.png
+https://datatrail-jhu.github.io/06_datacleaning/no_toc/working-with-factors.html	8 Working with Factors	resources/chapt_screen_images/working-with-factors.png
+https://datatrail-jhu.github.io/06_datacleaning/no_toc/working-with-dates.html	9 Working with Dates	resources/chapt_screen_images/working-with-dates.png
+https://datatrail-jhu.github.io/06_datacleaning/no_toc/data-tidying-project.html	10 Data Tidying Project	resources/chapt_screen_images/data-tidying-project.png
+https://datatrail-jhu.github.io/06_datacleaning/no_toc/about-the-authors.html	About the Authors	resources/chapt_screen_images/about-the-authors.png
+https://datatrail-jhu.github.io/06_datacleaning/no_toc/references.html	11 References	resources/chapt_screen_images/references.png
