@@ -1,5 +1,5 @@
 ---
-title: " Course Name "
+title: "06: Data Tidying"
 date: "`r format(Sys.time(), '%B, %Y')`"
 site: bookdown::bookdown_site
 documentclass: book
