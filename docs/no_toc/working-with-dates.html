@@ -291,8 +291,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 mdy(&quot;September 29th, 1988&quot;)
 
 dmy(&quot;29-Sep-1988&quot;)</code></pre>
-<p>
-<img src="https://docs.google.com/presentation/d/1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c/export/png?id=1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c&amp;pageid=g39252087a2_0_22" alt="creating date and date-time objects" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c/export/png?id=1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c&amp;pageid=g39252087a2_0_22" alt="" />
+<p class="caption">creating date and date-time objects</p>
+</div>
 <p>However, this has only covered working with date objects. To work with date-time objects, you have to further include hour (<code>h</code>), minute(<code>m</code>), and second (<code>s</code>) into the function. For example, in the code below, you can see that the output contains time information in addition to the date information generated in the functions above:</p>
 <div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="working-with-dates.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ymd_hms</span>(<span class="st">&quot;1988-09-29 20:11:59&quot;</span>)</span></code></pre></div>
 </div>
@@ -308,16 +310,20 @@ dmy(&quot;29-Sep-1988&quot;)</code></pre>
 <span id="cb98-3"><a href="working-with-dates.html#cb98-3" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span></span>
 <span id="cb98-4"><a href="working-with-dates.html#cb98-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, month, day) <span class="sc">%&gt;%</span></span>
 <span id="cb98-5"><a href="working-with-dates.html#cb98-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">departure =</span> <span class="fu">make_date</span>(year, month, day))</span></code></pre></div>
-<p>
-<img src="https://docs.google.com/presentation/d/1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c/export/png?id=1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c&amp;pageid=g39252087a2_0_0" alt="mutate and make_date() create a new column – departure – with a date object" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c/export/png?id=1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c&amp;pageid=g39252087a2_0_0" alt="" />
+<p class="caption">mutate and make_date() create a new column – departure – with a date object</p>
+</div>
 <p>A similar procedure is used to create a date-time object; however, this requires the function <code>make_datetime()</code> and requires columns with information about time be specified. Below, <code>hour</code> and <code>minute</code> are included to the function’s input.</p>
 <div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="working-with-dates.html#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="do">## make_datetime() creates a date-time object</span></span>
 <span id="cb99-2"><a href="working-with-dates.html#cb99-2" aria-hidden="true" tabindex="-1"></a><span class="do">## from information in separate columns</span></span>
 <span id="cb99-3"><a href="working-with-dates.html#cb99-3" aria-hidden="true" tabindex="-1"></a>flights <span class="sc">%&gt;%</span></span>
 <span id="cb99-4"><a href="working-with-dates.html#cb99-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(year, month, day, hour, minute) <span class="sc">%&gt;%</span></span>
 <span id="cb99-5"><a href="working-with-dates.html#cb99-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">departure =</span> <span class="fu">make_datetime</span>(year, month, day, hour, minute))</span></code></pre></div>
-<p>
-<img src="https://docs.google.com/presentation/d/1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c/export/png?id=1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c&amp;pageid=g39252087a2_0_4" alt="mutate and make_datetime() create a new column – departure – with a date-time object" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c/export/png?id=1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c&amp;pageid=g39252087a2_0_4" alt="" />
+<p class="caption">mutate and make_datetime() create a new column – departure – with a date-time object</p>
+</div>
 </div>
 </div>
 <div id="working-with-dates-1" class="section level3" number="9.0.3">
@@ -339,8 +345,10 @@ dmy(&quot;29-Sep-1988&quot;)</code></pre>
 <span id="cb100-11"><a href="working-with-dates.html#cb100-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb100-12"><a href="working-with-dates.html#cb100-12" aria-hidden="true" tabindex="-1"></a><span class="do">## label with actual day of the week</span></span>
 <span id="cb100-13"><a href="working-with-dates.html#cb100-13" aria-hidden="true" tabindex="-1"></a><span class="fu">wday</span>(mydate, <span class="at">label =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
-<p>
-<img src="https://docs.google.com/presentation/d/1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c/export/png?id=1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c&amp;pageid=g39252087a2_0_27" alt="lubridate has specific functions to extract components from date and date-time objects" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c/export/png?id=1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c&amp;pageid=g39252087a2_0_27" alt="" />
+<p class="caption">lubridate has specific functions to extract components from date and date-time objects</p>
+</div>
 </div>
 </div>
 <div id="time-spans" class="section level3" number="9.0.4">
@@ -355,8 +363,10 @@ dmy(&quot;29-Sep-1988&quot;)</code></pre>
 <span id="cb101-7"><a href="working-with-dates.html#cb101-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb101-8"><a href="working-with-dates.html#cb101-8" aria-hidden="true" tabindex="-1"></a><span class="do">## a duration object can get this information in years</span></span>
 <span id="cb101-9"><a href="working-with-dates.html#cb101-9" aria-hidden="true" tabindex="-1"></a><span class="fu">as.duration</span>(age)</span></code></pre></div>
-<p>
-<img src="https://docs.google.com/presentation/d/1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c/export/png?id=1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c&amp;pageid=g39252087a2_0_37" alt="dates and date-times can be operated upon" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c/export/png?id=1iLU-H6-GZw7EhL2syFZnjn_tC_cI6s9PmKRxcSOjg1c&amp;pageid=g39252087a2_0_37" alt="" />
+<p class="caption">dates and date-times can be operated upon</p>
+</div>
 <p>Using addition, subtraction, multiplication, and division is possible with date objects, and accurately takes into account things like leap years and different number of days each month. This capability and the additional functions that exist within lubridate can be enormously helpful when working with dates and date-time objects.</p>
 </div>
 <div id="whats-not-covered-in-this-lesson" class="section level3" number="9.0.5">
