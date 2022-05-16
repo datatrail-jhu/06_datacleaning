@@ -278,7 +278,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div id="wide-data" class="section level4" number="5.0.1.1">
 <h4><span class="header-section-number">5.0.1.1</span> Wide Data</h4>
 <p>Wide data has a column for each variable and a row for each observation. Data are often entered and stored in this manner. This is because wide data are often easy to understand at a glance. For example, this is a wide data set:</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI/export/png?id=14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI&amp;pageid=g2bfdb07292_0_151" alt="Wide dataset" /></p>
 <p>This is a dataset we’ve looked at in a previous lesson. As discussed previously, it’s a rectangular and tidy dataset. Now, we can also state that it is a wide dataset. Here you can clearly see what measurements were taken for each individual and can get a sense of how many individuals are contained in the dataset.</p>
 <p>Specifically, each individual is in a different row with each variable in a different column. At a glance we can quickly see that we have information about four different people and that each person was measured in four different ways.</p>
@@ -286,7 +286,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div id="long-data" class="section level4" number="5.0.1.2">
 <h4><span class="header-section-number">5.0.1.2</span> Long Data</h4>
 <p>Long data, on the other hand, has one column indicating the type of variable contained in that row and then a separate row for the value for that variable. Each row contains a single observation for a single variable. Below is an example of a long data set:</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI/export/png?id=14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI&amp;pageid=g38bb68a532_0_0" alt="Long dataset" /></p>
 <p>This long dataset includes the exact same information as the previous wide dataset; it is just stored differently. It’s harder to see visually how many different measurements were taken and on how many different people, but the same information is there.</p>
 <p>While long data formats are less readable than wide data at a glance, they are a lot easier to work with during analysis. Most of the tools we’ll be working with use long data. Thus, to go from how data are often stored (wide) to working with the data during analysis (long), we’ll need to understand what tools are needed to do this and how to work with them.</p>
@@ -295,12 +295,12 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div id="r-packages" class="section level3" number="5.0.2">
 <h3><span class="header-section-number">5.0.2</span> R Packages</h3>
 <p>Converting your data from wide-to-long or from long-to-wide data formats is referred to as <strong>reshaping</strong> your data. There are two primary packages in R that will help you reshape your data: <a href="https://tidyr.tidyverse.org/">tidyr</a> and <a href="https://stat.ethz.ch/pipermail/r-packages/2010/001169.html">reshape2</a>. We’ll walk through the important functions of these two packages and work through a few examples using the functions in each. However, as with most helpful packages in R, there is more functionality than what is discussed here, so feel free to explore the additional resources at the bottom to learn even more.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI/export/png?id=14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI&amp;pageid=g38bb68a532_0_13" alt="Reshaping data" /></p>
 <p>For these examples, we’ll work with the <code>airquality</code> dataset available in R. The data in this dataset includes “Daily air quality measurements in New York, May to September 1973.” This is a wide dataset because each day is in a separate row and there are multiple columns with each including information about a different variable (ozone, solar.r, wind, temp, month, and day).</p>
 <p>We can see the first few lines of this dataset using the following code:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="reshaping-data.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(airquality)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI/export/png?id=14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI&amp;pageid=g38bb68a532_0_4" alt="Air quality dataset" /></p>
 <p>Again, wide data are easy to decipher at a glance. We can see that we have six different variables for each day, with each one of these variables (measurements) being stored in a separate column.</p>
 <div id="tidyr" class="section level4" number="5.0.2.1">
@@ -322,7 +322,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb11-3"><a href="reshaping-data.html#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-4"><a href="reshaping-data.html#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="do">## take a look at first few rows of long data</span></span>
 <span id="cb11-5"><a href="reshaping-data.html#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gathered)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI/export/png?id=14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI&amp;pageid=g38bb68a532_0_205" alt="gather dataset" /></p>
 <p>However, it’s very easy to change the names of these columns within <code>gather()</code>. To do so you define what the key and value columns names should be within <code>gather()</code>:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="reshaping-data.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="do">## to rename the column names that gather provides,</span></span>
@@ -331,7 +331,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb12-4"><a href="reshaping-data.html#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-5"><a href="reshaping-data.html#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="do">## take a look at first few rows of long data</span></span>
 <span id="cb12-6"><a href="reshaping-data.html#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gathered)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI/export/png?id=14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI&amp;pageid=g38bb68a532_0_213" alt="gather column names changed" /></p>
 <p>However, you’re likely not interested in your day and month variable being separated out into their own variables within the <code>key</code> column. In fact, knowing the day and month associated with a particular data point helps identify that particular data point. To account for this, you can exclude <code>day</code> and <code>month</code> from the variables being included in the <code>key</code> column by specifying all the variables that you <em>do</em> want included in the <code>key</code> column. Here, that means specifying <code>ozone</code>, <code>solar.r</code>, <code>wind</code>, and <code>temp</code>. This will keep <code>day</code> and <code>month</code> in their own columns, allowing each row to be identified by the specific day and month being discussed.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="reshaping-data.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">## in gather(), after key and value, you can specify which variables</span></span>
@@ -341,7 +341,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb13-5"><a href="reshaping-data.html#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-6"><a href="reshaping-data.html#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="do">## take a look at first few rows of long data</span></span>
 <span id="cb13-7"><a href="reshaping-data.html#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gathered)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI/export/png?id=14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI&amp;pageid=g38bb68a532_0_222" alt="gather specifying which variables to include in long format" /></p>
 <p>Now, when you look at the top of this object, you’ll see that <code>month</code> and <code>day</code> remain in the data frame and that variable combines information from the other columns in airquality (<code>ozone</code>, <code>solar.r</code>, <code>wind</code>, <code>temp</code>). This is still a long format dataset; however, it has used <code>month</code> and <code>day</code> as IDs when reshaping the data frame.</p>
 </div>
@@ -356,7 +356,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb14-6"><a href="reshaping-data.html#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-7"><a href="reshaping-data.html#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="do">## compare that back to the original</span></span>
 <span id="cb14-8"><a href="reshaping-data.html#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(airquality)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI/export/png?id=14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI&amp;pageid=g38bb68a532_0_236" alt="spread data" /></p>
 </div>
 </div>
@@ -386,7 +386,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb16-8"><a href="reshaping-data.html#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="do">## and at the bottom of that melted data frame</span></span>
 <span id="cb16-9"><a href="reshaping-data.html#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(melted)</span></code></pre></div>
 <p>When you run this code you see that each column from the original data frame (<code>ozone</code>, <code>solar.r</code>, <code>wind</code>, <code>temp</code>,<code>month</code>, and <code>day</code>) are now repeated in the variables column, and each days’ value for that variable is now in the <code>value</code> column. This is now a long format dataset!</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI/export/png?id=14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI&amp;pageid=g38bb68a532_0_43" alt="melted data" /></p>
 <p>Now, to use month and day as identifiers as we did with <code>tidyr</code> above, the approach is slightly different. With <code>gather()</code>, you specified the column names that you wanted to gather and omitted the column names that you wanted to retain as identifiers. With <code>melt()</code> you will do the opposite. You will specify <code>day</code> and <code>month</code> as identifiers for the dataset and omit the remaining variables. You’ll want to use the following syntax:</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="reshaping-data.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="do">## melt the data frame</span></span>
@@ -395,7 +395,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb17-4"><a href="reshaping-data.html#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-5"><a href="reshaping-data.html#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="do">## look at the first few rows of the melted data frame</span></span>
 <span id="cb17-6"><a href="reshaping-data.html#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(melted)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI/export/png?id=14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI&amp;pageid=g38bb68a532_0_53" alt="melted data frame using IDs" /></p>
 <p>Despite the slight change in how the code was specified, the result here using <code>melt()</code> is the same as what was achieved above using <code>gather()</code>.</p>
 </div>
@@ -415,7 +415,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb18-6"><a href="reshaping-data.html#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(original)</span>
 <span id="cb18-7"><a href="reshaping-data.html#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-8"><a href="reshaping-data.html#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(airquality)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI/export/png?id=14msuN3MbQE6BSIaNu2ipv1-5ypgvWlxsGwn3jmpFyAI&amp;pageid=g38bb68a532_0_148" alt="dcast to obtain original data" /></p>
 <p>As you can see, aside from the column order changing, the information in <code>original</code> is the same as what was in the data frame we started with (<code>airquality</code>).</p>
 <p>While reshaping data may not be the most exciting topic, having this skill will be indispensable as you start working with data. It’s best to get these skills down early!</p>

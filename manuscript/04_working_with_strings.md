@@ -36,7 +36,7 @@ The best way to work through this lesson is to copy and paste every line of code
 
 As we'll only cover a few of the functions within stringr in this lesson, it's important to remember that if you start typing "str_" within RStudio, a list of the many options will show up.
 
-{format: png}
+
 ![str_ image](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g38bb68a539_0_12)
 
 ### String basics
@@ -57,7 +57,7 @@ objectA <- c( "This sentence is a string.", "Short String", "Third string" )
 str_length(objectA)
 ```
 
-{format: png}
+
 ![str_length output](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g38bb68a539_0_17)
 
 Here we see that the first string has a length of 26. If you were to go back and count the characters in the first string, you would see that this 26 includes each letter, space, and period in that string. The length of a string does not just could the letters in its length. The length includes every character. The second and third strings each have length 12. 
@@ -70,7 +70,7 @@ If you were interested in combining strings, you'd want to use `str_c`.
 str_c( "Good", "Morning")
 ```
 
-{format: png}
+
 ![str_c](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g38bb68a539_0_0)
 
 However, the output from this doesn't look quite right. You may want a space between these two words when you combine the two strings. That can be controlled with the `sep` argument.
@@ -89,7 +89,7 @@ object <- c( "Good", "Morning")
 str_sub(object, 1, 3)
 ```
 
-{format: png}
+
 ![str_sub output](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g398837bd56_0_29)
 
 You can also use negative numbers to count from the end of the string. For example, below we see code that returns the last three positions in the string.
@@ -99,7 +99,7 @@ object <- c( "Good", "Morning")
 
 str_sub(object, -3, -1)
 ```
-{format: png}
+
 ![str_sub output counting from end of string](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g398837bd56_0_36)
 
 #### String sorting: `str_sort()`
@@ -112,7 +112,7 @@ names <- c("Keisha", "Mohammed", "Jane")
 str_sort(names)
 ```
 
-{format: png}
+
 ![str_sort() output sorts strings](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g398837bd56_0_42)
 
 
@@ -148,7 +148,7 @@ names <- c("Keisha", "Mohammed", "Jane", "Mathieu")
 str_view(names, "^M")
 ```
 
-{format: png}
+
 ![`str_view()` identifies names that start with M](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g38bb68a539_0_30)
 
 In this first example we see in the Viewer Panel that str_view has identified the names that start with the letter M.
@@ -160,7 +160,7 @@ However, if you try to match strings that end with the letter "M", no match is f
 str_view(names, "M$")
 ```
 
-{format: png}
+
 ![`str_view()` does not identify any names that end with M](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g38bb68a539_0_26)
 
 To identify names by that end with the letter "a", you would use the following.
@@ -170,7 +170,7 @@ To identify names by that end with the letter "a", you would use the following.
 str_view(names, "a$")
 ```
 
-{format: png}
+
 ![`str_view()` identifies names that end with a](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g38bb68a539_0_34)
 
 Note, however, that regexps are case sensitive. To match patterns, you have to consider that "A" and "a" are different characters.  
@@ -180,7 +180,7 @@ Note, however, that regexps are case sensitive. To match patterns, you have to c
 str_view(names, "A$")
 ```
 
-{format: png}
+
 ![`str_view()` does not identify any names that end with A](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g38bb68a539_0_39)
 
 #### Count matches: `str_count()`
@@ -193,7 +193,7 @@ To count the number of matches within your strings, you would use `str_count()`.
 str_count(names, "^M")
 ```
 
-{format: png}
+
 ![str_count() strings that start with "M"](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g38bb68a539_0_90)
 
 However, if we instead wanted a count of the numbers of lowercase "m"s, we could still use `str_count()` to accomplish that. Notice below we've removed the specification to just look at the beginning of the string. Here, we're looking for lowercase m's anywhere in the string and counting them:
@@ -204,7 +204,7 @@ However, if we instead wanted a count of the numbers of lowercase "m"s, we could
 str_count(names, "m")
 ```
 
-{format: png}
+
 ![str_count() strings that have an m in them](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g38bb68a539_0_108)
 
 #### Detect matches: `str_detect()`
@@ -217,7 +217,7 @@ Instead of returning a count, at times you're just interested in knowing which s
 str_detect(names, "^M")
 ```
 
-{format: png}
+
 ![str_detect() returns TRUE for strings that match the specified pattern; FALSE otherwise](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g38bb68a539_0_96)
 
 
@@ -231,7 +231,7 @@ To return the actual string that matches the specified pattern, rather than a TR
 str_subset(names, "^M")
 ```
 
-{format: png}
+
 ![str_subset() returns the strings that match the pattern specified](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g38bb68a539_0_102)
 
 #### Extract matches: `str_extract()`
@@ -244,7 +244,7 @@ To extract only the portions of the string that match the specified pattern, you
 str_extract(names, "^M")
 ```
 
-{format: png}
+
 ![str_extract() returns the portions of the strings that match the pattern specified](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g38bb68a539_0_122)
 
 #### Replace matches: `str_replace()`
@@ -256,7 +256,7 @@ The final basic function from `stringr` that we'll discuss is `str_replace()`. T
 str_replace(names, "^M", "?")
 ```
 
-{format: png}
+
 ![str_replace() replaces regex with specified characters](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g38bb68a539_0_131)
 
 #### Common regular expressions
@@ -274,7 +274,7 @@ To search for a set of characters, you place these characters within brackets. B
 str_view_all(names, "[aeiou]")
 ```
 
-{format: png}
+
 ![brackets specify which characters to search for](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g38bb68a539_0_69)
 
 
@@ -287,7 +287,7 @@ By adding a caret (`^`) before the vowels within the brackets, this regular expr
 str_view_all(names, "[^aeiou]")
 ```
 
-{format: png}
+
 ![brackets with a caret first specify which characters NOT to search for](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g38bb68a539_0_78)
 
 
@@ -302,7 +302,7 @@ addresses <- c("1234 Main Street", "1600 Pennsylvania Ave", "Brick Building")
 str_view_all(addresses, "\\d")
 ```
 
-{format: png}
+
 ![\d searches for digits](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g38bb68a539_0_140)
 
 ##### Search for whitespace
@@ -314,7 +314,7 @@ Identifying whitespace in R identifies any spaces, tabs or newlines. Note that a
 str_view_all(addresses, "\\s")
 ```
 
-{format: png}
+
 ![\s searches for whitespace](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g38bb68a539_0_153)
 
 
@@ -327,7 +327,7 @@ To identify any character except for a newline you'll use `"."`. Notice in our a
 str_view_all(addresses, ".")
 ```
 
-{format: png}
+
 ![. searches for any character](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g38bb68a539_0_164)
 
 
@@ -352,7 +352,7 @@ Using the definitions above, we can see that the following code will identify pa
 str_view_all(addresses, "n+")
 ```
 
-{format: png}
+
 ![+ specifies to match the pattern one or more times](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g38bb68a539_0_177)
 
 
@@ -363,7 +363,7 @@ While the difference is slight in the output here, we're identifying portions of
 str_view_all(addresses, "n{1}")
 ```
 
-{format: png}
+
 ![{#} looks to match the pattern exactly the number of times within the curly braces](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g38bb68a539_0_183)
 
 If you only wanted to match strings where n showed up twice in a row, you could specify that in this way:
@@ -373,7 +373,7 @@ If you only wanted to match strings where n showed up twice in a row, you could 
 str_view_all(addresses, "n{2}")
 ```
 
-{format: png}
+
 ![{2} specifies that the pattern must be found exactly twice](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g38bb68a539_0_188)
 
 This could similarly be achieved by specifying to search for the pattern 'nn' one or more times (`+`):
@@ -382,7 +382,7 @@ This could similarly be achieved by specifying to search for the pattern 'nn' on
 ## identify any time 'nn' shows up one or more times 
 str_view_all(addresses, "nn+")
 ```
-{format: png}
+
 ![nn+ searches for double n one or more times in a string](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g38bb68a539_0_193)
 
 You can also specify a range of the number of times to search for a pattern within your string. Below, we see that if we specify n be searched for at least two and at most 3 times, the pattern matches within our string. However, if we increase that to between three and four times, no pattern matching occurs, as there are never three or four n's in a row in our strings.
@@ -395,7 +395,7 @@ str_view_all(addresses, "n{2,3}")
 str_view_all(addresses, "n{3,4}")
 ```
 
-{format: png}
+
 ![{n,m} looks to pattern match between n and m times](https://docs.google.com/presentation/d/1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw/export/png?id=1-6k6usRR06dp-YK-M3HUOUgQZKXXqKnAD5RC4TISGhw&pageid=g38bb68a539_0_65)
 
 ### Conclusion

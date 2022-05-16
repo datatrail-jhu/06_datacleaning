@@ -275,7 +275,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>So far we’ve discussed what tidy and untidy data are. We’ve (hopefully) convinced you that tidy data are the right type of data to work with. And, more than that, hopefully we’ve explained that data are not always the tidiest when they come to you at the start of a project. An incredibly important skill of a data scientist is to be able to take data from an untidy format and get it into a tidy format. We’ve started to discuss how to do this in the last lesson where we learned to reshape data. In this lesson, we’ll discuss a number of other ways in which data can be tidied and the necessary tools to <strong>tidy data</strong>.</p>
 <p>These skills are often referred to as <strong>data wrangling</strong>. They are skills that allow you to wrangle data from the format they’re currently in into the format you actually want them in.</p>
 <p>As this is an incredibly important topic, this will be a long lesson covering a number of packages and topics. Take your time working through it and be sure to understand all of the examples!</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_1" alt="data wrangling example" /></p>
 <div id="dplyr" class="section level3" number="6.0.1">
 <h3><span class="header-section-number">6.0.1</span> dplyr</h3>
@@ -359,7 +359,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb27-6"><a href="tidying-data.html#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-7"><a href="tidying-data.html#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="do">## take a look at the data</span></span>
 <span id="cb27-8"><a href="tidying-data.html#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(msleep)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_133" alt="Glimpse of msleep dataset" /></p>
 <div id="filtering-rows" class="section level4" number="6.0.6.1">
 <h4><span class="header-section-number">6.0.6.1</span> Filtering Rows</h4>
@@ -368,7 +368,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb28-2"><a href="tidying-data.html#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(order <span class="sc">==</span> <span class="st">&quot;Primates&quot;</span>)</span></code></pre></div>
 <p>Note that we are using the equality <code>==</code> comparison operator that you learned about in the previous course. Also note that we have used the pipe operator to feed the <code>msleep</code> data frame into the <code>filter()</code> function. This is shorthand for:</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="tidying-data.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(msleep, order <span class="sc">==</span> <span class="st">&quot;Primates&quot;</span>)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_164" alt="Filtered to only include Primates" /></p>
 <p>Here, we have a smaller dataset of only 12 mammals (as opposed to the original 83) and we can see that the <code>order</code> variable column only includes “Primates.”</p>
 <p>But, what if we were only interested in Primates who sleep more than 10 hours total per night? This information is in the <code>sleep_total</code> column. Fortunately, <code>filter()</code> also works on numeric variables. To accomplish this, you would use the following syntax, separating the multiple filters you want to apply with a comma:</p>
@@ -376,7 +376,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb30-2"><a href="tidying-data.html#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(order <span class="sc">==</span> <span class="st">&quot;Primates&quot;</span>, sleep_total <span class="sc">&gt;</span> <span class="dv">10</span>)</span></code></pre></div>
 <p>Note that we have used the “greater than” comparison operator with <code>sleep_total</code>.</p>
 <p>Now, we have a dataset focused in on only 5 mammals, all of which are primates who sleep for more than 10 hours a night total.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_179" alt="Numerically filtered dataset" /></p>
 <p>We can obtain the same result with the AND <code>&amp;</code> logical operator instead of separating filtering conditions with a comma:</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="tidying-data.html#cb31-1" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
@@ -390,7 +390,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="tidying-data.html#cb32-1" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
 <span id="cb32-2"><a href="tidying-data.html#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(order <span class="sc">==</span> <span class="st">&quot;Primates&quot;</span>, sleep_total <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb32-3"><a href="tidying-data.html#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, sleep_total, sleep_rem, sleep_cycle)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_187" alt="Data with selected columns" /></p>
 <p>Now, using <code>select()</code> we see that we still have the five rows we filtered to before, but we only have the four columns specified using <code>select()</code>. Here you can hopefully see the power of the pipe operator to chain together several commands in a row. Without the pipe operator, the full command would look like this:</p>
 <div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="tidying-data.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(<span class="fu">filter</span>(msleep, order <span class="sc">==</span> <span class="st">&quot;Primates&quot;</span>, sleep_total <span class="sc">&gt;</span> <span class="dv">10</span>), name, sleep_total, sleep_rem, sleep_cycle)</span></code></pre></div>
@@ -401,13 +401,13 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="tidying-data.html#cb34-1" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
 <span id="cb34-2"><a href="tidying-data.html#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(order <span class="sc">==</span> <span class="st">&quot;Primates&quot;</span>, sleep_total <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb34-3"><a href="tidying-data.html#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, <span class="at">total=</span>sleep_total, <span class="at">rem=</span>sleep_rem, <span class="at">cycle=</span>sleep_cycle)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_194" alt="Data with renamed columns names with select()" /></p>
 <p>It’s important to keep in mind that when using <code>select()</code> to rename columns, only the specified columns will be included and renamed in the output. If you, instead, want to change the names of a few columns but return <em>all</em> columns in your output, you’ll want to use <code>rename()</code>. For example, the following, returns a data frame with all 11 columns, where the column names for three columns specified within <code>rename()</code> function have been renamed.</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="tidying-data.html#cb35-1" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
 <span id="cb35-2"><a href="tidying-data.html#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(order <span class="sc">==</span> <span class="st">&quot;Primates&quot;</span>, sleep_total <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb35-3"><a href="tidying-data.html#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">total=</span>sleep_total, <span class="at">rem=</span>sleep_rem, <span class="at">cycle=</span>sleep_cycle)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g4518ccec72_0_0" alt="Data with renamed columns names using rename()" /></p>
 </div>
 </div>
@@ -421,7 +421,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb36-2"><a href="tidying-data.html#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(order <span class="sc">==</span> <span class="st">&quot;Primates&quot;</span>, sleep_total <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb36-3"><a href="tidying-data.html#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, sleep_rem, sleep_cycle, sleep_total)</span></code></pre></div>
 <p>Here we see that sleep_rem <code>name</code> is displayed first followed by <code>sleep_rem</code>, <code>sleep_cycle</code>, and <code>sleep_total</code>, just as it was specified within <code>select()</code>.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_204" alt="Data with reordered columns names" /></p>
 </div>
 <div id="reordering-rows" class="section level4" number="6.0.7.2">
@@ -431,7 +431,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb37-2"><a href="tidying-data.html#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(order <span class="sc">==</span> <span class="st">&quot;Primates&quot;</span>, sleep_total <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb37-3"><a href="tidying-data.html#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, sleep_rem, sleep_cycle, sleep_total) <span class="sc">%&gt;%</span></span>
 <span id="cb37-4"><a href="tidying-data.html#cb37-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(sleep_total)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_215" alt="Data arranged by total sleep in ascending order" /></p>
 <p>While <code>arrange</code> sorts variables in ascending order, it’s also possible to sort in descending (largest to smallest) order. To do this you just use <code>desc()</code> with the following syntax:</p>
 <div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="tidying-data.html#cb38-1" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
@@ -439,14 +439,14 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb38-3"><a href="tidying-data.html#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, sleep_rem, sleep_cycle, sleep_total) <span class="sc">%&gt;%</span></span>
 <span id="cb38-4"><a href="tidying-data.html#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(sleep_total))</span></code></pre></div>
 <p>By putting <code>sleep_total</code> within <code>desc()</code>, <code>arrange()</code> will now sort your data from the primates with the longest total sleep to the shortest.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_215" alt="Data arranged by total sleep in descending order" /></p>
 <p><code>arrange()</code> can also be used to order non-numeric variables. For example, <code>arrange()</code> will sort character vectors alphabetically.</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="tidying-data.html#cb39-1" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
 <span id="cb39-2"><a href="tidying-data.html#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(order <span class="sc">==</span> <span class="st">&quot;Primates&quot;</span>, sleep_total <span class="sc">&gt;</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb39-3"><a href="tidying-data.html#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, sleep_rem, sleep_cycle, sleep_total) <span class="sc">%&gt;%</span></span>
 <span id="cb39-4"><a href="tidying-data.html#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(name)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_234" alt="Data arranged alphabetically by name" /></p>
 <p>If you would like to reorder rows based on information in multiple columns, you can specify them separated by commas. This is useful if you have repeated labels in one column and want to sort within a category based on information in another column. In the example here, if there were repeated primates, this would sort the repeats based on their total sleep.</p>
 <div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="tidying-data.html#cb40-1" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
@@ -464,7 +464,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb41-3"><a href="tidying-data.html#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(name, sleep_rem, sleep_cycle, sleep_total) <span class="sc">%&gt;%</span></span>
 <span id="cb41-4"><a href="tidying-data.html#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(name) <span class="sc">%&gt;%</span></span>
 <span id="cb41-5"><a href="tidying-data.html#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sleep_total_min =</span> sleep_total <span class="sc">*</span> <span class="dv">60</span>)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_242" alt="Mutate to add new column to data" /></p>
 </div>
 <div id="separating-columns" class="section level3" number="6.0.9">
@@ -485,7 +485,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb42-12"><a href="tidying-data.html#cb42-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb42-13"><a href="tidying-data.html#cb42-13" aria-hidden="true" tabindex="-1"></a><span class="do">## take a look at this file</span></span>
 <span id="cb42-14"><a href="tidying-data.html#cb42-14" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(conservation)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_250" alt="Conservation data set" /></p>
 <p>In this dataset, we see that there is a single column that includes <em>both</em> the abbreviation for the conservation term as well as what that abbreviation means. Recall that this violates one of the tidy data principles covered in the first lesson: Put just one thing in a cell. To work with these data, you could imagine that you may want these two pieces of information (the abbreviation and the description) in two different columns. To accomplish this in R, you’ll want to use <code>separate()</code> from <code>tidyr</code>.</p>
 <p>The <code>separate()</code> function requires the name of the existing column that you want to separate (<code>conservation abbreviation</code>), the desired column names of the resulting separated columns (<code>into = c("abbreviation", "description")</code>), and the characters that currently separate the pieces of information (<code>sep = " = "</code>). We have to put <code>conservation abbreviation</code> in back ticks in the code below because the column name contains a space. Without the back ticks, R would think that <code>conservation</code> and <code>abbreviation</code> were two separate things. This is another violation of tidy data! Variable names should have underscores, not spaces!</p>
@@ -493,7 +493,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb43-2"><a href="tidying-data.html#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="st">`</span><span class="at">conservation abbreviation</span><span class="st">`</span>,</span>
 <span id="cb43-3"><a href="tidying-data.html#cb43-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;abbreviation&quot;</span>, <span class="st">&quot;description&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; = &quot;</span>)</span></code></pre></div>
 <p>The output of this code shows that we now have two separate columns with the information in the original column separated out into <code>abbreviation</code> and <code>description</code>.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_261" alt="Output of separate()" /></p>
 </div>
 <div id="merging-columns" class="section level3" number="6.0.10">
@@ -503,7 +503,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb44-2"><a href="tidying-data.html#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(<span class="st">`</span><span class="at">conservation abbreviation</span><span class="st">`</span>,</span>
 <span id="cb44-3"><a href="tidying-data.html#cb44-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;abbreviation&quot;</span>, <span class="st">&quot;description&quot;</span>), <span class="at">sep =</span> <span class="st">&quot; = &quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb44-4"><a href="tidying-data.html#cb44-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unite</span>(united_col, abbreviation, description, <span class="at">sep =</span> <span class="st">&quot; = &quot;</span>)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_408" alt="Output of unite()" /></p>
 </div>
 <div id="cleaning-up-column-names" class="section level3" number="6.0.11">
@@ -511,7 +511,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>While maybe not quite as important as some of the other functions mentioned in this lesson, a function that will likely prove very helpful as you start analyzing lots of different datasets is <code>clean_names()</code> from the <code>janitor</code> package. This function takes the existing column names of your dataset, converts them all to lowercase letters and numbers, and separates all words using the underscore character. For example, there is a space in the column name for conservation. <code>clean_names()</code> will convert <code>conservation abbreviation</code> to <code>conservation_abbreviation</code>. These cleaned up column names are a lot easier to work with when you have large datasets.</p>
 <div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="tidying-data.html#cb45-1" aria-hidden="true" tabindex="-1"></a>conservation <span class="sc">%&gt;%</span></span>
 <span id="cb45-2"><a href="tidying-data.html#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">clean_names</span>()</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_329" alt="clean_names() output" /></p>
 </div>
 <div id="combining-data-across-data-frames" class="section level3" number="6.0.12">
@@ -532,7 +532,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb46-10"><a href="tidying-data.html#cb46-10" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
 <span id="cb46-11"><a href="tidying-data.html#cb46-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">conservation =</span> <span class="fu">toupper</span>(conservation)) <span class="sc">%&gt;%</span></span>
 <span id="cb46-12"><a href="tidying-data.html#cb46-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(conserve, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;conservation&quot;</span> <span class="ot">=</span> <span class="st">&quot;abbreviation&quot;</span>))</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_265" alt="Data resulting from left_join" /></p>
 <p>It’s important to note that there are many other ways to join data, which are covered in more detail on this <a href="http://stat545.com/bit001_dplyr-cheatsheet.html">dplyr join cheatsheet</a> from Jenny Bryan. For now, it’s important to know that joining datasets is done easily in R using tools in <code>dplyr</code>. As you join data frames in your own work, it’s a good idea to refer back to this cheatsheet for assistance.</p>
 </div>
@@ -546,7 +546,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb47-2"><a href="tidying-data.html#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb47-3"><a href="tidying-data.html#cb47-3" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
 <span id="cb47-4"><a href="tidying-data.html#cb47-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(order)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_278" alt="group_by() output" /></p>
 <p>In fact, the only aspect of the output that is different is that the number of different orders is now printed on your screen. However, in the next section, you’ll see that the output from any further functions you carry out at this point will differ between the two datasets.</p>
 </div>
@@ -561,7 +561,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb48-2"><a href="tidying-data.html#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(order) <span class="sc">%&gt;%</span></span>
 <span id="cb48-3"><a href="tidying-data.html#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">N=</span><span class="fu">n</span>())</span></code></pre></div>
 <p>This provides a summary of the data with the new column name we specified above (<code>N</code>) and the number of samples in the dataset. Note that we could also obtain the same information by directly obtaining the number of rows in the data frame with <code>nrow(msleep)</code>.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_285" alt="Summarize with n()" /></p>
 <p>However, if you wanted to count how many of each different <code>order</code> of mammal you had. You would first <code>group_by(order)</code> and then use <code>summarize()</code>. This will summarize within group.</p>
 <div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="tidying-data.html#cb49-1" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
@@ -569,7 +569,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb49-3"><a href="tidying-data.html#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(order) <span class="sc">%&gt;%</span></span>
 <span id="cb49-4"><a href="tidying-data.html#cb49-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">N=</span><span class="fu">n</span>())</span></code></pre></div>
 <p>The output from this, like above, includes the column name we specified in summarize (<code>N</code>). However, it includes the number of samples in the group_by variable we specified (<code>order</code>).</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_293" alt="group_by() and summarize with n()" /></p>
 <p>There are other ways in which the data can be summarized using <code>summarize()</code>. In addition to using n() to count the number of samples within a group, you can also summarize using other helpful functions within R, such as <code>mean()</code>, <code>median()</code>, <code>min()</code>, and <code>max()</code>.</p>
 <p>For example, if we wanted to calculate the average (mean) total sleep each order of mammal got, we could use the following syntax:</p>
@@ -577,7 +577,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb50-2"><a href="tidying-data.html#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(order) <span class="sc">%&gt;%</span></span>
 <span id="cb50-3"><a href="tidying-data.html#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(order, sleep_total) <span class="sc">%&gt;%</span></span>
 <span id="cb50-4"><a href="tidying-data.html#cb50-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">N=</span><span class="fu">n</span>(), <span class="at">mean_sleep=</span><span class="fu">mean</span>(sleep_total))</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_300" alt="summarize using mean()" /></p>
 </div>
 <div id="tabyl" class="section level4" number="6.0.14.2">
@@ -585,18 +585,18 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>In addition to using <code>summarize()</code> from <code>dplyr</code>, the <code>tabyl()</code> function from the <code>janitor</code> package can be incredibly helpful for summarizing categorical variables quickly and discerning the output at a glance. Again returning to our <code>msleep</code> dataset, if we wanted to get a summary of how many samples are in each order category and what percent of the data fall into each category we could call tabyl on that variable. For example, if we use the following syntax, we easily get a quick snapshot of this variable.</p>
 <div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="tidying-data.html#cb51-1" aria-hidden="true" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
 <span id="cb51-2"><a href="tidying-data.html#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabyl</span>(order)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_304" alt="summarize using tabyl() from janitor" /></p>
 <p>Note, that <code>tabyl</code> assumes categorical variables. If you want to summarize numeric variables <code>summary()</code> works well. For example, this code will summarize the values in <code>msleep$awake</code> for you.</p>
 <div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="tidying-data.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(msleep<span class="sc">$</span>awake)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_320" alt="summarize numeric variables" /></p>
 </div>
 <div id="skim" class="section level4" number="6.0.14.3">
 <h4><span class="header-section-number">6.0.14.3</span> skim()</h4>
 <p>When you would rather get a snapshot of the entire dataset, rather than just one variable, the <code>skim()</code> function from the <code>skimr</code> package can be very helpful. The output from <code>skim()</code> breaks the data up by variable type. For example, the <code>msleep</code> data set is broken up into <code>character</code> and <code>numeric</code> variable types. The data are then summarized in a meaningful way for each. This function provides a lot of information about the entire data set. So, when you want a summarize a dataset and quickly get a sense of your data, <code>skim()</code> is a great option!</p>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="tidying-data.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">skim</span>(msleep)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4/export/png?id=1Z1pukaF-HrZHEwSfr3SV8N2Slo2rMEJxpgl1qJv-QL4&amp;pageid=g38bb68a535_0_313" alt="summarize entire dataset using skim() from skimr" /></p>
 </div>
 </div>

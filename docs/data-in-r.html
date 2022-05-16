@@ -291,20 +291,20 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <h4><span class="header-section-number">2.0.1.1</span> R Script file (.R)</h4>
 <p>The most basic file type in R uses the .R file extension. R Script files contain code written in the R programming language. As you want to write R code and save this code, you’ll save it as a .R file.</p>
 <p>To get started writing an R Script file, you’ll go to <a href="rstudio.cloud">rstudio.cloud</a> and click on File &gt; New File &gt; RScript along the menu at the top. This will open ups a blank R Script file.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&amp;pageid=g2bfdb07292_0_151" alt="R Script" /></p>
 <p>In this R Script is where you would write R code. As you write code, you’ll want to save this file. Here, in this example, you can see the R code we’ve written and that this file has been saved as “script_test.R.”</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&amp;pageid=g3c53e17c93_1_3" alt=".R file" /></p>
 </div>
 <div id="r-markdown-.rmd" class="section level4" number="2.0.1.2">
 <h4><span class="header-section-number">2.0.1.2</span> R Markdown (.Rmd)</h4>
 <p>We’ve also introduced R Markdown files previously. As a refresher, R Markdown documents use Markdown syntax <em>and</em> include code chunks with R code that will be run when the document is “Knit” into its final format (which can be PDF, HTML, or Word documents among others.</p>
 <p>To get started writing an R Markdown document, you’ll go to <a href="rstudio.cloud">rstudio.cloud</a> and click on File &gt; New File &gt; R Markdown… After filling out the information in the pop-up window and clicking OK, an R Markdown document will open up.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&amp;pageid=g3c53e17c93_1_11" alt="R Markdown" /></p>
 <p>In this document you’ll use Markdown syntax outside of code chunks and R code in the code chunks to generate your reports.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&amp;pageid=g3c53e17c93_1_15" alt=".Rmd file" /></p>
 <p>R Markdown documents are great at producing reproducible reports that walk people through your data science process from start to finish.</p>
 </div>
@@ -313,29 +313,29 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>As you write R code (say, in an .R file), you will inevitably create objects. For example, in the code you see here, <code>mpg</code> is an object created by this code that contains the data from the <code>mpg</code> column of the <code>mtcars</code> data frame and <code>cyl</code> an object from the <code>cyl</code> column of the <code>mtcars</code> data frame.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="data-in-r.html#cb1-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="ot">&lt;-</span> mtcars<span class="sc">$</span>mpg</span>
 <span id="cb1-2"><a href="data-in-r.html#cb1-2" aria-hidden="true" tabindex="-1"></a>cyl <span class="ot">&lt;-</span> mtcars<span class="sc">$</span>cyl</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&amp;pageid=g3c53e17c93_1_27" alt="mpg and cyl are objects" /></p>
 <p>If I were to run these two lines of code, they would show up in the Console, and the objects <code>mpg</code> and <code>cyl</code> would now be visible in the Environment tab.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&amp;pageid=g3c53e17c93_1_40" alt="mpg and cyl visible in Environment tab" /></p>
 <p>Often you’ll create objects that you won’t need to save. However, from time to time you’ll make changes to a data frame or generate an object that you’ll want to use later. To save an object and use it later, you can save it as an R data file. These files contain objects that can be saved directly <em>from</em> and read directly <em>into</em> R using the commands <code>save()</code> and <code>load()</code>. And, in particular, R data files can <strong>save multiple objects</strong>.</p>
 <p>To save the two objects <code>mpg</code> and <code>cyl</code> into an R Data file, you would do the following:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="data-in-r.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(mpg, cyl, <span class="at">file=</span><span class="st">&quot;mtcars_objects.rda&quot;</span>)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&amp;pageid=g3c53e17c93_1_36" alt="save" /></p>
 <p>The syntax for <code>save</code> requires you to specify the objects you want to save, separated by commas. Then, the filename you want this R data file to have is specified using the <code>file=</code> argument. When this line of code is run, the specified file (here, <code>mtcars_objects.rda</code>) appears in the Files tab within RStudio, demonstrating that this file has been created.</p>
 <p>If in the future, if you were to want to load the objects <code>mpg</code> and <code>cyl</code> back into your R session, you would do this using <code>load()</code>. To do that here, we’ll first have to remove these objects from RStudio. To accomplish this, click on the broom in the Environment tab of RStudio Cloud.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&amp;pageid=g3c53e17c93_1_61" alt="broom icon removes all objects from R session" /></p>
 <p>After clicking “Yes” to confirm that you want to remove all objects, you’ll see that <code>mpg</code> and <code>cyl</code> are no longer in your RStudio environment. They have been removed from RStudio.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&amp;pageid=g3c53e17c93_1_73" alt="Empty Environment" /></p>
 <p>To load them back in from <code>mtcars_objects.rda</code>, you would do the following:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="data-in-r.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;mtcars_objects.rda&quot;</span>)</span></code></pre></div>
 <p>Note that you need to put quotes around the filename to specify that this is a file and <em>not</em> an object in R.</p>
 <p>A second note is a reminder about file paths. Here, the file we want is in the directory we’re working in. If that were not the case, you would have to specify the path to the file within the quotation marks (i.e. “path/to/file/mtcars_objects.rda”)</p>
 <p>When you run this line of code, you’ll see that <code>cyl</code> and <code>mpg</code> are once again available objects in your RStudio Environment tab!</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&amp;pageid=g3c53e17c93_1_79" alt="load loads objects in .rda file back in" /></p>
 <p>To recap, when you want to save multiple objects to be read in at a later time, you’ll save them as an R data file (.rda). R Data files are generated using the <code>save()</code> function and read into R using the <code>load()</code> command.</p>
 </div>
@@ -345,22 +345,22 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>To save a serialized R object file, you’ll use the function <code>saveRDS()</code>. To read a serialized object file into R, you’ll use the function <code>readRDS()</code>.</p>
 <p>For example, to save the <code>mpg</code> object you would use the following:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="data-in-r.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(mpg, <span class="at">file=</span><span class="st">&quot;mpg.rds&quot;</span>)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&amp;pageid=g3c53e17c93_1_85" alt="saveRDS" /></p>
 <p>This will generate the file <code>mpg.rds</code>.</p>
 <p>To read this file back in, we’ll first remove all objects from R Studio using the broom icon in the Environment tab and will then use the <code>readRDS()</code> function.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&amp;pageid=g3c53e17c93_1_93" alt="broom icon to clean up Environment" /></p>
 <p>Unlike with .rda objects, when you read a .rds object back in, to make the object available, you have to assign the object a variable name. Otherwise, the contents of the object will just print to your Console. This is helpful because it doesn’t matter what the name of the object was when you saved it. As long as you know the filename, you can pick a new object name. Here, we assign the serialized R object file to <code>mpg</code>, but we could have chosen a different object name.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="data-in-r.html#cb5-1" aria-hidden="true" tabindex="-1"></a> mpg <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&quot;mpg.rds&quot;</span>)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&amp;pageid=g3c53e17c93_1_101" alt="readRDS" /></p>
 </div>
 <div id="r-project-files-.rproj" class="section level4" number="2.0.1.5">
 <h4><span class="header-section-number">2.0.1.5</span> R Project files (.Rproj)</h4>
 <p>R Projects are incredibly helpful files. In their simplest form, by working within an R Project and saving an .Rproj file, you are always able to pick back up on a project from where you left off. Fortunately, RStudio Cloud uses R projects automatically. You may have noticed that there is a “project.Rproj” file in your Files tab. This is an R Project file.</p>
 <p>RStudio Cloud will start a “project.Rproj” file within each project you start. This file will then track your project as you write code and create objects.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&amp;pageid=g3c53e17c93_1_116" alt="R Project files" /></p>
 <p>Then, when you return to this project, your .Rroj file will:</p>
 <ul>
@@ -380,12 +380,12 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>Now that we’ve covered the main types of R files you’ll be working with and generating in RStudio, we’ll move on to formally discussing the datasets available within R and RStudio/RStudio Cloud.</p>
 <p>You’ve previously seen and worked with datasets that are available to you in R. Specifically, you’ve seen examples that used the <code>iris</code> and <code>mtcars</code> datasets in previous lessons. However, we haven’t covered how to find all available datasets that are included in R automatically, so we’ll do that now.</p>
 <p>To access a list of all the available datasets within R, you’ll type <code>data()</code> into your Console. This will open up a file called “R data sets”. You can scroll through this list to get a sense of what data sets are available. The name of the data set is in the first column while a brief description of the dataset is in the second column.</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&amp;pageid=g3c53e17c93_1_105" alt="R data sets" /></p>
 <p>If one of these datasets looks interesting to you, say the “Orange” dataset, you can get more detailed information about the dataset by using help function in R (<code>?</code>).</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="data-in-r.html#cb6-1" aria-hidden="true" tabindex="-1"></a> ?Orange</span></code></pre></div>
 <p>This opens up an explanation in the Help tab of RStudio Cloud. Here, you can see a description of the dataset and can scroll to see what variables are included in this dataset. Finally, at the bottom of the Help window, you’ll see examples of how to work with the dataset!</p>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&amp;pageid=g3c53e17c93_1_127" alt="Orange dataset Help page" /></p>
 </div>
 <div id="datasets-in-packages" class="section level3" number="2.0.3">
@@ -393,13 +393,13 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>In addition to the datasets available by default to you in R, many packages (but not all!) also contain datasets that you can use. To see a list of what datasets are available from a specific package, you can again use the <code>data()</code> function, but you’ll want to specify the name of the package using the <code>package=</code> argument</p>
 <p>For example, to see a list of the datasets available from the ggplot2 package, you would want to use the following:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="data-in-r.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="at">package=</span><span class="st">&quot;ggplot2&quot;</span>)</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&amp;pageid=g3c53e17c93_1_138" alt="datasets available from ggplot2 package" /></p>
 <p>As before, this function will open up a list of the available datasets within that package.</p>
 <p>In order to use any of these datasets, however, you’ll have to load the package using the <code>library()</code> function. After loading the package, you can then access the Help pages for a dataset as previously using <code>?</code>.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="data-in-r.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb8-2"><a href="data-in-r.html#cb8-2" aria-hidden="true" tabindex="-1"></a>?msleep</span></code></pre></div>
-<p>{format: png}
+<p>
 <img src="https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/export/png?id=1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg&amp;pageid=g3c53e17c93_1_143" alt="msleep from ggplot2 package dataset Help page" /></p>
 </div>
 <div id="other-types-of-data-in-r" class="section level3" number="2.0.4">
