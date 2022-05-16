@@ -276,8 +276,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>To make working with factors simpler, we’ll utilize the <code>forcats</code> package. Similar to the <code>stringr</code> package, all functions within <code>forcats</code> begin with <code>fct_</code>. As before, to see available functions you can type <code>?fct_</code> in your RStudio console. A drop-down menu will appear with all the possible forcats functions. Before working through this lesson, you’ll want to be sure that <code>forcats</code> has been installed and loaded in:</p>
 <div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="working-with-factors.html#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;forcats&#39;</span>)</span>
 <span id="cb83-2"><a href="working-with-factors.html#cb83-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span></code></pre></div>
-<p>
-<img src="https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&amp;pageid=g391e563ea4_0_0" alt="fct_ output from RStudio" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&amp;pageid=g391e563ea4_0_0" alt="" />
+<p class="caption">fct_ output from RStudio</p>
+</div>
 <div id="factor-basics" class="section level3" number="8.0.1">
 <h3><span class="header-section-number">8.0.1</span> Factor basics</h3>
 <p>In R, factors are comprised of two components: the actual <strong>values</strong> of the data and the possible <strong>levels</strong> within the factor. Thus, to create a factor, you need to supply both these pieces of information.</p>
@@ -289,16 +291,20 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb84-5"><a href="working-with-factors.html#cb84-5" aria-hidden="true" tabindex="-1"></a>some_months <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Mar&quot;</span>, <span class="st">&quot;Dec&quot;</span>, <span class="st">&quot;Jan&quot;</span>,  <span class="st">&quot;Apr&quot;</span>, <span class="st">&quot;Jul&quot;</span>)</span></code></pre></div>
 <p>However, if we were to sort this vector, R would sort this vector alphabetically.</p>
 <div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="working-with-factors.html#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(some_months)</span></code></pre></div>
-<p>
-<img src="https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&amp;pageid=g391e563ea4_0_12" alt="sort sorts variable alphabetically" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&amp;pageid=g391e563ea4_0_12" alt="" />
+<p class="caption">sort sorts variable alphabetically</p>
+</div>
 <p>While you and I know that this is not how months should be ordered, we haven’t yet told R that. To do so, we need to let R know that it’s a factor variable and what the levels of that factor variable should be.</p>
 <div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="working-with-factors.html#cb86-1" aria-hidden="true" tabindex="-1"></a>mon <span class="ot">&lt;-</span> <span class="fu">factor</span>(some_months, <span class="at">levels =</span> all_months)</span>
 <span id="cb86-2"><a href="working-with-factors.html#cb86-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb86-3"><a href="working-with-factors.html#cb86-3" aria-hidden="true" tabindex="-1"></a>mon</span>
 <span id="cb86-4"><a href="working-with-factors.html#cb86-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb86-5"><a href="working-with-factors.html#cb86-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(mon)</span></code></pre></div>
-<p>
-<img src="https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&amp;pageid=g391e563ea4_0_16" alt="defining the factor levels sorts this variable sensibly" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&amp;pageid=g391e563ea4_0_16" alt="" />
+<p class="caption">defining the factor levels sorts this variable sensibly</p>
+</div>
 <p>Here, we specify all the possible values that the factor could take in the <code>levels = all_months</code> argument. So, even though not all twelve months are included in the some_months object, we’ve stated that all of the months are possible values. Further, when you sort this variable, it now sorts in the sensical way!</p>
 </div>
 <div id="manually-change-the-labels-of-factor-levels-fct_relevel" class="section level3" number="8.0.2">
@@ -309,8 +315,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb87-3"><a href="working-with-factors.html#cb87-3" aria-hidden="true" tabindex="-1"></a>mon_relevel</span>
 <span id="cb87-4"><a href="working-with-factors.html#cb87-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb87-5"><a href="working-with-factors.html#cb87-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(mon_relevel)</span></code></pre></div>
-<p>
-<img src="https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&amp;pageid=g391e563ea4_0_47" alt="fct_relevel enables you to change the order of your factor levels" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&amp;pageid=g391e563ea4_0_47" alt="" />
+<p class="caption">fct_relevel enables you to change the order of your factor levels</p>
+</div>
 <p>After re-leveling, when we sort this factor, we see that Jul is placed first, as specified by the level re-ordering.</p>
 </div>
 <div id="keep-the-order-of-the-factor-levels-fct_inorder" class="section level3" number="8.0.3">
@@ -321,15 +329,19 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb88-3"><a href="working-with-factors.html#cb88-3" aria-hidden="true" tabindex="-1"></a>mon_inorder</span>
 <span id="cb88-4"><a href="working-with-factors.html#cb88-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb88-5"><a href="working-with-factors.html#cb88-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(mon_inorder)</span></code></pre></div>
-<p>
-<img src="https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&amp;pageid=g391e563ea4_0_52" alt="fct_inorder assigns levels in the same order the level is seen in the data" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&amp;pageid=g391e563ea4_0_52" alt="" />
+<p class="caption">fct_inorder assigns levels in the same order the level is seen in the data</p>
+</div>
 <p>We see now with <code>fct_inorder</code> that even when we sort the output, it does not sort the factor alphabetically, nor does it put it in calendar order. In fact, it stays in the same order as the input, just as we specified.</p>
 </div>
 <div id="advanced-factoring" class="section level3" number="8.0.4">
 <h3><span class="header-section-number">8.0.4</span> Advanced Factoring</h3>
 <p>For the remainder of this lesson, we’re going to return to using a dataset that’s in R by default. We’ll use the <code>chickwts</code> dataset for exploring the remaining advanced functions. This data set includes data from an experiment that was looking to compare the “effectiveness of various feed supplements on the growth rate of chickens.”</p>
-<p>
-<img src="https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&amp;pageid=g391e563ea4_0_24" alt="chickwts dataset" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&amp;pageid=g391e563ea4_0_24" alt="" />
+<p class="caption">chickwts dataset</p>
+</div>
 </div>
 <div id="re-ordering-factor-levels-by-frequency-fct_infreq" class="section level3" number="8.0.5">
 <h3><span class="header-section-number">8.0.5</span> Re-ordering factor levels by frequency : <code>fct_infreq()</code></h3>
@@ -341,8 +353,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb89-5"><a href="working-with-factors.html#cb89-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb89-6"><a href="working-with-factors.html#cb89-6" aria-hidden="true" tabindex="-1"></a><span class="do">## order levels by frequency</span></span>
 <span id="cb89-7"><a href="working-with-factors.html#cb89-7" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_infreq</span>(chickwts<span class="sc">$</span>feed) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
-<p>
-<img src="https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&amp;pageid=g391e563ea4_0_56" alt="fct_infreq orders levels based on frequency in dataset" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&amp;pageid=g391e563ea4_0_56" alt="" />
+<p class="caption">fct_infreq orders levels based on frequency in dataset</p>
+</div>
 <p>As expected, soybean, the most frequent level, appears as the first level and horsebean, the least frequent level, appears last. The rest of the levels are sorted by frequency.</p>
 </div>
 <div id="reversing-order-levels-fct_rev" class="section level3" number="8.0.6">
@@ -350,8 +364,10 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 <p>If we wanted to sort the levels from least frequent to most frequent, we could just put <code>fct_rev()</code> around the code we just used to reverse the factor level order.</p>
 <div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="working-with-factors.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="do">## reverse factor level order</span></span>
 <span id="cb90-2"><a href="working-with-factors.html#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fct_rev</span>(<span class="fu">fct_infreq</span>(chickwts<span class="sc">$</span>feed)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code></pre></div>
-<p>
-<img src="https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&amp;pageid=g391e563ea4_0_20" alt="fct_rev() reverses the factor level order" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&amp;pageid=g391e563ea4_0_20" alt="" />
+<p class="caption">fct_rev() reverses the factor level order</p>
+</div>
 </div>
 <div id="re-ordering-factor-levels-by-another-variable-fct_reorder" class="section level3" number="8.0.7">
 <h3><span class="header-section-number">8.0.7</span> Re-ordering factor levels by another variable : <code>fct_reorder()</code></h3>
@@ -361,8 +377,10 @@ chickwts %&gt;%
   mutate(newfeed = fct_reorder(feed, weight)) %&gt;%
   ggplot(., aes(newfeed,weight)) +
   geom_point()</code></pre>
-<p>
-<img src="https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&amp;pageid=g391e563ea4_0_69" alt="fct_reorder allows you to re-level a factor based on a secondary numeric variable" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&amp;pageid=g391e563ea4_0_69" alt="" />
+<p class="caption">fct_reorder allows you to re-level a factor based on a secondary numeric variable</p>
+</div>
 </div>
 <div id="combining-several-levels-into-one-fct_recode" class="section level3" number="8.0.8">
 <h3><span class="header-section-number">8.0.8</span> Combining several levels into one: <code>fct_recode()</code></h3>
@@ -381,8 +399,10 @@ chickwts %&gt;%
 <span id="cb92-12"><a href="working-with-factors.html#cb92-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;casein&quot;</span>  <span class="ot">=</span>   <span class="st">&quot;casein&quot;</span></span>
 <span id="cb92-13"><a href="working-with-factors.html#cb92-13" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">%&gt;%</span></span>
 <span id="cb92-14"><a href="working-with-factors.html#cb92-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabyl</span>(feed_recode)</span></code></pre></div>
-<p>
-<img src="https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&amp;pageid=g391e563ea4_0_79" alt="fct_recode() can be used to group multiple levels into a single level and/or to rename levels" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&amp;pageid=g391e563ea4_0_79" alt="" />
+<p class="caption">fct_recode() can be used to group multiple levels into a single level and/or to rename levels</p>
+</div>
 </div>
 <div id="converting-numeric-levels-to-factors-ifelse-factor" class="section level3" number="8.0.9">
 <h3><span class="header-section-number">8.0.9</span> Converting numeric levels to factors: <code>ifelse()</code> + <code>factor()</code></h3>
@@ -392,8 +412,10 @@ chickwts %&gt;%
 <span id="cb93-3"><a href="working-with-factors.html#cb93-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">weight_recode =</span> <span class="fu">ifelse</span>(weight <span class="sc">&lt;=</span> <span class="dv">200</span>, <span class="st">&quot;low&quot;</span>, <span class="st">&quot;high&quot;</span>),</span>
 <span id="cb93-4"><a href="working-with-factors.html#cb93-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">weight_recode =</span> <span class="fu">factor</span>(weight_recode)) <span class="sc">%&gt;%</span></span>
 <span id="cb93-5"><a href="working-with-factors.html#cb93-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tabyl</span>(weight_recode)</span></code></pre></div>
-<p>
-<img src="https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&amp;pageid=g391e563ea4_0_84" alt="converting a numeric type variable to a factor" /></p>
+<div class="figure">
+<img src="https://docs.google.com/presentation/d/16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU/export/png?id=16Y8swNgNfpmZPqDfw-lO36MXRc2T66zWoFB5Y35rmJU&amp;pageid=g391e563ea4_0_84" alt="" />
+<p class="caption">converting a numeric type variable to a factor</p>
+</div>
 </div>
 <div id="conclusions" class="section level3" number="8.0.10">
 <h3><span class="header-section-number">8.0.10</span> Conclusions</h3>
