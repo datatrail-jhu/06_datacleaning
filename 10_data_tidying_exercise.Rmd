@@ -1,6 +1,6 @@
 \* If you would like to know the answers to the questions in this exercise, then you can take this [course in Leanpub](https://leanpub.com/universities/courses/jhu/cbds-tidying).
 
-### Data Tidying Project
+# Data Tidying Project
 
 Often times, data scientists are handed data and asked to make sense of them. The data scientist may be asked to figure out why people are getting sick in a city or how their employer can save money. No matter the situation, these data aren't always in the most usable format. **Data wrangling** is required before any pretty visualizations can be made or interesting questions can be answered.
 
