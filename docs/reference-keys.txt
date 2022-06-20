@@ -131,8 +131,8 @@ time-spans
 whats-not-covered-in-this-lesson
 additional-resources-6
 slides-and-video-8
+data-tidying
 data-tidying-project
-data-tidying-project-1
 github-setup
 rstudio-cloud-setup
 data-science-project-setup
