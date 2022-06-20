@@ -213,7 +213,7 @@ While reshaping data may not be the most exciting topic, having this skill will 
 * [reshape2](https://stat.ethz.ch/pipermail/r-packages/2010/001169.html), developed by [Hadley Wickham](http://hadley.nz/)
 * [tidyr tutorial](https://blog.rstudio.com/2014/07/22/introducing-tidyr/) by [Hadley Wickham](http://hadley.nz/)
 * [reshape2 tutorial](http://seananderson.ca/2013/10/19/reshape/) by [Sean C. Anderson](http://seananderson.ca/)
-* [tidyr vs reshape2](http://www.milanor.net/blog/reshape-data-r-tidyr-vs-reshape2/) by [Alberto Giudici](http://www.milanor.net/blog/author/alberto-giudici/)
+* [tidyr vs reshape2](https://www.r-bloggers.com/2016/06/how-to-reshape-data-in-r-tidyr-vs-reshape2/) by [Alberto Giudici](https://www.erim.eur.nl/people/alberto-giudici/)
 
 ### Slides and Video
 
