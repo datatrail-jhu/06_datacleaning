@@ -1,4 +1,4 @@
-# Data Tidying Project
+# Data Tidying
 
 Throughout this course set, we'll have a number of projects for you to complete. These will be included as Exercises. This means they will *not* be required to pass the course and receive your certificate; however, completing them will *really* help to improve your understanding of the material covered and to ensure that you've begun to master the skills needed to be a data scientist.
 
