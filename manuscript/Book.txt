@@ -7,7 +7,7 @@
 7-Working-with-Strings.md
 8-Working-with-Factors.md
 9-Working-with-Dates.md
-10-Data-Tidying-Project.md
+10-Data-Tidying.md
 11-Data-Tidying-Project.md
 12-References.md
 About-this-Course.md
