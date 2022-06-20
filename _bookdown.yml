@@ -11,7 +11,8 @@ rmd_files: ["index.Rmd",
             "06_working_with_strings.Rmd",
             "07_working_with_factors.Rmd",
             "08_working_with_dates.Rmd",
-            "09_data_tidying_project.Rmd",
+            "09_data_tidying.Rmd",
+            "10_data_tidying_exercise.Rmd",
             "About.Rmd",
             "References.Rmd"]
 new_session: yes

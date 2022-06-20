@@ -1,18 +1,4 @@
-# Data Tidying Project
-
-Throughout this course set, we'll have a number of projects for you to complete. These will be included as Exercises. This means they will *not* be required to pass the course and receive your certificate; however, completing them will *really* help to improve your understanding of the material covered and to ensure that you've begun to master the skills needed to be a data scientist.
-
-In each project, we'll aim to get you started and to ask questions that will help guide you through the project. But, we'll intentionally leave pieces out where you have to figure out what needs to be done.
-
-This first project will require you to:
-
-* use version control
-* demonstrate the skills you've learned programming in R
-* wrangle data
-
-You can access the first project by going to the exercise accompanying this lesson.
-
-{exercise, id: project_data_tidying}
+\* If you would like to know the answers to the questions in this exercise, then you can take this [course in Leanpub](https://leanpub.com/universities/courses/jhu/cbds-tidying).
 
 ### Data Tidying Project
 
@@ -47,10 +33,7 @@ To start using version control, you'll want to clone the GitHub repository you j
 
 A new directory with the name of your GitHub repository should now be viewable in the Files tab of RStudio Cloud. You are now set up to track your project with git.
 
-{words: 20}
-? Why did you clone your GitHub repository into RStudio Cloud?
-
-!  Allows project to be version controlled ; /.+(version).+/i; /.+(track).+/i
+- Why did you clone your GitHub repository into RStudio Cloud?
 
 #### Data Science Project Setup
 
@@ -60,6 +43,7 @@ First, use `cd` to get yourself into the directory of your GitHub Project.
 
 Once in the correct directory, use `mkdir` in the terminal to create folders with the following structure:
 
+```
 \- data/
   \- raw_data/
   \- tidy_data/
@@ -70,12 +54,11 @@ Once in the correct directory, use `mkdir` in the terminal to create folders wit
   \- exploratory_figures/
   \- explanatory_figures/
 \- products/
+```
 
 Now that your directories are set up you'll want to use the Terminal (or 'More' drop-down menu in the Files tab) to move (`mv`) the `data_tidying_project.Rmd ` file into `code/raw_code`. This ensures that your code file is in the correct directory.
 
-? In what directory did you save  `data_tidying_project.Rmd `?
-
-! code/raw_code ; /cloud/project/code/rawcode
+- In what directory did you save  `data_tidying_project.Rmd `?
 
 Once the .Rmd document is in the correct folder, you'll want to change the author of this document to your name at the top of the .Rmd document (in the YAML). Save this change before moving to the next step.
 
@@ -86,9 +69,7 @@ Once the .Rmd document is in the correct folder, you'll want to change the autho
 
 You'll want to save changes to your project regularly by pushing them to GitHub. Now that you've got your file structure set up and have added an R Markdown document to your code/raw_code directory, it's a good time to stage, commit, and push these changes to GitHub. Do so now, and then take a long on GitHub to see the changes on their website!
 
-? After this initial push, how many of the directories you created are visible on GitHub?
-
-! 1 ; one
+- After this initial push, how many of the directories you created are visible on GitHub?
 
 **Note**: If you're stuck on this, these steps were covered in detail in an earlier course: [Version Control](https://leanpub.com/universities/courses/jhu/cbds-version-control). Refer to the materials in this course if you're stuck on this part of the project.
 
@@ -116,9 +97,7 @@ You'll want to save these data in the data/raw_data folder you created. We'll sa
 
 Add the code to do this to the `save-data` code chunk in your `data_tidying_project.Rmd` document. Save `df1` as 'df_department.rds' and `df2` as `df_retail.rds`.
 
-? What line of code did you use to save `df1`?
-
-! saveRDS(df1, file="data/raw_data/df_department.rds") ; saveRDS(df1, file='data/raw_data/df_department.rds') ; saveRDS(df1, file='/cloud/project/data_tidying_project/data/raw_data/df_department.rds') ; saveRDS(df1, file="/cloud/project/data_tidying_project/data/raw_data/df_department.rds")
+- What line of code did you use to save `df1`?
 
 #### Wrangle the Data
 
@@ -132,17 +111,10 @@ Now that you have the data in RStudio Cloud and have saved the raw data to your 
 
 To get you acquainted with the dataset, we'll first have you answer a few questions about the dataset: `df2`
 
-? How many rows are there in `df2`
+- How many rows are there in `df2`
+- How many columns are there in `df2`
+- In 2014, what were the sales for used car dealers?
 
-! 92
-
-? How many columns are there in `df2`
-
-! 30
-
-? In 2014, what were the sales for used car dealers?
-
-! 90385 ; 90,385
 
 Now, the goal of wrangling these data will be to take this data frame, which is currently in the **wide** data format and wrangle it into a **long** data format.  The resulting data frame from your wrangling will have three columns: `business`, `year`, and `n`. In the `data_tidying_project.Rmd` document, you'll see the code required to accomplish this in the `wrangle-df2` code chunk.
 
@@ -170,36 +142,17 @@ df_retail <- df2 %>%
 
 Again, take a look at the output variable `df_retail` to understand this additional line of code. This will help you understand what each line of code does! And, you'll understand *why* each step was taken to get the data into it's final format. Continue this process until you understand the entire chunk of code in `wrangle-df2`.
 
-{words: 20}
-? If you were to change the line  `mutate(business = gsub("[?]|[.]","",`Kind of business`))` to `mutate(biz = gsub("[?]|[.]","",`Kind of business`))`, what would change?
-
-! It would create a column called "biz" instead of "business"
-
-{words: 20}
-? What information is in the column `n`?
-
-! Sales for the business type and year for that row
-
-{words: 20}
-? What does `filter(business == "Retail sales, total "| business=="Department stores ")` accomplish?
-
-! It only includes those two kinds of businesses in the final data frame
+- If you were to change the line  `mutate(business = gsub("[?]|[.]","",`Kind of business`))` to `mutate(biz = gsub("[?]|[.]","",`Kind of business`))`, what would change?
+- What information is in the column `n`?
+- What does `filter(business == "Retail sales, total "| business=="Department stores ")` accomplish?
 
 ##### The department store data: `df1`
 
 Having had all the code to wrangle `df2` and being able to understand what each line did, now it's your turn to wrangle a data frame! You'll take  We'll first ask a few questions to get you acquainted with `df1`.
 
-? How many rows are there in `df1`
-
-! 298
-
-? How many columns are there in `df1`
-
-! 2
-
-? In `Jun-1992`, what were retail sales (in millions)?
-
-! 13354 ; 13,354
+- How many rows are there in `df1`
+- How many columns are there in `df1`
+- In `Jun-1992`, what were retail sales (in millions)?
 
 Now that you have an idea of what data are in the data frame `df`, it's time to wrangle! The goal of wrangling this data set is to mirror (or mimic) what we did in the first data set. This means, that by the end of data wrangling, you should have three columns with the same names as `df_retail`: `business`, `year`, and `n`.
 
@@ -229,17 +182,9 @@ Before you get started on the rest of this,  a quick note on data wrangling : As
 
 OK, now it's your job to work line by line to change `function_name` to the appropriate function in order to accomplish what the comments state you want to accomplish. Work through this code chunk line by line until you have a long data set called `df_department` with three columns:  `business`, `year`, and `n`.
 
-? What function did you use to group the data by the `year` column?
-
-! group_by ; group_by()
-
-? What function did you use to add the column name `value`?
-
-! mutate() ; mutate
-
-? What function did you use to reorder the column names?
-
-! select() ; select
+- What function did you use to group the data by the `year` column?
+- What function did you use to add the column name `value`?
+- What function did you use to reorder the column names?
 
 ##### Pushing to GitHub
 
@@ -271,11 +216,4 @@ Now that you've finalized your project, you'll do one final push to GitHub. add,
 
 **Note**: If you're stuck on this, these steps were covered in detail in an earlier course: [Version Control](https://leanpub.com/universities/courses/jhu/cbds-version-control). Refer to the materials in this course if you're stuck on this part of the project.
 
-
-? Submit the URL to your `data_tidying_project` GitHub repository below.
-
-! /(https:\/\/github.com.+\/data_tidying_project)/i
-
 **Congrats on finishing your first Data Science Project**
-
-{/exercise}
