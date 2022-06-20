@@ -8,6 +8,7 @@
 8-Working-with-Factors.md
 9-Working-with-Dates.md
 10-Data-Tidying-Project.md
-11-References.md
+11-Data-Tidying-Project.md
+12-References.md
 About-this-Course.md
 About-the-Authors.md
