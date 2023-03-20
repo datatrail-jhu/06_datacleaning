@@ -228,6 +228,6 @@ In this lesson we've covered the main file formats that are used within R. Make 
 
 ### Slides and Video
 
-![Data in R](https://youtu.be/fPt9faKdhP8)
+[Automated Video](https://youtu.be/fPt9faKdhP8)
 
 * [Slides](https://docs.google.com/presentation/d/1w7qP4LXwMUv-9mJQZgRdOqMCuUL82z7-rUGk4EoydDg/edit?usp=sharing)
