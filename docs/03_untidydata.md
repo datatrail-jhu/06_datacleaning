@@ -47,6 +47,6 @@ To address this, these data can be split into two different spreadsheets, one fo
 
 ### Slides and Video
 
-![Tidy Data](https://youtu.be/XO-goK_loFw)
+[Automated Video](https://youtu.be/XO-goK_loFw)
 
 * [Slides](https://docs.google.com/presentation/d/1SS0PYUE9_dE1MIWt6CZePEMUFL2P2Zy_3BidNWSq7hs/edit?usp=sharing)
